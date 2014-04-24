@@ -1,0 +1,134 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    line-height: 1.8em;
+    font-size: 16px;
+    list-style: none;
+}
+
+body {
+    background-color: #eeeeee;
+}
+
+a, th, td, p, h1, li {
+    font-family: 'Open Sans', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 微软雅黑, STHeiti, 'WenQuanYi Micro Hei', SimSun, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link, a:visited {
+    color: black;
+}
+
+a:focus, a:hover, a:active {
+    color: #5dafe9;
+}
+
+table {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    width: 46.875em;
+    border: 2px solid #7fb80e;
+}
+
+table col#name {
+    width: 50%;
+}
+
+table col#time-jp, table col#time-cn {
+    width: 20%;
+}
+
+table thead th {
+    border-right: 1px solid white;
+    background-color: #cde6c7;
+}
+
+table tbody td {
+    border-right: 1px solid white;
+    border-top: 1px solid white;
+}
+
+table tbody tr.color {
+    background-color: #f6f5ec;
+}
+
+table thead th#header {
+    height: 5em;
+    text-align: left;
+    padding-left: 1.25em;
+    background-color: #7fb80e;
+}
+
+table thead th#header h1 {
+    font-size: 2em;
+}
+
+table tbody tr td {
+    text-align: center;
+}
+
+table tbody tr td:first-child a {
+    position: relative;
+}
+
+
+table tbody tr td:first-child a span {
+    position: absolute;
+    background-color: rgba(206, 230, 201, 0.9);
+    top: 1em;
+    left: -9999px;
+    font-size: 0.8em;
+    color: gray;
+    width: 15em;
+    line-height: 1.5em;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 2px;
+    z-index: 1;
+}
+
+table tbody tr td:first-child a:hover span,
+table tbody tr td:first-child a:focus span {
+    left:100%;
+    margin-left: -0.4em;
+}
+
+table tr.hide {
+    display: none;
+}
+
+ul#nav {
+    word-spacing: -4px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 46.875em;
+    margin-top: 3em;
+}
+
+ul#nav li {
+    display: inline-block;
+    width: 4em;
+    height: 2em;
+    border: 2px solid #7fb80e;
+    border-bottom: none;
+    text-align: center;
+    line-height: 2em;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+ul#nav li:last-child {
+    border-right: 2px solid #7fb80e;
+}
+
+ul#nav li:focus, ul#nav li:hover {
+    background-color: #cde6c7;
+}
+
+ul#nav li.selected {
+    background-color: #7fb80e;
+}
