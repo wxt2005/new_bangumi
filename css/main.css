@@ -132,3 +132,8 @@ ul#nav li:focus, ul#nav li:hover {
 ul#nav li.selected {
     background-color: #7fb80e;
 }
+
+p#github {
+    text-align: center;
+    margin-top: 10px;
+}
