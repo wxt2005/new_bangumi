@@ -97,7 +97,8 @@ table tbody tr td:first-child a:focus span {
     margin-left: -0.4em;
 }
 
-table tr.hide {
+table tr.hide,
+table tr.hide a {
     display: none;
 }
 
