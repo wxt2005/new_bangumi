@@ -71,7 +71,7 @@ var colorTable = function() {
     }
 };
 
-//fix IE bug
+//fix IE display bug
 var disableIeSpan = function() {
     var bangumis = document.getElementById("bangumi_list").getElementsByTagName("tr");
     if(navigator.appName === "Microsoft Internet Explorer" && +navigator.appVersion.match(/MSIE\s(\d+)/)[1] < 9) {
@@ -82,11 +82,12 @@ var disableIeSpan = function() {
     }
 };
 
+//fix IE that can not write innerHTML of table element
 var changeTable = function(string) {
      if(navigator.appName === "Microsoft Internet Explorer" && +navigator.appVersion.match(/MSIE\s(\d+)/)[1] < 10) {
         var oldTbody = document.getElementsByTagName("tbody")[0];
         var temp = oldTbody.ownerDocument.createElement("div");
-        temp.innerHTML = "<table><tbody id=\"bangumi_list\">" + string + "</tbody></table>";
+        temp.innerHTML = "<table><tbody id='bangumi_list'>" + string + "</tbody></table>";
         oldTbody.parentNode.replaceChild(temp.firstChild.firstChild, oldTbody);
      } else {
         document.getElementById("bangumi_list").innerHTML = string; 
@@ -117,6 +118,7 @@ var createXHR = function() {
     }
 };
 
+//use ajax to get json data then do things
 var getJson = function() {
     var xhr = createXHR(); 
     xhr.onreadystatechange = function() {
@@ -138,13 +140,55 @@ var getJson = function() {
     xhr.send(null);
 };
 
+//use json to build table dom
 var buildTable = function() {
     var htmlString = "";
     for (var bangumi in result) {
-        htmlString += "\<tr\>" + "\<td\>" + "\<a href=\"" + result[bangumi]["officalSite"] + "\"\>" + bangumi + "\<span\>" + result[bangumi]["originName"] + "\<\/span\>\<\/a\>\<\/td\>\<td\>" + result[bangumi]["timeJP"] + "\<\/td\>\<td\>" + result[bangumi]["timeCN"] + "\<\/td\>\<td\>" +  "\<\/td\>\<\/tr\>"; 
+        htmlString += "<tr>" + "<td>" + "<a href='" + result[bangumi]["officalSite"] + "'>" + bangumi + "<span>" + result[bangumi]["originName"] + "</span></a></td><td>" + result[bangumi]["timeJP"] + "</td><td>" + result[bangumi]["timeCN"] + "</td><td>"; 
+        if (result[bangumi]["onAir"].length === 0) {
+            htmlString += "N/A" + "</td></tr>";
+        } else {
+            for (var i = 0, l = result[bangumi]["onAir"].length; i < l; i++) {
+                htmlString += "<a href='" + result[bangumi]["onAir"][i] + "'>";
+                var re = /^https{0,}:\/\/\w+\.(\w+)\.\w+/i;
+                switch (result[bangumi]["onAir"][i].match(re)[1].toLowerCase()) {
+                    case "youku":
+                        htmlString += "优酷";     
+                        break;
+                    case "sohu":
+                        htmlString += "搜狐";
+                        break;
+                    case "qq":
+                        htmlString += "腾讯";
+                        break;
+                    case "iqiyi":
+                        htmlString += "爱奇艺";
+                        break;
+                    case "letv":
+                        htmlString += "乐视";
+                        break;
+                    case "pptv":
+                        htmlString += "PPTV";
+                        break;
+                    case "tudou":
+                        htmlString += "土豆";
+                        break;
+                    default:
+                        htmlString += "未知";
+                }
+                htmlString +=  "</a> ";
+                
+                //add a return after even link
+                if (i % 2 !== 0) {
+                    htmlString += "<br>";
+                }
+            }
+        }
     }
+
+    //clear result obj
     result = undefined;
-    return htmlString;
+    return htmlString + "</td></tr>";
 };
 
 window.onload = function() {
