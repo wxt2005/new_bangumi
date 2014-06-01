@@ -94,25 +94,12 @@ var changeTable = function(string) {
      }
 };
 
-//support IE 6 xhr object
+//support IE6 or IE7 XMLHttpRequest object
 var createXHR = function() {
     if (typeof XMLHttpRequest !== "undefined") {
         return new XMLHttpRequest();
     } else if (typeof ActiveXObject !== "undefined") {
-        if (typeof arguments.callee.activeXString !== "string") {
-            var versions = ["MSXML2.XMLHttp.6.0", "MSXML2.XMLHttp.3.0",
-                "MSXML2.XMLHttp"];
-                for (var i=0, l = versions.length; i < l; i++) {
-                    try {
-                        new ActiveXObject(versions[i]);
-                        arguments.callee.activeXString = versions[i];
-                        break;
-                    } catch (ex) {
-                        //skip
-                    }
-                }
-        }
-        return new ActiveXObject(arguments.callee.activeXString);
+        return new ActiveXObject("Microsoft.XMLHTTP");
     } else {
         throw new Error("No XHR object available.");
     }
