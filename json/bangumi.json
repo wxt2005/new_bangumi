@@ -1,0 +1,438 @@
+{
+    "愚者信长": {
+        "originName": "ノブナガ・ザ・フール",
+        "officalSite": "http://www.nobunaga.tv/",
+        "timeJP": "星期一 00:05",
+        "timeCN": "星期一 00:35",
+        "onAir": [
+            "http://www.youku.com/show_page/id_z8581ce084a9811e3b8b7.html"
+        ]
+    },
+    "邻座同学是怪咖": {
+        "originName": "となりの関くん",
+        "officalSite": "http://www.t-sekikun.jp/",
+        "timeJP": "星期一 01:05",
+        "timeCN": "星期一 05:15",
+        "onAir": [
+            "http://www.youku.com/show_page/id_zb302b478144711e38b3f.html"
+        ]
+    },
+    "漫画家与助手": {
+        "originName": "マンガ家さんとアシスタントさんと",
+        "officalSite": "http://mangakasan.tv/",
+        "timeJP": "星期二 00:05",
+        "timeCN": "星期二 03:18",
+        "onAir": [
+            "http://tv.sohu.com/s2014/mhjyzsm"
+        ]
+    },
+    "M3 ~黑钢~": {
+        "originName": "M3 ～ソノ黑キ鋼～",
+        "officalSite": "http://m3-project.com/",
+        "timeJP": "星期二 00:35",
+        "timeCN": "星期二 01:05",
+        "onAir": [
+            "http://www.iqiyi.com/a_19rrgi95ql.html",
+            "http://tv.sohu.com/s2014/m3hg/",
+            "http://www.tudou.com/albumcover/bnjoDHGXv1c.html",
+            "http://www.youku.com/show_page/id_z53e64c72ae7811e3a705.html"
+        ]
+    },
+    "飚速宅男": {
+        "originName": "弱虫ペダル",
+        "officalSite": "http://yowapeda.com/",
+        "timeJP": "星期二 00:35",
+        "timeCN": "星期二 01:05",
+        "onAir": [
+            "http://www.youku.com/show_page/id_z88da380a055711e3b8b7.html"
+        ]
+    },
+    "魔神之骨": {
+        "originName": "マジンボーン",
+        "officalSite": "http://www.toei-anim.co.jp/tv/majinbone/",
+        "timeJP": "星期二 17:30",
+        "timeCN": "星期三",
+        "onAir": [
+            "http://tv.sohu.com/s2014/majinbone/"
+        ]
+    },
+    "魔法少女大战": {
+        "originName": "魔法少女大戦",
+        "officalSite": "http://mahoushoujyotaisen.com/",
+        "timeJP": "星期二 20:55",
+        "timeCN": "星期二 23:00",
+        "onAir": [
+            "http://v.qq.com/detail/z/zpvbrqfxv585n4l.html"
+        ]
+    },
+    "漆黑的子弹": {
+        "originName": "ブラック・ブレット",
+        "officalSite": "http://www.black-bullet.net/",
+        "timeJP": "星期二 21:30",
+        "timeCN": "星期三 03:00",
+        "onAir": [
+            "http://tv.sohu.com/s2014/hszd"
+        ]
+    },
+    "史上最强弟子兼一 ～暗之袭击～": {
+        "originName": "史上最強の弟子ケンイチ ～闇の襲撃～",
+        "officalSite": "http://www.kenichianime.com/",
+        "timeJP": "星期三 00:00",
+        "timeCN": "N/A",
+        "onAir": []
+    },
+    "噬魂师NOT！": {
+        "originName": "ソウルイーターノット！",
+        "officalSite": "http://www.souleaternot.tv/",
+        "timeJP": "星期三 00:40",
+        "timeCN": "星期三 01:10",
+        "onAir": [
+            "http://www.iqiyi.com/a_19rrgi8v2x.html"
+        ]
+    },
+    "游戏人生": {
+        "originName": "ノーゲーム・ノーライフ",
+        "officalSite": "http://ngnl.jp/",
+        "timeJP": "星期三 20:30",
+        "timeCN": "星期四 00:00",
+        "onAir": [
+            "http://www.pptv.com/page/268822.html"
+        ]
+    },
+    "棺姬嘉依卡": {
+        "originName": "棺姫のチャイカ",
+        "officalSite": "http://chaika-anime.jp/",
+        "timeJP": "星期三 20:30",
+        "timeCN": "星期四 01:35",
+        "onAir": [
+            "http://v.qq.com/detail/s/sdi5wn3om79wo2m.html"
+        ]
+    },
+    "风云维新大将军": {
+        "originName": "風雲維新ダイショーグン",
+        "officalSite": "http://daishogun-anime.jp/",
+        "timeJP": "星期三 00:35",
+        "timeCN": "星期四 02:05",
+        "onAir": [
+            "http://comic.letv.com/zt/fengyun/index.shtml"
+        ]
+    },
+    "口袋妖怪XY": {
+        "originName": "ポケットモンスターXY",
+        "officalSite": "http://www.tv-tokyo.co.jp/anime/pokemon_xy/",
+        "timeJP": "星期四 18:00",
+        "timeCN": "N/A",
+        "onAir": []
+    },
+    "艾斯卡与罗吉的工作室 ～黄昏之空的炼金术士～": {
+        "originName": "エスカ＆ロジーのアトリエ ～黄昏の空の錬金術士～",
+        "officalSite": "http://atelier-ps3.jp/escha-logy/anime/",
+        "timeJP": "星期四 21:00",
+        "timeCN": "N/A",
+        "onAir": []
+    },
+    "请问您今天要来点兔子吗？": {
+        "originName": "ご注文はうさぎですか？",
+        "officalSite": "http://www.gochiusa.com/",
+        "timeJP": "星期四 21:30",
+        "timeCN": "星期五 01:00",
+        "onAir": [
+            "http://v.qq.com/detail/o/o2fm6biw90g8tbv.html"
+        ]
+    },
+    "乒乓": {
+        "originName": "ピンポン THE ANIMATION",
+        "officalSite": "http://www.pingpong-anime.tv/",
+        "timeJP": "星期四 23:50",
+        "timeCN": "星期五 00:30",
+        "onAir": [
+            "http://comic.letv.com/zt/pingpong/index.shtml"
+        ]
+    },
+    "犬神同学和猫山同学": {
+        "originName": "犬神さんと猫山さん",
+        "officalSite": "http://www.dreamcreation.co.jp/inuneko/",
+        "timeJP": "星期五 00:00",
+        "timeCN": "N/A",
+        "onAir": []
+    },
+    "龙娘七七七埋藏的宝藏": {
+        "originName": "龍ヶ嬢七々々の埋蔵金",
+        "officalSite": "http://www.nanana.tv/",
+        "timeJP": "星期五 00:20",
+        "timeCN": "星期五 01:00",
+        "onAir": [
+            "http://comic.letv.com/zt/777/index.shtml"
+        ]
+    },
+    "洪门剑灵传说": {
+        "originName": "ブレイドアンドソウル",
+        "officalSite": "http://www.tbs.co.jp/anime/blade/",
+        "timeJP": "星期五 00:46",
+        "timeCN": "星期五 02:30",
+        "onAir": [
+            "http://v.qq.com/detail/g/g9bv0pqsa2sr71o.html"
+        ]
+    },
+    "希德尼娅的骑士": {
+        "originName": "シドニアの騎士",
+        "officalSite": "http://www.knightsofsidonia.com/",
+        "timeJP": "星期五 00:49",
+        "timeCN": "星期五 12:30",
+        "onAir": [
+            "http://www.iqiyi.com/a_19rrgi8f5p.html"
+        ]
+    },
+    "监督不行届": {
+        "originName": "監督不行届",
+        "officalSite": "http://www.dle.jp/kantoku/",
+        "timeJP": "星期五 01:05",
+        "timeCN": "N/A",
+        "onAir": []
+    },
+    "我们大家的河合庄": {
+        "originName": "僕らはみんな河合荘",
+        "officalSite": "http://www.tbs.co.jp/anime/kawaisou/",
+        "timeJP": "星期五 01:16",
+        "timeCN": "N/A",
+        "onAir": []
+    },
+    "恶魔之谜": {
+        "originName": "悪魔のリドル",
+        "officalSite": "http://akuma-riddle.com/",
+        "timeJP": "星期五 01:19",
+        "timeCN": "星期六 03:00",
+        "onAir": [
+            "http://tv.sohu.com/s2014/emzm"
+        ]
+    },
+    "选择感染者 WIXOSS": {
+        "originName": "selector infected WIXOSS",
+        "officalSite": "http://selector-wixoss.com/",
+        "timeJP": "星期五 01:49",
+        "timeCN": "星期五 02:49",
+        "onAir": [
+            "http://www.iqiyi.com/a_19rrgi91g9.html"
+        ]
+    },
+    "忍者神龟 新系列": {
+        "originName": "ミュータント・タートルズ 新シリーズ",
+        "officalSite": "http://www.nickjapan.com/character/tmnt/",
+        "timeJP": "星期五 06:30",
+        "timeCN": "N/A",
+        "onAir": []
+    },
+    "虫师 续章": {
+        "originName": "蟲師 続章",
+        "officalSite": "http://www.mushishi-anime.com/",
+        "timeJP": "星期五 23:00",
+        "timeCN": "星期六 04:00",
+        "onAir": [
+            "http://tv.sohu.com/s2014/csxz/"
+        ]
+    },
+    "JOJO的奇妙冒险 第三部 Stardust Crusaders": {
+        "originName": "ジョジョの奇妙な冒険 第三部 スターダストクルセイダース",
+        "officalSite": "http://jojo-animation.com/",
+        "timeJP": "星期五 23:30",
+        "timeCN": "N/A",
+        "onAir": []
+    },
+    "约会大作战 第二季": {
+        "originName": "デート・ア・ライブⅡ",
+        "officalSite": "http://date-a-live-anime.com/",
+        "timeJP": "星期六 00:35",
+        "timeCN": "星期六 02:05",
+        "onAir": [
+            "http://comic.letv.com/zt/datealive/index.shtml"
+        ]
+    },
+    "宝石宠物": {
+        "originName": "レディ ジュエルペット",
+        "officalSite": "http://www.tv-tokyo.co.jp/anime/jewelpet6/",
+        "timeJP": "星期六 08:30",
+        "timeCN": "N/A",
+        "onAir": []
+    },
+    "美妙旋律All Star": {
+        "originName": "プリティーリズム・オールスターセレクション",
+        "officalSite": "http://www.tv-tokyo.co.jp/anime/prettyrhythm/",
+        "timeJP": "星期六 09:00",
+        "timeCN": "N/A",
+        "onAir": []
+    },
+    "妖精的尾巴 第二季": {
+        "originName": "FAIRY TAIL 新シリーズ",
+        "officalSite": "http://www.fairytail-tv.com/",
+        "timeJP": "星期六 09:30",
+        "timeCN": "星期六 14:00",
+        "onAir": [
+            "http://tv.sohu.com/s2011/yjdwb/"
+        ]
+    },
+    "金田一少年事件簿R": {
+        "originName": "金田一少年の事件簿R（リターンズ）",
+        "officalSite": "http://www.ytv.co.jp/kindaichi_r/",
+        "timeJP": "星期六 16:30",
+        "timeCN": "星期日",
+        "onAir": [
+            "http://tv.sohu.com/s2014/jtysnr/"
+        ]
+    },
+    "健全机斗士": {
+        "originName": "健全ロボ ダイミダラー",
+        "officalSite": "http://penguin-empire.com/",
+        "timeJP": "星期六 17:30",
+        "timeCN": "星期六 18:30",
+        "onAir": [
+            "http://tv.sohu.com/s2014/jqjds/"
+        ]
+    },
+    "星刻龙骑士": {
+        "originName": "星刻の竜騎士",
+        "officalSite": "http://www.seikokutv.com/",
+        "timeJP": "星期六 19:30",
+        "timeCN": "星期六 22:30",
+        "onAir": [
+            "http://www.youku.com/show_page/id_z4dd5df8e6b7d11e3b8b7.html"
+        ]
+    },
+    "伪恋": {
+        "originName": "ニセコイ",
+        "officalSite": "http://www.nisekoi.jp/",
+        "timeJP": "星期六 22:30",
+        "timeCN": "星期六 22:35",
+        "onAir": [
+            "http://comic.letv.com/zt/weilian/index.shtml"
+        ]
+    },
+    "目隐都市的演绎者": {
+        "originName": "メカクシティアクターズ",
+        "officalSite": "http://www.mekakucityactors.com/",
+        "timeJP": "星期六 23:00",
+        "timeCN": "星期六 23:05",
+        "onAir": [
+            "http://comic.letv.com/zt/yangyan/index.shtml"
+        ]
+    },
+    "魔法科高校的劣等生": {
+        "originName": "魔法科高校の劣等生",
+        "officalSite": "http://mahouka.jp/",
+        "timeJP": "星期六 23:30",
+        "timeCN": "N/A",
+        "onAir": []
+    },
+    "众神的恶作剧": {
+        "originName": "神々の悪戯",
+        "officalSite": "http://www.kamiaso-anime.com/",
+        "timeJP": "星期日 00:00",
+        "timeCN": "N/A",
+        "onAir": []
+    },
+    "金色琴弦 BlueSky": {
+        "originName": "金色のコルダ Blue♪Sky",
+        "officalSite": "http://www.ntv.co.jp/corda/",
+        "timeJP": "星期日 00:50",
+        "timeCN": "星期日 04:20",
+        "onAir": [
+            "http://www.iqiyi.com/a_19rrgi8ugt.html"
+        ]
+    },
+    "地球队长": {
+        "originName": "キャプテン・アース",
+        "officalSite": "http://captain-earth.net/",
+        "timeJP": "星期日 00:58",
+        "timeCN": "星期日 02:28",
+        "onAir": [
+            "http://www.iqiyi.com/a_19rrgi8upt.html"
+        ]
+    },
+    "尽管如此世界依然美丽": {
+        "originName": "それでも世界は美しい",
+        "officalSite": "http://www.ntv.co.jp/soreseka/",
+        "timeJP": "星期日 01:20",
+        "timeCN": "星期日 04:50",
+        "onAir": [
+            "http://www.iqiyi.com/a_19rrgi8ul5.html"
+        ]
+    },
+    "Happiness Charge Precure!": {
+        "originName": "ハピネスチャージプリキュア！",
+        "officalSite": "http://www.toei-anim.co.jp/tv/happinesscharge_precure/",
+        "timeJP": "星期日 07:30",
+        "timeCN": "N/A",
+        "onAir": []
+    },
+    "龙珠改 魔人布欧篇": {
+        "originName": "ドラゴンボール改 魔人ブウ編",
+        "officalSite": "http://www.toei-anim.co.jp/tv/dragon_kai/",
+        "timeJP": "星期日 08:00",
+        "timeCN": "星期日",
+        "onAir": [
+            "http://tv.sohu.com/s2014/lzg2/"
+        ]
+    },
+    "排球少年": {
+        "originName": "ハイキュー!!",
+        "officalSite": "http://www.j-haikyu.com/",
+        "timeJP": "星期日 16:00",
+        "timeCN": "星期日 17:30",
+        "onAir": [
+            "http://www.youku.com/show_page/id_z0a90146c4c1811e38b3f.html"
+        ]
+    },
+    "网球优等生": {
+        "originName": "ベイビーステップ",
+        "officalSite": "http://www9.nhk.or.jp/anime/babysteps/",
+        "timeJP": "星期日 16:30",
+        "timeCN": "星期一 03:00",
+        "onAir": [
+            "http://www.iqiyi.com/a_19rrgi8tcp.html"
+        ]
+    },
+    "极黑的布伦希尔特": {
+        "originName": "極黒のブリュンヒルデ",
+        "officalSite": "http://www.brynhildr.jp/",
+        "timeJP": "星期日 21:00",
+        "timeCN": "星期一 00:30",
+        "onAir": [
+            "http://tv.sohu.com/s2014/jhdblxet/"
+        ]
+    },
+    "LOVELIVE！第二季": {
+        "originName": "ラブライブ！第2期",
+        "officalSite": "http://www.lovelive-anime.jp/",
+        "timeJP": "星期日 21:30",
+        "timeCN": "星期二 11:30",
+        "onAir": [
+            "http://www.iqiyi.com/a_19rrgi8vct.html"
+        ]
+    },
+    "破刃之剑": {
+        "originName": "ブレイクブレイド",
+        "officalSite": "http://breakblade.jp/",
+        "timeJP": "星期日 22:00",
+        "timeCN": "星期日 23:00",
+        "onAir": [
+            "http://www.iqiyi.com/a_19rrgi8ta9.html"
+        ]
+    },
+    "一周的朋友": {
+        "originName": "一週間フレンズ。",
+        "officalSite": "http://oneweekfriends.com/",
+        "timeJP": "星期日 23:00",
+        "timeCN": "星期一 00:30",
+        "onAir": [
+            "http://v.qq.com/detail/k/kg70mw6f4nhwwj8.html"
+        ]
+    },
+    "如果折断她的旗": {
+        "originName": "彼女がフラグをおられたら",
+        "officalSite": "http://www.gaworare-anime.com/",
+        "timeJP": "星期日 23:30",
+        "timeCN": "星期一 06:45",
+        "onAir": [
+            "http://www.iqiyi.com/a_19rrgi8tfh.html"
+        ]
+    }
+}
