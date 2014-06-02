@@ -1,3 +1,17 @@
+var weekDayList = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+
+//add Array.prototype.indexOf for IE below version 9
+if (typeof Array.prototype.indexOf !== "function") {
+    Array.prototype.indexOf = function(item) {
+        for (var i = 0, l = this.length; i < l; i++) {
+            if (this[i] === item) {
+                return i;
+            }
+        }
+        return -1;
+    };
+}
+
 //highlight selected button
 function selectButton(navButtons, buttonNum) {
     for (var i = 0, l = navButtons.length; i < l; i++) {
@@ -24,7 +38,6 @@ function colorTable(bangumis) {
 
 //hide useless bangumis
 function hideOtherBangumi(bangumis, weekDay) {
-    var weekDayList = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
     if (weekDay === -1) {
         for (var i = 0, l = bangumis.length; i < l; i++) {
             bangumis[i].className = "";
@@ -107,22 +120,22 @@ function createXHR() {
 
 //use json to build table dom
 function buildTable(result) {
-    var htmlString = "";
-
+    var htmlArr = [];
     for (var bangumi in result) {
-        var info = result[bangumi];
-        htmlString += "<tr><td><a href='" + info["officalSite"] + "'>" + 
-            bangumi + "<span>" + info["originName"] + "</span></a></td><td>" + 
-            info["timeJP"] + "</td><td>" + info["timeCN"] + "</td><td>"; 
+        var htmlString = "",
+            info = result[bangumi];
+        htmlString += "<tr><td><a href='" + info.officalSite + "'>" + 
+            bangumi + "<span>" + info.originName + "</span></a></td><td>" + 
+            info.timeJP + "</td><td>" + info.timeCN + "</td><td>"; 
 
-        if (info["onAir"].length === 0) {
+        if (info.onAir.length === 0) {
             htmlString += "N/A";
         } else {
-            for (var i = 0, l = info["onAir"].length; i < l; i++) {
-                htmlString += "<a href='" + info["onAir"][i] + "'>";
+            for (var i = 0, l = info.onAir.length; i < l; i++) {
+                htmlString += "<a href='" + info.onAir[i] + "'>";
                 var re = /^https{0,}:\/\/\w+\.(\w+)\.\w+/i;
 
-                switch (info["onAir"][i].match(re)[1].toLowerCase()) {
+                switch (info.onAir[i].match(re)[1].toLowerCase()) {
                     case "youku":
                         htmlString += "优酷";     
                         break;
@@ -161,8 +174,30 @@ function buildTable(result) {
                 }
             }
         }
+        htmlString += "</td></tr>";
+        htmlArr.push(htmlString);
     }
-    return htmlString + "</td></tr>";
+    //use timeJP to sort bangumis
+    htmlArr.sort(function(a, b) {
+        var aDay = weekDayList.indexOf(a.match(/星期.{1}/)[0]),
+            bDay = weekDayList.indexOf(b.match(/星期.{1}/)[0]),
+            aTime = a.match(/\d{2}:\d{2}/)[0],
+            bTime = b.match(/\d{2}:\d{2}/)[0];
+        if (aDay === bDay) {
+            if (aTime === bTime) {
+                return 0;
+            } else if (aTime < bTime) {
+                return -1;
+            } else {
+                return 1;
+            }
+        } else if (aDay < bDay) {
+            return -1;
+        } else {
+            return 1;
+        }
+    });
+    return htmlArr.join("");
 }
 
 //use ajax to get json data then do things

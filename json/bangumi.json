@@ -465,13 +465,5 @@
         "onAir": [
             "http://www.iqiyi.com/a_19rrgi8tfh.html"
         ]
-    },
-    "测试番组": {
-        "originName": "test",
-        "officalSite": "#",
-        "timeJP": "星期二 03:30",
-        "timeCN": "星期三 23:45",
-        "onAir": [
-        ]
     }
 }
