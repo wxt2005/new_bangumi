@@ -1,11 +1,5 @@
-var now = new Date();
-var day = now.getDay();
-var result = {};
-
 //highlight selected button
-var selectButton = function(buttonNum) {
-    var navBar = document.getElementById("nav");
-    var navButtons = navBar.getElementsByTagName("li");
+function selectButton(navButtons, buttonNum) {
     for (var i = 0, l = navButtons.length; i < l; i++) {
         if (i === buttonNum) {
             navButtons[i].className = "selected";
@@ -13,89 +7,95 @@ var selectButton = function(buttonNum) {
             navButtons[i].className = "";
         }
     }
-    colorTable();
-};
+}
 
-//hide unnecessary bangumis
-var hideOtherBangumi = function(weekDay) {
-    var bangumis = document.getElementById("bangumi_list").getElementsByTagName("tr");
+//color table rows
+function colorTable(bangumis) {
+    var colored = true;
+    for (var i = 0, l = bangumis.length; i < l; i++) {
+        if (bangumis[i].className !== "hide") {
+            if (!colored) {
+                bangumis[i].className = "color";
+            }
+            colored = !colored;
+        }
+    }
+}
+
+//hide useless bangumis
+function hideOtherBangumi(bangumis, weekDay) {
     var weekDayList = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
-    if (weekDay === 8) {
+    if (weekDay === -1) {
         for (var i = 0, l = bangumis.length; i < l; i++) {
             bangumis[i].className = "";
         }
     } else {
         for (var i = 0, l = bangumis.length; i < l; i++) {
             var bangumiInfos = bangumis[i].getElementsByTagName("td"),
-                timeJp = bangumiInfos[1].textContent ||  bangumiInfos[1].innerText,
-                timeCn = bangumiInfos[2].textContent ||  bangumiInfos[2].innerText ;
-            if (timeCn.indexOf("N/A") === -1 && timeCn.indexOf(weekDayList[weekDay]) === -1) {
-                bangumis[i].className = "hide";
-            } else if (timeCn.indexOf("N/A") !== -1 && timeJp.indexOf(weekDayList[weekDay]) === -1) {
-                bangumis[i].className = "hide";
-            } else {
-                bangumis[i].className = "";
-            }
+                timeJP = bangumiInfos[1].textContent || bangumiInfos[1].innerText,
+                timeCN = bangumiInfos[2].textContent || bangumiInfos[2].innerText,
+                weekDayCN = weekDayList[weekDay];
+            if ((timeCN.indexOf("N/A") === -1 && timeCN.indexOf(weekDayCN) === -1) ||
+                (timeCN.indexOf("N/A") !== -1 && timeJP.indexOf(weekDayCN) === -1)) {
+                    bangumis[i].className = "hide";
+                } else {
+                    bangumis[i].className = "";
+                }
         }
     }
-};
+    colorTable(bangumis);
+}
 
 //bind event to buttons
-var bindButton = function() {
-    var navBar = document.getElementById("nav");
-    var navButtons = navBar.getElementsByTagName("li");
+function bindButton(bangumis, navBar, navButtons) {
     navBar.onclick = function(event) {
         var event = event || window.event,
-            target = event.target || event.srcElement;
+            target = event.target || event.srcElement,
+            //for converting button index to weekday, -1 for show all
+            buttonList = [1, 2, 3, 4, 5, 6, 0, -1];
         for (var i = 0, l = navButtons.length; i < l; i++) {
             if (navButtons[i] === target) {
                 //button number to weekday
-                hideOtherBangumi((function(i){ return i !== 6 ? j = i + 1 : j = 0})(i)); 
-                selectButton(i);
+                hideOtherBangumi(bangumis, buttonList[i]); 
+                selectButton(navButtons, i);
             }
         }
-    }
-};
+    };
+}
 
-//color table rows
-var colorTable = function() {
-    var bangumis = document.getElementById("bangumi_list").getElementsByTagName("tr");
-    var colored = true;
-    for (var i = 0, l = bangumis.length; i < l; i++) {
-        if (colored === false && bangumis[i].className !== "hide") {
-            bangumis[i].className = "color";
-            colored = true;
-        } else if (colored === true && bangumis[i].className !== "hide"){
-            colored = false;
-        }
-    }
-};
-
-//fix IE display bug
-var disableIeSpan = function() {
-    var bangumis = document.getElementById("bangumi_list").getElementsByTagName("tr");
-    if(navigator.appName === "Microsoft Internet Explorer" && +navigator.appVersion.match(/MSIE\s(\d+)/)[1] < 9) {
+//becaus IE below version 9 can not show relative span correctly, so hide them
+function disableIeSpan(bangumis) {
+    if(navigator.appName === "Microsoft Internet Explorer" && 
+       +navigator.appVersion.match(/MSIE\s(\d+)/)[1] < 9) {
         for (var i = 0, l = bangumis.length; i < l; i++) {
             var span = bangumis[i].getElementsByTagName("span")[0];
             span.style.cssText = "display:none";
         }
     }
-};
+}
 
 //fix IE that can not write innerHTML of table element
-var changeTable = function(string) {
-     if(navigator.appName === "Microsoft Internet Explorer" && +navigator.appVersion.match(/MSIE\s(\d+)/)[1] < 10) {
-        var oldTbody = document.getElementsByTagName("tbody")[0];
-        var temp = oldTbody.ownerDocument.createElement("div");
+function showTable(string) {
+    //IE below version 10 only
+    if(navigator.appName === "Microsoft Internet Explorer" && 
+       +navigator.appVersion.match(/MSIE\s(\d+)/)[1] < 10) {
+            //get tbody element
+        var oldTbody = document.getElementsByTagName("tbody")[0],
+            //create a div on root document
+            temp = oldTbody.ownerDocument.createElement("div");
+        //use string to fill up temp div 
         temp.innerHTML = "<table><tbody id='bangumi_list'>" + string + "</tbody></table>";
+        //use temp div>table>tbody to overwrite oldTbody
         oldTbody.parentNode.replaceChild(temp.firstChild.firstChild, oldTbody);
-     } else {
+    } else {
         document.getElementById("bangumi_list").innerHTML = string; 
-     }
-};
+    }
+    //return bangumis
+    return document.getElementById("bangumi_list").getElementsByTagName("tr");
+}
 
 //support IE6 or IE7 XMLHttpRequest object
-var createXHR = function() {
+function createXHR() {
     if (typeof XMLHttpRequest !== "undefined") {
         return new XMLHttpRequest();
     } else if (typeof ActiveXObject !== "undefined") {
@@ -103,42 +103,26 @@ var createXHR = function() {
     } else {
         throw new Error("No XHR object available.");
     }
-};
-
-//use ajax to get json data then do things
-var getJson = function() {
-    var xhr = createXHR(); 
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4) {
-            if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
-                result = JSON.parse(xhr.responseText);
-                changeTable(buildTable());
-                disableIeSpan();
-                hideOtherBangumi(day);
-                //week day to button number
-                selectButton((function(i){ return i !== 0 ? j = i - 1 : j = 6})(day));
-                bindButton();
-            } else {
-                console.log("wrong");
-            }
-        }
-    };
-    xhr.open("get", "json/bangumi.json", true);
-    xhr.send(null);
-};
+}
 
 //use json to build table dom
-var buildTable = function() {
+function buildTable(result) {
     var htmlString = "";
+
     for (var bangumi in result) {
-        htmlString += "<tr>" + "<td>" + "<a href='" + result[bangumi]["officalSite"] + "'>" + bangumi + "<span>" + result[bangumi]["originName"] + "</span></a></td><td>" + result[bangumi]["timeJP"] + "</td><td>" + result[bangumi]["timeCN"] + "</td><td>"; 
-        if (result[bangumi]["onAir"].length === 0) {
-            htmlString += "N/A" + "</td></tr>";
+        var info = result[bangumi];
+        htmlString += "<tr><td><a href='" + info["officalSite"] + "'>" + 
+            bangumi + "<span>" + info["originName"] + "</span></a></td><td>" + 
+            info["timeJP"] + "</td><td>" + info["timeCN"] + "</td><td>"; 
+
+        if (info["onAir"].length === 0) {
+            htmlString += "N/A";
         } else {
-            for (var i = 0, l = result[bangumi]["onAir"].length; i < l; i++) {
-                htmlString += "<a href='" + result[bangumi]["onAir"][i] + "'>";
+            for (var i = 0, l = info["onAir"].length; i < l; i++) {
+                htmlString += "<a href='" + info["onAir"][i] + "'>";
                 var re = /^https{0,}:\/\/\w+\.(\w+)\.\w+/i;
-                switch (result[bangumi]["onAir"][i].match(re)[1].toLowerCase()) {
+
+                switch (info["onAir"][i].match(re)[1].toLowerCase()) {
                     case "youku":
                         htmlString += "优酷";     
                         break;
@@ -160,11 +144,17 @@ var buildTable = function() {
                     case "tudou":
                         htmlString += "土豆";
                         break;
+                    case "bilibili":
+                        htmlString += "B站";
+                        break;
+                    case "acfun":
+                        htmlString += "A站";
+                        break;
                     default:
                         htmlString += "未知";
                 }
-                htmlString +=  "</a> ";
-                
+                htmlString += "</a> ";
+
                 //add a return after even link
                 if (i % 2 !== 0) {
                     htmlString += "<br>";
@@ -172,12 +162,34 @@ var buildTable = function() {
             }
         }
     }
-
-    //clear result obj
-    result = undefined;
     return htmlString + "</td></tr>";
-};
+}
+
+//use ajax to get json data then do things
+function getJSON() {
+    var xhr = createXHR(); 
+    xhr.open("get", "json/bangumi.json", false);
+    xhr.send(null);
+    return xhr.responseText;
+}
+
+//convert weekDay to button number
+function dayToNum(weekDay) {
+    return weekDay !== 0 ? num = weekDay - 1 : num = 6;
+}
+
+function initPage() {
+    var navBar = document.getElementById("nav");
+    var navButtons = navBar.getElementsByTagName("li");
+    var weekDay = new Date().getDay();
+    var result = JSON.parse(getJSON());
+    var bangumis = showTable(buildTable(result));
+    disableIeSpan(bangumis);
+    bindButton(bangumis, navBar, navButtons);
+    hideOtherBangumi(bangumis, weekDay);
+    selectButton(navButtons, dayToNum(weekDay));
+}
 
 window.onload = function() {
-    getJson();
+    initPage();
 };
