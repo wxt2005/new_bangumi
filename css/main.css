@@ -32,10 +32,11 @@ table {
     margin-right: auto;
     width: 46.875em;
     border: 2px solid #7fb80e;
+    table-layout: fixed;
 }
 
 table col#name {
-    width: 50%;
+    width: 52%;
 }
 
 table col#time-jp, table col#time-cn {
@@ -73,6 +74,9 @@ table tbody tr td:first-child a {
     position: relative;
 }
 
+table tbody tr td:last-child {
+    padding: 0 0.5em;
+}
 
 table tbody tr td:first-child a span {
     position: absolute;

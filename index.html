@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="BangumiList">
     <head>
         <meta charset="utf-8">
         <title>4月新番</title>
@@ -35,11 +35,20 @@
                     <th>播放网址</th>
                 </tr>
             </thead>
-            <tbody id="bangumi_list">
-                <tr><td colspan="4"><noscript>请打开javascript支持</noscript></td></tr>
+            <tbody id="bangumi_list" ng-controller="ListController">
+                <tr ng-repeat="bangumi in bangumis">
+                    <td><a href="{{bangumi.officalSite}}">{{bangumi.titleCN}}<span>{{bangumi.titleJP}}</span></a></td>
+                    <td>{{bangumi.weekDayJP | weekday}} {{bangumi.timeJP}}</td>
+                    <td>{{bangumi.weekDayCN | weekday}} {{bangumi.timeCN}}</td>
+                    <td>
+                        <a ng-repeat="site in bangumi.onAirSite" href="{{site}}">
+                            {{site | onair}}</a> 
+                    </td>
+                </tr>
             </tbody>
         </table>
         <p id="github"><a href="https://github.com/wxt2005/new_bangumi">GitHub</a></p>
-        <script type="text/javascript" src="js/main.js"></script> 
+        <script type="text/javascript" src="js/angular.min.js"></script> 
+        <script type="text/javascript" src="js/app.js"></script> 
     </body>
 </html>
