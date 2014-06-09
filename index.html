@@ -5,6 +5,13 @@
         <title>4月新番</title>
         <link type="text/css" rel="stylesheet" href="css/main.css">
         <script type="text/javascript" src="js/json2.js"></script>
+        <style type="text/css">
+            @charset "UTF-8";
+            [ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}
+            ng\:form{display:block;}
+        .ng-animate-start{clip:rect(0,auto,auto,0);-ms-zoom:1.0001;}
+        .ng-animate-active{clip:rect(-1px,auto,auto,0);-ms-zoom:1;}
+    </style>
     </head>
     <body>
         <ul id="nav">
@@ -36,7 +43,7 @@
                 </tr>
             </thead>
             <tbody id="bangumi_list" ng-controller="ListController">
-                <tr ng-repeat="bangumi in bangumis">
+                <tr ng-repeat="bangumi in bangumis" ng-cloak>
                     <td><a href="{{bangumi.officalSite}}">{{bangumi.titleCN}}<span>{{bangumi.titleJP}}</span></a></td>
                     <td>{{bangumi.weekDayJP | weekday}} {{bangumi.timeJP}}</td>
                     <td>{{bangumi.weekDayCN | weekday}} {{bangumi.timeCN}}</td>
