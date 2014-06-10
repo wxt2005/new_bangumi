@@ -24,7 +24,7 @@
             <li>星期日</li>
             <li>全 部</li>
         </ul>
-        <table>
+        <table ng-controller="ListController" ng-cloak>
             <colgroup>
                 <col id="name">
                 <col id="time-jp">
@@ -38,23 +38,27 @@
                 </tr>
                 <tr>
                     <th>作品名</th>
-                    <th>日本放送时间</th>
-                    <th>大陆放送时间</th>
+                    <th>
+                        <a href="" ng-click="reverse=!reverse;ordered='jp';order(bangumis, 'jp', reverse)">日本放送时间 {{ordered==='jp'?(reverse?"v":"^"):''}}</a>
+                    </th>
+                    <th>
+                        <a href="" ng-click="reverse=!reverse;ordered='cn';order(bangumis, 'cn', reverse)">大陆放送时间 {{ordered==='cn'?(reverse?"v":"^"):''}}</a>
+                    </th>
                     <th>播放网址</th>
                 </tr>
             </thead>
-            <tbody id="bangumi_list" ng-controller="ListController">
+            <tbody id="bangumi_list">
                 <noscript>
                     <tr style="height: 5em">
                         <td colspan="4">请打开javascript支持以显示本页面 (´･ω･｀)</td>
                     </tr>
                 </noscript>
-                <tr ng-repeat="item in bangumis | filter:query | orderBy:'weekDayJP'" ng-cloak>
+                <tr ng-repeat="item in bangumis | filter:query">
                     <td><a href="{{item.officalSite}}">{{item.titleCN}}
                             <span>{{item.titleJP}}</span></a>
                     </td>
-                    <td>{{item.weekDayJP | weekday}} {{item.timeJP}}</td>
-                    <td>{{item.weekDayCN | weekday}} {{item.timeCN}}</td>
+                    <td>{{item.weekDayJP | weekday}} {{item.timeJP | time}}</td>
+                    <td>{{item.weekDayCN | weekday}} {{item.timeCN | time}}</td>
                     <td>
                         <a ng-repeat="site in item.onAirSite" href="{{site}}">
                             {{site | onair}}</a> 
