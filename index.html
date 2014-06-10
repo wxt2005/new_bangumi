@@ -39,10 +39,10 @@
                 <tr>
                     <th>作品名</th>
                     <th>
-                        <a href="" ng-click="reverse=!reverse;ordered='jp';order(bangumis, 'jp', reverse)">日本放送时间 {{ordered==='jp'?(reverse?"v":"^"):''}}</a>
+                        <a href="" ng-click="reverse=!reverse;ordered='jp';order(bangumis, 'jp', reverse)">日本放送时间</a>
                     </th>
                     <th>
-                        <a href="" ng-click="reverse=!reverse;ordered='cn';order(bangumis, 'cn', reverse)">大陆放送时间 {{ordered==='cn'?(reverse?"v":"^"):''}}</a>
+                        <a href="" ng-click="reverse=!reverse;ordered='cn';order(bangumis, 'cn', reverse)">大陆放送时间</a>
                     </th>
                     <th>播放网址</th>
                 </tr>
@@ -53,7 +53,7 @@
                         <td colspan="4">请打开javascript支持以显示本页面 (´･ω･｀)</td>
                     </tr>
                 </noscript>
-                <tr ng-repeat="item in bangumis | filter:query">
+                <tr ng-repeat="item in bangumis | filter:query" ng-class-even="'color'">
                     <td><a href="{{item.officalSite}}">{{item.titleCN}}
                             <span>{{item.titleJP}}</span></a>
                     </td>
