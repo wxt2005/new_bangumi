@@ -9,9 +9,9 @@
             @charset "UTF-8";
             [ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}
             ng\:form{display:block;}
-        .ng-animate-start{clip:rect(0,auto,auto,0);-ms-zoom:1.0001;}
-        .ng-animate-active{clip:rect(-1px,auto,auto,0);-ms-zoom:1;}
-    </style>
+            .ng-animate-start{clip:rect(0,auto,auto,0);-ms-zoom:1.0001;}
+            .ng-animate-active{clip:rect(-1px,auto,auto,0);-ms-zoom:1;}
+        </style>
     </head>
     <body>
         <ul id="nav">
@@ -33,7 +33,8 @@
             </colgroup>
             <thead>
                 <tr>
-                    <th id="header" colspan="4"> 四月新番放送列表 </th>
+                    <th id="header"> 四月新番放送列表 </th>
+                    <th id="search" colspan="3">搜索：<input ng-model="query"></th>
                 </tr>
                 <tr>
                     <th>作品名</th>
@@ -43,12 +44,19 @@
                 </tr>
             </thead>
             <tbody id="bangumi_list" ng-controller="ListController">
-                <tr ng-repeat="bangumi in bangumis" ng-cloak>
-                    <td><a href="{{bangumi.officalSite}}">{{bangumi.titleCN}}<span>{{bangumi.titleJP}}</span></a></td>
-                    <td>{{bangumi.weekDayJP | weekday}} {{bangumi.timeJP}}</td>
-                    <td>{{bangumi.weekDayCN | weekday}} {{bangumi.timeCN}}</td>
+                <noscript>
+                    <tr style="height: 5em">
+                        <td colspan="4">请打开javascript支持以显示本页面 (´･ω･｀)</td>
+                    </tr>
+                </noscript>
+                <tr ng-repeat="item in bangumis | filter:query | orderBy:'weekDayJP'" ng-cloak>
+                    <td><a href="{{item.officalSite}}">{{item.titleCN}}
+                            <span>{{item.titleJP}}</span></a>
+                    </td>
+                    <td>{{item.weekDayJP | weekday}} {{item.timeJP}}</td>
+                    <td>{{item.weekDayCN | weekday}} {{item.timeCN}}</td>
                     <td>
-                        <a ng-repeat="site in bangumi.onAirSite" href="{{site}}">
+                        <a ng-repeat="site in item.onAirSite" href="{{site}}">
                             {{site | onair}}</a> 
                     </td>
                 </tr>

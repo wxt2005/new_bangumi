@@ -61,9 +61,31 @@ table thead th#header {
     border-right: none;
     height: 3em;
     text-align: left;
-    padding-left: 1.25em;
+    padding-left: 40px;
     background-color: #7fb80e;
-    font-size: 2em;
+    font-size: 2.2em;
+}
+
+table thead th#search {
+    background-color: #7fb80e;
+    text-align: right;
+    font-size: 1em;
+    padding-right: 40px;
+}
+
+table thead th#search input {
+    font-family: inherit;
+    vertical-align: top;
+    padding: 1px 5px;
+    font-size: 0.8em;
+    background-color: #f6f5ec;
+    border: 2px solid #7fb80e;
+}
+
+table thead th#search input:active,
+table thead th#search input:focus {
+    outline: none;
+    border: 2px solid #cde6c7;
 }
 
 table tbody tr td {
