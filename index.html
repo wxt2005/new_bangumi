@@ -15,13 +15,13 @@
     </head>
     <body ng-controller="ListController" ng-cloak>
         <ul id="nav">
-            <li ng-class="selectedNav(query, 1)" ng-click="query.weekDayCN = 1">星期一</li>
-            <li ng-class="selectedNav(query, 2)" ng-click="query.weekDayCN = 2">星期二</li>
-            <li ng-class="selectedNav(query, 3)" ng-click="query.weekDayCN = 3">星期三</li>
-            <li ng-class="selectedNav(query, 4)" ng-click="query.weekDayCN = 4">星期四</li>
-            <li ng-class="selectedNav(query, 5)" ng-click="query.weekDayCN = 5">星期五</li>
-            <li ng-class="selectedNav(query, 6)" ng-click="query.weekDayCN = 6">星期六</li>
-            <li ng-class="selectedNav(query, 0)" ng-click="query.weekDayCN = 0">星期日</li>
+            <li ng-class="selectedNav(query, 1)" ng-click="query={titleCN:undefined,weekDayCN:1}">星期一</li>
+            <li ng-class="selectedNav(query, 2)" ng-click="query={titleCN:undefined,weekDayCN:2}">星期二</li>
+            <li ng-class="selectedNav(query, 3)" ng-click="query={titleCN:undefined,weekDayCN:3}">星期三</li>
+            <li ng-class="selectedNav(query, 4)" ng-click="query={titleCN:undefined,weekDayCN:4}">星期四</li>
+            <li ng-class="selectedNav(query, 5)" ng-click="query={titleCN:undefined,weekDayCN:5}">星期五</li>
+            <li ng-class="selectedNav(query, 6)" ng-click="query={titleCN:undefined,weekDayCN:6}">星期六</li>
+            <li ng-class="selectedNav(query, 0)" ng-click="query={titleCN:undefined,weekDayCN:0}">星期日</li>
             <li ng-class="selectedNav(query, undefined)" ng-click="query.weekDayCN = undefined">全 部</li>
         </ul>
         <table>
