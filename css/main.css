@@ -48,6 +48,11 @@ table thead th {
     background-color: #cde6c7;
 }
 
+table thead th a.ordered:link,
+table thead th a.ordered:visited {
+    text-decoration: underline;
+}
+
 table tbody td {
     border-right: 1px solid white;
     border-top: 1px solid white;

@@ -13,18 +13,18 @@
             .ng-animate-active{clip:rect(-1px,auto,auto,0);-ms-zoom:1;}
         </style>
     </head>
-    <body>
+    <body ng-controller="ListController" ng-cloak>
         <ul id="nav">
-            <li>星期一</li>
-            <li>星期二</li>
-            <li>星期三</li>
-            <li>星期四</li>
-            <li>星期五</li>
-            <li>星期六</li>
-            <li>星期日</li>
-            <li>全 部</li>
+            <li ng-class="selectedNav(query, 1)" ng-click="query.weekDayCN = 1">星期一</li>
+            <li ng-class="selectedNav(query, 2)" ng-click="query.weekDayCN = 2">星期二</li>
+            <li ng-class="selectedNav(query, 3)" ng-click="query.weekDayCN = 3">星期三</li>
+            <li ng-class="selectedNav(query, 4)" ng-click="query.weekDayCN = 4">星期四</li>
+            <li ng-class="selectedNav(query, 5)" ng-click="query.weekDayCN = 5">星期五</li>
+            <li ng-class="selectedNav(query, 6)" ng-click="query.weekDayCN = 6">星期六</li>
+            <li ng-class="selectedNav(query, 0)" ng-click="query.weekDayCN = 0">星期日</li>
+            <li ng-class="selectedNav(query, undefined)" ng-click="query.weekDayCN = undefined">全 部</li>
         </ul>
-        <table ng-controller="ListController" ng-cloak>
+        <table>
             <colgroup>
                 <col id="name">
                 <col id="time-jp">
@@ -34,15 +34,15 @@
             <thead>
                 <tr>
                     <th id="header"> 四月新番放送列表 </th>
-                    <th id="search" colspan="3">搜索：<input ng-model="query"></th>
+                    <th id="search" colspan="3">搜索：<input ng-model="query.titleCN" ng-keydown="query.weekDayCN = undefined"></th>
                 </tr>
                 <tr>
                     <th>作品名</th>
                     <th>
-                        <a href="" ng-click="reverse=!reverse;ordered='jp';order(bangumis, 'jp', reverse)">日本放送时间</a>
+                        <a href="" ng-click="order(bangumis, 'jp', reversed)" ng-class="selectedOrder('jp')">日本放送时间</a>
                     </th>
                     <th>
-                        <a href="" ng-click="reverse=!reverse;ordered='cn';order(bangumis, 'cn', reverse)">大陆放送时间</a>
+                        <a href="" ng-click="order(bangumis, 'cn', reversed)" ng-class="selectedOrder('cn')">大陆放送时间</a>
                     </th>
                     <th>播放网址</th>
                 </tr>
@@ -53,7 +53,7 @@
                         <td colspan="4">请打开javascript支持以显示本页面 (´･ω･｀)</td>
                     </tr>
                 </noscript>
-                <tr ng-repeat="item in bangumis | filter:query" ng-class-even="'color'">
+                <tr ng-repeat="item in bangumis | filter:query track by $index" ng-class-even="'color'">
                     <td><a href="{{item.officalSite}}">{{item.titleCN}}
                             <span>{{item.titleJP}}</span></a>
                     </td>
