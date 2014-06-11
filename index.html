@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html ng-app="BangumiList">
+<html id="ng-app" ng-app="BangumiList">
     <head>
         <meta charset="utf-8">
         <title>4月新番</title>
         <link type="text/css" rel="stylesheet" href="css/main.css">
-        <script type="text/javascript" src="js/json2.js"></script>
+        <!--[if lte IE 7]><script type="text/javascript" src="js/json2.js"></script><![endif]-->
         <style type="text/css">
             @charset "UTF-8";
             [ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}
@@ -15,14 +15,14 @@
     </head>
     <body ng-controller="ListController" ng-cloak>
         <ul id="nav">
-            <li ng-class="selectedNav(query, 1)" ng-click="query={titleCN:undefined,weekDayCN:1}">星期一</li>
-            <li ng-class="selectedNav(query, 2)" ng-click="query={titleCN:undefined,weekDayCN:2}">星期二</li>
-            <li ng-class="selectedNav(query, 3)" ng-click="query={titleCN:undefined,weekDayCN:3}">星期三</li>
-            <li ng-class="selectedNav(query, 4)" ng-click="query={titleCN:undefined,weekDayCN:4}">星期四</li>
-            <li ng-class="selectedNav(query, 5)" ng-click="query={titleCN:undefined,weekDayCN:5}">星期五</li>
-            <li ng-class="selectedNav(query, 6)" ng-click="query={titleCN:undefined,weekDayCN:6}">星期六</li>
-            <li ng-class="selectedNav(query, 0)" ng-click="query={titleCN:undefined,weekDayCN:0}">星期日</li>
-            <li ng-class="selectedNav(query, undefined)" ng-click="query.weekDayCN = undefined">全 部</li>
+            <li ng-class="{'selected':query.weekDayCN===1}" ng-click="query={titleCN:undefined,weekDayCN:1}">星期一</li>
+            <li ng-class="{'selected':query.weekDayCN===2}" ng-click="query={titleCN:undefined,weekDayCN:2}">星期二</li>
+            <li ng-class="{'selected':query.weekDayCN===3}" ng-click="query={titleCN:undefined,weekDayCN:3}">星期三</li>
+            <li ng-class="{'selected':query.weekDayCN===4}" ng-click="query={titleCN:undefined,weekDayCN:4}">星期四</li>
+            <li ng-class="{'selected':query.weekDayCN===5}" ng-click="query={titleCN:undefined,weekDayCN:5}">星期五</li>
+            <li ng-class="{'selected':query.weekDayCN===6}" ng-click="query={titleCN:undefined,weekDayCN:6}">星期六</li>
+            <li ng-class="{'selected':query.weekDayCN===0}" ng-click="query={titleCN:undefined,weekDayCN:0}">星期日</li>
+            <li ng-class="{'selected':!query.weekDayCN}" ng-click="query.weekDayCN=undefined">全 部</li>
         </ul>
         <table>
             <colgroup>
@@ -33,16 +33,16 @@
             </colgroup>
             <thead>
                 <tr>
-                    <th id="header"> 四月新番放送列表 </th>
+                    <th id="header">四月新番放送列表</th>
                     <th id="search" colspan="3">搜索：<input ng-model="query.titleCN" ng-keydown="query.weekDayCN = undefined"></th>
                 </tr>
                 <tr>
                     <th>作品名</th>
                     <th>
-                        <a href="" ng-click="order(bangumis, 'jp', reversed)" ng-class="selectedOrder('jp')">日本放送时间</a>
+                        <a href="#" ng-click="order(bangumis,'jp',reversed)" ng-class="{'ordered':ordered==='jp'}">日本放送时间</a>
                     </th>
                     <th>
-                        <a href="" ng-click="order(bangumis, 'cn', reversed)" ng-class="selectedOrder('cn')">大陆放送时间</a>
+                        <a href="#" ng-click="order(bangumis,'cn',reversed)" ng-class="{'ordered':ordered==='cn'}">大陆放送时间</a>
                     </th>
                     <th>播放网址</th>
                 </tr>
@@ -60,8 +60,7 @@
                     <td>{{item.weekDayJP | weekday}} {{item.timeJP | time}}</td>
                     <td>{{item.weekDayCN | weekday}} {{item.timeCN | time}}</td>
                     <td>
-                        <a ng-repeat="site in item.onAirSite" href="{{site}}">
-                            {{site | onair}}</a> 
+                        <a ng-repeat="site in item.onAirSite" href="{{site}}"> {{site | onair}}</a> 
                     </td>
                 </tr>
             </tbody>

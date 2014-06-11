@@ -79,18 +79,7 @@ table thead th#search {
 }
 
 table thead th#search input {
-    font-family: inherit;
-    vertical-align: top;
-    padding: 1px 5px;
-    font-size: 0.8em;
-    background-color: #f6f5ec;
-    border: 2px solid #7fb80e;
-}
-
-table thead th#search input:active,
-table thead th#search input:focus {
-    outline: none;
-    border: 2px solid #cde6c7;
+    vertical-align: baseline;
 }
 
 table tbody tr td {

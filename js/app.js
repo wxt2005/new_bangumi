@@ -2,6 +2,14 @@
 
 var app = angular.module('BangumiList', []);
 
+//fix IE 7 $sce:iequirs error
+if (navigator.appName === "Microsoft Internet Explorer" && 
+       +navigator.appVersion.match(/MSIE\s(\d+)/)[1] < 8) {
+    app.config(function($sceProvider) {
+        $sceProvider.enabled(false);
+    });
+}
+
 app.controller('ListController', ['$scope', '$http', function($scope, $http) {
     $scope.weekDayNum = (new Date()).getDay();
     $scope.reversed = false;
@@ -25,16 +33,6 @@ app.controller('ListController', ['$scope', '$http', function($scope, $http) {
                                       (b[weekDay] === 0 ? 7 : b[weekDay]));
             }
         });
-    };
-
-    //used to add .selected class to nav button
-    $scope.selectedNav = function(query, target) {
-        return query.weekDayCN === target ? 'selected' : '';
-    };
-
-    //used to add .ordered class to order button
-    $scope.selectedOrder = function(target) {
-        return $scope.ordered === target ? 'ordered' : '';
     };
 
     //use $http to get json data
