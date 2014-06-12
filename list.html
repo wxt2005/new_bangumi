@@ -22,11 +22,6 @@
         </tr>
     </thead>
     <tbody id="bangumi_list">
-        <noscript>
-            <tr style="height: 5em">
-                <td colspan="4">请打开javascript支持以显示本页面 (´･ω･｀)</td>
-            </tr>
-        </noscript>
         <tr ng-repeat="item in bangumis | filter:query track by $index" ng-class-even="'color'" class-fix>
             <td><a href="{{item.officalSite}}">{{item.titleCN}}
                     <span span-fix>{{item.titleJP}}</span></a>
