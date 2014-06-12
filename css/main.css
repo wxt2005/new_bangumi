@@ -157,7 +157,16 @@ ul#nav li.selected {
     background-color: #7fb80e;
 }
 
-p#github {
+p#footer {
     text-align: center;
     margin-top: 10px;
 }
+
+p#footer a:link,
+p#footer a:visited,
+p#footer a:focus,
+p#footer a:hover,
+p#footer a:active {
+    text-decoration: underline;
+}
+    
