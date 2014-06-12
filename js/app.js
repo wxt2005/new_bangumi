@@ -4,10 +4,14 @@
     var app = angular.module('BangumiList', ['ieFix']);
 
     app.controller('ListController', ['$scope', '$http', function($scope, $http) {
-        $scope.weekDayNum = (new Date()).getDay();
+        $scope.dateNow = new Date();
+        $scope.weekDayNum = $scope.dateNow.getDay();
+        $scope.yearNow = $scope.dateNow.getFullYear();
+        $scope.monthNow = $scope.dateNow.getMonth() + 1;
         $scope.reversed = false;
         $scope.ordered = 'jp';
         $scope.query = {weekDayCN: $scope.weekDayNum};
+        $scope.mArr = [1, 4, 7, 10];
 
         //order bangumi list
         $scope.order = function(items, target, reverseFlag) {
@@ -28,10 +32,36 @@
             });
         };
 
-        //use $http to get json data
-        $http.get('json/bangumi-1404.json').success(function(data) {
-            $scope.bangumis = $scope.order(data, 'jp', $scope.reversed);
+        $scope.monthToSeason = function(month) {
+            switch (true) {
+                case (month < 4):
+                    return 1;
+                case (month < 7):
+                    return 4;
+                case (month < 10):
+                    return 7;
+                case (month <= 12):
+                    return 10;
+                default:
+                    throw new Error('failed convrting to season');
+            }
+        };
+
+        //use $http to get bangumi data
+        $scope.readBangumi = function(filePath) {
+            $http.get(filePath).success(function(data) {
+                $scope.bangumis = $scope.order(data, 'jp', $scope.reversed);
+            });
+        };
+
+        $http.get('json/archive.json').success(function(data) {
+            for (var year in data) {
+                data[year].show = +year === $scope.yearNow ? true : false;
+            }
+            $scope.archive = data;
+            $scope.readBangumi($scope.archive[$scope.yearNow].months[$scope.mArr.indexOf($scope.monthToSeason($scope.monthNow))].json);
         });
+
     }]);
 
     //nav bar template
@@ -62,6 +92,24 @@
     app.filter('time', function() {
         return function(originTime) {
             return originTime ? originTime.slice(0,2) + ':' + originTime.slice(2) : '(预计)';
+        };
+    });
+
+    //filter used to format month data
+    app.filter('monthCN', function() {
+        return function(originMonth) {
+            switch (+originMonth) {
+                case 1:
+                    return '一月';
+                case 4:
+                    return '四月';
+                case 7:
+                    return '七月';
+                case 10:
+                    return '十月';
+                default:
+                    throw new Error('failed to convert month');
+            }
         };
     });
 

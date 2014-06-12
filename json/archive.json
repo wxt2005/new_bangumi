@@ -1,0 +1,40 @@
+{
+    "2014": {
+        "months": [{
+            "month": 1,
+            "json": "",
+            "done": true
+        }, {
+            "month": 4,
+            "json": "json/bangumi-1404.json",
+            "done": true
+        }, {
+            "month": 7,
+            "json": "json/bangumi-1407.json",
+            "done": true
+        }, {
+            "month": 10,
+            "json": "json/bangumi-1404.json",
+            "done": false
+        }]
+    },
+    "2015": {
+        "months": [{
+            "month": 1,
+            "json": "",
+            "done": true
+        }, {
+            "month": 4,
+            "json": "json/bangumi-1404.json",
+            "done": true
+        }, {
+            "month": 7,
+            "json": "json/bangumi-1407.json",
+            "done": true
+        }, {
+            "month": 10,
+            "json": "json/bangumi-1404.json",
+            "done": false
+        }]
+    }
+}

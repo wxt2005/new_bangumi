@@ -2,7 +2,7 @@
 <html id="ng-app" ng-app="BangumiList">
     <head>
         <meta charset="utf-8">
-        <title>4月新番</title>
+        <title>四月新番</title>
         <link type="text/css" rel="stylesheet" href="css/main.css">
         <!--[if lte IE 7]><script type="text/javascript" src="js/json2.js"></script><![endif]-->
         <!--[if lte IE 8]>
@@ -12,15 +12,28 @@
         </script>
         <![endif]-->
     </head>
-    <body ng-controller="ListController">
+    <body ng-controller="ListController" ng-cloak>
         <noscript>
             <p style="text-align:center;">请打开javascript支持以显示本页面 (´･ω･｀)</p>
         </noscript>
-        <nav-bar ng-cloak></nav-bar> 
-        <item-list ng-cloak></item-list>
-        <p id="footer">Powered by <a href="https://angularjs.org">AngularJS</a>
-            and <a href="https://github.com/wxt2005/new_bangumi">GitHub</a>.
-        </p>
+        <div id="container">
+
+            <div id="sidebar">
+                <h3>归档</h3>
+                <ul ng-repeat="(year, data) in archive">
+                    <li class="year"><a href="#" ng-click="data.show=!data.show">{{year}}年</a>
+                        <ul class="month" ng-repeat="item in data.months" ng-show="data.show===true">
+                            <li ng-hide="item.json===''||!item.done"><a href="#" ng-click="readBangumi(item.json)">{{item.month | monthCN}}</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <nav-bar></nav-bar> 
+            <item-list></item-list>
+            <p id="footer">Powered by <a href="https://angularjs.org">AngularJS</a>
+                and <a href="https://github.com/wxt2005/new_bangumi">GitHub</a>.
+            </p>
+        </div>
         <script type="text/javascript" src="js/angular.min.js"></script> 
         <script type="text/javascript" src="js/app.js"></script> 
         <script type="text/javascript" src="js/iefix.js"></script> 
