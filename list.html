@@ -1,0 +1,41 @@
+<table>
+    <colgroup>
+        <col id="name">
+        <col id="time-jp">
+        <col id="time-cn">
+        <col id="site">
+    </colgroup>
+    <thead>
+        <tr>
+            <th id="header">四月新番放送列表</th>
+            <th id="search" colspan="3">搜索：<input ng-model="query.titleCN" ng-keydown="query.weekDayCN = undefined"></th>
+        </tr>
+        <tr>
+            <th>作品名</th>
+            <th>
+                <a href="#" ng-click="order(bangumis,'jp',reversed)" ng-class="{'ordered':ordered==='jp'}" class-fix>日本放送时间</a>
+            </th>
+            <th>
+                <a href="#" ng-click="order(bangumis,'cn',reversed)" ng-class="{'ordered':ordered==='cn'}" class-fix>大陆放送时间</a>
+            </th>
+            <th>播放网址</th>
+        </tr>
+    </thead>
+    <tbody id="bangumi_list">
+        <noscript>
+            <tr style="height: 5em">
+                <td colspan="4">请打开javascript支持以显示本页面 (´･ω･｀)</td>
+            </tr>
+        </noscript>
+        <tr ng-repeat="item in bangumis | filter:query track by $index" ng-class-even="'color'" class-fix>
+            <td><a href="{{item.officalSite}}">{{item.titleCN}}
+                    <span span-fix>{{item.titleJP}}</span></a>
+            </td>
+            <td>{{item.weekDayJP | weekday}} {{item.timeJP | time}}</td>
+            <td>{{item.weekDayCN | weekday}} {{item.timeCN | time}}</td>
+            <td>
+                <a ng-repeat="site in item.onAirSite" href="{{site}}"> {{site | onair}}</a> 
+            </td>
+        </tr>
+    </tbody>
+</table>

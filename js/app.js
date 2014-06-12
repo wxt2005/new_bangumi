@@ -34,6 +34,22 @@
         });
     }]);
 
+    //nav bar template
+    app.directive('navBar', function() {
+        return {
+            restrict: 'E',
+            templateUrl: 'nav.html'
+        };
+    });
+
+    //table template
+    app.directive('itemList', function() {
+        return {
+            restrict: 'E',
+            templateUrl: 'list.html'
+        };
+    });
+
     //filter used to format weekday data
     app.filter('weekday', function() {
         var weekDayList = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];

@@ -5,66 +5,16 @@
         <title>4月新番</title>
         <link type="text/css" rel="stylesheet" href="css/main.css">
         <!--[if lte IE 7]><script type="text/javascript" src="js/json2.js"></script><![endif]-->
-        <style type="text/css">
-            @charset "UTF-8";
-            [ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}
-            ng\:form{display:block;}
-            .ng-animate-start{clip:rect(0,auto,auto,0);-ms-zoom:1.0001;}
-            .ng-animate-active{clip:rect(-1px,auto,auto,0);-ms-zoom:1;}
-        </style>
+        <!--[if lte IE 8]>
+        <script>
+          document.createElement('item-list');
+          document.createElement('nav-bar');
+        </script>
+      <![endif]-->
     </head>
     <body ng-controller="ListController" ng-cloak>
-        <ul id="nav">
-            <li ng-class="{'selected':query.weekDayCN===1}" class-fix ng-click="query={titleCN:undefined,weekDayCN:1}">星期一</li>
-            <li ng-class="{'selected':query.weekDayCN===2}" class-fix ng-click="query={titleCN:undefined,weekDayCN:2}">星期二</li>
-            <li ng-class="{'selected':query.weekDayCN===3}" class-fix ng-click="query={titleCN:undefined,weekDayCN:3}">星期三</li>
-            <li ng-class="{'selected':query.weekDayCN===4}" class-fix ng-click="query={titleCN:undefined,weekDayCN:4}">星期四</li>
-            <li ng-class="{'selected':query.weekDayCN===5}" class-fix ng-click="query={titleCN:undefined,weekDayCN:5}">星期五</li>
-            <li ng-class="{'selected':query.weekDayCN===6}" class-fix ng-click="query={titleCN:undefined,weekDayCN:6}">星期六</li>
-            <li ng-class="{'selected':query.weekDayCN===0}" class-fix ng-click="query={titleCN:undefined,weekDayCN:0}">星期日</li>
-            <li ng-class="{'selected':query.weekDayCN===undefined}" class-fix ng-click="query.weekDayCN=undefined">全 部</li>
-        </ul>
-        <table>
-            <colgroup>
-                <col id="name">
-                <col id="time-jp">
-                <col id="time-cn">
-                <col id="site">
-            </colgroup>
-            <thead>
-                <tr>
-                    <th id="header">四月新番放送列表</th>
-                    <th id="search" colspan="3">搜索：<input ng-model="query.titleCN" ng-keydown="query.weekDayCN = undefined"></th>
-                </tr>
-                <tr>
-                    <th>作品名</th>
-                    <th>
-                        <a href="#" ng-click="order(bangumis,'jp',reversed)" ng-class="{'ordered':ordered==='jp'}" class-fix>日本放送时间</a>
-                    </th>
-                    <th>
-                        <a href="#" ng-click="order(bangumis,'cn',reversed)" ng-class="{'ordered':ordered==='cn'}" class-fix>大陆放送时间</a>
-                    </th>
-                    <th>播放网址</th>
-                </tr>
-            </thead>
-            <tbody id="bangumi_list">
-                <noscript>
-                    <tr style="height: 5em">
-                        <td colspan="4">请打开javascript支持以显示本页面 (´･ω･｀)</td>
-                    </tr>
-                </noscript>
-                <tr ng-repeat="item in bangumis | filter:query track by $index" ng-class-even="'color'" class-fix>
-                    <td><a href="{{item.officalSite}}">{{item.titleCN}}
-                            <span span-fix>{{item.titleJP}}</span></a>
-                    </td>
-                    <td>{{item.weekDayJP | weekday}} {{item.timeJP | time}}</td>
-                    <td>{{item.weekDayCN | weekday}} {{item.timeCN | time}}</td>
-                    <td>
-                        <a ng-repeat="site in item.onAirSite" href="{{site}}"> {{site | onair}}</a> 
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <nav-bar></nav-bar> 
+        <item-list></item-list>
         <p id="github"><a href="https://github.com/wxt2005/new_bangumi">GitHub</a></p>
         <script type="text/javascript" src="js/angular.min.js"></script> 
         <script type="text/javascript" src="js/app.js"></script> 
