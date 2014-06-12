@@ -1,88 +1,80 @@
-'use strict';
+(function(){
+    'use strict';
 
-var app = angular.module('BangumiList', []);
+    var app = angular.module('BangumiList', ['ieFix']);
 
-//fix IE 7 $sce:iequirs error
-if (navigator.appName === "Microsoft Internet Explorer" && 
-       +navigator.appVersion.match(/MSIE\s(\d+)/)[1] < 8) {
-    app.config(function($sceProvider) {
-        $sceProvider.enabled(false);
-    });
-}
+    app.controller('ListController', ['$scope', '$http', function($scope, $http) {
+        $scope.weekDayNum = (new Date()).getDay();
+        $scope.reversed = false;
+        $scope.ordered = 'jp';
+        $scope.query = {weekDayCN: $scope.weekDayNum};
 
-app.controller('ListController', ['$scope', '$http', function($scope, $http) {
-    $scope.weekDayNum = (new Date()).getDay();
-    $scope.reversed = false;
-    $scope.ordered = 'jp';
-    $scope.query = {weekDayCN: $scope.weekDayNum};
+        //order bangumi list
+        $scope.order = function(items, target, reverseFlag) {
+            var weekDay = 'weekDay' + target.toUpperCase(),
+            time = 'time' + target.toUpperCase();
 
-    //order bangumi list
-    $scope.order = function(items, target, reverseFlag) {
-        var weekDay = 'weekDay' + target.toUpperCase(),
-        time = 'time' + target.toUpperCase();
+            $scope.reversed = !reverseFlag;
+            $scope.ordered = target;
+            reverseFlag = reverseFlag ? -1 : 1;
 
-        $scope.reversed = !reverseFlag;
-        $scope.ordered = target;
-        reverseFlag = reverseFlag ? -1 : 1;
+            return items.sort(function(a, b) {
+                if (a[weekDay] === b[weekDay]) {
+                    return reverseFlag * (a[time] - b[time]);
+                } else {
+                    return reverseFlag * ((a[weekDay] === 0 ? 7 : a[weekDay]) - 
+                                          (b[weekDay] === 0 ? 7 : b[weekDay]));
+                }
+            });
+        };
 
-        return items.sort(function(a, b) {
-            if (a[weekDay] === b[weekDay]) {
-                return reverseFlag * (a[time] - b[time]);
-            } else {
-                return reverseFlag * ((a[weekDay] === 0 ? 7 : a[weekDay]) - 
-                                      (b[weekDay] === 0 ? 7 : b[weekDay]));
-            }
+        //use $http to get json data
+        $http.get('json/bangumi-1404.json').success(function(data) {
+            $scope.bangumis = $scope.order(data, 'jp', $scope.reversed);
         });
-    };
+    }]);
 
-    //use $http to get json data
-    $http.get('json/bangumi-1404.json').success(function(data) {
-        $scope.bangumis = $scope.order(data, 'jp', $scope.reversed);
+    //filter used to format weekday data
+    app.filter('weekday', function() {
+        var weekDayList = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+        return function(weekDayNum) {
+            return weekDayList[weekDayNum];
+        };
     });
-}]);
 
-//filter used to format weekday data
-app.filter('weekday', function() {
-    var weekDayList = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
-    return function(weekDayNum) {
-        return weekDayList[weekDayNum];
-    };
-});
+    //filter used to format time data
+    app.filter('time', function() {
+        return function(originTime) {
+            return originTime ? originTime.slice(0,2) + ':' + originTime.slice(2) : '(预计)';
+        };
+    });
 
-//filter used to format time data
-app.filter('time', function() {
-    return function(originTime) {
-        return originTime ? originTime.slice(0,2) + ':' + originTime.slice(2) : '(预计)';
-    };
-});
-
-//filter used to format bangumi link
-app.filter('onair', function() {
-    var re = /^https{0,}:\/\/\w+\.(\w+)\.\w+/i;
-    return function(link) {
-        switch (link.match(re)[1].toLowerCase()) {
-            case "youku":
-                return "优酷";     
-            case "sohu":
-                return "搜狐";
-            case "qq":
-                return "腾讯";
-            case "iqiyi":
-                return "爱奇艺";
-            case "letv":
-                return "乐视";
-            case "pptv":
-                return "PPTV";
-            case "tudou":
-                return "土豆";
-            case "bilibili":
-                return "B站";
-            case "acfun":
-                return "A站";
-            default:
-                return "未知";
-        }
-    };
-});
-
-
+    //filter used to format bangumi link
+    app.filter('onair', function() {
+        var re = /^https{0,}:\/\/\w+\.(\w+)\.\w+/i;
+        return function(link) {
+            switch (link.match(re)[1].toLowerCase()) {
+                case "youku":
+                    return "优酷";     
+                case "sohu":
+                    return "搜狐";
+                case "qq":
+                    return "腾讯";
+                case "iqiyi":
+                    return "爱奇艺";
+                case "letv":
+                    return "乐视";
+                case "pptv":
+                    return "PPTV";
+                case "tudou":
+                    return "土豆";
+                case "bilibili":
+                    return "B站";
+                case "acfun":
+                    return "A站";
+                default:
+                    return "未知";
+            }
+        };
+    });
+})();
