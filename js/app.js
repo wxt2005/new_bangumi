@@ -52,7 +52,9 @@
         $scope.getJsonPath = function(year, month, archive) {
             for (var file in archive) {
                 if (archive[file].year == year) {
-                    return archive[file].months[$scope.mArr.indexOf($scope.monthToSeason(month))].json;     
+                    $scope.yearRead = archive[file].year;
+                    $scope.monthRead = $scope.monthToSeason(month); 
+                    return archive[file].months[$scope.mArr.indexOf($scope.monthRead)].json;     
                 }
             }
             throw new Error('failed to get json path');
@@ -99,7 +101,7 @@
             templateUrl: 'sidebar.html'
         };
     });
-    
+
     //filter used to format weekday data
     app.filter('weekday', function() {
         var weekDayList = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];

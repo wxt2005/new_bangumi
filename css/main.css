@@ -8,7 +8,7 @@
 
 /* for angularJS ng-cloak attribute */
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none !important;
+    display: none !important;
 }
 
 body {
@@ -49,8 +49,8 @@ div#container {
     right: 0;
     top: 0;
     bottom; 0;
-    margin: auto;
-    width: 750px;
+    margin: 3em auto;
+    width: 1080px;
 }
 
 table {
@@ -92,7 +92,7 @@ table thead th#header {
     border-right: none;
     height: 3em;
     text-align: left;
-    padding-left: 40px;
+    padding-left: 20px;
     background-color: #7fb80e;
     font-size: 2.2em;
 }
@@ -101,7 +101,7 @@ table thead th#search {
     background-color: #7fb80e;
     text-align: right;
     font-size: 1em;
-    padding-right: 40px;
+    padding-right: 20px;
 }
 
 table thead th#search input {
@@ -149,7 +149,6 @@ ul#nav {
     margin-left: auto;
     margin-right: auto;
     width: 46.875em;
-    margin-top: 3em;
     zoom: 1;
     overflow: hidden;
 }
@@ -192,8 +191,6 @@ p#footer a:active {
 }
 
 div#sidebar {
-    display: none;
-    float: left;
     position: absolute;
     width: 80px;
     padding: 0 5px;
@@ -230,13 +227,13 @@ div#sidebar li.year ul.month li:first-child {
     border-top: none;
 }
 
-@media only screen and (min-width:920px) {
+@media only screen and (max-width:990px) {
     div#container {
-        width: 1080px;
+        width: auto;
     }
 
     div#sidebar { 
-        display: block; 
+        display: none; 
     }
 }
 

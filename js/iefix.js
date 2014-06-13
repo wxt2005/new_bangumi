@@ -2,9 +2,9 @@ if (typeof Array.prototype.indexOf !== 'function') {
     Array.prototype.indexOf = function(target) {
         if (target) {
             for (var i = 0, l = this.length; i < l; i++) {
-               if (this[i] == target) {
-                   return i;
-               }
+                if (this[i] == target) {
+                    return i;
+                }
             }
             return -1;
         } else {
@@ -34,7 +34,7 @@ if (typeof Array.prototype.indexOf !== 'function') {
                     scope.$watch(function() {
                         return element[0]['class'];
                     }, function() {
-                        element[0].className = element[0]['class'] ? element[0]['class'] : '';
+                        element[0].className += ' ' + element[0]['class'];
                     });
                 }
             };
