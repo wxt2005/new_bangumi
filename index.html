@@ -9,6 +9,7 @@
         <script>
             document.createElement('item-list');
             document.createElement('nav-bar');
+            document.createElement('side-bar');
         </script>
         <![endif]-->
     </head>
@@ -17,17 +18,7 @@
             <p style="text-align:center;">请打开javascript支持以显示本页面 (´･ω･｀)</p>
         </noscript>
         <div id="container">
-
-            <div id="sidebar">
-                <h3>归档</h3>
-                <ul ng-repeat="file in archive">
-                    <li class="year"><span class="pointer" ng-click="file.show=!file.show">{{file.year}}年</span>
-                        <ul class="month" ng-repeat="data in file.months" ng-show="file.show===true">
-                            <li ng-hide="data.json===''||data.done===false"><span class="pointer" ng-click="readBangumi(getJsonPath(file.year, data.month, archive))">{{data.month | monthCN}}</span></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+            <side-bar></side-bar> 
             <nav-bar></nav-bar> 
             <item-list></item-list>
             <p id="footer">Powered by <a href="https://angularjs.org">AngularJS</a>

@@ -92,6 +92,14 @@
         };
     });
 
+    //side bar template
+    app.directive('sideBar', function() {
+        return {
+            restrict: 'E',
+            templateUrl: 'sidebar.html'
+        };
+    });
+    
     //filter used to format weekday data
     app.filter('weekday', function() {
         var weekDayList = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
