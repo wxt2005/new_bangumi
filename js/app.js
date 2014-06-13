@@ -32,6 +32,7 @@
             });
         };
 
+        //turn current month to bangumi season
         $scope.monthToSeason = function(month) {
             switch (true) {
                 case (month < 4):
@@ -47,19 +48,30 @@
             }
         };
 
+        //use year month to get json file path
+        $scope.getJsonPath = function(year, month, archive) {
+            for (var file in archive) {
+                if (archive[file].year == year) {
+                    return archive[file].months[$scope.mArr.indexOf($scope.monthToSeason(month))].json;     
+                }
+            }
+            throw new Error('failed to get json path');
+        };
+
         //use $http to get bangumi data
         $scope.readBangumi = function(filePath) {
             $http.get(filePath).success(function(data) {
-                $scope.bangumis = $scope.order(data, 'jp', $scope.reversed);
+                $scope.bangumis = $scope.order(data, $scope.ordered, !$scope.reversed);
             });
         };
 
+        //use $http to get archive data, then init page
         $http.get('json/archive.json').success(function(data) {
-            for (var year in data) {
-                data[year].show = +year === $scope.yearNow ? true : false;
+            for (var file in data) {
+                data[file].show = data[file].year == $scope.yearNow ? true : false;
             }
             $scope.archive = data;
-            $scope.readBangumi($scope.archive[$scope.yearNow].months[$scope.mArr.indexOf($scope.monthToSeason($scope.monthNow))].json);
+            $scope.readBangumi($scope.getJsonPath($scope.yearNow, $scope.monthNow, data));
         });
 
     }]);
@@ -119,25 +131,25 @@
         return function(link) {
             switch (link.match(re)[1].toLowerCase()) {
                 case "youku":
-                    return "优酷";     
+                    return "优酷 ";     
                 case "sohu":
-                    return "搜狐";
+                    return "搜狐 ";
                 case "qq":
-                    return "腾讯";
+                    return "腾讯 ";
                 case "iqiyi":
-                    return "爱奇艺";
+                    return "爱奇艺 ";
                 case "letv":
-                    return "乐视";
+                    return "乐视 ";
                 case "pptv":
-                    return "PPTV";
+                    return "PPTV ";
                 case "tudou":
-                    return "土豆";
+                    return "土豆 ";
                 case "bilibili":
-                    return "B站";
+                    return "B站 ";
                 case "acfun":
-                    return "A站";
+                    return "A站 ";
                 default:
-                    return "未知";
+                    return "未知 ";
             }
         };
     });

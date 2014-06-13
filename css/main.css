@@ -31,6 +31,18 @@ a:focus, a:hover, a:active {
     color: #5dafe9;
 }
 
+span.pointer {
+    color: black;
+    cursor: pointer;
+    display: block;
+}
+
+span.pointer:focus,
+span.pointer:hover,
+span.pointer:active {
+    color: #5dafe9; 
+}
+
 div#container {
     position: relative;
     left: 0;
@@ -63,8 +75,7 @@ table thead th {
     background-color: #cde6c7;
 }
 
-table thead th a.ordered:link,
-table thead th a.ordered:visited {
+table thead th span.ordered {
     text-decoration: underline;
 }
 
@@ -183,7 +194,6 @@ p#footer a:active {
 div#sidebar {
     display: none;
     float: left;
-    /*background-color: #7fb80e;*/
     position: absolute;
     width: 80px;
     padding: 0 5px;
@@ -196,6 +206,7 @@ div#sidebar h3 {
     font-size: 1.2em;
 }
 
+
 div#sidebar li.year {
     font-size: 1em;
     margin-bottom: 10px;
@@ -203,16 +214,11 @@ div#sidebar li.year {
     text-align: center;
 }
 
-div#sidebar li.year a {
+div#sidebar li.year span {
     background-color: #cde6c7;
-    display: block;
 }
 
-div#sidebar li.year.hide ul.month {
-    display: none;
-}
-
-div#sidebar li.year ul.month li a {
+div#sidebar li.year ul.month li span {
     border-top: 1px solid #cde6c7;
     text-align: right;
     background-color: #eee;

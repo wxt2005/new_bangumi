@@ -1,3 +1,18 @@
+if (typeof Array.prototype.indexOf !== 'function') {
+    Array.prototype.indexOf = function(target) {
+        if (target) {
+            for (var i = 0, l = this.length; i < l; i++) {
+               if (this[i] == target) {
+                   return i;
+               }
+            }
+            return -1;
+        } else {
+            throw new Error('illegal target');
+        }
+    };
+}
+
 (function() {
     'use strict';
 

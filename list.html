@@ -13,10 +13,10 @@
         <tr>
             <th>作品名</th>
             <th>
-                <a href="#" ng-click="order(bangumis,'jp',reversed)" ng-class="{'ordered':ordered==='jp'}" class-fix>日本放送时间</a>
+                <span class="pointer" ng-click="order(bangumis,'jp',reversed)" ng-class="{'ordered':ordered==='jp'}" class-fix>日本放送时间</span>
             </th>
             <th>
-                <a href="#" ng-click="order(bangumis,'cn',reversed)" ng-class="{'ordered':ordered==='cn'}" class-fix>大陆放送时间</a>
+                <span class="pointer"  ng-click="order(bangumis,'cn',reversed)" ng-class="{'ordered':ordered==='cn'}" class-fix>大陆放送时间</span>
             </th>
             <th>播放网址</th>
         </tr>
@@ -29,7 +29,7 @@
             <td>{{item.weekDayJP | weekday}} {{item.timeJP | time}}</td>
             <td>{{item.weekDayCN | weekday}} {{item.timeCN | time}}</td>
             <td>
-                <a ng-repeat="site in item.onAirSite" href="{{site}}"> {{site | onair}}</a> 
+                <a ng-repeat="site in item.onAirSite" href="{{site}}">{{site | onair}}</a> 
             </td>
         </tr>
     </tbody>
