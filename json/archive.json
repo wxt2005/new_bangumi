@@ -19,7 +19,7 @@
             }, 
             {
                 "month": 10,
-                "json": "json/bangumi-1404.json",
+                "json": "",
                 "done": false
             }
         ]
@@ -34,17 +34,17 @@
             }, 
             {
                 "month": 4,
-                "json": "json/bangumi-1404.json",
+                "json": "",
                 "done": true
             }, 
             {
                 "month": 7,
-                "json": "json/bangumi-1407.json",
+                "json": "",
                 "done": true
             }, 
             {
                 "month": 10,
-                "json": "json/bangumi-1404.json",
+                "json": "",
                 "done": false
             }
         ]

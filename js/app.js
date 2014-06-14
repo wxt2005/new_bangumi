@@ -4,14 +4,21 @@
     var app = angular.module('BangumiList', ['ieFix']);
 
     app.controller('ListController', ['$scope', '$http', function($scope, $http) {
-        $scope.dateNow = new Date();
-        $scope.weekDayNum = $scope.dateNow.getDay();
-        $scope.yearNow = $scope.dateNow.getFullYear();
-        $scope.monthNow = $scope.dateNow.getMonth() + 1;
+        var dateNow = new Date();
+        var weekDayNum = dateNow.getDay();
+        var yearNow = dateNow.getFullYear();
+        var monthNow = dateNow.getMonth() + 1;
         $scope.reversed = false;
         $scope.ordered = 'jp';
-        $scope.query = {weekDayCN: $scope.weekDayNum};
-        $scope.mArr = [1, 4, 7, 10];
+        $scope.query = {weekDayCN: weekDayNum};
+        
+
+        var http = new XMLHttpRequest();   
+        http.open("HEAD", ".", false);   
+        http.send(null);   
+        if((new Date(http.getResponseHeader("Date")).getMonth() + 1) !== monthNow) {
+            alert('请检查本机的时间设置(´･ω･｀)');
+        }
 
         //order bangumi list
         $scope.order = function(items, target, reverseFlag) {
@@ -52,12 +59,25 @@
         $scope.getJsonPath = function(year, month, archive) {
             for (var file in archive) {
                 if (archive[file].year == year) {
+                    var months = archive[file].months;
                     $scope.yearRead = archive[file].year;
                     $scope.monthRead = $scope.monthToSeason(month); 
-                    return archive[file].months[$scope.mArr.indexOf($scope.monthRead)].json;     
+                    for (var i = 0, l = months.length; i < l; i++ ) {
+                        if ($scope.monthRead === months[i].month && months[i].json) {
+                            return months[i].json;
+                        }
+                    }
+                    if ($scope.monthRead === 1) {
+                        console.log('failed to get json path, try year - 1, 10');
+                        return $scope.getJsonPath(year - 1, 10, archive);
+                    } else {
+                        console.log('failed to get json path, try year, month - 3');
+                        return $scope.getJsonPath(year, month - 3, archive);
+                    }
                 }
             }
-            throw new Error('failed to get json path');
+            console.log('failed to get json path, try year - 1');
+            return $scope.getJsonPath(year - 1, month, archive);
         };
 
         //use $http to get bangumi data
@@ -70,10 +90,10 @@
         //use $http to get archive data, then init page
         $http.get('json/archive.json').success(function(data) {
             for (var file in data) {
-                data[file].show = data[file].year == $scope.yearNow ? true : false;
+                data[file].show = data[file].year == yearNow ? true : false;
             }
             $scope.archive = data;
-            $scope.readBangumi($scope.getJsonPath($scope.yearNow, $scope.monthNow, data));
+            $scope.readBangumi($scope.getJsonPath(yearNow, monthNow, data));
         });
 
     }]);
