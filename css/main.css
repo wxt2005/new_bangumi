@@ -1,7 +1,6 @@
 * {
     margin: 0px;
     padding: 0px;
-    line-height: 1.8em;
     font-size: 16px;
     list-style: none;
 }
@@ -47,8 +46,6 @@ div#container {
     position: relative;
     left: 0;
     right: 0;
-    top: 0;
-    bottom: 0;
     margin: 3em auto;
     width: 1080px;
 }
@@ -60,13 +57,15 @@ table {
     width: 46.875em;
     border: 2px solid #7fb80e;
     table-layout: fixed;
+    line-height: 1.6;
 }
 
 table col#name {
     width: 52%;
 }
 
-table col#time-jp, table col#time-cn {
+table col#time-jp, 
+table col#time-cn {
     width: 17%;
 }
 

@@ -8,10 +8,10 @@
         var weekDayNum = dateNow.getDay();
         var yearNow = dateNow.getFullYear();
         var monthNow = dateNow.getMonth() + 1;
+
         $scope.reversed = false;
         $scope.ordered = 'jp';
         $scope.query = {weekDayCN: weekDayNum};
-        
 
         var http = new XMLHttpRequest();   
         http.open("HEAD", ".", false);   
