@@ -4,15 +4,11 @@
     var app = angular.module('BangumiList', ['ieFix']);
 
     app.controller('ListController', ['$scope', '$http', function($scope, $http) {
-        var dateNow = new Date();
-        var weekDayNum = dateNow.getDay();
-        var yearNow = dateNow.getFullYear();
-        var monthNow = dateNow.getMonth() + 1;
+        var dateNow, weekDayNow, yearNow, monthNow;
 
         $scope.reversed = true;
         $scope.ordered = 'cn';
-        $scope.query = {weekDayCN: weekDayNum};
-
+        
         //order bangumi list
         $scope.order = function(items, target, reverseFlag) {
             var weekDay = 'weekDay' + target.toUpperCase(),
@@ -82,13 +78,12 @@
 
         //use $http to get archive data, then init page
         $http.get('json/archive.json').success(function(data, status, headers) {
-            //determine if the local month is wrong
-            if (navigator.appName !== "Microsoft Internet Explorer" ||
-                +navigator.appVersion.match(/MSIE\s(\d+)/)[1] > 6) {
-                if((new Date(headers('Date')).getMonth() + 1) !== monthNow) {
-                    alert('请检查本机的日期是否正确(´･ω･｀)');
-                }
-            }
+            dateNow = headers('Date') ? new Date(headers('Date')) : new Date();
+            weekDayNow = dateNow.getDay();
+            yearNow = dateNow.getFullYear();
+            monthNow = dateNow.getMonth() + 1;
+            $scope.query = {weekDayCN: weekDayNow};
+
             for (var file in data) {
                 data[file].show = data[file].year == yearNow ? true : false;
             }

@@ -94,9 +94,15 @@ table thead th#header {
     text-align: left;
     padding-left: 120px;
     font-size: 36px;
-    background: url("../images/header.gif") 3% 100% / auto 100px no-repeat #7fb80e;
+    background-image: url("../images/header.gif");
+    /*IE hack*/
+    background-image: url("../images/header-IE.gif")\9;
+    background-size: auto 100px;
+    background-position: 3% 100%;
+    background-repeat: no-repeat;
     background-color: #7fb80e;
 }
+
 
 table thead th#search {
     background-color: #7fb80e;
