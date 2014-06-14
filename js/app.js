@@ -83,8 +83,11 @@
         //use $http to get archive data, then init page
         $http.get('json/archive.json').success(function(data, status, headers) {
             //determine if the local month is wrong
-            if((new Date(headers('Date')).getMonth() + 1) !== monthNow) {
-                alert('请检查本机的日期是否正确(´･ω･｀)');
+            if (navigator.appName !== "Microsoft Internet Explorer" ||
+                +navigator.appVersion.match(/MSIE\s(\d+)/)[1] > 6) {
+                if((new Date(headers('Date')).getMonth() + 1) !== monthNow) {
+                    alert('请检查本机的日期是否正确(´･ω･｀)');
+                }
             }
             for (var file in data) {
                 data[file].show = data[file].year == yearNow ? true : false;
