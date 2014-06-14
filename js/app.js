@@ -13,13 +13,6 @@
         $scope.ordered = 'cn';
         $scope.query = {weekDayCN: weekDayNum};
 
-        var http = new XMLHttpRequest();   
-        http.open("HEAD", ".", false);   
-        http.send(null);   
-        if((new Date(http.getResponseHeader("Date")).getMonth() + 1) !== monthNow) {
-            alert('请检查本机的时间设置(´･ω･｀)');
-        }
-
         //order bangumi list
         $scope.order = function(items, target, reverseFlag) {
             var weekDay = 'weekDay' + target.toUpperCase(),
@@ -88,7 +81,11 @@
         };
 
         //use $http to get archive data, then init page
-        $http.get('json/archive.json').success(function(data) {
+        $http.get('json/archive.json').success(function(data, status, headers) {
+            //determine if the local month is wrong
+            if((new Date(headers('Date')).getMonth() + 1) !== monthNow) {
+                alert('请检查本机的日期是否正确(´･ω･｀)');
+            }
             for (var file in data) {
                 data[file].show = data[file].year == yearNow ? true : false;
             }
