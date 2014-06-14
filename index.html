@@ -13,11 +13,12 @@
         </script>
         <![endif]-->
     </head>
-    <body ng-controller="ListController" ng-cloak>
+    <body ng-controller="ListController">
         <noscript>
-            <p style="text-align:center;">请打开javascript支持以显示本页面 (´･ω･｀)</p>
+            <img style="margin:0 35%;" src="images/no-js.gif" alt="没有打开Javascript！">
+            <p style="text-align:center;">请打开javascript支持以显示本页面</p>
         </noscript>
-        <div id="container">
+        <div id="container" ng-cloak>
             <side-bar></side-bar> 
             <nav-bar></nav-bar> 
             <item-list></item-list>
