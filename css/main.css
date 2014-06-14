@@ -48,7 +48,7 @@ span.pointer:active {
 div#container {
     position: relative;
     margin: 40px auto;
-    width: 1080px;
+    width: auto;
 }
 
 table {
@@ -205,6 +205,7 @@ div#sidebar {
     padding: 0 5px;
     border: 2px solid #7fb80e;
     left: 20px;
+    display: none;
 }
 
 div#sidebar h3 {
@@ -236,13 +237,13 @@ div#sidebar li.year ul.month li:first-child {
     border-top: none;
 }
 
-@media only screen and (max-width:990px) {
+@media screen and (min-width: 960px) {
     div#container {
-        width: auto;
+        width: 1080px;
     }
 
     div#sidebar { 
-        display: none; 
+        display: block; 
     }
 }
 
