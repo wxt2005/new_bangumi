@@ -23,31 +23,6 @@
                 "done": false
             }
         ]
-    }, 
-    {
-        "year": 2015,
-        "months": [
-            {
-                "month": 1,
-                "json": "",
-                "done": true
-            }, 
-            {
-                "month": 4,
-                "json": "",
-                "done": true
-            }, 
-            {
-                "month": 7,
-                "json": "",
-                "done": true
-            }, 
-            {
-                "month": 10,
-                "json": "",
-                "done": false
-            }
-        ]
-    }
+    } 
 ]
 
