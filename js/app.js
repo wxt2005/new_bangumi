@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('BangumiList', ['ieFix'])
-.controller('ListController', ['$scope', '$http', function($scope, $http) {
+angular.module('BangumiList', ['ieFix', 'ngProgressLite'])
+.controller('ListController', ['$scope', '$http', 'ngProgressLite', function($scope, $http, ngProgressLite) {
     var dateNow, weekDayNow, yearNow, monthNow;
 
     $scope.reversed = true;
@@ -70,9 +70,11 @@ angular.module('BangumiList', ['ieFix'])
 
     //use $http to get bangumi data
     $scope.readBangumi = function(filePath) {
+        ngProgressLite.start();
         $http.get(filePath)
             .success(function(data) {
                 $scope.bangumis = $scope.order(data, $scope.ordered, !$scope.reversed);
+                ngProgressLite.done();
             })
             .error(function(data, status) {
                 alert('读取' + filePath + '出错\n错误代码:' + status + '\n请联系wxt2005#gmail.com\n或在Twitter上@wxt2005');   
