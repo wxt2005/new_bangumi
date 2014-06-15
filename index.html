@@ -5,24 +5,73 @@
         <title>番组放送</title>
         <link type="text/css" rel="stylesheet" href="css/main.css">
         <!--[if lte IE 7]><script type="text/javascript" src="js/json2.js"></script><![endif]-->
-        <!--[if lte IE 8]>
-        <script>
-            document.createElement('item-list');
-            document.createElement('nav-bar');
-            document.createElement('side-bar');
-        </script>
-        <![endif]-->
     </head>
     <body ng-controller="ListController">
         <noscript>
-            <img style="margin:0 35%;" src="images/no-js.gif" alt="没有打开Javascript！">
+            <img src="images/no-js.gif" alt="没有打开Javascript！">
             <p style="text-align:center;">请打开javascript支持以显示本页面</p>
         </noscript>
         <div id="container" ng-cloak>
-            <side-bar></side-bar> 
-            <nav-bar></nav-bar> 
-            <item-list></item-list>
-            <p id="footer">Copyright &copy; 番组放送 | All Rights Reserved | Powered by <a href="https://angularjs.org">AngularJS</a>
+            <div id="sidebar">
+                <h3>归档</h3>
+                <ul>
+                    <li class="year" ng-repeat="file in archive"><span class="pointer" 
+                            ng-click="file.show=!file.show">{{file.year}}年</span>
+                        <ul class="month" ng-show="file.show===true">
+                            <li ng-repeat="data in file.months" ng-hide="data.json===''||data.done===false" class-fix>
+                                <span class="pointer" ng-click="readBangumi(getJsonPath(file.year, data.month, archive))">{{data.month | monthCN}}</span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div> 
+            <ul id='nav'>
+                <li ng-repeat="nav in navList" ng-class="{'selected':$parent.query.weekDayCN===nav.index}" 
+                    class-fix ng-click="$parent.query={titleCN:undefined,weekDayCN:nav.index};
+                    order(bangumis, nav.order,false);">{{nav.name}}</li>
+            </ul> 
+            <table>
+                <colgroup>
+                    <col id="name">
+                    <col id="time-jp">
+                    <col id="time-cn">
+                    <col id="site">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th id="header" colspan="2">{{yearRead}}年{{monthRead}}月番组</th>
+                        <th id="search" colspan="2">搜索：<input ng-model="query.titleCN" 
+                            ng-keydown="query.weekDayCN = undefined"></th>
+                    </tr>
+                    <tr>
+                        <th>作品名</th>
+                        <th>
+                            <span class="pointer" ng-click="order(bangumis,'jp',reversed)" 
+                                ng-class="{'ordered':ordered==='jp'}" class-fix>日本放送时间</span>
+                        </th>
+                        <th>
+                            <span class="pointer"  ng-click="order(bangumis,'cn',reversed)" 
+                                ng-class="{'ordered':ordered==='cn'}" class-fix>大陆放送时间</span>
+                        </th>
+                        <th>播放网址</th>
+                    </tr>
+                </thead>
+                <tbody id="bangumi_list">
+                    <tr ng-repeat="item in bangumis | filter:query track by $index" 
+                        ng-class-even="'color'" class-fix>
+                        <td><a href="{{item.officalSite}}">{{item.titleCN}}
+                                <span span-fix>{{item.titleJP}}</span></a>
+                        </td>
+                        <td>{{item.weekDayJP | weekday}} {{item.timeJP | time}}</td>
+                        <td>{{item.weekDayCN | weekday}} {{item.timeCN | time}}</td>
+                        <td>
+                            <a ng-repeat="site in item.onAirSite" href="{{site}}">{{site | onair}}</a> 
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p id="footer">Copyright &copy; 番组放送 | All Rights Reserved | Powered by 
+                <a href="https://angularjs.org">AngularJS</a>
                 and <a href="https://github.com/wxt2005/new_bangumi">GitHub</a>
             </p>
         </div>

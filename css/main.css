@@ -11,6 +11,7 @@
 body {
     background-color: #eee;
     font-size: 16px;
+    text-align: center;
 }
 
 body ul {
@@ -49,6 +50,8 @@ div#container {
     position: relative;
     margin: 40px auto;
     width: auto;
+    /*IE hack*/
+    width: 1080px\9;
 }
 
 table {
@@ -212,6 +215,9 @@ div#sidebar {
     border: 2px solid #7fb80e;
     left: 20px;
     display: none;
+    /*IE hack*/
+    display: block\9;
+    _display: none;
 }
 
 div#sidebar h3 {

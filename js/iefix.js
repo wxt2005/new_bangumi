@@ -1,3 +1,4 @@
+//if Array.prototype.indexOf didn't exist, then add one
 if (typeof Array.prototype.indexOf !== 'function') {
     Array.prototype.indexOf = function(target) {
         if (target) {
@@ -34,7 +35,11 @@ if (typeof Array.prototype.indexOf !== 'function') {
                     scope.$watch(function() {
                         return element[0]['class'];
                     }, function() {
-                        element[0].className += ' ' + element[0]['class'];
+                        if (element[0]['class']) {
+                            element[0].className = element[0]['class'];
+                        } else {
+                            element[0].className = '';
+                        }
                     });
                 }
             };
