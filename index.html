@@ -1,45 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html id="ng-app" ng-app="BangumiList">
     <head>
         <meta charset="utf-8">
-        <title>4月新番</title>
+        <title>番组放送</title>
         <link type="text/css" rel="stylesheet" href="css/main.css">
-        <script type="text/javascript" src="js/json2.js"></script>
+        <link type="text/css" rel="stylesheet" href="css/ngprogress-lite.css">
+        <!--[if lte IE 7]><script type="text/javascript" src="js/json2.js"></script><![endif]-->
     </head>
-    <body>
-        <ul id="nav">
-            <li>星期一</li>
-            <li>星期二</li>
-            <li>星期三</li>
-            <li>星期四</li>
-            <li>星期五</li>
-            <li>星期六</li>
-            <li>星期日</li>
-            <li>全 部</li>
-        </ul>
-        <table>
-            <colgroup>
-                <col id="name">
-                <col id="time-jp">
-                <col id="time-cn">
-                <col id="site">
-            </colgroup>
-            <thead>
-                <tr>
-                    <th id="header" colspan="4"> 四月新番放送列表 </th>
-                </tr>
-                <tr>
-                    <th>作品名</th>
-                    <th>日本放送时间</th>
-                    <th>大陆放送时间</th>
-                    <th>播放网址</th>
-                </tr>
-            </thead>
-            <tbody id="bangumi_list">
-                <tr><td colspan="4"><noscript>请打开javascript支持</noscript></td></tr>
-            </tbody>
-        </table>
-        <p id="github"><a href="https://github.com/wxt2005/new_bangumi">GitHub</a></p>
-        <script type="text/javascript" src="js/main.js"></script> 
+    <body ng-controller="ListController">
+        <noscript>
+            <img src="images/no-js.gif" alt="没有打开Javascript！">
+            <p style="text-align:center;">请打开javascript支持以显示本页面</p>
+        </noscript>
+        <div id="container" ng-cloak>
+            <div id="sidebar">
+                <h3>归档</h3>
+                <ul>
+                    <li class="year" ng-repeat="file in archive"><span class="pointer" 
+                            ng-click="file.show=!file.show">{{file.year}}年</span>
+                        <ul class="month" ng-show="file.show===true">
+                            <li ng-repeat="data in file.months" ng-hide="data.json===''||data.done===false" class-fix>
+                                <span class="pointer" ng-click="readBangumi(getJsonPath(file.year, data.month, archive))">{{data.month | monthCN}}</span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div> 
+            <ul id='nav'>
+                <li ng-repeat="nav in navList" ng-class="{'selected':$parent.query.weekDayCN===nav.index}" 
+                    class-fix ng-click="$parent.query={titleCN:undefined,weekDayCN:nav.index};
+                    order(bangumis, nav.order,false);">{{nav.name}}</li>
+            </ul> 
+            <table>
+                <colgroup>
+                    <col id="name">
+                    <col id="time-jp">
+                    <col id="time-cn">
+                    <col id="site">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th id="header" colspan="2">{{yearRead}}年{{monthRead}}月番组</th>
+                        <th id="search" colspan="2">搜索：<input ng-model="query.titleCN" 
+                            ng-keydown="query.weekDayCN = undefined"></th>
+                    </tr>
+                    <tr>
+                        <th>作品名</th>
+                        <th>
+                            <span class="pointer" ng-click="order(bangumis,'jp',reversed)" 
+                                ng-class="{'ordered':ordered==='jp'}" class-fix>日本放送时间</span>
+                        </th>
+                        <th>
+                            <span class="pointer"  ng-click="order(bangumis,'cn',reversed)" 
+                                ng-class="{'ordered':ordered==='cn'}" class-fix>大陆放送时间</span>
+                        </th>
+                        <th>播放网址</th>
+                    </tr>
+                </thead>
+                <tbody id="bangumi_list">
+                    <tr ng-repeat="item in bangumis | filter:query track by $index" 
+                        ng-class-even="'color'" class-fix>
+                        <td><a href="{{item.officalSite}}">{{item.titleCN}}
+                                <span span-fix>{{item.titleJP}}</span></a>
+                        </td>
+                        <td>{{item.weekDayJP | weekday}} {{item.timeJP | time}}</td>
+                        <td>{{item.weekDayCN | weekday}} {{item.timeCN | time}}</td>
+                        <td>
+                            <a ng-repeat="site in item.onAirSite" href="{{site}}">{{site | onair}}</a> 
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p id="footer">Copyright &copy; 番组放送 | All Rights Reserved | Powered by 
+                <a href="https://angularjs.org">AngularJS</a>
+                and <a href="https://github.com/wxt2005/new_bangumi">GitHub</a>
+            </p>
+        </div>
+        <script type="text/javascript" src="js/angular.min.js"></script> 
+        <script type="text/javascript" src="js/app.js"></script> 
+        <script type="text/javascript" src="js/iefix.js"></script> 
+        <script type="text/javascript" src="js/ngprogress-lite.min.js"></script> 
     </body>
 </html>

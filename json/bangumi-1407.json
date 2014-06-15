@@ -1,0 +1,432 @@
+[
+  {
+    "titleCN": "元气囝仔",
+    "titleJP": "ばらかもん",
+    "officalSite": "http://www.barakamon.jp/",
+    "weekDayJP": 0,
+    "weekDayCN": 1,
+    "timeJP": "0120",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "战国BASARA Judge End",
+    "titleJP": "戦国BASARA Judge End",
+    "officalSite": "http://www.ntv.co.jp/basara_je/",
+    "weekDayJP": 0,
+    "weekDayCN": 1,
+    "timeJP": "0050",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "GLASSLIP",
+    "titleJP": "グラスリップ",
+    "officalSite": "http://glasslip.jp/",
+    "weekDayJP": 4,
+    "weekDayCN": 5,
+    "timeJP": "2130",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "RAILWARS!",
+    "titleJP": "RAILWARS!",
+    "officalSite": "http://www.tbs.co.jp/anime/railwars/",
+    "weekDayJP": null,
+    "weekDayCN": null,
+    "timeJP": "",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "女神异闻录4 the Golden",
+    "titleJP": "ペルソナ4 ザ・ゴールデン",
+    "officalSite": "http://www.p4ga.jp/",
+    "weekDayJP": 5,
+    "weekDayCN": 6,
+    "timeJP": "0049",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "黑执事 Book of Circus",
+    "titleJP": "黒執事 Book of Circus",
+    "officalSite": "http://www.kuroshitsuji.tv/",
+    "weekDayJP": 5,
+    "weekDayCN": 6,
+    "timeJP": "0119",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "普通女高中生要做当地偶像",
+    "titleJP": "普通の女子校生が【ろこどる】やってみた。",
+    "officalSite": "http://www.tbs.co.jp/anime/locodol/",
+    "weekDayJP": 5,
+    "weekDayCN": 6,
+    "timeJP": "0116",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "Space☆Dandy 二期",
+    "titleJP": "スペース☆ダンディ シーズン2",
+    "officalSite": "http://space-dandy.com/",
+    "weekDayJP": 0,
+    "weekDayCN": 1,
+    "timeJP": "2200",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "PriPara",
+    "titleJP": "プリパラ",
+    "officalSite": "http://www.takaratomy-arts.co.jp/specials/pripara/",
+    "weekDayJP": 6,
+    "weekDayCN": 0,
+    "timeJP": "0900",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "搞姬日常",
+    "titleJP": "ひめゴト",
+    "officalSite": "http://www.himegoto-tv.jp/",
+    "weekDayJP": 1,
+    "weekDayCN": 2,
+    "timeJP": "2256",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "Sword Art Online Ⅱ",
+    "titleJP": "ソードアート・オンラインⅡ",
+    "officalSite": "http://www.swordart-online.net/",
+    "weekDayJP": 6,
+    "weekDayCN": 0,
+    "timeJP": "2230",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "向山进发 二期",
+    "titleJP": "ヤマノススメ セカンドシーズン",
+    "officalSite": "http://www.yamanosusume.com/",
+    "weekDayJP": 3,
+    "weekDayCN": 4,
+    "timeJP": "2100",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "三坪房间的侵略者！？",
+    "titleJP": "六畳間の侵略者！？",
+    "officalSite": "http://corona106.tv/",
+    "weekDayJP": null,
+    "weekDayCN": null,
+    "timeJP": "",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "少年好莱坞",
+    "titleJP": "少年ハリウッド",
+    "officalSite": "http://www.starchild.co.jp/special/shonen-hollywood-anime/",
+    "weekDayJP": 0,
+    "weekDayCN": 1,
+    "timeJP": "2300",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "Fate/kaleid liner 魔法少女☆伊莉雅 Zwei!",
+    "titleJP": "Fate/kaleid liner プリズマ☆イリヤ ツヴァイ!",
+    "officalSite": "http://anime.prisma-illya.jp/",
+    "weekDayJP": 4,
+    "weekDayCN": 5,
+    "timeJP": "0035",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "LOVE STAGE!!",
+    "titleJP": "LOVE STAGE!!",
+    "officalSite": "http://lovestage-tv.jp/",
+    "weekDayJP": 4,
+    "weekDayCN": 5,
+    "timeJP": "0005",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "东京ESP",
+    "titleJP": "東京ESP",
+    "officalSite": "http://www.tokyo-esp.org/",
+    "weekDayJP": 6,
+    "weekDayCN": 0,
+    "timeJP": "0035",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "ALDNOAH·ZERO",
+    "titleJP": "アルドノア・ゼロ",
+    "officalSite": "http://www.aldnoahzero.com/",
+    "weekDayJP": 6,
+    "weekDayCN": 0,
+    "timeJP": "2300",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "人生",
+    "titleJP": "人生",
+    "officalSite": "http://www.vap.co.jp/jinsei/",
+    "weekDayJP": null,
+    "weekDayCN": null,
+    "timeJP": "",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "Free!-Eternal Summer-",
+    "titleJP": "Free!-Eternal Summer-",
+    "officalSite": "http://iwatobi-sc.com/",
+    "weekDayJP": 3,
+    "weekDayCN": 4,
+    "timeJP": "2300",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "精灵使的剑舞",
+    "titleJP": "精霊使いの剣舞",
+    "officalSite": "http://www.bladedance.tv/",
+    "weekDayJP": 1,
+    "weekDayCN": 2,
+    "timeJP": "2330",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "白银的意志 安格弗伦",
+    "titleJP": "白銀の意思 アルジェヴォルン",
+    "officalSite": "http://www.argevollen.com/",
+    "weekDayJP": 4,
+    "weekDayCN": 5,
+    "timeJP": "2200",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "幕末Rock",
+    "titleJP": "幕末Rock",
+    "officalSite": "http://bakumatsu.maql.co.jp/anime/",
+    "weekDayJP": 3,
+    "weekDayCN": 4,
+    "timeJP": "2230",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "桃剑",
+    "titleJP": "モモキュンソード",
+    "officalSite": "http://momokyun.com/",
+    "weekDayJP": 2,
+    "weekDayCN": 3,
+    "timeJP": "2330",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "修业魔女璐璐萌",
+    "titleJP": "まじもじるるも",
+    "officalSite": "http://anime-rurumo.com/",
+    "weekDayJP": 3,
+    "weekDayCN": 4,
+    "timeJP": "2330",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "青春之旅",
+    "titleJP": "アオハライド",
+    "officalSite": "http://aoha-anime.com/",
+    "weekDayJP": 1,
+    "weekDayCN": 2,
+    "timeJP": "2300",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "斩·赤红之瞳!",
+    "titleJP": "アカメが斬る！",
+    "officalSite": "http://akame.tv/",
+    "weekDayJP": 0,
+    "weekDayCN": 1,
+    "timeJP": "2300",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "生存游戏社",
+    "titleJP": "さばげぶっ！",
+    "officalSite": "http://sabagebu.com/",
+    "weekDayJP": 0,
+    "weekDayCN": 1,
+    "timeJP": "2130",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "花物语",
+    "titleJP": "＜物語＞シリーズ セカンドシーズン 「花物語」",
+    "officalSite": "http://www.monogatari-series.com/2ndseason/",
+    "weekDayJP": 6,
+    "weekDayCN": 0,
+    "timeJP": "1800",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "东京食尸鬼",
+    "titleJP": "東京喰種トーキョーグール",
+    "officalSite": "http://www.maql.co.jp/special/tokyoghoul/",
+    "weekDayJP": 4,
+    "weekDayCN": 5,
+    "timeJP": "2300",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "真 Strange+",
+    "titleJP": "真 ストレンジ・プラス",
+    "officalSite": "http://www.dreamcreation.co.jp/stpl2/",
+    "weekDayJP": 5,
+    "weekDayCN": 6,
+    "timeJP": "0000",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "月刊少女野崎君",
+    "titleJP": "月刊少女野崎くん",
+    "officalSite": "http://nozakikun.tv/",
+    "weekDayJP": 1,
+    "weekDayCN": 2,
+    "timeJP": "0005",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "francesca",
+    "titleJP": "フランチェスカ",
+    "officalSite": "http://www.heart-bit.com/francesca/",
+    "weekDayJP": null,
+    "weekDayCN": null,
+    "timeJP": "",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "恐怖残响",
+    "titleJP": "残響のテロル",
+    "officalSite": "http://terror-in-tokyo.com/",
+    "weekDayJP": 4,
+    "weekDayCN": 5,
+    "timeJP": "2350",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "PSYCHO-PASS 新编集版",
+    "titleJP": "PSYCHO-PASS 新編集版",
+    "officalSite": "http://psycho-pass.com/",
+    "weekDayJP": 5,
+    "weekDayCN": 6,
+    "timeJP": "0020",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "信长协奏曲",
+    "titleJP": "信長協奏曲",
+    "officalSite": "http://www.fujitv.co.jp/nobunaga-concerto-anime/",
+    "weekDayJP": 6,
+    "weekDayCN": 0,
+    "timeJP": "0050",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "暗芝居 第2期",
+    "titleJP": "闇芝居 第2期",
+    "officalSite": "http://ani.tv/yamishibai/",
+    "weekDayJP": 1,
+    "weekDayCN": 2,
+    "timeJP": "0135",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "DRAMAtical Murder",
+    "titleJP": "DRAMAtical Murder [ドラマティカルマーダー]",
+    "officalSite": "http://dmmd-anime.com/",
+    "weekDayJP": 1,
+    "weekDayCN": 2,
+    "timeJP": "0035",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "Re: 滨虎",
+    "titleJP": "Re： ハマトラ",
+    "officalSite": "http://hamatorapj.com/reply/index.php",
+    "weekDayJP": 2,
+    "weekDayCN": 3,
+    "timeJP": "0105",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "花舞少女",
+    "titleJP": "ハナヤマタ",
+    "officalSite": "http://hanayamata.com/",
+    "weekDayJP": 2,
+    "weekDayCN": 3,
+    "timeJP": "0035",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "每度！抓狂一族",
+    "titleJP": "毎度！浦安鉄筋家族",
+    "officalSite": "http://www.deen.co.jp/works/201405/29144226.php",
+    "weekDayJP": 0,
+    "weekDayCN": 1,
+    "timeJP": "2125",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "漫研社 二期",
+    "titleJP": "あいまいみー第二幕！",
+    "officalSite": "http://www.dreamcreation.co.jp/aimaimi/",
+    "weekDayJP": 5,
+    "weekDayCN": 6,
+    "timeJP": "0105",
+    "timeCN": "",
+    "onAirSite": []
+  },
+  {
+    "titleCN": "美少女战士 Crystal",
+    "titleJP": "美少女戦士セーラームーンCrystal",
+    "officalSite": "http://sailormoon-official.com/animation/",
+    "weekDayJP": 6,
+    "weekDayCN": 0,
+    "timeJP": "1800",
+    "timeCN": "",
+    "onAirSite": []
+  }
+]
