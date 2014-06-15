@@ -214,6 +214,7 @@ div#sidebar {
     padding: 0 5px;
     border: 2px solid #7fb80e;
     left: 20px;
+    top: 32px;
     display: none;
     /*IE hack*/
     display: block\9;
@@ -223,6 +224,7 @@ div#sidebar {
 div#sidebar h3 {
     text-align: center;
     font-size: 20px;
+    margin: 5px 0;
 }
 
 
