@@ -67,6 +67,7 @@
                         <td>{{item.weekDayCN | weekday}} {{item.timeCN | time}}</td>
                         <td>
                             <a ng-repeat="site in item.onAirSite" href="{{site}}">{{site | onair}}</a> 
+                            <p ng-show="item.onAirSite.length===0" class-fix>暂无</p>
                         </td>
                     </tr>
                 </tbody>
