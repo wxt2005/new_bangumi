@@ -1,4 +1,6 @@
-new_bangumi
+番组放送
 ===========
 
-（2014年4月）新番放送兼版权引进列表
+新番放送兼版权引进播放地址聚合站
+
+放送时间数据源：http://www.posite-c.com/anime/weekly/
