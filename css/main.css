@@ -87,6 +87,10 @@ table tbody td {
     border-top: 1px solid white;
 }
 
+table tbody tr {
+    height: 28px;
+}
+
 table tbody tr.color {
     background-color: #f6f5ec;
 }
