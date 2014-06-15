@@ -42,6 +42,10 @@ angular.module('ieFix', [])
                 });
             }
         };
+    } else {
+        return {
+            restrict: 'A'
+        };
     }
 })
 
@@ -53,6 +57,10 @@ angular.module('ieFix', [])
             link: function(scope, element, attrs) { 
                 element[0].className = 'hide';
             }
+        };
+    } else {
+        return {
+            restrict: 'A'
         };
     }
 });
