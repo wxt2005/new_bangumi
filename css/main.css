@@ -107,7 +107,6 @@ table thead th#header {
     background-color: #7fb80e;
 }
 
-
 table thead th#search {
     background-color: #7fb80e;
     text-align: right;
@@ -120,6 +119,10 @@ table thead th#search input {
     vertical-align: baseline;
     width: 150px;
     font-size: 16px;
+}
+
+table tbody tr {
+    height: 30px;
 }
 
 table tbody tr td {
