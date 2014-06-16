@@ -88,6 +88,12 @@ table tbody td {
     height: 28px;
 }
 
+table tbody td a.new::before {
+    content: "new";
+    font-size: 10px;
+    vertical-align: super;
+}
+
 table tbody tr.color {
     background-color: #f6f5ec;
 }

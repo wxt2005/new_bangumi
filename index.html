@@ -60,8 +60,9 @@
                 <tbody id="bangumi_list">
                     <tr ng-repeat="item in bangumis | filter:query track by $index" 
                         ng-class-even="'color'" class-fix>
-                        <td><a href="{{item.officalSite}}">{{item.titleCN}}
-                                <span span-fix>{{item.titleJP}}</span></a>
+                        <td>
+                            <a href="{{item.officalSite}}" ng-class="{'new':item.newBgm}" class-fix>
+                            {{item.titleCN}}<span span-fix>{{item.titleJP}}</span></a>
                         </td>
                         <td>{{item.weekDayJP | weekday}} {{item.timeJP | time}}</td>
                         <td>{{item.weekDayCN | weekday}} {{item.timeCN | time}}</td>
