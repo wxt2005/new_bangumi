@@ -29,8 +29,8 @@
         "months": [
             {
                 "month": 1,
-                "json": "",
-                "done": false
+                "json": "json/bangumi-1401.json",
+                "done": true
             }, 
             {
                 "month": 4,

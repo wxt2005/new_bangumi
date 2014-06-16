@@ -8,20 +8,9 @@
     "timeJP": "2300",
     "timeCN": "",
     "onAirSite": [
-      "http://www.bilibili.tv/video/av991605/"
+      "http://www.bilibili.tv/sp/王者天下"
     ],
     "newBgm": false
-  },
-  {
-    "titleCN": "HUNTER×HUNTER 杰作选",
-    "titleJP": "HUNTER×HUNTER傑作選",
-    "officalSite": "http://www.ntv.co.jp/hunterhunter/",
-    "weekDayJP": 0,
-    "weekDayCN": 1,
-    "timeJP": "1030",
-    "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
   },
   {
     "titleCN": "BLAZBLUE Alter Memory",
@@ -128,32 +117,6 @@
     "timeCN": "",
     "onAirSite": [
       "http://www.bilibili.tv/sp/卡片战斗先导者"
-    ],
-    "newBgm": false
-  },
-  {
-    "titleCN": "纸箱战机WARS",
-    "titleJP": "ダンボール戦機WARS",
-    "officalSite": "http://www.tv-tokyo.co.jp/anime/lbxwars/",
-    "weekDayJP": 3,
-    "weekDayCN": 4,
-    "timeJP": "1827",
-    "timeCN": "",
-    "onAirSite": [
-      "http://www.bilibili.tv/sp/纸箱战机"
-    ],
-    "newBgm": false
-  },
-  {
-    "titleCN": "闪电十一人GO：银河超新星",
-    "titleJP": "イナズマイレブンGO ギャラクシー",
-    "officalSite": "http://www.tv-tokyo.co.jp/anime/inazumago/",
-    "weekDayJP": 3,
-    "weekDayCN": 4,
-    "timeJP": "1800",
-    "timeCN": "",
-    "onAirSite": [
-      "http://www.bilibili.tv/sp/闪电十一人"
     ],
     "newBgm": false
   },
@@ -329,7 +292,9 @@
     "weekDayCN": 0,
     "timeJP": "0000",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.bilibili.tv/sp/零度战姬"
+    ],
     "newBgm": true
   },
   {
@@ -415,17 +380,6 @@
     "newBgm": true
   },
   {
-    "titleCN": "鷹の爪団の楽しいテレビ",
-    "titleJP": "鷹の爪団の楽しいテレビ",
-    "officalSite": "http://www.twellv.co.jp/program/kids/takanotsume.html",
-    "weekDayJP": 4,
-    "weekDayCN": 5,
-    "timeJP": "1730",
-    "timeCN": "",
-    "onAirSite": [],
-    "newBgm": false
-  },
-  {
     "titleCN": "魔笛MAGI 2期",
     "titleJP": "マギ 第2期",
     "officalSite": "http://www.project-magi.com/",
@@ -492,19 +446,6 @@
     "newBgm": true
   },
   {
-    "titleCN": "彩虹小马 ～友谊是魔法～",
-    "titleJP": "マイリトルポニー ～トモダチは魔法～",
-    "officalSite": "http://www.tv-tokyo.co.jp/anime/mylittle-pony/",
-    "weekDayJP": 2,
-    "weekDayCN": 3,
-    "timeJP": "0630",
-    "timeCN": "",
-    "onAirSite": [
-      "http://www.bilibili.tv/sp/小马宝莉"
-    ],
-    "newBgm": false
-  },
-  {
     "titleCN": "飚速宅男",
     "titleJP": "弱虫ペダル",
     "officalSite": "http://yowapeda.com/",
@@ -561,32 +502,6 @@
     "newBgm": true
   },
   {
-    "titleCN": "义风堂堂!!兼续和庆次",
-    "titleJP": "義風堂々!! -兼続と慶次-",
-    "officalSite": "http://gifuu.jp/",
-    "weekDayJP": 3,
-    "weekDayCN": 4,
-    "timeJP": "0040",
-    "timeCN": "",
-    "onAirSite": [
-      "http://www.bilibili.tv/sp/义风堂堂！！兼续与庆次"
-    ],
-    "newBgm": false
-  },
-  {
-    "titleCN": "闪电十一人GO：时空之石",
-    "titleJP": "イナズマイレブンGO クロノ・ストーン",
-    "officalSite": "http://www.tv-tokyo.co.jp/anime/inazumago/",
-    "weekDayJP": 0,
-    "weekDayCN": 1,
-    "timeJP": "0445",
-    "timeCN": "",
-    "onAirSite": [
-      "http://www.bilibili.tv/sp/闪电十一人"
-    ],
-    "newBgm": false
-  },
-  {
     "titleCN": "Phi·Brain 神之谜题第三季",
     "titleJP": "ファイ・ブレイン３ 神のパズル",
     "officalSite": "http://www9.nhk.or.jp/anime/phibrain/index.html",
@@ -599,17 +514,7 @@
     ],
     "newBgm": true
   },
-  {
-    "titleCN": "鷹の爪MAX （ビットワールド内）",
-    "titleJP": "鷹の爪MAX （ビットワールド内）",
-    "officalSite": "http://xn--u9j429qiq1a.jp/max/",
-    "weekDayJP": 5,
-    "weekDayCN": 6,
-    "timeJP": "1720",
-    "timeCN": "",
-    "onAirSite": [],
-    "newBgm": false
-  },
+
   {
     "titleCN": "记录的地平线",
     "titleJP": "ログ・ホライズン",
@@ -661,17 +566,6 @@
       "http://www.bilibili.tv/sp/摸索吧！部活剧"
     ],
     "newBgm": true
-  },
-  {
-    "titleCN": "铁人28号GAO！",
-    "titleJP": "鉄人28号ガオ！",
-    "officalSite": "http://www.eiken-anime.jp/works/wks_gao.html",
-    "weekDayJP": 6,
-    "weekDayCN": 0,
-    "timeJP": "0352",
-    "timeCN": "",
-    "onAirSite": [],
-    "newBgm": false
   },
   {
     "titleCN": "单色小姐",
@@ -737,17 +631,6 @@
       "http://www.bilibili.tv/sp/银狐"
     ],
     "newBgm": true
-  },
-  {
-    "titleCN": "加油！黑轮君",
-    "titleJP": "がんばれ！おでんくん",
-    "officalSite": "http://www.fight-odenkun.com/",
-    "weekDayJP": 6,
-    "weekDayCN": 0,
-    "timeJP": "0555",
-    "timeCN": "",
-    "onAirSite": [],
-    "newBgm": false
   },
   {
     "titleCN": "少女骑士物语",
@@ -818,17 +701,6 @@
     "newBgm": true
   },
   {
-    "titleCN": "AG学園 あに☆ぶん",
-    "titleJP": "AG学園 あに☆ぶん",
-    "officalSite": "http://www.anime-tv.co.jp/anibun/index.html",
-    "weekDayJP": 6,
-    "weekDayCN": 0,
-    "timeJP": "2230",
-    "timeCN": "",
-    "onAirSite": [],
-    "newBgm": false
-  },
-  {
     "titleCN": "限制级杀手",
     "titleJP": "殺し屋さん",
     "officalSite": "http://www.5648.jp/",
@@ -840,45 +712,6 @@
       "http://www.bilibili.tv/sp/限制级杀手"
     ],
     "newBgm": true
-  },
-  {
-    "titleCN": "闪电十一人",
-    "titleJP": "イナズマイレブン",
-    "officalSite": "http://www.tv-tokyo.co.jp/anime/inazuma/",
-    "weekDayJP": 3,
-    "weekDayCN": 4,
-    "timeJP": "1730",
-    "timeCN": "",
-    "onAirSite": [
-      "http://www.bilibili.tv/sp/闪电十一人"
-    ],
-    "newBgm": false
-  },
-  {
-    "titleCN": "妖精的尾巴 FAIRY TAIL",
-    "titleJP": "FAIRY TAIL",
-    "officalSite": "http://www.tv-tokyo.co.jp/anime/fairytail2013/",
-    "weekDayJP": 0,
-    "weekDayCN": 1,
-    "timeJP": "0125",
-    "timeCN": "",
-    "onAirSite": [
-      "http://www.bilibili.tv/sp/妖精的尾巴"
-    ],
-    "newBgm": false
-  },
-  {
-    "titleCN": "纸箱战机W",
-    "titleJP": "ダンボール戦機W",
-    "officalSite": "http://www.tv-tokyo.co.jp/anime/lbxw/",
-    "weekDayJP": 6,
-    "weekDayCN": 0,
-    "timeJP": "0930",
-    "timeCN": "",
-    "onAirSite": [
-      "http://www.bilibili.tv/sp/纸箱战机"
-    ],
-    "newBgm": false
   },
   {
     "titleCN": "银之匙",

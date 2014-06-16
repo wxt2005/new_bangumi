@@ -7,8 +7,7 @@
     "weekDayCN": 1,
     "timeJP": "0120",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "战国BASARA Judge End",
@@ -18,8 +17,7 @@
     "weekDayCN": 1,
     "timeJP": "0050",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "GLASSLIP",
@@ -29,8 +27,17 @@
     "weekDayCN": 5,
     "timeJP": "2130",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
+  },
+  {
+    "titleCN": "RAILWARS!",
+    "titleJP": "RAILWARS!",
+    "officalSite": "http://www.tbs.co.jp/anime/railwars/",
+    "weekDayJP": null,
+    "weekDayCN": null,
+    "timeJP": "",
+    "timeCN": "",
+    "onAirSite": []
   },
   {
     "titleCN": "女神异闻录4 the Golden",
@@ -40,8 +47,7 @@
     "weekDayCN": 6,
     "timeJP": "0049",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "黑执事 Book of Circus",
@@ -51,8 +57,7 @@
     "weekDayCN": 6,
     "timeJP": "0119",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "普通女高中生要做当地偶像",
@@ -62,30 +67,17 @@
     "weekDayCN": 6,
     "timeJP": "0116",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
-    "titleCN": "RAILWARS!",
-    "titleJP": "RAILWARS!",
-    "officalSite": "http://www.tbs.co.jp/anime/railwars/",
-    "weekDayJP": 5,
-    "weekDayCN": 6,
-    "timeJP": "0046",
-    "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
-  },
-  {
-    "titleCN": "Space☆Dandy 2期",
+    "titleCN": "Space☆Dandy 二期",
     "titleJP": "スペース☆ダンディ シーズン2",
     "officalSite": "http://space-dandy.com/",
     "weekDayJP": 0,
     "weekDayCN": 1,
     "timeJP": "2200",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "PriPara",
@@ -95,8 +87,7 @@
     "weekDayCN": 0,
     "timeJP": "0900",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "搞姬日常",
@@ -106,8 +97,7 @@
     "weekDayCN": 2,
     "timeJP": "2256",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "Sword Art Online Ⅱ",
@@ -117,19 +107,17 @@
     "weekDayCN": 0,
     "timeJP": "2230",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
-    "titleCN": "向山进发 2期",
+    "titleCN": "向山进发 二期",
     "titleJP": "ヤマノススメ セカンドシーズン",
     "officalSite": "http://www.yamanosusume.com/",
     "weekDayJP": 3,
     "weekDayCN": 4,
     "timeJP": "2100",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "三坪房间的侵略者！？",
@@ -139,19 +127,17 @@
     "weekDayCN": null,
     "timeJP": "",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "少年好莱坞",
-    "titleJP": "少年ハリウッド -HOLLY STAGE FOR 49-",
+    "titleJP": "少年ハリウッド",
     "officalSite": "http://www.starchild.co.jp/special/shonen-hollywood-anime/",
     "weekDayJP": 0,
     "weekDayCN": 1,
-    "timeJP": "0000",
+    "timeJP": "2300",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "Fate/kaleid liner 魔法少女☆伊莉雅 Zwei!",
@@ -161,8 +147,7 @@
     "weekDayCN": 5,
     "timeJP": "0035",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "LOVE STAGE!!",
@@ -172,8 +157,7 @@
     "weekDayCN": 5,
     "timeJP": "0005",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "东京ESP",
@@ -183,8 +167,7 @@
     "weekDayCN": 0,
     "timeJP": "0035",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "ALDNOAH·ZERO",
@@ -194,8 +177,7 @@
     "weekDayCN": 0,
     "timeJP": "2300",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "人生",
@@ -205,8 +187,7 @@
     "weekDayCN": null,
     "timeJP": "",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "Free!-Eternal Summer-",
@@ -216,8 +197,7 @@
     "weekDayCN": 4,
     "timeJP": "2300",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "精灵使的剑舞",
@@ -227,8 +207,7 @@
     "weekDayCN": 2,
     "timeJP": "2330",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "白银的意志 安格弗伦",
@@ -238,8 +217,7 @@
     "weekDayCN": 5,
     "timeJP": "2200",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "幕末Rock",
@@ -249,8 +227,7 @@
     "weekDayCN": 4,
     "timeJP": "2230",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "桃剑",
@@ -260,8 +237,7 @@
     "weekDayCN": 3,
     "timeJP": "2330",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "修业魔女璐璐萌",
@@ -271,8 +247,7 @@
     "weekDayCN": 4,
     "timeJP": "2330",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "青春之旅",
@@ -282,8 +257,7 @@
     "weekDayCN": 2,
     "timeJP": "2300",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "斩·赤红之瞳!",
@@ -293,8 +267,7 @@
     "weekDayCN": 1,
     "timeJP": "2300",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "生存游戏社",
@@ -304,8 +277,7 @@
     "weekDayCN": 1,
     "timeJP": "2130",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "花物语",
@@ -315,8 +287,7 @@
     "weekDayCN": 0,
     "timeJP": "1800",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "东京食尸鬼",
@@ -326,8 +297,7 @@
     "weekDayCN": 5,
     "timeJP": "2300",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "真 Strange+",
@@ -337,8 +307,7 @@
     "weekDayCN": 6,
     "timeJP": "0000",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "月刊少女野崎君",
@@ -348,8 +317,7 @@
     "weekDayCN": 2,
     "timeJP": "0005",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "francesca",
@@ -359,8 +327,7 @@
     "weekDayCN": null,
     "timeJP": "",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "恐怖残响",
@@ -370,8 +337,7 @@
     "weekDayCN": 5,
     "timeJP": "2350",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "PSYCHO-PASS 新编集版",
@@ -381,8 +347,7 @@
     "weekDayCN": 6,
     "timeJP": "0020",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "信长协奏曲",
@@ -392,19 +357,17 @@
     "weekDayCN": 0,
     "timeJP": "0050",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
-    "titleCN": "暗芝居 2期",
+    "titleCN": "暗芝居 第2期",
     "titleJP": "闇芝居 第2期",
     "officalSite": "http://ani.tv/yamishibai/",
     "weekDayJP": 1,
     "weekDayCN": 2,
     "timeJP": "0135",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "DRAMAtical Murder",
@@ -414,8 +377,7 @@
     "weekDayCN": 2,
     "timeJP": "0035",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "Re: 滨虎",
@@ -425,8 +387,7 @@
     "weekDayCN": 3,
     "timeJP": "0105",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "花舞少女",
@@ -436,8 +397,7 @@
     "weekDayCN": 3,
     "timeJP": "0035",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "每度！抓狂一族",
@@ -447,19 +407,17 @@
     "weekDayCN": 1,
     "timeJP": "2125",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
-    "titleCN": "漫研社 2期",
+    "titleCN": "漫研社 二期",
     "titleJP": "あいまいみー第二幕！",
     "officalSite": "http://www.dreamcreation.co.jp/aimaimi/",
     "weekDayJP": 5,
     "weekDayCN": 6,
     "timeJP": "0105",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   },
   {
     "titleCN": "美少女战士 Crystal",
@@ -469,7 +427,6 @@
     "weekDayCN": 0,
     "timeJP": "1800",
     "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true
+    "onAirSite": []
   }
 ]
