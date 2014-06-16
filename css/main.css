@@ -88,6 +88,15 @@ table tbody td {
     height: 28px;
 }
 
+table tbody td a.new::after {
+    content: "\00A0\00A0new";
+    font-size: 10px;
+    font-family: sans-serif;
+    color: gray;
+    font-weight: normal;
+    vertical-align: super;
+}
+
 table tbody tr.color {
     background-color: #f6f5ec;
 }

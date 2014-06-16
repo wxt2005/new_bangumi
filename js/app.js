@@ -182,6 +182,8 @@ angular.module('BangumiList', ['ieFix', 'ngProgressLite'])
                 return 'B站 ';
             case 'acfun':
                 return 'A站 ';
+            case 'movie':
+                return '迅雷 ';
             default:
                 return '未知 ';
         }
