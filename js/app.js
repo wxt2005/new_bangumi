@@ -69,11 +69,11 @@ angular.module('BangumiList', ['ieFix', 'ngProgressLite'])
     };
 
     //use $http to get bangumi data
-    $scope.readBangumi = function(filePath) {
+    $scope.readBangumi = function(filePath, order, reverse) {
         ngProgressLite.start();
         $http.get(filePath)
             .success(function(data) {
-                $scope.bangumis = $scope.order(data, $scope.ordered, !$scope.reversed);
+                $scope.bangumis = $scope.order(data, order, reverse);
                 $scope.query.titleCN = '';
                 ngProgressLite.done();
             })
@@ -96,7 +96,7 @@ angular.module('BangumiList', ['ieFix', 'ngProgressLite'])
                 data[file].show = data[file].year == yearNow ? true : false;
             }
             $scope.archive = data;
-            $scope.readBangumi($scope.getJsonPath(yearNow, monthNow, data));
+            $scope.readBangumi($scope.getJsonPath(yearNow, monthNow, data), $scope.ordered, !$scope.reversed);
         })
         .error(function(data, status) {
             alert('读取archive.json出错\n错误代码:' + status + '\n请联系wxt2005#gmail.com\n或在Twitter上@wxt2005');

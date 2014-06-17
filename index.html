@@ -20,7 +20,8 @@
                             ng-click="file.show=!file.show">{{file.year}}年</span>
                         <ul class="month" ng-show="file.show===true">
                             <li ng-repeat="data in file.months" ng-hide="data.json===''||data.done===false" class-fix>
-                                <span class="pointer" ng-click="readBangumi(getJsonPath(file.year, data.month, archive));query.weekDayCN=undefined">{{data.month | monthCN}}</span>
+                                <span class="pointer" ng-class="{'read':(file.year===yearRead&&data.month===monthRead)}"
+                                    ng-click="readBangumi(getJsonPath(file.year, data.month, archive),'jp',false);query.weekDayCN=undefined">{{data.month | monthCN}}</span>
                             </li>
                         </ul>
                     </li>
@@ -29,7 +30,7 @@
             <ul id='nav'>
                 <li ng-repeat="nav in navList" ng-class="{'selected':$parent.query.weekDayCN===nav.index}" 
                     class-fix ng-click="$parent.query.titleCN='';$parent.query.weekDayCN=nav.index;
-                    order(bangumis, nav.order,false);">{{nav.name}}</li>
+                    order(bangumis,nav.order,false);">{{nav.name}}</li>
             </ul> 
             <table>
                 <colgroup>
