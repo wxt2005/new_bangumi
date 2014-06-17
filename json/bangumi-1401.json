@@ -149,19 +149,6 @@
     "newBgm": true
   },
   {
-    "titleCN": "闪电十一人GO：银河超新星",
-    "titleJP": "イナズマイレブンGO ギャラクシー",
-    "officalSite": "http://www.tv-tokyo.co.jp/anime/inazumago/",
-    "weekDayJP": 3,
-    "weekDayCN": 4,
-    "timeJP": "1827",
-    "timeCN": "",
-    "onAirSite": [
-      "http://www.bilibili.tv/sp/闪电十一人"
-    ],
-    "newBgm": false
-  },
-  {
     "titleCN": "圣灵破碎者",
     "titleJP": "ガイストクラッシャー",
     "officalSite": "http://gaist-anime.com/",

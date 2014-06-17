@@ -714,32 +714,6 @@
     "newBgm": true
   },
   {
-    "titleCN": "银之匙",
-    "titleJP": "銀の匙 Silver Spoon",
-    "officalSite": "http://www.ginsaji-anime.com/",
-    "weekDayJP": 3,
-    "weekDayCN": 4,
-    "timeJP": "0045",
-    "timeCN": "",
-    "onAirSite": [
-      "http://www.bilibili.tv/sp/银之匙%20SILVER%20SPOON"
-    ],
-    "newBgm": false
-  },
-  {
-    "titleCN": "丧女",
-    "titleJP": "私がモテないのはどう考えてもお前らが悪い！",
-    "officalSite": "http://www.watamote.jp/",
-    "weekDayJP": 1,
-    "weekDayCN": 2,
-    "timeJP": "0050",
-    "timeCN": "",
-    "onAirSite": [
-      "http://www.bilibili.tv/sp/丧女"
-    ],
-    "newBgm": false
-  },
-  {
     "titleCN": "魔鬼恋人",
     "titleJP": "DIABOLIK LOVERS",
     "officalSite": "http://anime-dialover.com/",
