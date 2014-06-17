@@ -20,7 +20,7 @@
                             ng-click="file.show=!file.show">{{file.year}}年</span>
                         <ul class="month" ng-show="file.show===true">
                             <li ng-repeat="data in file.months" ng-hide="data.json===''||data.done===false" class-fix>
-                                <span class="pointer" ng-click="readBangumi(getJsonPath(file.year, data.month, archive))">{{data.month | monthCN}}</span>
+                                <span class="pointer" ng-click="readBangumi(getJsonPath(file.year, data.month, archive));query.weekDayCN=undefined">{{data.month | monthCN}}</span>
                             </li>
                         </ul>
                     </li>
@@ -28,7 +28,7 @@
             </div> 
             <ul id='nav'>
                 <li ng-repeat="nav in navList" ng-class="{'selected':$parent.query.weekDayCN===nav.index}" 
-                    class-fix ng-click="$parent.query={titleCN:undefined,weekDayCN:nav.index};
+                    class-fix ng-click="$parent.query.titleCN='';$parent.query.weekDayCN=nav.index;
                     order(bangumis, nav.order,false);">{{nav.name}}</li>
             </ul> 
             <table>
@@ -42,7 +42,7 @@
                     <tr>
                         <th id="header" colspan="2">{{yearRead}}年{{monthRead}}月番组</th>
                         <th id="search" colspan="2">搜索：<input ng-model="query.titleCN" 
-                            ng-keydown="query.weekDayCN = undefined"></th>
+                            ng-keydown="query.weekDayCN=undefined"></th>
                     </tr>
                     <tr>
                         <th>作品名</th>
