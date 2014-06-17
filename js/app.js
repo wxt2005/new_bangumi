@@ -74,6 +74,7 @@ angular.module('BangumiList', ['ieFix', 'ngProgressLite'])
         $http.get(filePath)
             .success(function(data) {
                 $scope.bangumis = $scope.order(data, $scope.ordered, !$scope.reversed);
+                $scope.query.titleCN = '';
                 ngProgressLite.done();
             })
             .error(function(data, status) {
