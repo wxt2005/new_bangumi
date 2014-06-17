@@ -257,6 +257,10 @@ div#sidebar li.year span {
     background-color: #cde6c7;
 }
 
+div#sidebar li.year span.read::before {
+    content:"\02C3\00A0\00A0";
+}
+
 div#sidebar li.year ul.month li span {
     border-top: 1px solid #cde6c7;
     text-align: right;
