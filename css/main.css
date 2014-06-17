@@ -58,7 +58,7 @@ table {
     border-collapse: collapse;
     margin-left: auto;
     margin-right: auto;
-    width: 750px;
+    width: 800px;
     border: 2px solid #7fb80e;
     table-layout: fixed;
     line-height: 1.6;
@@ -95,8 +95,13 @@ table tbody td a.new::after {
     color: gray;
     font-weight: normal;
     vertical-align: super;
+    position: absolute;
 }
 
+table tbody td a.even-site::after {
+    content: "\0000A";
+    white-space: pre;
+}
 table tbody tr.color {
     background-color: #f6f5ec;
 }
@@ -174,7 +179,7 @@ table span.hide {
 ul#nav {
     margin-left: auto;
     margin-right: auto;
-    width: 750px;
+    width: 800px;
     zoom: 1;
     overflow: hidden;
 }
