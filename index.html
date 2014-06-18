@@ -3,6 +3,11 @@
     <head>
         <meta charset="utf-8">
         <title>番组放送</title>
+        <script type="text/javascript">
+            if (location.href == "http://wxt2005.github.io/new_bangumi/") {
+                window.location.replace("http://bgmlist.com/");
+            }
+        </script>
         <link type="text/css" rel="stylesheet" href="css/main.min.css">
         <link type="text/css" rel="stylesheet" href="css/ngprogress-lite.min.css">
         <!--[if lte IE 7]><script type="text/javascript" src="js/json2.min.js"></script><![endif]-->
@@ -63,7 +68,7 @@
                         ng-class-even="'color'" class-fix>
                         <td>
                             <a href="{{item.officalSite}}" ng-class="{'new':item.newBgm}" class-fix>
-                            {{item.titleCN}}<span span-fix>{{item.titleJP}}</span></a>
+                                {{item.titleCN}}<span span-fix>{{item.titleJP}}</span></a>
                         </td>
                         <td>{{item.weekDayJP | weekday}} {{item.timeJP | time}}</td>
                         <td>{{item.weekDayCN | weekday}} {{item.timeCN | time}}</td>
