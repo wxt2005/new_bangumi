@@ -28,6 +28,19 @@
     "newBgm": true
   },
   {
+    "titleCN": "Lady 宝石宠物",
+    "titleJP": "レディ ジュエルペット",
+    "officalSite": "http://www.tv-tokyo.co.jp/anime/jewelpet6/",
+    "weekDayJP": 6,
+    "weekDayCN": 6,
+    "timeJP": "0730",
+    "timeCN": "",
+    "onAirSite": [
+      "http://www.bilibili.com/sp/宝石宠物#S-894"
+    ],
+    "newBgm": true
+  },
+  {
     "titleCN": "Happiness Charge Precure!",
     "titleJP": "ハピネスチャージプリキュア！",
     "officalSite": "http://www.toei-anim.co.jp/tv/happinesscharge_precure/",
@@ -616,10 +629,11 @@
     "titleJP": "HUNTER×HUNTER",
     "officalSite": "http://www.ntv.co.jp/hunterhunter/",
     "weekDayJP": 3,
-    "weekDayCN": 4,
+    "weekDayCN": 3,
     "timeJP": "0029",
-    "timeCN": "",
+    "timeCN": "0400",
     "onAirSite": [
+      "http://tv.sohu.com/s2012/hunter/",
       "http://www.bilibili.tv/sp/全职猎人"
     ],
     "newBgm": false
