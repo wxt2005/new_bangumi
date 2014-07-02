@@ -76,12 +76,12 @@ table {
 }
 
 table col#name {
-    width: 52%;
+    width: 50%;
 }
 
 table col#time-jp, 
 table col#time-cn {
-    width: 16%;
+    width: 15%;
 }
 
 table thead th {
@@ -109,10 +109,6 @@ table tbody td a.new:after {
     position: absolute;
 }
 
-table tbody td a.even-site:after {
-    content: "\0000A";
-    white-space: pre;
-}
 table tbody tr.color {
     background-color: #f6f5ec;
 }
@@ -165,6 +161,29 @@ table tbody tr td:first-child a {
 
 table tbody tr td:last-child {
     padding: 0 10px;
+    text-align: center;
+    font-size: 15px;
+}
+
+table tbody #link-list ul {
+    text-align: center;
+}
+
+table tbody #link-list li {
+    display: inline-block;
+}
+
+/*fix lte IE 7 inline block bug*/
+table tbody #link-list li {
+    *display: inline;
+}
+
+table tbody #link-list li:after {
+    content: "\007C\00A0";
+}
+
+table tbody #link-list .lastLink:after {
+    content: "";
 }
 
 table tbody tr td:first-child a span {

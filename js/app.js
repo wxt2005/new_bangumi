@@ -166,27 +166,27 @@ angular.module('BangumiList', ['ieFix', 'ngProgressLite'])
     return function(link) {
         switch (link.match(re)[1].toLowerCase()) {
             case 'youku':
-                return '优酷 ';     
+                return '优酷';     
             case 'sohu':
-                return '搜狐 ';
+                return '搜狐';
             case 'qq':
-                return '腾讯 ';
+                return '腾讯';
             case 'iqiyi':
-                return '爱奇艺 ';
+                return '爱奇艺';
             case 'letv':
-                return '乐视 ';
+                return '乐视';
             case 'pptv':
-                return 'PPTV ';
+                return 'PPTV';
             case 'tudou':
-                return '土豆 ';
+                return '土豆';
             case 'bilibili':
-                return 'B站 ';
+                return 'B站';
             case 'acfun':
-                return 'A站 ';
+                return 'A站';
             case 'movie':
-                return '迅雷 ';
+                return '迅雷';
             default:
-                return '未知 ';
+                return '未知';
         }
     };
 });
