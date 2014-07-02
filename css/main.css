@@ -34,6 +34,17 @@ a:focus, a:hover, a:active {
     color: #5dafe9;
 }
 
+input[type=search] {
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box;
+    font-family: inherit;
+    font-size: 100%;
+}
+
+input:-webkit-search-decoration {
+    display: none;
+}
+
 span.pointer {
     color: black;
     cursor: pointer;
@@ -88,7 +99,7 @@ table tbody td {
     height: 28px;
 }
 
-table tbody td a.new::after {
+table tbody td a.new:after {
     content: "\00A0\00A0new";
     font-size: 10px;
     font-family: sans-serif;
@@ -98,7 +109,7 @@ table tbody td a.new::after {
     position: absolute;
 }
 
-table tbody td a.even-site::after {
+table tbody td a.even-site:after {
     content: "\0000A";
     white-space: pre;
 }
@@ -123,16 +134,21 @@ table thead th#header {
 
 table thead th#search {
     background-color: #7fb80e;
-    text-align: right;
+    text-align: center;
     font-size: 16px;
-    padding-right: 20px;
     border-left: 2px solid #7fb80e;
 }
 
 table thead th#search input {
     vertical-align: baseline;
     width: 150px;
+    height: 25px;
     font-size: 16px;
+    background-image: url("../images/search-icon.png");
+    background-repeat: no-repeat;
+    background-position: 2% 50%;
+    padding-left: 25px;
+    line-height: 25px;
 }
 
 table tbody tr {
@@ -257,7 +273,7 @@ div#sidebar li.year span {
     background-color: #cde6c7;
 }
 
-div#sidebar li.year span.read::before {
+div#sidebar li.year span.read:before {
     content:"\02C3\00A0\00A0";
 }
 

@@ -47,8 +47,10 @@
                 <thead>
                     <tr>
                         <th id="header" colspan="2">{{yearRead}}年{{monthRead}}月番组</th>
-                        <th id="search" colspan="2">搜索：<input ng-model="query.titleCN" 
-                            ng-keydown="query.weekDayCN=undefined"></th>
+                        <th id="search" colspan="2">
+                            <input type="search" ng-model="query.titleCN" placeholder="搜索本月番组"
+                            ng-keydown="query.weekDayCN=undefined">
+                        </th>
                     </tr>
                     <tr>
                         <th>作品名</th>
