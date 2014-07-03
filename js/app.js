@@ -1,5 +1,10 @@
 'use strict';
 
+function getDomain(url) {
+    var re = /^https{0,}:\/\/\w+\.(\w+)\.\w+/i;
+    return url.match(re)[1].toLowerCase();
+}
+
 angular.module('BangumiList', ['ieFix', 'ngProgressLite'])
 .controller('ListController', ['$scope', '$http', 'ngProgressLite', function($scope, $http, ngProgressLite) {
     var dateNow, weekDayNow, yearNow, monthNow;
@@ -162,9 +167,8 @@ angular.module('BangumiList', ['ieFix', 'ngProgressLite'])
 
 //filter used to format bangumi link
 .filter('onair', function() {
-    var re = /^https{0,}:\/\/\w+\.(\w+)\.\w+/i;
     return function(link) {
-        switch (link.match(re)[1].toLowerCase()) {
+        switch (getDomain(link)) {
             case 'youku':
                 return '优酷';     
             case 'sohu':
@@ -188,6 +192,23 @@ angular.module('BangumiList', ['ieFix', 'ngProgressLite'])
             default:
                 return '未知';
         }
+    };
+})
+
+.filter('orderLink', function() {
+    return function(array) {
+        array.sort(function(a, b) {
+            a = getDomain(a);
+            b = getDomain(b);
+            if (a < b) {
+                return -1;
+            } else if (a > b) {
+                return 1;
+            } else {
+                return 0;
+            }
+        });
+        return array;
     };
 });
 

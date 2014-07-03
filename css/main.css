@@ -107,6 +107,8 @@ table tbody td a.new:after {
     font-weight: normal;
     vertical-align: super;
     position: absolute;
+    top: 0;
+    left: 100%;
 }
 
 table tbody tr.color {
@@ -179,7 +181,8 @@ table tbody #link-list li {
 }
 
 table tbody #link-list li:after {
-    content: "\007C\00A0";
+    content: "\00A0\007C\00A0";
+    vertical-align: 6%;
 }
 
 table tbody #link-list .lastLink:after {
