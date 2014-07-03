@@ -304,6 +304,8 @@ div#sidebar li.year ul.month li span {
     text-align: right;
     background-color: #eee;
     font-size: 13px;
+    line-height: 22px;
+    height: 22px;
     margin: 0 10px;
 }
 
