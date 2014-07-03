@@ -17,8 +17,7 @@
             <img src="images/no-js.gif" alt="没有打开Javascript！">
             <p style="text-align:center;">请打开javascript支持以显示本页面</p>
         </noscript>
-        <div id="container">
-            <div class="sidebar">
+        <div class="sidebar">
             <div id="archive">
                 <h3>归档</h3>
                 <ul>
@@ -37,7 +36,7 @@
                 <h3>选项</h3>
                 <ul>
                     <li class="s-title"><span class="pointer" ng-init="display.show=false"
-                        ng-click="display.show=!display.show">显示</span>
+                            ng-click="display.show=!display.show">显示</span>
                         <ul class="s-items" ng-show="display.show===true" class-fix>
                             <li class="display">
                                 <label><input type="checkbox" ng-model="query.newBgm" 
@@ -47,7 +46,7 @@
                         </ul>
                     </li>
                     <li class="s-title"><span class="pointer" ng-init="sites.show=false"
-                        ng-click="sites.show=!sites.show">站点</span>
+                            ng-click="sites.show=!sites.show">站点</span>
                         <ul class="s-items" ng-show="sites.show===true" class-fix>
                             <li ng-repeat="airSite in siteList" class="sites">
                                 <label><input type="checkbox" ng-model="airSite.show" 
@@ -57,10 +56,11 @@
                     </li>
                 </ul>
             </div>
-
         </div>
-                        <ul id='nav'>
-                <li ng-repeat="nav in navList" ng-class="{'selected':$parent.query.weekDayCN===nav.index}" 
+        <div id="container">
+            <ul id='nav'>
+                <li ng-repeat="nav in navList" 
+                    ng-class="{'selected':$parent.query.weekDayCN===nav.index}" 
                     class-fix ng-click="$parent.query.titleCN='';$parent.query.weekDayCN=nav.index;
                     order(bangumis,nav.order,false);">{{nav.name}}</li>
             </ul> 
