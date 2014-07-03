@@ -409,11 +409,13 @@
     "titleJP": "Free!-Eternal Summer-",
     "officalSite": "http://iwatobi-sc.com/",
     "weekDayJP": 3,
-    "weekDayCN": 4,
+    "weekDayCN": 3,
     "timeJP": "2300",
-    "timeCN": "",
+    "timeCN": "2330",
     "onAirSite": [
-      "http://www.youku.com/show_page/id_zeacf9a46b25e11e38b3f.html"
+      "http://www.youku.com/show_page/id_zeacf9a46b25e11e38b3f.html",
+      "http://www.bilibili.com/sp/FREE%21",
+      "http://www.acfun.com/a/aa2646"
     ],
     "newBgm": true
   },
@@ -450,8 +452,12 @@
     "weekDayJP": 3,
     "weekDayCN": 4,
     "timeJP": "2230",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0000",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrgiff91.html",
+      "http://www.bilibili.com/sp/幕末ROCK",
+      "http://www.acfun.com/a/aa2647"
+    ],
     "newBgm": true
   },
   {
@@ -867,14 +873,17 @@
     "newBgm": true
   },
   {
-    "titleCN": "漫研社 2期",
+    "titleCN": "漫研部 ~妄想Catastrophe~",
     "titleJP": "あいまいみー ～妄想カタストロフ～",
     "officalSite": "http://www.dreamcreation.co.jp/aimaimi/",
     "weekDayJP": 2,
     "weekDayCN": 3,
     "timeJP": "2125",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.bilibili.com/sp/漫研部",
+      "http://www.acfun.com/a/aa2687"
+    ],
     "newBgm": true
   },
   {

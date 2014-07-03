@@ -76,7 +76,9 @@
                         <td>{{item.weekDayCN | weekday}} {{item.timeCN | time}}</td>
                         <td>
                             <ul id="link-list">
-                                <li ng-repeat="site in item.onAirSite" ng-class="{'lastLink':$last}"><a href="{{site}}">{{site | onair}}&#160;</a></li> 
+                                <li ng-repeat="site in item.onAirSite | orderLink" 
+                                    ng-class="{'lastLink':$last}">
+                                    <a href="{{site}}">{{site | onair}}</a></li>
                             </ul>    
                             <p ng-show="item.onAirSite.length===0" style="color:gray" class-fix>暂无</p>
                         </td>
