@@ -13,12 +13,12 @@
             <p style="text-align:center;">请打开javascript支持以显示本页面</p>
         </noscript>
         <div id="container" ng-cloak>
-            <div id="sidebar">
+            <div id="archive" class="sidebar">
                 <h3>归档</h3>
                 <ul>
-                    <li class="year" ng-repeat="file in archive"><span class="pointer" 
+                    <li class="s-title" ng-repeat="file in archive"><span class="pointer" 
                             ng-click="file.show=!file.show">{{file.year}}年</span>
-                        <ul class="month" ng-show="file.show===true">
+                        <ul class="s-items" ng-show="file.show===true">
                             <li ng-repeat="data in file.months" ng-hide="data.json===''||data.done===false" class-fix>
                                 <span class="pointer" ng-class="{'read':(file.year===yearRead&&data.month===monthRead)}"
                                     ng-click="readBangumi(getJsonPath(file.year, data.month, archive),'jp',false);query.weekDayCN=undefined">{{data.month | monthCN}}</span>
@@ -27,6 +27,28 @@
                     </li>
                 </ul>
             </div> 
+            <div class="sidebar" id="option">
+                <h3>选项</h3>
+                <ul>
+                    <li class="s-title"><span class="pointer" ng-init="display.show=true"
+                        ng-click="display.show=!display.show">显示</span>
+                        <ul class="s-items" ng-show="display.show===true">
+                            <li>
+                                <label><input type="checkbox" ng-model="query.newBgm" 
+                                    ng-true-value="true" ng-false-value=""> 仅显示新番</label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="s-title"><span class="pointer" ng-init="sites.show=true"
+                        ng-click="sites.show=!sites.show">站点</span>
+                        <ul class="s-items" ng-show="sites.show===true">
+                            <li ng-repeat="airSite in siteList">
+                                <label><input type="checkbox">{{airSite.name}}</label>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
             <ul id='nav'>
                 <li ng-repeat="nav in navList" ng-class="{'selected':$parent.query.weekDayCN===nav.index}" 
                     class-fix ng-click="$parent.query.titleCN='';$parent.query.weekDayCN=nav.index;
@@ -71,7 +93,7 @@
                         <td>{{item.weekDayCN | weekday}} {{item.timeCN | time}}</td>
                         <td>
                             <ul id="link-list">
-                                <li ng-repeat="site in item.onAirSite | orderLink" 
+                                <li ng-repeat="site in item.onAirSite | filter:siteQuery | orderLink" 
                                     ng-class="{'lastLink':$last}">
                                     <a href="{{site}}">{{site | onair}}</a></li>
                             </ul>    

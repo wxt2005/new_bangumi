@@ -12,6 +12,7 @@ angular.module('BangumiList', ['ieFix', 'ngProgressLite'])
     $scope.reversed = true;
     $scope.ordered = 'cn';
     $scope.navList = [{name: '星期一', index: 1, order: 'cn'}, {name: '星期二', index: 2, order: 'cn'}, {name: '星期三', index: 3, order: 'cn'}, {name: '星期四', index: 4, order: 'cn'}, {name: '星期五', index: 5, order: 'cn'}, {name: '星期六', index: 6, order: 'cn'}, {name: '星期日', index: 0, order: 'cn'}, {name: '全部', index: undefined, order: 'jp'}];
+    $scope.siteList = [{name: 'A站', domain: 'acfun'}, {name: 'B站', domain: 'bilibili'}, {name: '搜狐', domain: 'sohu'}, {name: '优酷', domain: 'youku'}, {name: '腾讯', domain: 'qq'}, {name: '爱奇艺', domain: 'iqiyi'}, {name: '乐视', domain: 'letv'}, {name: 'PPTV', domain: 'pptv'}, {name:'土豆', domain: 'tudou'}, {name: '迅雷', domain: 'movie'}];
     
     //order bangumi list
     $scope.order = function(items, target, reverseFlag) {

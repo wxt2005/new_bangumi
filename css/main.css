@@ -261,12 +261,11 @@ p#footer a:active {
     text-decoration: underline;
 }
 
-div#sidebar {
+div.sidebar {
     position: absolute;
-    width: 80px;
+    width: 100px;
     padding: 0 5px;
     border: 2px solid #7fb80e;
-    left: 20px;
     top: 32px;
     display: none;
     /*IE hack*/
@@ -274,29 +273,37 @@ div#sidebar {
     _display: none;
 }
 
-div#sidebar h3 {
+div.sidebar#archive {
+    left: 20px;
+}
+
+div.sidebar#option {
+    right: 20px;
+}
+
+div.sidebar h3 {
     text-align: center;
     font-size: 20px;
     margin: 5px 0;
 }
 
 
-div#sidebar li.year {
+div.sidebar li.s-title {
     font-size: 16px;
     margin-bottom: 10px;
     border: 2px solid #cde6c7;
     text-align: center;
 }
 
-div#sidebar li.year span {
+div.sidebar li.s-title span {
     background-color: #cde6c7;
 }
 
-div#sidebar li.year span.read:before {
+div.sidebar li.s-title span.read:before {
     content:"\02C3\00A0\00A0";
 }
 
-div#sidebar li.year ul.month li span {
+div.sidebar li.s-title ul.s-items li span {
     border-top: 1px solid #cde6c7;
     text-align: right;
     background-color: #eee;
@@ -305,8 +312,16 @@ div#sidebar li.year ul.month li span {
     height: 22px;
     margin: 0 10px;
 }
+div.sidebar#option li.s-title ul.s-items li {
+    text-align: left;
+    padding-left: 10px;
+}
 
-div#sidebar li.year ul.month li:first-child {
+div.sidebar li.s-title ul.s-items li label {
+    font-size: 12px;
+}
+
+div.sidebar li.s-title ul.s-items li:first-child {
     border-top: none;
 }
 
@@ -315,7 +330,7 @@ div#sidebar li.year ul.month li:first-child {
         width: 1080px;
     }
 
-    div#sidebar { 
+    div.sidebar { 
         display: block; 
     }
 }
