@@ -30,20 +30,22 @@
             <div class="sidebar" id="option">
                 <h3>选项</h3>
                 <ul>
-                    <li class="s-title"><span class="pointer" ng-init="display.show=true"
+                    <li class="s-title"><span class="pointer" ng-init="display.show=false"
                         ng-click="display.show=!display.show">显示</span>
                         <ul class="s-items" ng-show="display.show===true">
                             <li>
                                 <label><input type="checkbox" ng-model="query.newBgm" 
-                                    ng-true-value="true" ng-false-value=""> 仅显示新番</label>
+                                    ng-change="ipCookie('newOnly',query.newBgm,{expires:365})" 
+                                    ng-false-value=""> 仅显示新番</label>
                             </li>
                         </ul>
                     </li>
-                    <li class="s-title"><span class="pointer" ng-init="sites.show=true"
+                    <li class="s-title"><span class="pointer" ng-init="sites.show=false"
                         ng-click="sites.show=!sites.show">站点</span>
                         <ul class="s-items" ng-show="sites.show===true">
                             <li ng-repeat="airSite in siteList">
-                                <label><input type="checkbox" ng-model="airSite.show">{{airSite.name}}</label>
+                                <label><input type="checkbox" ng-model="airSite.show" 
+                                    ng-change="ipCookie(airSite.domain,airSite.show,{expires:365})">{{airSite.name}}</label>
                             </li>
                         </ul>
                     </li>
@@ -109,6 +111,7 @@
             </p>
         </div>
         <script type="text/javascript" src="js/angular.min.js"></script> 
+        <script type="text/javascript" src="js/angular-cookie.min.js"></script> 
         <script type="text/javascript" src="js/app.js"></script> 
         <script type="text/javascript" src="js/iefix.js"></script> 
         <script type="text/javascript" src="js/ngprogress-lite.min.js"></script> 

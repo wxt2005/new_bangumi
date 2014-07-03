@@ -314,11 +314,24 @@ div.sidebar li.s-title ul.s-items li span {
 }
 div.sidebar#option li.s-title ul.s-items li {
     text-align: left;
-    padding-left: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+    line-height: 30px;
+    height: 30px;
+}
+
+div.sidebar li.s-title ul.s-items li input {
+    margin-right: 5px;
 }
 
 div.sidebar li.s-title ul.s-items li label {
     font-size: 12px;
+    border-top: 1px solid #cde6c7;
+    display: block;
+}
+
+div.sidebar li.s-title ul.s-items li:first-child label {
+    border-top: none;
 }
 
 div.sidebar li.s-title ul.s-items li:first-child {

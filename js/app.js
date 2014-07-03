@@ -5,15 +5,30 @@ function getDomain(url) {
     return url.match(re)[1].toLowerCase();
 }
 
-angular.module('BangumiList', ['ieFix', 'ngProgressLite'])
-.controller('ListController', ['$scope', '$http', 'ngProgressLite', function($scope, $http, ngProgressLite) {
+angular.module('BangumiList', ['ieFix', 'ngProgressLite', 'ipCookie'])
+.controller('ListController', ['$scope', '$http', 'ngProgressLite', 'ipCookie', function($scope, $http, ngProgressLite, ipCookie) {
     var dateNow, weekDayNow, yearNow, monthNow;
 
+    $scope.ipCookie = ipCookie;
     $scope.reversed = true;
     $scope.ordered = 'cn';
     $scope.navList = [{name: '星期一', index: 1, order: 'cn'}, {name: '星期二', index: 2, order: 'cn'}, {name: '星期三', index: 3, order: 'cn'}, {name: '星期四', index: 4, order: 'cn'}, {name: '星期五', index: 5, order: 'cn'}, {name: '星期六', index: 6, order: 'cn'}, {name: '星期日', index: 0, order: 'cn'}, {name: '全部', index: undefined, order: 'jp'}];
     $scope.siteList = [{name: 'A站', domain: 'acfun', show: true}, {name: 'B站', domain: 'bilibili', show: true}, {name: '搜狐', domain: 'sohu', show: true}, {name: '优酷', domain: 'youku', show: true}, {name: '腾讯', domain: 'qq', show: true}, {name: '爱奇艺', domain: 'iqiyi', show: true}, {name: '乐视', domain: 'letv', show: true}, {name: 'PPTV', domain: 'pptv', show: true}, {name:'土豆', domain: 'tudou', show: true}, {name: '迅雷', domain: 'movie', show: true}];
+    $scope.query = {};
     
+    //use cookie to change siteList
+    $scope.getSiteCookie = function(siteList) {
+        return siteList.map(function(site) {
+            var value = ipCookie(site.domain);
+            if (value!==undefined) {
+                site.show = value;
+            }
+           return site; 
+        });
+    };
+    $scope.siteList = $scope.getSiteCookie($scope.siteList);
+    $scope.query.newBgm = ipCookie('newOnly');
+
     //order bangumi list
     $scope.order = function(items, target, reverseFlag) {
         var weekDay = 'weekDay' + target.toUpperCase(),
@@ -96,7 +111,7 @@ angular.module('BangumiList', ['ieFix', 'ngProgressLite'])
             weekDayNow = dateNow.getDay();
             yearNow = dateNow.getFullYear();
             monthNow = dateNow.getMonth() + 1;
-            $scope.query = {weekDayCN: weekDayNow};
+            $scope.query.weekDayCN = weekDayNow;
 
             for (var file in data) {
                 data[file].show = data[file].year == yearNow ? true : false;
