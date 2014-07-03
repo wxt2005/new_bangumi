@@ -106,9 +106,6 @@ table tbody td a.new:after {
     color: gray;
     font-weight: normal;
     vertical-align: super;
-    position: absolute;
-    top: 0;
-    left: 100%;
 }
 
 table tbody tr.color {
