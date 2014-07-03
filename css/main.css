@@ -261,42 +261,51 @@ p#footer a:active {
     text-decoration: underline;
 }
 
-div#sidebar {
+div.sidebar {
     position: absolute;
-    width: 80px;
-    padding: 0 5px;
-    border: 2px solid #7fb80e;
-    left: 20px;
+    width: 100px;
     top: 32px;
     display: none;
     /*IE hack*/
     display: block\9;
     _display: none;
+    left: 20px;
 }
 
-div#sidebar h3 {
+div.sidebar #archive,
+div.sidebar #option {
+    border: 2px solid #7fb80e;
+}
+
+div.sidebar #option {
+    margin-top: 15px;
+}
+
+div.sidebar h3 {
     text-align: center;
     font-size: 20px;
     margin: 5px 0;
 }
 
 
-div#sidebar li.year {
+div.sidebar li.s-title {
     font-size: 16px;
+    padding: 0 5px;
     margin-bottom: 10px;
-    border: 2px solid #cde6c7;
     text-align: center;
 }
 
-div#sidebar li.year span {
+div.sidebar li.s-title span {
     background-color: #cde6c7;
+    height: 25px;
+    line-height: 25px;
 }
 
-div#sidebar li.year span.read:before {
+div.sidebar li.s-title span.read:before {
     content:"\02C3\00A0\00A0";
 }
 
-div#sidebar li.year ul.month li span {
+div.sidebar li.s-title ul.s-items li span {
     border-top: 1px solid #cde6c7;
     text-align: right;
     background-color: #eee;
@@ -306,8 +315,36 @@ div#sidebar li.year ul.month li span {
     margin: 0 10px;
 }
 
-div#sidebar li.year ul.month li:first-child {
+div.sidebar li.s-title ul.s-items li input {
+    margin-right: 3px;
+}
+
+div.sidebar li.s-title ul.s-items li label {
+    font-size: 12px;
+    border-top: 1px solid #cde6c7;
+    display: block;
+}
+
+div.sidebar li.s-title ul.s-items li:first-child label {
     border-top: none;
+}
+
+div.sidebar li.s-title ul.s-items li:first-child {
+    border-top: none;
+}
+
+div.sidebar #option li.s-title ul.s-items li {
+    text-align: left;
+    line-height: 30px;
+    height: 30px;
+}
+
+div.sidebar #option li.s-title ul.s-items li.sites {
+    padding-left: 10px;
+}
+
+div.sidebar #option li.s-title ul.s-items li.display input {
+    margin: 0;
 }
 
 @media screen and (min-width: 960px) {
@@ -315,7 +352,7 @@ div#sidebar li.year ul.month li:first-child {
         width: 1080px;
     }
 
-    div#sidebar { 
+    div.sidebar { 
         display: block; 
     }
 }

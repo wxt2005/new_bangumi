@@ -773,8 +773,10 @@
     "weekDayJP": 4,
     "weekDayCN": 5,
     "timeJP": "2350",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0030",
+    "onAirSite": [
+      "http://comic.letv.com/zt/djcx/index.shtml"
+    ],
     "newBgm": true
   },
   {

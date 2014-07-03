@@ -3,21 +3,6 @@
         "year": 2013,
         "months": [
             {
-                "month": 1,
-                "json": "",
-                "done": false
-            }, 
-            {
-                "month": 4,
-                "json": "",
-                "done": true
-            }, 
-                {
-                "month": 7,
-                "json": "",
-                "done": false
-            }, 
-            {
                 "month": 10,
                 "json": "json/bangumi-1310.json",
                 "done": true
@@ -41,12 +26,7 @@
                 "month": 7,
                 "json": "json/bangumi-1407.json",
                 "done": true
-            }, 
-            {
-                "month": 10,
-                "json": "",
-                "done": false
-            }
+            } 
         ]
     } 
 ]
