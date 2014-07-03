@@ -13,12 +13,13 @@
             <p style="text-align:center;">请打开javascript支持以显示本页面</p>
         </noscript>
         <div id="container" ng-cloak>
-            <div id="archive" class="sidebar">
+            <div class="sidebar">
+            <div id="archive">
                 <h3>归档</h3>
                 <ul>
                     <li class="s-title" ng-repeat="file in archive"><span class="pointer" 
-                            ng-click="file.show=!file.show">{{file.year}}年</span>
-                        <ul class="s-items" ng-show="file.show===true">
+                            ng-click="file.show=!file.show">{{file.year}}年({{file.months.length}})</span>
+                        <ul class="s-items" ng-show="file.show===true" class-fix>
                             <li ng-repeat="data in file.months" ng-hide="data.json===''||data.done===false" class-fix>
                                 <span class="pointer" ng-class="{'read':(file.year===yearRead&&data.month===monthRead)}"
                                     ng-click="readBangumi(getJsonPath(file.year, data.month, archive),'jp',false);query.weekDayCN=undefined">{{data.month | monthCN}}</span>
@@ -27,13 +28,13 @@
                     </li>
                 </ul>
             </div> 
-            <div class="sidebar" id="option">
+            <div id="option">
                 <h3>选项</h3>
                 <ul>
                     <li class="s-title"><span class="pointer" ng-init="display.show=false"
                         ng-click="display.show=!display.show">显示</span>
-                        <ul class="s-items" ng-show="display.show===true">
-                            <li>
+                        <ul class="s-items" ng-show="display.show===true" class-fix>
+                            <li class="display">
                                 <label><input type="checkbox" ng-model="query.newBgm" 
                                     ng-change="ipCookie('newOnly',query.newBgm,{expires:365})" 
                                     ng-false-value=""> 仅显示新番</label>
@@ -42,8 +43,8 @@
                     </li>
                     <li class="s-title"><span class="pointer" ng-init="sites.show=false"
                         ng-click="sites.show=!sites.show">站点</span>
-                        <ul class="s-items" ng-show="sites.show===true">
-                            <li ng-repeat="airSite in siteList">
+                        <ul class="s-items" ng-show="sites.show===true" class-fix>
+                            <li ng-repeat="airSite in siteList" class="sites">
                                 <label><input type="checkbox" ng-model="airSite.show" 
                                     ng-change="ipCookie(airSite.domain,airSite.show,{expires:365})">{{airSite.name}}</label>
                             </li>
@@ -51,7 +52,9 @@
                     </li>
                 </ul>
             </div>
-            <ul id='nav'>
+
+        </div>
+                        <ul id='nav'>
                 <li ng-repeat="nav in navList" ng-class="{'selected':$parent.query.weekDayCN===nav.index}" 
                     class-fix ng-click="$parent.query.titleCN='';$parent.query.weekDayCN=nav.index;
                     order(bangumis,nav.order,false);">{{nav.name}}</li>

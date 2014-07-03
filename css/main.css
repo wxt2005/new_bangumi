@@ -264,21 +264,21 @@ p#footer a:active {
 div.sidebar {
     position: absolute;
     width: 100px;
-    padding: 0 5px;
-    border: 2px solid #7fb80e;
     top: 32px;
     display: none;
     /*IE hack*/
     display: block\9;
     _display: none;
-}
-
-div.sidebar#archive {
     left: 20px;
 }
 
-div.sidebar#option {
-    right: 20px;
+div.sidebar #archive,
+div.sidebar #option {
+    border: 2px solid #7fb80e;
+}
+
+div.sidebar #option {
+    margin-top: 15px;
 }
 
 div.sidebar h3 {
@@ -290,13 +290,15 @@ div.sidebar h3 {
 
 div.sidebar li.s-title {
     font-size: 16px;
+    padding: 0 5px;
     margin-bottom: 10px;
-    border: 2px solid #cde6c7;
     text-align: center;
 }
 
 div.sidebar li.s-title span {
     background-color: #cde6c7;
+    height: 25px;
+    line-height: 25px;
 }
 
 div.sidebar li.s-title span.read:before {
@@ -312,16 +314,9 @@ div.sidebar li.s-title ul.s-items li span {
     height: 22px;
     margin: 0 10px;
 }
-div.sidebar#option li.s-title ul.s-items li {
-    text-align: left;
-    padding-left: 8px;
-    padding-right: 8px;
-    line-height: 30px;
-    height: 30px;
-}
 
 div.sidebar li.s-title ul.s-items li input {
-    margin-right: 5px;
+    margin-right: 3px;
 }
 
 div.sidebar li.s-title ul.s-items li label {
@@ -336,6 +331,20 @@ div.sidebar li.s-title ul.s-items li:first-child label {
 
 div.sidebar li.s-title ul.s-items li:first-child {
     border-top: none;
+}
+
+div.sidebar #option li.s-title ul.s-items li {
+    text-align: left;
+    line-height: 30px;
+    height: 30px;
+}
+
+div.sidebar #option li.s-title ul.s-items li.sites {
+    padding-left: 10px;
+}
+
+div.sidebar #option li.s-title ul.s-items li.display input {
+    margin: 0;
 }
 
 @media screen and (min-width: 960px) {
