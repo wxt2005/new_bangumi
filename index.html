@@ -43,7 +43,7 @@
                         ng-click="sites.show=!sites.show">站点</span>
                         <ul class="s-items" ng-show="sites.show===true">
                             <li ng-repeat="airSite in siteList">
-                                <label><input type="checkbox">{{airSite.name}}</label>
+                                <label><input type="checkbox" ng-model="airSite.show">{{airSite.name}}</label>
                             </li>
                         </ul>
                     </li>
@@ -93,7 +93,7 @@
                         <td>{{item.weekDayCN | weekday}} {{item.timeCN | time}}</td>
                         <td>
                             <ul id="link-list">
-                                <li ng-repeat="site in item.onAirSite | filter:siteQuery | orderLink" 
+                                <li ng-repeat="site in item.onAirSite | linkFilter:siteList" 
                                     ng-class="{'lastLink':$last}">
                                     <a href="{{site}}">{{site | onair}}</a></li>
                             </ul>    
