@@ -54,8 +54,12 @@
     "weekDayJP": 5,
     "weekDayCN": 6,
     "timeJP": "0046",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0115",
+    "onAirSite": [
+      "http://tv.sohu.com/s2014/railwars/",
+      "http://www.bilibili.com/sp/RAIL%20WARS%21%20-日本国有铁道公安队-",
+      "http://www.acfun.com/a/aa2652"
+    ],
     "newBgm": true
   },
   {
@@ -617,7 +621,10 @@
     "weekDayCN": 6,
     "timeJP": "0000",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.acfun.com/a/aa2654",
+      "http://www.bilibili.com/sp/STRANGE+#S-1022"
+    ],
     "newBgm": true
   },
   {
