@@ -26,10 +26,14 @@
     "titleJP": "グラスリップ",
     "officalSite": "http://glasslip.jp/",
     "weekDayJP": 4,
-    "weekDayCN": 5,
+    "weekDayCN": 4,
     "timeJP": "2130",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "2230",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrgif3ql.html",
+      "http://www.bilibili.com/sp/GLASSLIP",
+      "http://www.acfun.com/a/aa2650"
+    ],
     "newBgm": true
   },
   {
@@ -70,10 +74,14 @@
     "titleJP": "普通の女子校生が【ろこどる】やってみた。",
     "officalSite": "http://www.tbs.co.jp/anime/locodol/",
     "weekDayJP": 5,
-    "weekDayCN": 6,
+    "weekDayCN": 5,
     "timeJP": "0116",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0456",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrgif399.html",
+      "http://www.bilibili.com/sp/普通女高中生要做当地偶像",
+      "http://www.acfun.com/a/aa2653"
+    ],
     "newBgm": true
   },
   {
@@ -398,10 +406,14 @@
     "titleJP": "白銀の意思 アルジェヴォルン",
     "officalSite": "http://www.argevollen.com/",
     "weekDayJP": 4,
-    "weekDayCN": 5,
+    "weekDayCN": 4,
     "timeJP": "2200",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "2300",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrgif3l1.html",
+      "http://www.acfun.com/a/aa2649",
+      "http://www.bilibili.com/sp/白银的意志%20ARGEVOLLEN"
+    ],
     "newBgm": true
   },
   {
@@ -457,7 +469,9 @@
       "http://www.iqiyi.com/a_19rrgiff91.html",
       "http://www.bilibili.com/sp/幕末ROCK",
       "http://www.acfun.com/a/aa2647",
-      "http://www.letv.com/comic/10002832.html"
+      "http://www.letv.com/comic/10002832.html",
+      "http://www.youku.com/show_page/id_za737b9a0df2a11e38b3f.html",
+      "http://www.pptv.com/page/290009.html"
     ],
     "newBgm": true
   },
@@ -564,14 +578,18 @@
     "newBgm": false
   },
   {
-    "titleCN": "东京食尸鬼",
+    "titleCN": "东京喰种",
     "titleJP": "東京喰種トーキョーグール",
     "officalSite": "http://www.maql.co.jp/special/tokyoghoul/",
     "weekDayJP": 4,
     "weekDayCN": 5,
     "timeJP": "2300",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0000",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrgif5id.html",
+      "http://www.acfun.com/a/aa2651",
+      "http://www.bilibili.com/sp/东京食尸鬼"
+    ],
     "newBgm": true
   },
   {
