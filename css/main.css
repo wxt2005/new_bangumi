@@ -159,7 +159,7 @@ table tbody tr td:first-child a {
 }
 
 table tbody tr td:last-child {
-    padding: 0 10px;
+    padding: 0 5px;
     text-align: center;
     font-size: 15px;
 }
