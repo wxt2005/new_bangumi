@@ -588,7 +588,9 @@
     "onAirSite": [
       "http://www.iqiyi.com/a_19rrgif5id.html",
       "http://www.acfun.com/a/aa2651",
-      "http://www.bilibili.com/sp/东京食尸鬼"
+      "http://www.bilibili.com/sp/东京食尸鬼",
+      "http://tv.sohu.com/s2014/djsz/",
+      "http://v.qq.com/detail/d/dxxmvywtpp8nz70.html"
     ],
     "newBgm": true
   },
@@ -653,12 +655,13 @@
     "titleJP": "暴れん坊力士！！松太郎",
     "officalSite": "http://www.toei-anim.co.jp/tv/matsutaro/",
     "weekDayJP": 0,
-    "weekDayCN": 1,
+    "weekDayCN": 0,
     "timeJP": "0530",
     "timeCN": "",
     "onAirSite": [
       "http://www.bilibili.com/sp/相扑力士松太郎",
-      "http://www.acfun.com/a/aa1254"
+      "http://www.acfun.com/a/aa1254",
+      "http://tv.sohu.com/s2014/xplsstl/"
     ],
     "newBgm": false
   },
