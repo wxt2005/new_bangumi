@@ -40,7 +40,13 @@ angular.module('BangumiList', ['ieFix', 'ngProgressLite', 'ipCookie'])
 
         return items.sort(function(a, b) {
             if (a[weekDay] === b[weekDay]) {
-                return reverseFlag * (a[time] - b[time]);
+                if (a[time] === '') {
+                    return reverseFlag * -1;
+                } else if (b[time] === '') {
+                    return reverseFlag * 1;
+                } else {
+                    return reverseFlag * (a[time] - b[time]);
+                }
             } else {
                 return reverseFlag * ((a[weekDay] === 0 ? 7 : a[weekDay]) - 
                                         (b[weekDay] === 0 ? 7 : b[weekDay]));
