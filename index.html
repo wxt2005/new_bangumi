@@ -2,6 +2,8 @@
 <html id="ng-app" ng-app="BangumiList">
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <title>番组放送</title>
         <link type="text/css" rel="stylesheet" href="css/main.css">
         <link type="text/css" rel="stylesheet" href="css/ngprogress-lite.css">
@@ -94,8 +96,8 @@
                             <a href="{{item.officalSite}}" ng-class="{'new':item.newBgm}" class-fix>
                                 {{item.titleCN}}<span span-fix>{{item.titleJP}}</span></a>
                         </td>
-                        <td>{{item.weekDayJP | weekday}} {{item.timeJP | time}}</td>
-                        <td>{{item.weekDayCN | weekday}} {{item.timeCN | time}}</td>
+                        <td>{{item.weekDayJP | weekday}}&#160;&#160;{{item.timeJP | time}}</td>
+                        <td>{{item.weekDayCN | weekday}}&#160;&#160;{{item.timeCN | time}}</td>
                         <td>
                             <ul id="link-list">
                                 <li ng-repeat="site in item.onAirSite | linkFilter:siteList" 
