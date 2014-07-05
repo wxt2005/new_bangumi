@@ -955,5 +955,18 @@
       "http://www.acfun.com/a/aa254"
     ],
     "newBgm": false
+  },
+  {
+    "titleCN": "抓狂一族 2期",
+    "titleJP": "毎度!浦安鉄筋家族",
+    "officalSite": "http://www.akitashoten.co.jp/special/urayasu",
+    "weekDayJP": 0,
+    "weekDayCN": 0,
+    "timeJP": "2127",
+    "timeCN": "2230",
+    "onAirSite": [
+      "http://www.bilibili.com/sp/抓狂一族"
+    ],
+    "newBgm": true
   }
 ]
