@@ -6,8 +6,12 @@
     "weekDayJP": 0,
     "weekDayCN": 1,
     "timeJP": "0120",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0450",
+    "onAirSite": [
+      "http://www.iqiyi.com/v_19rrhkotbk.html?src=focustext_4_20130410_3",
+      "http://www.bilibili.com/sp/元气囝仔",
+      "http://www.acfun.com/a/aa3374#group=7"
+    ],
     "newBgm": true
   },
   {
@@ -15,10 +19,16 @@
     "titleJP": "戦国BASARA Judge End",
     "officalSite": "http://www.ntv.co.jp/basara_je/",
     "weekDayJP": 0,
-    "weekDayCN": 1,
+    "weekDayCN": 0,
     "timeJP": "0050",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0350",
+    "onAirSite": [
+      "http://www.youku.com/show_page/id_zf48c67d0d8ec11e3a705.html",
+      "http://www.iqiyi.com/v_19rrhkorto.html?src=focustext_4_20130410_5",
+      "http://v.pptv.com/show/g59591icFNXPWVLw.html",
+      "http://www.bilibili.com/sp/战国BASARA#S-1002",
+      "http://www.acfun.com/a/aa2663"
+    ],
     "newBgm": true
   },
   {
@@ -253,7 +263,8 @@
     "timeJP": "2230",
     "timeCN": "2235",
     "onAirSite": [
-      "http://comic.letv.com/zt/sao2/index.shtml"
+      "http://comic.letv.com/zt/sao2/index.shtml",
+      "http://www.bilibili.com/sp/刀剑神域"
     ],
     "newBgm": true
   },
@@ -354,7 +365,11 @@
     "weekDayCN": 0,
     "timeJP": "1930",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.youku.com/show_page/id_z4d1a493cdf2611e38b3f.html",
+      "http://www.bilibili.com/sp/少年好莱坞",
+      "http://www.acfun.com/a/aa3374#group=6"
+    ],
     "newBgm": true
   },
   {
@@ -390,8 +405,11 @@
     "weekDayJP": 6,
     "weekDayCN": 0,
     "timeJP": "2300",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0000",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrhzp0j8.html?src=focustext_4_20130410_1",
+      "http://www.bilibili.com/sp/ALDNOAH.ZERO"
+    ],
     "newBgm": true
   },
   {
