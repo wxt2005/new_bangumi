@@ -61,6 +61,7 @@ span.pointer:active {
 div#container {
     margin: 40px auto;
     width: auto;
+    min-width: 750px;
     /*IE hack*/
     width: 1080px\9;
 }
@@ -69,7 +70,7 @@ table {
     border-collapse: collapse;
     margin-left: auto;
     margin-right: auto;
-    width: 800px;
+    width: 750px;
     border: 2px solid #7fb80e;
     table-layout: fixed;
     line-height: 1.6;
@@ -81,7 +82,7 @@ table col#name {
 
 table col#time-jp, 
 table col#time-cn {
-    width: 15%;
+    width: 14%;
 }
 
 table thead th {
@@ -215,7 +216,7 @@ table span.hide {
 ul#nav {
     margin-left: auto;
     margin-right: auto;
-    width: 800px;
+    width: 750px;
     zoom: 1;
     overflow: hidden;
 }
@@ -271,7 +272,7 @@ div.sidebar {
     display: block\9;
     _display: none;
     right: 50%;
-    margin-right: 450px;
+    margin-right: 400px;
 }
 
 div.sidebar #archive,
@@ -349,9 +350,8 @@ div.sidebar #option li.s-title ul.s-items li.display input {
     margin: 0;
 }
 
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 1024px) {
     div.sidebar { 
         display: block; 
     }
 }
-

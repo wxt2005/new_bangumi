@@ -12,7 +12,7 @@ angular.module('BangumiList', ['ieFix', 'ngProgressLite', 'ipCookie'])
     $scope.ipCookie = ipCookie;
     $scope.reversed = true;
     $scope.ordered = 'cn';
-    $scope.navList = [{name: '星期一', index: 1, order: 'cn'}, {name: '星期二', index: 2, order: 'cn'}, {name: '星期三', index: 3, order: 'cn'}, {name: '星期四', index: 4, order: 'cn'}, {name: '星期五', index: 5, order: 'cn'}, {name: '星期六', index: 6, order: 'cn'}, {name: '星期日', index: 0, order: 'cn'}, {name: '全部', index: undefined, order: 'jp'}];
+    $scope.navList = [{name: '周一', index: 1, order: 'cn'}, {name: '周二', index: 2, order: 'cn'}, {name: '周三', index: 3, order: 'cn'}, {name: '周四', index: 4, order: 'cn'}, {name: '周五', index: 5, order: 'cn'}, {name: '周六', index: 6, order: 'cn'}, {name: '周日', index: 0, order: 'cn'}, {name: '全部', index: undefined, order: 'jp'}];
     $scope.siteList = [{name: 'A站', domain: 'acfun', show: true}, {name: 'B站', domain: 'bilibili', show: true}, {name: '搜狐', domain: 'sohu', show: true}, {name: '优酷', domain: 'youku', show: true}, {name: '腾讯', domain: 'qq', show: true}, {name: '爱奇艺', domain: 'iqiyi', show: true}, {name: '乐视', domain: 'letv', show: true}, {name: 'PPTV', domain: 'pptv', show: true}, {name:'土豆', domain: 'tudou', show: true}, {name: '迅雷', domain: 'movie', show: true}];
     $scope.query = {};
     
@@ -150,7 +150,7 @@ angular.module('BangumiList', ['ieFix', 'ngProgressLite', 'ipCookie'])
 
 //filter used to format weekday data
 .filter('weekday', function() {
-    var weekDayList = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+    var weekDayList = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
     return function(weekDayNum) {
         return weekDayList[weekDayNum];
     };
