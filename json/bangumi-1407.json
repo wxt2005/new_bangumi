@@ -4,11 +4,11 @@
     "titleJP": "ばらかもん",
     "officalSite": "http://www.barakamon.jp/",
     "weekDayJP": 0,
-    "weekDayCN": 1,
+    "weekDayCN": 0,
     "timeJP": "0120",
     "timeCN": "0450",
     "onAirSite": [
-      "http://www.iqiyi.com/v_19rrhkotbk.html?src=focustext_4_20130410_3",
+      "http://www.iqiyi.com/a_19rrgif715.html",
       "http://www.bilibili.com/sp/元气囝仔",
       "http://www.acfun.com/a/aa3374#group=7"
     ],
@@ -103,10 +103,14 @@
     "titleJP": "スペース☆ダンディ シーズン2",
     "officalSite": "http://space-dandy.com/",
     "weekDayJP": 0,
-    "weekDayCN": 1,
+    "weekDayCN": 0,
     "timeJP": "2200",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "2200",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrgif9il.html",
+      "http://www.bilibili.com/sp/SPACE☆DANDY",
+      "http://www.acfun.com/a/aa2666"
+    ],
     "newBgm": true
   },
   {
@@ -332,7 +336,9 @@
     "weekDayCN": 1,
     "timeJP": "1828",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.acfun.com/a/aa2669"
+    ],
     "newBgm": true
   },
   {
@@ -364,7 +370,7 @@
     "weekDayJP": 6,
     "weekDayCN": 0,
     "timeJP": "1930",
-    "timeCN": "",
+    "timeCN": "0130",
     "onAirSite": [
       "http://www.youku.com/show_page/id_z4d1a493cdf2611e38b3f.html",
       "http://www.bilibili.com/sp/少年好莱坞",
@@ -417,10 +423,14 @@
     "titleJP": "人生相談テレビアニメーション「人生」",
     "officalSite": "http://www.vap.co.jp/jinsei/",
     "weekDayJP": 0,
-    "weekDayCN": 1,
+    "weekDayCN": 0,
     "timeJP": "2100",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "2330",
+    "onAirSite": [
+      "http://v.pptv.com/show/y1M9uyOJibTeaGIA.html",
+      "http://www.acfun.com/a/aa2675",
+      "http://www.bilibili.com/sp/人生"
+    ],
     "newBgm": true
   },
   {
@@ -548,8 +558,13 @@
     "weekDayJP": 0,
     "weekDayCN": 1,
     "timeJP": "2300",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0000",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrgif6md.html",
+      "http://tv.sohu.com/s2014/zchzt/",
+      "http://www.bilibili.com/sp/斩·赤红之瞳！",
+      "http://www.acfun.com/a/aa2667"
+    ],
     "newBgm": true
   },
   {
@@ -560,7 +575,10 @@
     "weekDayCN": 1,
     "timeJP": "2130",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.bilibili.com/sp/生存游戏社！",
+      "http://www.acfun.com/a/aa2665"
+    ],
     "newBgm": true
   },
   {
@@ -717,11 +735,15 @@
     "titleJP": "月刊少女野崎くん",
     "officalSite": "http://nozakikun.tv/",
     "weekDayJP": 1,
-    "weekDayCN": 2,
+    "weekDayCN": 1,
     "timeJP": "0005",
-    "timeCN": "",
+    "timeCN": "0105",
     "onAirSite": [
-      "http://www.youku.com/show_page/id_zdde1b9beb26211e3b8b7.html"
+      "http://www.youku.com/show_page/id_zdde1b9beb26211e3b8b7.html",
+      "http://www.letv.com/comic/10002971.html",
+      "http://www.acfun.com/a/aa2670",
+      "http://www.bilibili.com/sp/月刊少女野崎君",
+      "http://www.iqiyi.com/a_19rrgif6ex.html"
     ],
     "newBgm": true
   },
@@ -867,10 +889,12 @@
     "titleJP": "闇芝居 第2期",
     "officalSite": "http://ani.tv/yamishibai/",
     "weekDayJP": 1,
-    "weekDayCN": 2,
+    "weekDayCN": 1,
     "timeJP": "0135",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.bilibili.com/sp/暗芝居"
+    ],
     "newBgm": true
   },
   {
@@ -878,11 +902,14 @@
     "titleJP": "DRAMAtical Murder [ドラマティカルマーダー]",
     "officalSite": "http://dmmd-anime.com/",
     "weekDayJP": 1,
-    "weekDayCN": 2,
+    "weekDayCN": 1,
     "timeJP": "0035",
-    "timeCN": "",
+    "timeCN": "0135",
     "onAirSite": [
-      "http://www.youku.com/show_page/id_zbe6a268cb7e111e3a705.html"
+      "http://www.youku.com/show_page/id_zbe6a268cb7e111e3a705.html",
+      "http://www.letv.com/comic/10002982.html",
+      "http://www.bilibili.com/sp/DRAMATICAL%20MURDER",
+      "http://www.acfun.com/a/aa2671"
     ],
     "newBgm": true
   },
