@@ -940,10 +940,14 @@
     "titleJP": "美少女戦士セーラームーンCrystal",
     "officalSite": "http://sailormoon-official.com/animation/",
     "weekDayJP": 6,
-    "weekDayCN": 0,
+    "weekDayCN": 6,
     "timeJP": "1800",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://tv.sohu.com/s2014/msnzsc/",
+      "http://www.bilibili.com/sp/美少女战士",
+      "http://www.acfun.com/a/aa2659"
+    ],
     "newBgm": true
   },
   {
