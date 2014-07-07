@@ -892,9 +892,10 @@
     "weekDayJP": 1,
     "weekDayCN": 1,
     "timeJP": "0135",
-    "timeCN": "",
+    "timeCN": "0235",
     "onAirSite": [
-      "http://www.bilibili.com/sp/暗芝居"
+      "http://www.bilibili.com/sp/暗芝居",
+      "http://www.youku.com/show_page/id_z367017a6f68d11e3b8b7.html"
     ],
     "newBgm": true
   },
