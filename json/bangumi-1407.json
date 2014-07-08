@@ -256,7 +256,10 @@
     "weekDayCN": 2,
     "timeJP": "2256",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.acfun.com/a/aa2673",
+      "http://www.bilibili.com/sp/搞姬日常"
+    ],
     "newBgm": true
   },
   {
@@ -548,8 +551,11 @@
     "weekDayJP": 1,
     "weekDayCN": 2,
     "timeJP": "2300",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0305",
+    "onAirSite": [
+      "http://comic.letv.com/zt/qingchun/index.shtml",
+      "http://www.bilibili.com/sp/青春之旅"
+    ],
     "newBgm": true
   },
   {
@@ -925,11 +931,13 @@
     "titleJP": "Re： ハマトラ",
     "officalSite": "http://hamatorapj.com/reply/index.php",
     "weekDayJP": 2,
-    "weekDayCN": 3,
+    "weekDayCN": 2,
     "timeJP": "0105",
     "timeCN": "",
     "onAirSite": [
-      "http://www.youku.com/show_page/id_zabf5e98ad8ef11e3b8b7.html"
+      "http://www.youku.com/show_page/id_zabf5e98ad8ef11e3b8b7.html",
+      "http://www.bilibili.com/sp/Re：␣浜虎（第二季）",
+      "http://www.acfun.com/a/aa3374#group=2"
     ],
     "newBgm": true
   },
@@ -938,10 +946,13 @@
     "titleJP": "ハナヤマタ",
     "officalSite": "http://hanayamata.com/",
     "weekDayJP": 2,
-    "weekDayCN": 3,
+    "weekDayCN": 2,
     "timeJP": "0035",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.bilibili.com/sp/花舞少女",
+      "http://www.acfun.com/a/aa3374#group=1"
+    ],
     "newBgm": true
   },
   {
