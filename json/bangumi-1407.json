@@ -179,7 +179,9 @@
     "weekDayCN": 4,
     "timeJP": "1700",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.bilibili.com/sp/圣灵破碎者"
+    ],
     "newBgm": false
   },
   {
@@ -347,14 +349,18 @@
     "newBgm": true
   },
   {
-    "titleCN": "Fate/kaleid liner 魔法少女☆伊莉雅 Zwei!",
+    "titleCN": "魔法少女☆伊莉雅 Zwei!",
     "titleJP": "Fate/kaleid liner プリズマ☆イリヤ ツヴァイ!",
     "officalSite": "http://anime.prisma-illya.jp/",
     "weekDayJP": 4,
     "weekDayCN": 4,
     "timeJP": "0035",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0205",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrgif0st.html",
+      "http://www.acfun.com/a/aa2480",
+      "http://www.bilibili.com/sp/魔法少女☆伊莉雅"
+    ],
     "newBgm": true
   },
   {
@@ -364,8 +370,12 @@
     "weekDayJP": 4,
     "weekDayCN": 4,
     "timeJP": "0005",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0135",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrgif0kh.html" ,
+      "http://www.acfun.com/a/aa2682",
+      "http://www.bilibili.com/sp/LOVE%20STAGE%21%21"
+    ],
     "newBgm": true
   },
   {
@@ -523,8 +533,12 @@
     "weekDayJP": 3,
     "weekDayCN": 4,
     "timeJP": "2000",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0200",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrgif06l.html",
+      "http://www.bilibili.com/sp/修业魔女璐璐萌",
+      "http://www.acfun.com/a/aa2681"
+    ],
     "newBgm": true
   },
   {
@@ -544,14 +558,18 @@
     "newBgm": true
   },
   {
-    "titleCN": "向山进发 2期",
+    "titleCN": "前进吧！登山少女 2期",
     "titleJP": "ヤマノススメ セカンドシーズン",
     "officalSite": "http://www.yamanosusume.com/",
     "weekDayJP": 3,
     "weekDayCN": 4,
     "timeJP": "2100",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0030",
+    "onAirSite": [
+      "http://tv.sohu.com/s2014/qjbdssn2/",
+      "http://www.acfun.com/a/aa2680",
+      "http://www.bilibili.com/sp/向山进发"
+    ],
     "newBgm": true
   },
   {
