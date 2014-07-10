@@ -886,7 +886,8 @@
     "timeJP": "2350",
     "timeCN": "0030",
     "onAirSite": [
-      "http://comic.letv.com/zt/djcx/index.shtml"
+      "http://comic.letv.com/zt/djcx/index.shtml",
+      "http://www.bilibili.com/sp/恐怖残响"
     ],
     "newBgm": true
   },
@@ -926,8 +927,11 @@
     "weekDayJP": 5,
     "weekDayCN": 5,
     "timeJP": "0020",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0100",
+    "onAirSite": [
+      "http://comic.letv.com/zt/ppnew/index.shtml",
+      "http://www.bilibili.com/sp/PSYCHO-PASS#S-1150"
+    ],
     "newBgm": true
   },
   {
