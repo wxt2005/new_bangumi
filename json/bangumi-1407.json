@@ -55,8 +55,12 @@
     "weekDayJP": 5,
     "weekDayCN": 5,
     "timeJP": "0119",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0219",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrgif36t.html",
+      "http://www.bilibili.com/sp/黑执事",
+      "http://www.acfun.com/a/aa3374#group=4"
+    ],
     "newBgm": true
   },
   {
@@ -81,8 +85,12 @@
     "weekDayJP": 5,
     "weekDayCN": 5,
     "timeJP": "0049",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0149",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrgif2ph.html",
+      "http://www.bilibili.com/sp/女神异闻录4",
+      "http://www.acfun.com/a/aa2686"
+    ],
     "newBgm": true
   },
   {
@@ -929,7 +937,7 @@
     "timeJP": "0020",
     "timeCN": "0100",
     "onAirSite": [
-      "http://comic.letv.com/zt/ppnew/index.shtml",
+      "http://www.letv.com/comic/10002914.html",
       "http://www.bilibili.com/sp/PSYCHO-PASS#S-1150"
     ],
     "newBgm": true
