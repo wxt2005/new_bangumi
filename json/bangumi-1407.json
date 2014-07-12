@@ -241,7 +241,9 @@
     "weekDayCN": 6,
     "timeJP": "0900",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.acfun.com/a/aa2658"
+    ],
     "newBgm": true
   },
   {
@@ -409,8 +411,12 @@
     "weekDayJP": 6,
     "weekDayCN": 6,
     "timeJP": "0035",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0205",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrgiixqd.html",
+      "http://www.acfun.com/a/aa2689",
+      "http://www.bilibili.com/sp/东京ESP"
+    ],
     "newBgm": true
   },
   {
@@ -634,8 +640,12 @@
     "weekDayJP": 6,
     "weekDayCN": 6,
     "timeJP": "0005",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0330",
+    "onAirSite": [
+      "http://tv.sohu.com/s2014/spfjdqlz/",
+      "http://www.acfun.com/a/aa2692",
+      "http://www.bilibili.com/sp/三坪房间的侵略者"
+    ],
     "newBgm": true
   },
   {
@@ -907,7 +917,10 @@
     "weekDayCN": 6,
     "timeJP": "0050",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.acfun.com/a/aa3374#group=5",
+      "http://www.bilibili.com/sp/信长协奏曲"
+    ],
     "newBgm": true
   },
   {
