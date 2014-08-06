@@ -14,6 +14,70 @@
             <img src="images/no-js.gif" alt="没有打开Javascript！">
             <p style="text-align:center;">请打开javascript支持以显示本页面</p>
         </noscript>
+        <div id="topbar">
+            <ul id=topnav>
+                <li class="title">
+                    <a href="http://bgmlist.com/">番组放送</a>
+                </li>
+                <li class="menu">
+                    <a href="javascript:;">历史数据</a>
+                    <ul class="submenu year">
+                        <li>
+                            2014年
+                            <ul class="submenu month">
+                                <li>1月</li>
+                                <li>4月</li>
+                                <li>7月</li>
+                                <li>10月</li>
+                            </ul>
+                        </li>
+                        <li>2013年
+                            <ul class="submenu month">
+                                <li>1月</li>
+                                <li>4月</li>
+                                <li>7月</li>
+                                <li>10月</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu">
+                    <a href="javascript:;">显示设置</a>
+                    <ul class="submenu display">
+                        <li>
+                            <label for="newOnly">只显示新番
+                                <span class="toggleON"></span>
+                            </label>
+                            <input type="checkbox" name="newOnly" id="newOnly">
+                        </li>
+                        <li>
+                            <label for="outOnly">只显示已开播番组
+                                <span class="toggleOFF"></span>
+                            </label>
+                            <input type="checkbox" name="outOnly" id="outOnly">
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu">
+                    <a href="javascript:;">站点过滤</a>
+                    <ul class="submenu sites">
+                        <li>
+                            <label for="youku">优酷
+                                <span class="toggleON"></span>
+                            </label>
+                            <input type="checkbox" name="youku" id="youku">
+                        </li>
+                        <li>
+                            <label for="tudou">土豆
+                                <span class="toggleOFF"></span>
+                            </label>
+                            <input type="checkbox" name="tudou" id="tudou">
+                        </li>
+                        <li><span class="selectAll">全选</span></li>
+                    </ul> 
+                </li>
+            </ul>
+        </div>
         <div class="sidebar">
             <div id="archive">
                 <h3>归档</h3>
@@ -70,8 +134,8 @@
                 </colgroup>
                 <thead>
                     <tr>
-                        <th id="header" colspan="2">{{yearRead}}年{{monthRead}}月番组</th>
-                        <th id="search" colspan="2">
+                        <th id="header" colspan="3">{{yearRead}}年{{monthRead}}月番组</th>
+                        <th id="search" colspan="1">
                             <input type="search" ng-model="query.titleCN" placeholder="搜索本月番组"
                             ng-keydown="query.weekDayCN=undefined">
                         </th>

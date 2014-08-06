@@ -70,19 +70,19 @@ table {
     border-collapse: collapse;
     margin-left: auto;
     margin-right: auto;
-    width: 750px;
+    width: 960px;
     border: 2px solid #7fb80e;
     table-layout: fixed;
     line-height: 1.6;
 }
 
 table col#name {
-    width: 49%;
+    width: 40%;
 }
 
 table col#time-jp, 
 table col#time-cn {
-    width: 14%;
+    width: 15%;
 }
 
 table thead th {
@@ -216,7 +216,7 @@ table span.hide {
 ul#nav {
     margin-left: auto;
     margin-right: auto;
-    width: 750px;
+    width: 960px;
     zoom: 1;
     overflow: hidden;
 }
@@ -350,8 +350,184 @@ div.sidebar #option li.s-title ul.s-items li.display input {
     margin: 0;
 }
 
-@media screen and (min-width: 1024px) {
+/*@media screen and (min-width: 1024px) {
     div.sidebar { 
         display: block; 
     }
+}*/
+
+/*顶部导航栏*/
+#topbar {
+    height: 40px;
+    width: 100%;
+    top: 0;
+    background-color: #34495e;
+    z-index: 1;
+    position: relative;
+    color: #ffffff;
+}
+
+#topbar #topnav {
+    width: 960px;
+    margin: auto;
+}
+
+#topbar #topnav .title {
+    float: left;
+    margin-right: 20px;
+    width: 100px;
+}
+
+#topbar #topnav .menu {
+    float: left;
+    width: 80px;
+}
+
+#topbar #topnav li {
+    cursor: pointer;
+    line-height: 40px;
+    height: 40px;
+}
+
+#topbar #topnav li a {
+    width: 100px;
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#topbar #topnav li a:hover {
+    color: #1abc9c;
+}
+
+#topbar #topnav .menu a {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+#topbar #topnav .menu a.active {
+    color: #1abc9c;
+}
+
+#topbar #topnav .menu .submenu {
+    background: #34495e;
+    border-radius: 4px;
+    float: none;
+    width: 100px;
+    position: absolute;
+    top: 50px;
+}
+
+#topbar #topnav .menu .submenu li:hover {
+    background-color: #1abc9c;
+}
+
+#topbar #topnav .menu .submenu li {
+    position: relative;
+    border-radius: 2px;
+    margin: 3px;
+    width: 94px;
+}
+
+
+#topbar #topnav .menu>.submenu:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-width: 0 9px 9px 9px;
+    border-style: solid;
+    border-color: transparent transparent #34495e transparent;
+    top: -9px;
+    left: 15px;
+    position: absolute;
+}
+
+#topbar #topnav .menu .submenu.year .submenu.month {
+    left: 100px;
+    top: -3px;
+}
+
+#topbar #topnav .menu .submenu.display {
+    width: 200px;
+}
+
+#topbar #topnav .menu .submenu.display li {
+    width: 194px;
+}
+
+#topbar #topnav .menu .submenu.display li:hover,
+#topbar #topnav .menu .submenu.sites li:hover {
+    background-color: #34495e;
+}
+
+#topbar #topnav .menu .submenu label {
+    position: relative;
+    display: block;
+    left: 10px;
+    width: 194px;
+    text-align: left;
+}
+
+#topbar #topnav .menu .submenu label span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #34495e;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    background-image: url("../images/checkbox.png");
+    background-size: 40px;
+    cursor: pointer;
+}
+
+#topbar #topnav .menu .submenu label span.toggleON {
+    background-position: 20px 0;
+}
+
+#topbar #topnav .menu .submenu label span.toggleOFF {
+    background-position: 0 0;
+}
+
+#topbar #topnav .menu .submenu input[type="checkbox"] {
+    position: absolute;
+    right: 40px;
+    top: 5px;
+    display: none;
+}
+
+#topbar #topnav .menu .submenu.sites {
+    width: 150px;
+}
+
+#topbar #topnav .menu .submenu.sites li {
+    width: 144px;
+}
+
+#topbar #topnav .menu .submenu.sites label {
+    width: 144px;
+}
+
+#topbar #topnav .menu .submenu.sites li span.selectAll {
+    background-color: #1ABC9C;
+    display: block;
+    width: 150px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    position: absolute;
+    bottom: -3px;
+    left: -3px;
+    cursor: pointer;
+}
+
+#topbar #topnav .menu .submenu.sites li span.selectAll:hover {
+    background-color: #16A085;
+}
+
+/*测试用*/
+#topbar #topnav .menu .submenu.year {
+    display: none;
+}
+#topbar #topnav .menu .submenu.display {
+    display: none;
 }
