@@ -76,8 +76,15 @@
                         <li><span class="selectAll">全选</span></li>
                     </ul> 
                 </li>
+                <li class="share twitter">
+                    <a href="https://twitter.com/share?url=http%3A%2F%2Fbgmlist.com%2F&text=%e6%96%b9%e4%be%bf%e5%bf%ab%e6%8d%b7%e7%9a%84%e6%ad%a3%e7%89%88%e6%96%b0%e7%95%aa%e6%94%be%e9%80%81%e8%81%9a%e5%90%88%e7%ab%99+-+%e7%95%aa%e7%bb%84%e6%94%be%e9%80%81" title="分享到Twitter" target="_blank">分享到Twitter</a>
+                </li>
+                <li class="share weibo">
+                    <a href="http://service.weibo.com/share/share.php?title=%e6%96%b9%e4%be%bf%e5%bf%ab%e6%8d%b7%e7%9a%84%e6%ad%a3%e7%89%88%e6%96%b0%e7%95%aa%e6%94%be%e9%80%81%e8%81%9a%e5%90%88%e7%ab%99+-+%e7%95%aa%e7%bb%84%e6%94%be%e9%80%81&url=http%3A%2F%2Fbgmlist.com%2F" title="分享到微博" target="_blank">分享到微博</a>
+                </li>
             </ul>
         </div>
+        <!--
         <div class="sidebar">
             <div id="archive">
                 <h3>归档</h3>
@@ -118,13 +125,19 @@
                 </ul>
             </div>
         </div>
+        -->
+        <h1>2014年7月番组</h1>
+        <ul id='nav'>
+            <li ng-repeat="nav in navList" 
+                ng-class="{'selected':$parent.query.weekDayCN===nav.index}" 
+                class-fix ng-click="$parent.query.titleCN='';$parent.query.weekDayCN=nav.index;
+                order(bangumis,nav.order,false);">{{nav.name}}</li>
+            <li id="search">
+                <input type="text" ng-model="query.titleCN" placeholder="搜索本月番组"
+                ng-keydown="query.weekDayCN=undefined">
+            </li>
+        </ul> 
         <div id="container">
-            <ul id='nav'>
-                <li ng-repeat="nav in navList" 
-                    ng-class="{'selected':$parent.query.weekDayCN===nav.index}" 
-                    class-fix ng-click="$parent.query.titleCN='';$parent.query.weekDayCN=nav.index;
-                    order(bangumis,nav.order,false);">{{nav.name}}</li>
-            </ul> 
             <table>
                 <colgroup>
                     <col id="name">
@@ -133,21 +146,21 @@
                     <col id="site">
                 </colgroup>
                 <thead>
-                    <tr>
-                        <th id="header" colspan="3">{{yearRead}}年{{monthRead}}月番组</th>
-                        <th id="search" colspan="1">
-                            <input type="search" ng-model="query.titleCN" placeholder="搜索本月番组"
-                            ng-keydown="query.weekDayCN=undefined">
-                        </th>
-                    </tr>
+                    <!--tr>
+                    <th id="header" colspan="3">{{yearRead}}年{{monthRead}}月番组</th>
+                    <th id="search" colspan="1">
+                        <input type="search" ng-model="query.titleCN" placeholder="搜索本月番组"
+                        ng-keydown="query.weekDayCN=undefined">
+                    </th>
+                    </tr-->
                     <tr>
                         <th>作品名</th>
                         <th>
-                            <span class="pointer" ng-click="order(bangumis,'jp',reversed)" 
+                            <span ng-click="order(bangumis,'jp',reversed)" 
                                 ng-class="{'ordered':ordered==='jp'}" class-fix>日本放送时间</span>
                         </th>
                         <th>
-                            <span class="pointer"  ng-click="order(bangumis,'cn',reversed)" 
+                            <span ng-click="order(bangumis,'cn',reversed)" 
                                 ng-class="{'ordered':ordered==='cn'}" class-fix>大陆放送时间</span>
                         </th>
                         <th>播放网址</th>
@@ -173,12 +186,12 @@
                     </tr>
                 </tbody>
             </table>
-            <p id="footer">Copyright &copy; 
-                <a href="http://bgmlist.com/">番组放送</a> | All Rights Reserved | Powered by 
-                <a href="https://angularjs.org">AngularJS</a>
-                and <a href="https://github.com/wxt2005/new_bangumi">GitHub</a>
-            </p>
         </div>
+        <p id="footer">&copy; 
+            <a href="http://bgmlist.com/">番组放送</a> | All Rights Reserved | Powered by 
+            <a href="https://angularjs.org">AngularJS</a>
+            and <a href="https://github.com/wxt2005/new_bangumi">GitHub</a>
+        </p>
         <script type="text/javascript" src="js/angular.min.js"></script> 
         <script type="text/javascript" src="js/angular-cookie.min.js"></script> 
         <script type="text/javascript" src="js/app.js"></script> 
