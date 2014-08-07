@@ -443,10 +443,13 @@ table tbody tr td .hide {
     float: right;
     width: auto;
     position: relative;
+    background: url("../images/search.png") 0 0 no-repeat transparent;
+    width: 230px;
+    text-align: right;
 }
 
 #search:hover {
-    background: transparent;
+    background-color: transparent;
 }
 
 #search input {
@@ -458,6 +461,7 @@ table tbody tr td .hide {
     font-size: 16px;
     padding: 6px 12px;
     background: #eee;
+    width: 170px;
 }
 
 #search input:focus {
