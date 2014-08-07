@@ -82,6 +82,10 @@
                 <li class="share weibo">
                     <a href="http://service.weibo.com/share/share.php?title=%e6%96%b9%e4%be%bf%e5%bf%ab%e6%8d%b7%e7%9a%84%e6%ad%a3%e7%89%88%e6%96%b0%e7%95%aa%e6%94%be%e9%80%81%e8%81%9a%e5%90%88%e7%ab%99+-+%e7%95%aa%e7%bb%84%e6%94%be%e9%80%81&url=http%3A%2F%2Fbgmlist.com%2F" title="分享到微博" target="_blank">分享到微博</a>
                 </li>
+                <li class="share plain">
+                    分享
+                </li>
+
             </ul>
         </div>
         <!--
@@ -127,16 +131,18 @@
         </div>
         -->
         <h1>2014年7月番组</h1>
-        <ul id='nav'>
-            <li ng-repeat="nav in navList" 
-                ng-class="{'selected':$parent.query.weekDayCN===nav.index}" 
-                class-fix ng-click="$parent.query.titleCN='';$parent.query.weekDayCN=nav.index;
-                order(bangumis,nav.order,false);">{{nav.name}}</li>
-            <li id="search">
-                <input type="text" ng-model="query.titleCN" placeholder="搜索本月番组"
-                ng-keydown="query.weekDayCN=undefined">
-            </li>
-        </ul> 
+        <div id="nav">
+            <ul id='switcher'>
+                <li ng-repeat="nav in navList" 
+                    ng-class="{'selected':$parent.query.weekDayCN===nav.index}" 
+                    class-fix ng-click="$parent.query.titleCN='';$parent.query.weekDayCN=nav.index;
+                    order(bangumis,nav.order,false);">{{nav.name}}</li>
+            </ul> 
+            <div id="search">
+                <input type="text" ng-model="query.titleCN" 
+                placeholder="搜索本月番组" ng-keydown="query.weekDayCN=undefined">
+            </div>
+        </div>
         <div id="container">
             <table>
                 <colgroup>
@@ -176,7 +182,7 @@
                         <td>{{item.weekDayJP | weekday}}&#160;&#160;{{item.timeJP | time}}</td>
                         <td>{{item.weekDayCN | weekday}}&#160;&#160;{{item.timeCN | time}}</td>
                         <td>
-                            <ul id="link-list">
+                            <ul class="link-list">
                                 <li ng-repeat="site in item.onAirSite | linkFilter:siteList" 
                                     ng-class="{'lastLink':$last}">
                                     <a href="{{site}}">{{site | onair}}</a></li>
@@ -189,8 +195,8 @@
         </div>
         <p id="footer">&copy; 
             <a href="http://bgmlist.com/">番组放送</a> | All Rights Reserved | Powered by 
-            <a href="https://angularjs.org">AngularJS</a>
-            and <a href="https://github.com/wxt2005/new_bangumi">GitHub</a>
+            <a href="https://angularjs.org/">AngularJS</a>
+            and <a href="https://github.com/wxt2005/new_bangumi/">GitHub</a>
         </p>
         <script type="text/javascript" src="js/angular.min.js"></script> 
         <script type="text/javascript" src="js/angular-cookie.min.js"></script> 

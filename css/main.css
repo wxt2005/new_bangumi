@@ -23,11 +23,14 @@ a {
     text-decoration: none;
 }
 
-a:link, a:visited {
+a:link, 
+a:visited {
     color: black;
 }
 
-a:focus, a:hover, a:active {
+a:focus, 
+a:hover, 
+a:active {
     color: #3498db;
 }
 
@@ -49,6 +52,7 @@ h1 {
     z-index: 1;
     position: relative;
     color: #fff;
+    text-align: center;
 }
 
 #topbar #topnav {
@@ -71,6 +75,10 @@ h1 {
     cursor: pointer;
     line-height: 40px;
     height: 40px;
+}
+
+#topbar #topnav .plain {
+    cursor: default;
 }
 
 #topbar #topnav li a {
@@ -116,6 +124,7 @@ h1 {
 }
 
 
+/*三角形*/
 #topbar #topnav .menu>.submenu:before {
     content: "";
     width: 0;
@@ -163,15 +172,14 @@ h1 {
     right: 20px;
     top: 10px;
     background-image: url("../images/checkbox.png");
-    background-size: 40px;
     cursor: pointer;
 }
 
-#topbar #topnav .menu .submenu label span.toggleON {
+#topbar #topnav .menu .submenu label .toggleON {
     background-position: 20px 0;
 }
 
-#topbar #topnav .menu .submenu label span.toggleOFF {
+#topbar #topnav .menu .submenu label .toggleOFF {
     background-position: 0 0;
 }
 
@@ -194,7 +202,7 @@ h1 {
     width: 144px;
 }
 
-#topbar #topnav .menu .submenu.sites li span.selectAll {
+#topbar #topnav .menu .submenu.sites li .selectAll {
     background: #1abc9c;
     display: block;
     width: 150px;
@@ -206,7 +214,7 @@ h1 {
     cursor: pointer;
 }
 
-#topbar #topnav .menu .submenu.sites li span.selectAll:hover {
+#topbar #topnav .menu .submenu.sites li .selectAll:hover {
     background: #16a085;
 }
 
@@ -221,7 +229,6 @@ h1 {
     overflow: hidden;
     zoom: 1;
     background-position: 0 0;
-    background-size: 80px 40px;
     text-indent: -9999px;
     margin-left: 5px;
 }
@@ -229,12 +236,10 @@ h1 {
 
 #topbar #topnav .share.twitter a {
     background: url("../images/twitter.png") no-repeat #34495e;
-    background-size: 80px 40px;
 }
 
 #topbar #topnav .share.weibo a {
     background: url("../images/weibo.png") no-repeat #34495e;
-    background-size: 80px 40px;
 }
 
 #topbar #topnav .share.twitter a:focus,
@@ -273,22 +278,22 @@ table #time-cn {
     width: 15%;
 }
 
-table thead th {
+table thead tr th {
     background: #1abc9c;
     height: 30px;
     vertical-align: -4px;
 }
 
-table thead th span:hover {
+table thead tr th span:hover {
     color: #3498db;
     cursor: pointer;
 }
 
-table thead th span.ordered {
+table thead tr th span.ordered {
     text-decoration: underline;
 }
 
-table tbody td a.new:after {
+table tbody tr td a.new:after {
     content: "\00A0\00A0new";
     font-size: 12px;
     font-family: sans-serif;
@@ -301,6 +306,7 @@ table tbody td a.new:after {
 table tbody tr {
     height: 50px;
     border-bottom: 1px solid #ddd;
+    padding-left: 20px;
 }
 
 table tbody tr:hover {
@@ -321,25 +327,25 @@ table tbody tr td:last-child {
     font-size: 15px;
 }
 
-table tbody #link-list ul {
+table tbody tr td .link-list ul {
     text-align: center;
 }
 
-table tbody #link-list li {
+table tbody tr td .link-list li {
     display: inline-block;
 }
 
-/*fix lte IE 7 inline block bug*/
-table tbody #link-list li {
+/*修复IE7inline-block失效的问题*/
+table tbody tr td .link-list li {
     *display: inline;
 }
 
-table tbody #link-list li:after {
+table tbody tr td .link-list li:after {
     content: "\00A0\007C\00A0";
     vertical-align: 6%;
 }
 
-table tbody #link-list .lastLink:after {
+table tbody tr td .link-list .lastLink:after {
     content: "";
 }
 
@@ -358,53 +364,70 @@ table tbody tr td:first-child a span {
     z-index: 1;
 }
 
+table tbody tr td:first-child a:focus span,
 table tbody tr td:first-child a:hover span,
-table tbody tr td:first-child a:focus span {
+table tbody tr td:first-child a:active span {
     left:100%;
     margin-left: -7px;
 }
 
-table span.hide {
+table tbody tr td .hide {
     display: none;
 }
 
-/*切换按钮*/
+/*导航条*/
 #nav {
-    margin-top: 15px;
+    width: 960px;
+    margin: 0 auto;
+    margin-top: 10px;
+    zoom: 1;
+    overflow: hidden;
+}
+
+/*切换按钮*/
+#switcher {
     margin-left: auto;
     margin-right: auto;
-    width: 960px;
     zoom: 1;
     overflow: hidden;
     padding-bottom: 16px;
+    float: left;
 }
 
-#nav li {
+#switcher li {
     float: left;
     width: 60px;
-    border: 2px solid #1abc9c;
+    border-top: 2px solid #1abc9c;
+    border-bottom: 2px solid #1abc9c;
+    border-right: 2px solid #1abc9c;
     text-align: center;
     line-height: 2;
-    margin-right: 15px;
     cursor: pointer;
-    border-radius: 6px;
     height: 32px;
     position: relative;
 }
 
-#nav li:last-child {
-    margin-right: 0;
+#switcher li:first-child {
+    border-left: 2px solid #1abc9c;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
 }
 
-#nav li:hover {
+#switcher li:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+#switcher li:hover {
     background: rgba(26, 188, 156, 0.1);
 }
 
-#nav li.selected {
+#switcher li.selected {
     background: #1abc9c;
 }
 
-#nav li.selected:after {
+/*三角形*/
+#switcher li.selected:after {
     content: "";
     position: absolute;
     width: 0;
@@ -416,18 +439,17 @@ table span.hide {
     left: 15px;
 }
 
-#nav #search {
-    border: none;
+#search {
     float: right;
     width: auto;
     position: relative;
 }
 
-#nav #search:hover {
+#search:hover {
     background: transparent;
 }
 
-#nav #search input {
+#search input {
     color: #1abc9c;
     border: 2px solid #1abc9c;
     border-radius: 6px;
@@ -438,18 +460,18 @@ table span.hide {
     background: #eee;
 }
 
-#nav #search input:focus {
+#search input:focus {
     background: #fff;
 }
 
-#nav #search:after {
+#search:after {
     content: "";
     height: 20px;
     width: 20px;
-    background: url("../images/clear.png") 0 0/20px transparent no-repeat ;
+    background: url("../images/clear.png") no-repeat transparent;
     position: absolute;
     right: 10px;
-    top: 7px;
+    top: 8px;
     display: none;
 }
 
@@ -458,6 +480,7 @@ table span.hide {
     text-align: center;
     margin: 10px 0;
     font-size: 12px;
+    color: #34495e;
 }
 
 #footer a {
@@ -470,6 +493,7 @@ table span.hide {
 #footer a:hover,
 #footer a:active {
     text-decoration: underline;
+    color: #34495e;
 }
 
 
