@@ -79,49 +79,7 @@
 
             </ul>
         </div>
-        <!--
-        <div class="sidebar">
-            <div id="archive">
-                <h3>归档</h3>
-                <ul>
-                    <li class="s-title" ng-repeat="file in archive"><span class="pointer" 
-                            ng-click="file.show=!file.show">{{file.year}}年({{file.months.length}})</span>
-                        <ul class="s-items" ng-show="file.show===true" class-fix>
-                            <li ng-repeat="data in file.months" ng-hide="data.json===''||data.done===false" class-fix>
-                                <span class="pointer" ng-class="{'read':(file.year===yearRead&&data.month===monthRead)}"
-                                    ng-click="readBangumi(getJsonPath(file.year, data.month, archive),'jp',false);query.weekDayCN=undefined">{{data.month | monthCN}}</span>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div> 
-            <div id="option">
-                <h3>选项</h3>
-                <ul>
-                    <li class="s-title"><span class="pointer" ng-init="display.show=false"
-                            ng-click="display.show=!display.show">显示</span>
-                        <ul class="s-items" ng-show="display.show===true" class-fix>
-                            <li class="display">
-                                <label><input type="checkbox" ng-model="query.newBgm" 
-                                    ng-change="ipCookie('newOnly',query.newBgm,{expires:365})" 
-                                    ng-false-value=""> 仅显示新番</label>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="s-title"><span class="pointer" ng-init="sites.show=false"
-                            ng-click="sites.show=!sites.show">站点</span>
-                        <ul class="s-items" ng-show="sites.show===true" class-fix>
-                            <li ng-repeat="airSite in siteList" class="sites">
-                                <label><input type="checkbox" ng-model="airSite.show" 
-                                    ng-change="ipCookie(airSite.domain,airSite.show,{expires:365})">{{airSite.name}}</label>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        -->
-        <h1>2014年7月番组</h1>
+        <h1>{{yearRead}}年{{monthRead}}月番组</h1>
         <div id="nav">
             <ul id='switcher'>
                 <li ng-repeat="nav in navList" 
@@ -143,13 +101,6 @@
                     <col id="site">
                 </colgroup>
                 <thead>
-                    <!--tr>
-                    <th id="header" colspan="3">{{yearRead}}年{{monthRead}}月番组</th>
-                    <th id="search" colspan="1">
-                        <input type="search" ng-model="query.titleCN" placeholder="搜索本月番组"
-                        ng-keydown="query.weekDayCN=undefined">
-                    </th>
-                    </tr-->
                     <tr>
                         <th>作品名</th>
                         <th>
