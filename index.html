@@ -22,21 +22,12 @@
                 <li class="menu">
                     <a href="javascript:;">历史数据</a>
                     <ul class="submenu year">
-                        <li>
-                            2014年
+                        <li ng-repeat="file in archive">
+                            {{file.year}}年
                             <ul class="submenu month">
-                                <li>1月</li>
-                                <li>4月</li>
-                                <li>7月</li>
-                                <li>10月</li>
-                            </ul>
-                        </li>
-                        <li>2013年
-                            <ul class="submenu month">
-                                <li>1月</li>
-                                <li>4月</li>
-                                <li>7月</li>
-                                <li>10月</li>
+                                <li ng-repeat="data in file.months" 
+                                    ng-click="readBangumi(getJsonPath(file.year, data.month, archive),'jp',false);query.weekDayCN=undefined">
+                                    {{data.month | monthCN}}</li>
                             </ul>
                         </li>
                     </ul>
@@ -46,9 +37,11 @@
                     <ul class="submenu display">
                         <li>
                             <label for="newOnly">只显示新番
-                                <span class="toggleON"></span>
+                                <span ng-class="{'toggleON':query.newBgm,'toggleOFF':!query.newBgm}"></span>
                             </label>
-                            <input type="checkbox" name="newOnly" id="newOnly">
+                            <input type="checkbox" name="newOnly" id="newOnly" 
+                            ng-model="query.newBgm" ng-false-value="" 
+                            ng-change="ipCookie('newOnly',query.newBgm,{expires:365})">
                         </li>
                         <li>
                             <label for="outOnly">只显示已开播番组
@@ -61,17 +54,15 @@
                 <li class="menu">
                     <a href="javascript:;">站点过滤</a>
                     <ul class="submenu sites">
-                        <li>
-                            <label for="youku">优酷
-                                <span class="toggleON"></span>
+                        <li ng-repeat="airSite in siteList">
+                            <label for="{{airSite.domain}}">{{airSite.name}}
+                                <span class="toggleON" 
+                                    ng-class="{'toggleON':airSite.show,'toggleOFF':!airSite.show}">
+                                </span>
                             </label>
-                            <input type="checkbox" name="youku" id="youku">
-                        </li>
-                        <li>
-                            <label for="tudou">土豆
-                                <span class="toggleOFF"></span>
-                            </label>
-                            <input type="checkbox" name="tudou" id="tudou">
+                            <input type="checkbox" name="{{airSite.domain}}" id="{{airSite.domain}}" 
+                                ng-model="airSite.show" 
+                                ng-change="ipCookie(airSite.domain,airSite.show,{expires:365})">
                         </li>
                         <li><span class="selectAll">全选</span></li>
                     </ul> 
