@@ -58,6 +58,9 @@ h1 {
 #topbar #topnav {
     width: 960px;
     margin: auto;
+    overflow: hidden;
+    zoom: 1;
+    height: 50px;
 }
 
 #topbar #topnav .title {
@@ -69,6 +72,7 @@ h1 {
 #topbar #topnav .menu {
     float: left;
     width: 80px;
+    height: 50px;
 }
 
 #topbar #topnav li {
@@ -82,7 +86,6 @@ h1 {
 }
 
 #topbar #topnav li a {
-    width: 100px;
     font-size: 20px;
     color: #fff;
     font-weight: bold;
@@ -92,6 +95,10 @@ h1 {
 #topbar #topnav li a:hover,
 #topbar #topnav li a:active {
     color: #1abc9c;
+}
+
+#topbar #topnav .menu a {
+    height: 50px;
 }
 
 #topbar #topnav .menu a {
@@ -110,6 +117,37 @@ h1 {
     width: 100px;
     position: absolute;
     top: 50px;
+    display: none;
+}
+
+#topbar #topnav .menu .submenu a {
+    display: block;
+    width: 110px;
+    text-align: center;
+    position: relative;
+    left: -10px;
+}
+
+#topbar #topnav .menu .submenu a:focus,
+#topbar #topnav .menu .submenu a:hover,
+#topbar #topnav .menu .submenu a:active {
+    color: #fff;
+}
+
+#topbar #topnav .menu:hover>a {
+    color: #1abc9c;
+}
+
+#topbar #topnav .menu:hover .submenu {
+    display: block;
+}
+
+#topbar #topnav .menu .submenu .submenu {
+    display: none;
+}
+
+#topbar #topnav .menu .submenu li:hover .submenu {
+    display: block;
 }
 
 #topbar #topnav .menu .submenu li:hover {
@@ -185,9 +223,7 @@ h1 {
 
 #topbar #topnav .menu .submenu input[type="checkbox"] {
     position: absolute;
-    right: 40px;
-    top: 5px;
-    display: none;
+    left: -9999px;
 }
 
 #topbar #topnav .menu .submenu.sites {
@@ -500,16 +536,3 @@ table tbody tr td .hide {
     color: #34495e;
 }
 
-
-/*测试用*/
-#topbar #topnav .menu .submenu.year {
-    display: none;
-}
-
-#topbar #topnav .menu .submenu.display {
-    display: none;
-}
-
-#topbar #topnav .menu .submenu.sites {
-    display: none;
-}

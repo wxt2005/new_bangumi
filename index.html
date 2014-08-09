@@ -2,8 +2,8 @@
 <html id="ng-app" ng-app="BangumiList">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <!--meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1"-->
+        <!--meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"-->
         <title>番组放送</title>
         <link type="text/css" rel="stylesheet" href="css/main.css">
         <link type="text/css" rel="stylesheet" href="css/ngprogress-lite.css">
@@ -23,11 +23,10 @@
                     <a href="javascript:;">历史数据</a>
                     <ul class="submenu year">
                         <li ng-repeat="file in archive">
-                            {{file.year}}年
+                            <a href="javascript:;">{{file.year}}年</a>
                             <ul class="submenu month">
-                                <li ng-repeat="data in file.months" 
-                                    ng-click="readBangumi(getJsonPath(file.year, data.month, archive),'jp',false);query.weekDayCN=undefined">
-                                    {{data.month | monthCN}}</li>
+                                <li ng-repeat="data in file.months">
+                                    <a href="javascript:;" ng-click="readBangumi(getJsonPath(file.year, data.month, archive),'jp',false);query.weekDayCN=undefined">{{data.month | monthCN}}</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -43,12 +42,12 @@
                             ng-model="query.newBgm" ng-false-value="" 
                             ng-change="ipCookie('newOnly',query.newBgm,{expires:365})">
                         </li>
-                        <li>
+                        <!--li>
                             <label for="outOnly">只显示已开播番组
                                 <span class="toggleOFF"></span>
                             </label>
                             <input type="checkbox" name="outOnly" id="outOnly">
-                        </li>
+                        </li-->
                     </ul>
                 </li>
                 <li class="menu">
@@ -62,9 +61,9 @@
                             </label>
                             <input type="checkbox" name="{{airSite.domain}}" id="{{airSite.domain}}" 
                                 ng-model="airSite.show" 
-                                ng-change="ipCookie(airSite.domain,airSite.show,{expires:365})">
+                                ng-change="ipCookie(airSite.domain,airSite.show,{expires:365});checkSiteList()">
                         </li>
-                        <li><span class="selectAll">全选</span></li>
+                        <li><span class="selectAll" ng-click="selectAll(selectFlag)">{{selectFlag|selectAllButton}}</span></li>
                     </ul> 
                 </li>
                 <li class="share twitter">
@@ -144,6 +143,6 @@
         <script type="text/javascript" src="js/angular-cookie.min.js"></script> 
         <script type="text/javascript" src="js/app.js"></script> 
         <script type="text/javascript" src="js/iefix.js"></script> 
-        <script type="text/javascript" src="js/ngprogress-lite.min.js"></script> 
+        <!--script type="text/javascript" src="js/ngprogress-lite.min.js"></script--> 
     </body>
 </html>

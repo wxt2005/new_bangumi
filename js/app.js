@@ -5,8 +5,8 @@ function getDomain(url) {
     return url.match(re)[1].toLowerCase();
 }
 
-angular.module('BangumiList', ['ieFix', 'ngProgressLite', 'ipCookie'])
-.controller('ListController', ['$scope', '$http', 'ngProgressLite', 'ipCookie', function($scope, $http, ngProgressLite, ipCookie) {
+angular.module('BangumiList', ['ieFix', 'ipCookie'])
+.controller('ListController', ['$scope', '$http', 'ipCookie', function($scope, $http, ipCookie) {
     var dateNow, weekDayNow, yearNow, monthNow;
 
     $scope.ipCookie = ipCookie;
@@ -15,6 +15,7 @@ angular.module('BangumiList', ['ieFix', 'ngProgressLite', 'ipCookie'])
     $scope.navList = [{name: '周一', index: 1, order: 'cn'}, {name: '周二', index: 2, order: 'cn'}, {name: '周三', index: 3, order: 'cn'}, {name: '周四', index: 4, order: 'cn'}, {name: '周五', index: 5, order: 'cn'}, {name: '周六', index: 6, order: 'cn'}, {name: '周日', index: 0, order: 'cn'}, {name: '全部', index: undefined, order: 'jp'}];
     $scope.siteList = [{name: 'A站', domain: 'acfun', show: true}, {name: 'B站', domain: 'bilibili', show: true}, {name: '搜狐', domain: 'sohu', show: true}, {name: '优酷', domain: 'youku', show: true}, {name: '腾讯', domain: 'qq', show: true}, {name: '爱奇艺', domain: 'iqiyi', show: true}, {name: '乐视', domain: 'letv', show: true}, {name: 'PPTV', domain: 'pptv', show: true}, {name:'土豆', domain: 'tudou', show: true}, {name: '迅雷', domain: 'movie', show: true}];
     $scope.query = {};
+    $scope.selectFlag = null;
     
     //use cookie to change siteList
     $scope.getSiteCookie = function(siteList) {
@@ -26,8 +27,26 @@ angular.module('BangumiList', ['ieFix', 'ngProgressLite', 'ipCookie'])
            return site; 
         });
     };
-    $scope.siteList = $scope.getSiteCookie($scope.siteList);
-    $scope.query.newBgm = ipCookie('newOnly');
+    
+    //check if all bangumi's show is true
+    $scope.checkSiteList = function() {
+        for(var i = 0, l = $scope.siteList.length; i < l; i++) {
+            if($scope.siteList[i].show === false) {
+                $scope.selectFlag = true;
+                break;
+            }
+            $scope.selectFlag = false;
+        }
+    };
+    
+    //for select all button
+    $scope.selectAll = function(flag) {
+        for(var i = 0, l = $scope.siteList.length; i < l; i++) {
+           $scope.siteList[i].show = flag; 
+           ipCookie($scope.siteList[i].domain,$scope.siteList[i].show,{expires:365});
+        }
+        $scope.selectFlag = !$scope.selectFlag;
+    };
 
     //order bangumi list
     $scope.order = function(items, target, reverseFlag) {
@@ -97,12 +116,12 @@ angular.module('BangumiList', ['ieFix', 'ngProgressLite', 'ipCookie'])
 
     //use $http to get bangumi data
     $scope.readBangumi = function(filePath, order, reverse) {
-        ngProgressLite.start();
+        //ngProgressLite.start();
         $http.get(filePath)
             .success(function(data) {
                 $scope.bangumis = $scope.order(data, order, reverse);
                 $scope.query.titleCN = '';
-                ngProgressLite.done();
+                //ngProgressLite.done();
             })
             .error(function(data, status) {
                 alert('读取' + filePath + '出错\n错误代码:' + status + '\n请联系wxt2005#gmail.com\n或在Twitter上@wxt2005');   
@@ -128,6 +147,10 @@ angular.module('BangumiList', ['ieFix', 'ngProgressLite', 'ipCookie'])
         .error(function(data, status) {
             alert('读取archive.json出错\n错误代码:' + status + '\n请联系wxt2005#gmail.com\n或在Twitter上@wxt2005');
         });
+
+    $scope.siteList = $scope.getSiteCookie($scope.siteList);
+    $scope.query.newBgm = ipCookie('newOnly');
+    $scope.checkSiteList();
 }])
 
 //nav bar template
@@ -153,6 +176,13 @@ angular.module('BangumiList', ['ieFix', 'ngProgressLite', 'ipCookie'])
         templateUrl: 'sidebar.html'
     };
 })*/
+
+//filter used to format time data
+.filter('selectAllButton', function() {
+    return function(flag) {
+        return flag ? '全选' : '全不选';
+    };
+})
 
 //filter used to format weekday data
 .filter('weekday', function() {
