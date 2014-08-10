@@ -4,7 +4,7 @@
 }
 
 /*全局*/
-body, a, th, td, p, h1, ul, li {
+body, a, th, td, p, h1, ul, li, blockquote {
     font-family: "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", "SimSun", sans-serif;
     margin: 0px;
     padding: 0px;
@@ -34,25 +34,61 @@ a:active {
     color: #3498db;
 }
 
-h1 {
+#shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /*for let IE7*/
+    *display: none;
+}
+
+#header {
+    width: 960px;
+    height: 75px;
     margin: 15px auto;
+    position: relative;
+    vertical-align: bottom;
+}
+
+#header h1 {
     color: #34495e;
     font-size: 50px;
     text-align: left;
-    width: 960px;
     letter-spacing: 1px;
+    position: absolute;
+    left: 0;
+    height: 75px;
+    line-height: 75px;
+}
+
+#header p {
+    color: #34495e;
+    font-size: 16px;
+    width: 300px;
+    text-align: right;
+    float: right;
+    position: absolute;
+    right: 10px;
+}
+
+#header .lastModified {
+    bottom: 8px;
+}
+
+#header .total {
+    bottom: 32px;
 }
 
 /*顶部导航栏*/
 #topbar {
     height: 40px;
-    width: 100%;
-    top: 0;
     background: #34495e;
-    z-index: 1;
     position: relative;
     color: #fff;
     text-align: center;
+    min-width: 980px;
+    z-index: 2;
 }
 
 #topbar #topnav {
@@ -98,10 +134,6 @@ h1 {
 }
 
 #topbar #topnav .menu a {
-    height: 50px;
-}
-
-#topbar #topnav .menu a {
     font-size: 16px;
     font-weight: normal;
 }
@@ -117,15 +149,17 @@ h1 {
     width: 100px;
     position: absolute;
     top: 50px;
-    display: none;
+    /*hide submenu for let IE7*/
+    *display: none;
 }
 
 #topbar #topnav .menu .submenu a {
     display: block;
     width: 110px;
     text-align: center;
-    position: relative;
-    left: -10px;
+    position: absolute;
+    left: 0;
+    text-indent: -12px;
 }
 
 #topbar #topnav .menu .submenu a:focus,
@@ -136,18 +170,6 @@ h1 {
 
 #topbar #topnav .menu:hover>a {
     color: #1abc9c;
-}
-
-#topbar #topnav .menu:hover .submenu {
-    display: block;
-}
-
-#topbar #topnav .menu .submenu .submenu {
-    display: none;
-}
-
-#topbar #topnav .menu .submenu li:hover .submenu {
-    display: block;
 }
 
 #topbar #topnav .menu .submenu li:hover {
@@ -161,6 +183,39 @@ h1 {
     width: 94px;
 }
 
+#topbar #topnav .menu .submenu .hourSelecter {
+   position: absolute;
+   right: 10px;
+   top: 10px;
+   height: 20px;
+   overflow: hidden;
+   zoom: 1;
+}
+
+#topbar #topnav .menu .submenu .hourSelecter p {
+    height: 20px;
+    line-height: 20px;
+    float: left;
+}
+
+#topbar #topnav .menu .submenu .hourSelecter span {
+    position: static;
+    float: left;
+}
+
+#topbar #topnav .menu .submenu .hourSelecter .left {
+    margin-right: 5px;
+    background: url("../images/left-arrow.png") 0 0 transparent;
+}
+
+#topbar #topnav .menu .submenu .hourSelecter .right {
+    margin-left: 5px;
+    background: url("../images/right-arrow.png") 0 0 transparent;
+}
+
+#topbar #topnav .menu .submenu .hourSelecter .disable {
+    background-position: 20px 0;
+}
 
 /*三角形*/
 #topbar #topnav .menu>.submenu:before {
@@ -201,7 +256,7 @@ h1 {
     text-align: left;
 }
 
-#topbar #topnav .menu .submenu label span {
+#topbar #topnav .menu .submenu span {
     display: block;
     width: 20px;
     height: 20px;
@@ -213,11 +268,11 @@ h1 {
     cursor: pointer;
 }
 
-#topbar #topnav .menu .submenu label .toggleON {
+#topbar #topnav .menu .submenu .toggleON {
     background-position: 20px 0;
 }
 
-#topbar #topnav .menu .submenu label .toggleOFF {
+#topbar #topnav .menu .submenu .toggleOFF {
     background-position: 0 0;
 }
 
@@ -248,6 +303,7 @@ h1 {
     bottom: -3px;
     left: -3px;
     cursor: pointer;
+    height: 40px;
 }
 
 #topbar #topnav .menu .submenu.sites li .selectAll:hover {
@@ -305,6 +361,11 @@ table {
     line-height: 1.4;
 }
 
+table .errorMessage {
+    /*for lte IE7*/
+    *display: none;
+}
+
 table #name {
     width: 40%;
 }
@@ -346,7 +407,7 @@ table tbody tr {
 }
 
 table tbody tr:hover {
-    background: rgba(26, 188, 156, 0.1);
+    background: #d7e8e4;
 }
 
 table tbody tr td {
@@ -361,10 +422,6 @@ table tbody tr td:last-child {
     padding: 0 5px;
     text-align: center;
     font-size: 15px;
-}
-
-table tbody tr td .link-list ul {
-    text-align: center;
 }
 
 table tbody tr td .link-list li {
@@ -382,33 +439,7 @@ table tbody tr td .link-list li:after {
 }
 
 table tbody tr td .link-list .lastLink:after {
-    content: "";
-}
-
-table tbody tr td:first-child a span {
-    position: absolute;
-    background: rgba(206, 230, 201, 0.9);
-    top: 15px;
-    left: -9999px;
-    font-size: 14px;
-    color: gray;
-    width: 150px;
-    line-height: 1.5;
-    border: 1px solid white;
-    border-radius: 5px;
-    padding: 2px;
-    z-index: 1;
-}
-
-table tbody tr td:first-child a:focus span,
-table tbody tr td:first-child a:hover span,
-table tbody tr td:first-child a:active span {
-    left:100%;
-    margin-left: -7px;
-}
-
-table tbody tr td .hide {
-    display: none;
+    content: "\00A0";
 }
 
 /*导航条*/
@@ -441,6 +472,9 @@ table tbody tr td .hide {
     cursor: pointer;
     height: 32px;
     position: relative;
+    /*for let IE7*/
+    *border-left: 2px solid #1abc9c;
+    *margin-left: -2px;
 }
 
 #switcher li:first-child {
@@ -519,7 +553,7 @@ table tbody tr td .hide {
 #footer {
     text-align: center;
     margin: 10px 0;
-    font-size: 12px;
+    font-size: 14px;
     color: #34495e;
 }
 

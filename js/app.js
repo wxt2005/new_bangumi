@@ -2,7 +2,11 @@
 
 function getDomain(url) {
     var re = /^https{0,}:\/\/\w+\.(\w+)\.\w+/i;
-    return url.match(re)[1].toLowerCase();
+    if (url !== '#') {
+        return url.match(re)[1].toLowerCase();
+    } else {
+        return 'empty';
+    }
 }
 
 angular.module('BangumiList', ['ieFix', 'ipCookie'])
@@ -12,22 +16,83 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
     $scope.ipCookie = ipCookie;
     $scope.reversed = true;
     $scope.ordered = 'cn';
-    $scope.navList = [{name: '周一', index: 1, order: 'cn'}, {name: '周二', index: 2, order: 'cn'}, {name: '周三', index: 3, order: 'cn'}, {name: '周四', index: 4, order: 'cn'}, {name: '周五', index: 5, order: 'cn'}, {name: '周六', index: 6, order: 'cn'}, {name: '周日', index: 0, order: 'cn'}, {name: '全部', index: undefined, order: 'jp'}];
+    $scope.navList = [{name: '周一', index: 1, order: 'cn'}, {name: '周二', index: 2, order: 'cn'}, {name: '周三', index: 3, order: 'cn'}, {name: '周四', index: 4, order: 'cn'}, {name: '周五', index: 5, order: 'cn'}, {name: '周六', index: 6, order: 'cn'}, {name: '周日', index: 0, order: 'cn'}, {name: '全部', index: -1, order: 'jp'}];
     $scope.siteList = [{name: 'A站', domain: 'acfun', show: true}, {name: 'B站', domain: 'bilibili', show: true}, {name: '搜狐', domain: 'sohu', show: true}, {name: '优酷', domain: 'youku', show: true}, {name: '腾讯', domain: 'qq', show: true}, {name: '爱奇艺', domain: 'iqiyi', show: true}, {name: '乐视', domain: 'letv', show: true}, {name: 'PPTV', domain: 'pptv', show: true}, {name:'土豆', domain: 'tudou', show: true}, {name: '迅雷', domain: 'movie', show: true}];
-    $scope.query = {};
+    $scope.query = {
+        'nextDayTime': 24,
+        'weekDayCN': -1,
+        'titleCN': '',
+        'newBgm': false
+    };
     $scope.selectFlag = null;
-    
+    $scope.errorFlag = false;
+    $scope.errorMessage = '';
+    $scope.lastModified = '';
+    $scope.allOnly = false; //new bangumi only flag
+    $scope.menuArchive = false; //topnav archive menu
+    $scope.menuDisplay = false; //topnav display menu
+    $scope.menuSites = false; //topnav sites menu
+    $scope.shadow = false; //div shadow
+    $scope.nextDayTimeFlag = '';
+    $scope.nextDayTimeMax = 24;
+    $scope.nextDayTimeMin = 20;
+
+    //filter bangumi data
+    $scope.bgmFilter = function(item) {
+        if ($scope.query.weekDayCN === -1 ) {
+            return true;
+        } else if ((item.weekDayCN === $scope.query.weekDayCN && +item.timeCN.slice(0, 2) < $scope.query.nextDayTime) || 
+                  ((item.weekDayCN === 6 ? 0 : item.weekDayCN + 1) === $scope.query.weekDayCN && +item.timeCN.slice(0,2) >= $scope.query.nextDayTime)) {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
+    //to change query.netDaytime
+    $scope.changeNextDayTime = function(flag) {
+       if (flag === '+') {
+           $scope.query.nextDayTime = ($scope.query.nextDayTime === $scope.nextDayTimeMax ? $scope.nextDayTimeMax : $scope.query.nextDayTime + 1);
+           $scope.checkNextDayTimeFlag();
+       } else if (flag === '-') {
+           $scope.query.nextDayTime = ($scope.query.nextDayTime === $scope.nextDayTimeMin ? $scope.nextDayTimeMin : $scope.query.nextDayTime - 1);
+           $scope.checkNextDayTimeFlag();
+       }
+    };
+
+    //to check nextDayTimeFlag
+    $scope.checkNextDayTimeFlag = function() {
+        if ($scope.query.nextDayTime === $scope.nextDayTimeMax) {
+            $scope.nextDayTimeFlag = 'max';
+        } else if ($scope.query.nextDayTime === $scope.nextDayTimeMin) { 
+            $scope.nextDayTimeFlag = 'min';
+        } else {
+            $scope.nextDayTimeFlag = '';
+        }
+    };
+
     //use cookie to change siteList
     $scope.getSiteCookie = function(siteList) {
         return siteList.map(function(site) {
             var value = ipCookie(site.domain);
-            if (value!==undefined) {
+            if (value !== undefined) {
                 site.show = value;
             }
            return site; 
         });
     };
     
+    //allOnly switch
+    $scope.switchAllOnly = function() {
+        if ($scope.allOnly) {
+            $scope.query.weekDayCN = -1;
+            $scope.order($scope.bangumis,'jp',false);
+        } else {
+            $scope.query.weekDayCN = weekDayNow;
+            $scope.order($scope.bangumis,'cn',false);
+        }
+    };
+
     //check if all bangumi's show is true
     $scope.checkSiteList = function() {
         for(var i = 0, l = $scope.siteList.length; i < l; i++) {
@@ -67,8 +132,8 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
                     return reverseFlag * (a[time] - b[time]);
                 }
             } else {
-                return reverseFlag * ((a[weekDay] === 0 ? 7 : a[weekDay]) - 
-                                        (b[weekDay] === 0 ? 7 : b[weekDay]));
+                return reverseFlag * (a[weekDay] - b[weekDay]);
+                //return reverseFlag * ((a[weekDay] === 0 ? 7 : a[weekDay]) - (b[weekDay] === 0 ? 7 : b[weekDay]));
             }
         });
     };
@@ -118,13 +183,19 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
     $scope.readBangumi = function(filePath, order, reverse) {
         //ngProgressLite.start();
         $http.get(filePath)
-            .success(function(data) {
+            .success(function(data, status, headers) {
                 $scope.bangumis = $scope.order(data, order, reverse);
                 $scope.query.titleCN = '';
+                if (headers('Last-Modified')) {
+                    var tempDate = new Date(headers('Last-Modified'));
+                    $scope.lastModified = '数据更新日期: ' + tempDate.getFullYear() + '年' + 
+                        (tempDate.getMonth() + 1) + '月' + tempDate.getDate() + '日';
+                }
                 //ngProgressLite.done();
             })
             .error(function(data, status) {
-                alert('读取' + filePath + '出错\n错误代码:' + status + '\n请联系wxt2005#gmail.com\n或在Twitter上@wxt2005');   
+                $scope.errorFlag = true;
+                $scope.errorMessage = '读取 ' + filePath + ' 出错. 错误代码: ' + status + '. 请联系: wxt2005#gmail.com, 或在Twitter上@wxt2005.';
             });
     };
 
@@ -142,15 +213,23 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
                 data[file].show = data[file].year == yearNow ? true : false;
             }
             $scope.archive = data;
-            $scope.readBangumi($scope.getJsonPath(yearNow, monthNow, data), $scope.ordered, !$scope.reversed);
+            if ($scope.allOnly) {
+                $scope.readBangumi($scope.getJsonPath(yearNow, monthNow, data), 'jp', false);
+                $scope.query.weekDayCN = -1;
+            } else {
+                $scope.readBangumi($scope.getJsonPath(yearNow, monthNow, data), $scope.ordered, !$scope.reversed);
+            }
         })
         .error(function(data, status) {
-            alert('读取archive.json出错\n错误代码:' + status + '\n请联系wxt2005#gmail.com\n或在Twitter上@wxt2005');
+            $scope.errorFlag = true;
+            $scope.errorMessage = '读取 archive.json 出错. 错误代码: ' + status + '. 请联系: wxt2005#gmail.com, 或在Twitter上@wxt2005.';
         });
-
     $scope.siteList = $scope.getSiteCookie($scope.siteList);
-    $scope.query.newBgm = ipCookie('newOnly');
+    $scope.query.newBgm = ipCookie('newOnly') || false;
+    $scope.query.nextDayTime = ipCookie('nextDayTime') || 24;
+    $scope.allOnly = ipCookie('allOnly') || false;
     $scope.checkSiteList();
+    $scope.checkNextDayTimeFlag();
 }])
 
 //nav bar template
@@ -176,6 +255,18 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
         templateUrl: 'sidebar.html'
     };
 })*/
+
+//used to filter bangumi data
+/*.filter('bgmFilter', '$scope', function($scope) {
+   return function(item) {
+       if (item.weekDayCN === $scope.query.weekDayCN) {
+            return true;
+       } else {
+            return false;
+       }
+   };
+})*/
+
 
 //filter used to format time data
 .filter('selectAllButton', function() {
@@ -241,6 +332,8 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
                 return 'A站';
             case 'movie':
                 return '迅雷';
+            case 'empty':
+                return '暂无';
             default:
                 return '未知';
         }
@@ -259,17 +352,21 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
             }
             return false;
         });
-        return nArray.sort(function(a, b) {
-            a = getDomain(a);
-            b = getDomain(b);
-            if (a < b) {
-                return -1;
-            } else if (a > b) {
-                return 1;
-            } else {
-                return 0;
-            }
-        });
+        if (nArray.length !== 0) {
+            return nArray.sort(function(a, b) {
+                a = getDomain(a);
+                b = getDomain(b);
+                if (a < b) {
+                    return -1;
+                } else if (a > b) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            });
+        } else {
+            return ['#'];
+        }
     };
 });
 

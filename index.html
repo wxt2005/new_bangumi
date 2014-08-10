@@ -9,31 +9,36 @@
         <link type="text/css" rel="stylesheet" href="css/ngprogress-lite.css">
         <!--[if lte IE 7]><script type="text/javascript" src="js/json2.js"></script><![endif]-->
     </head>
-    <body ng-controller="ListController" ng-cloak>
-        <noscript>
-            <img src="images/no-js.gif" alt="没有打开Javascript！">
-            <p style="text-align:center;">请打开javascript支持以显示本页面</p>
-        </noscript>
+    <body ng-controller="ListController">
         <div id="topbar">
             <ul id=topnav>
                 <li class="title">
                     <a href="http://bgmlist.com/">番组放送</a>
                 </li>
-                <li class="menu">
-                    <a href="javascript:;">历史数据</a>
-                    <ul class="submenu year">
+                <li class="menu" ng-mouseenter="menuArchive=true;shadow=true" ng-mouseleave="menuArchive=false;shadow=false">
+                    <a href="javascript:;" ng-click="menuArchive=!menuArchive">历史数据</a>
+                    <ul class="submenu year" ng-show="menuArchive===true" ng-cloak>
                         <li ng-repeat="file in archive">
-                            <a href="javascript:;">{{file.year}}年</a>
-                            <ul class="submenu month">
+                            <a href="javascript:;" ng-mouseenter="$parent['year'+file.year]=true" ng-mouseleave="$parent['year'+file.year]=false" 
+                                ng-click="$parent['year'+file.year]=!$parent['year'+file.year]" ng-init="$parent['year'+file.year]=false">
+                                {{file.year}}年
+                            </a>
+                            <ul class="submenu month" ng-show="$parent['year'+file.year]===true"
+                                ng-mouseenter="$parent['year'+file.year]=true" ng-mouseleave="$parent['year'+file.year]=false">
                                 <li ng-repeat="data in file.months">
-                                    <a href="javascript:;" ng-click="readBangumi(getJsonPath(file.year, data.month, archive),'jp',false);query.weekDayCN=undefined">{{data.month | monthCN}}</a></li>
+                                    <a href="javascript:;" 
+                                        ng-click="readBangumi(getJsonPath(file.year, data.month, archive),'jp',false);
+                                        query.weekDayCN=-1;$parent.$parent.menuArchive=false">
+                                        {{data.month | monthCN}}
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
                 </li>
-                <li class="menu">
-                    <a href="javascript:;">显示设置</a>
-                    <ul class="submenu display">
+                <li class="menu" ng-mouseenter="menuDisplay=true;shadow=true" ng-mouseleave="menuDisplay=false;shadow=false">
+                    <a href="javascript:;" ng-click="menuDisplay=!menuDisplay">显示设置</a>
+                    <ul class="submenu display" ng-show="menuDisplay===true" ng-cloak>
                         <li>
                             <label for="newOnly">只显示新番
                                 <span ng-class="{'toggleON':query.newBgm,'toggleOFF':!query.newBgm}"></span>
@@ -42,17 +47,30 @@
                             ng-model="query.newBgm" ng-false-value="" 
                             ng-change="ipCookie('newOnly',query.newBgm,{expires:365})">
                         </li>
-                        <!--li>
-                            <label for="outOnly">只显示已开播番组
-                                <span class="toggleOFF"></span>
+                        <li>
+                            <label for="allOnly">关闭自动切换
+                                <span ng-class="{'toggleON':allOnly,'toggleOFF':!allOnly}"></span>
                             </label>
-                            <input type="checkbox" name="outOnly" id="outOnly">
-                        </li-->
+                            <input type="checkbox" name="allOnly" id="allOnly" 
+                            ng-model="allOnly" 
+                            ng-change="switchAllOnly();ipCookie('allOnly',allOnly,{expires:365})">
+                        </li>
+                        <li>
+                            <label for="toNextDay">转到次日
+                            </label>
+                            <div class="hourSelecter">
+                                <span class="left" ng-click="changeNextDayTime('-');ipCookie('nextDayTime',query.nextDayTime,{expires:365})" 
+                                    ng-class="{'disable':nextDayTimeFlag==='min'}"></span>
+                                <p>{{query.nextDayTime}}点</p>
+                                <span class="right" ng-click="changeNextDayTime('+');ipCookie('nextDayTime',query.nextDayTime,{expires:365})" 
+                                    ng-class="{'disable':nextDayTimeFlag==='max'}"></span>
+                            </div>
+                        </li>
                     </ul>
                 </li>
-                <li class="menu">
-                    <a href="javascript:;">站点过滤</a>
-                    <ul class="submenu sites">
+                <li class="menu" ng-mouseenter="menuSites=true;shadow=true" ng-mouseleave="menuSites=false;shadow=false">
+                    <a href="javascript:;" ng-click="menuSites=!menuSites">站点过滤</a>
+                    <ul class="submenu sites" ng-show="menuSites===true" ng-cloak>
                         <li ng-repeat="airSite in siteList">
                             <label for="{{airSite.domain}}">{{airSite.name}}
                                 <span class="toggleON" 
@@ -78,21 +96,29 @@
 
             </ul>
         </div>
-        <h1>{{yearRead}}年{{monthRead}}月番组</h1>
+        <div id="shadow" ng-click="menuArchive=false;menuDisplay=false;menuSites=false" ng-show="shadow===true"></div>
+        <div id="header" ng-cloak>
+            <h1>{{yearRead}}年{{monthRead}}月番组</h1>
+            <p class="total">本季度共有{{bangumis.length}}部番组</p>
+            <p class="lastModified">{{lastModified}}</p>
+        </div>
         <div id="nav">
-            <ul id='switcher'>
+            <ul id='switcher' ng-cloak>
                 <li ng-repeat="nav in navList" 
                     ng-class="{'selected':$parent.query.weekDayCN===nav.index}" 
-                    class-fix ng-click="$parent.query.titleCN='';$parent.query.weekDayCN=nav.index;
+                    ng-click="$parent.query.titleCN='';$parent.query.weekDayCN=nav.index;
                     order(bangumis,nav.order,false);">{{nav.name}}</li>
             </ul> 
             <div id="search">
                 <input type="text" ng-model="query.titleCN" 
-                placeholder="搜索本月番组" ng-keydown="query.weekDayCN=undefined">
+                placeholder="搜索本季度番组" ng-keydown="query.weekDayCN=-1">
             </div>
         </div>
         <div id="container">
-            <table>
+            <noscript>
+                <p style="text-align:center;">请打开javascript支持以完整显示本站点</p>
+            </noscript>
+            <table ng-cloak>
                 <colgroup>
                     <col id="name">
                     <col id="time-jp">
@@ -104,21 +130,22 @@
                         <th>作品名</th>
                         <th>
                             <span ng-click="order(bangumis,'jp',reversed)" 
-                                ng-class="{'ordered':ordered==='jp'}" class-fix>日本放送时间</span>
+                                ng-class="{'ordered':ordered==='jp'}">日本放送时间</span>
                         </th>
                         <th>
                             <span ng-click="order(bangumis,'cn',reversed)" 
-                                ng-class="{'ordered':ordered==='cn'}" class-fix>大陆放送时间</span>
+                                ng-class="{'ordered':ordered==='cn'}">大陆放送时间</span>
                         </th>
                         <th>播放网址</th>
                     </tr>
                 </thead>
                 <tbody id="bangumi_list">
-                    <tr ng-repeat="item in bangumis | filter:query track by $index" 
-                        ng-class-even="'color'" class-fix>
+                    <tr class="errorMessage" ng-show="errorFlag===true"><td colspan="4">{{errorMessage}}</td></tr>
+                    <tr ng-repeat="item in bangumis | filter:bgmFilter track by $index">
                         <td>
-                            <a href="{{item.officalSite}}" ng-class="{'new':item.newBgm}" class-fix>
-                                {{item.titleCN}}<span span-fix>{{item.titleJP}}</span></a>
+                            <a href="{{item.officalSite}}" ng-class="{'new':item.newBgm}" title="{{item.titleJP}}">
+                                {{item.titleCN}}
+                            </a>
                         </td>
                         <td>{{item.weekDayJP | weekday}}&#160;&#160;{{item.timeJP | time}}</td>
                         <td>{{item.weekDayCN | weekday}}&#160;&#160;{{item.timeCN | time}}</td>
@@ -126,9 +153,9 @@
                             <ul class="link-list">
                                 <li ng-repeat="site in item.onAirSite | linkFilter:siteList" 
                                     ng-class="{'lastLink':$last}">
-                                    <a href="{{site}}">{{site | onair}}</a></li>
+                                    <a href="{{site}}">{{site | onair}}</a>
+                                </li>
                             </ul>    
-                            <p ng-show="item.onAirSite.length===0" style="color:gray" class-fix>暂无</p>
                         </td>
                     </tr>
                 </tbody>
