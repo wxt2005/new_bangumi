@@ -403,6 +403,7 @@ table tbody tr td a.new:after {
     font-weight: normal;
     vertical-align: super;
     position: absolute;
+    right: -30px;
 }
 
 table tbody tr {
