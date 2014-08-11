@@ -11,17 +11,17 @@
                 <li class="title">
                     <a href="http://bgmlist.com/">番组放送</a>
                 </li>
-                <li class="menu" ng-mouseenter="topMenuHandler('menuArchive')" 
-                    ng-mouseleave="topMenuHandler('menuArchive')">
-                    <a href="javascript:;" ng-click="topMenuHandler('menuArchive')">历史数据</a>
-                    <ul class="submenu year" ng-show="menuArchive" ng-cloak>
+                <li class="menu" ng-mouseenter="topMenuHandler('archive')" 
+                    ng-mouseleave="topMenuHandler('archive')">
+                    <a href="javascript:;" ng-click="topMenuHandler('archive')">历史数据</a>
+                    <ul class="submenu year" ng-show="status.menu.archive" ng-cloak>
                         <li ng-repeat="file in archive">
                             <a href="javascript:;" ng-mouseenter="topMenuHandler('year'+file.year,true)" 
                                 ng-mouseleave="topMenuHandler('year'+file.year,true)" 
                                 ng-click="topMenuHandler('year'+file.year,true)">
                                 {{file.year}}年
                             </a>
-                            <ul class="submenu month" ng-show="$parent['year'+file.year]"
+                            <ul class="submenu month" ng-show="$parent.status.menu['year'+file.year]"
                                 ng-mouseenter="topMenuHandler('year'+file.year,true)" 
                                 ng-mouseleave="topMenuHandler('year'+file.year,true)">
                                 <li ng-repeat="data in file.months">
@@ -34,16 +34,16 @@
                         </li>
                     </ul>
                 </li>
-                <li class="menu" ng-mouseenter="topMenuHandler('menuDisplay')" 
-                    ng-mouseleave="topMenuHandler('menuDisplay')">
-                    <a href="javascript:;" ng-click="topMenuHandler('menuDisplay')">显示设置</a>
-                    <ul class="submenu display" ng-show="menuDisplay" ng-cloak>
+                <li class="menu" ng-mouseenter="topMenuHandler('display')" 
+                    ng-mouseleave="topMenuHandler('display')">
+                    <a href="javascript:;" ng-click="topMenuHandler('display')">显示设置</a>
+                    <ul class="submenu display" ng-show="status.menu.display" ng-cloak>
                         <li>
-                            <label for="newOnly" title="只在列表中显示当月开播的番组">只显示新番
+                            <label for="setting.showNew" title="只在列表中显示当月开播的番组">只显示新番
                                 <span class="toggle" ng-class="{'ON':query.newBgm}"></span>
                             </label>
-                            <input type="checkbox" name="newOnly" id="newOnly" 
-                            ng-model="newOnly" ng-change="switchNewOnly()">
+                            <input type="checkbox" name="setting.showNew" id="setting.showNew" 
+                            ng-model="setting.showNew" ng-change="switchNewOnly()">
                         </li>
                         <li>
                             <label for="allOnly" title="打开页面后直接显示全部番组">关闭自动切换
@@ -63,10 +63,10 @@
                             <label for="toNextDay" title="将该时间点及之后的番组顺延到第二天显示">转到次日</label>
                             <div class="hourSelecter">
                                 <span class="left" ng-click="hourSelectHandler('-')" 
-                                    ng-class="{'disable':nextDayTimeFlag==='min'}"></span>
+                                    ng-class="{'disable':status.nextDayTime==='min'}"></span>
                                 <p>{{query.nextDayTime}}点</p>
                                 <span class="right" ng-click="hourSelectHandler('+')" 
-                                    ng-class="{'disable':nextDayTimeFlag==='max'}"></span>
+                                    ng-class="{'disable':status.nextDayTime==='max'}"></span>
                             </div>
                         </li>
                         <li>
@@ -75,9 +75,9 @@
                         </li>
                     </ul>
                 </li>
-                <li class="menu" ng-mouseenter="topMenuHandler('menuSites')" ng-mouseleave="topMenuHandler('menuSites')">
-                    <a href="javascript:;" ng-click="topMenuHandler('menuSites')">站点过滤</a>
-                    <ul class="submenu sites" ng-show="menuSites" ng-cloak>
+                <li class="menu" ng-mouseenter="topMenuHandler('sites')" ng-mouseleave="topMenuHandler('sites')">
+                    <a href="javascript:;" ng-click="topMenuHandler('sites')">站点过滤</a>
+                    <ul class="submenu sites" ng-show="status.menu.sites" ng-cloak>
                         <li ng-repeat="airSite in siteList">
                             <label for="{{airSite.domain}}">{{airSite.name}}
                                 <span class="toggle" ng-class="{'ON':airSite.show}">
@@ -88,8 +88,8 @@
                                 ng-change="switchSite(airSite.domain,airSite.show)">
                         </li>
                         <li>
-                            <span class="all" ng-click="selectAll(selectFlag)">
-                                {{selectFlag|selectAllButton}}
+                            <span class="all" ng-click="selectAll(status.selectAll)">
+                                {{status.selectAll|selectAllButton}}
                             </span>
                         </li>
                     </ul> 
@@ -110,11 +110,11 @@
 
             </ul>
         </div>
-        <div id="shadow" ng-click="shadowHandler()" ng-show="shadow"></div>
+        <div id="shadow" ng-click="shadowHandler()" ng-show="status.shadow"></div>
         <div id="header" ng-cloak>
             <h1>{{yearRead}}年{{monthRead}}月番组</h1>
             <p class="total">当季共有{{bangumis.length}}部番组</p>
-            <p class="lastModified">{{lastModified}}</p>
+            <p class="lastModified">{{status.lastModifieded}}</p>
         </div>
         <div id="nav">
             <ul id='switcher' ng-cloak>
@@ -143,22 +143,24 @@
                     <tr>
                         <th>作品名</th>
                         <th>
-                            <span ng-click="order(bangumis,'jp',reversed)" 
-                                ng-class="{'ordered':ordered==='jp'}">日本放送时间</span>
+                            <span ng-click="order(bangumis,'jp',status.reversed)" 
+                                ng-class="{'ordered':status.ordered==='jp'}">日本放送时间</span>
                         </th>
                         <th>
-                            <span ng-click="order(bangumis,'cn',reversed)" 
-                                ng-class="{'ordered':ordered==='cn'}">大陆放送时间</span>
+                            <span ng-click="order(bangumis,'cn',status.reversed)" 
+                                ng-class="{'ordered':status.ordered==='cn'}">大陆放送时间</span>
                         </th>
                         <th>播放网址</th>
                     </tr>
                 </thead>
                 <tbody id="bangumi_list">
-                    <tr class="errorMessage" ng-show="errorFlag"><td colspan="4">{{errorMessage}}</td></tr>
+                    <tr class="status.errorMsg" ng-show="status.error">
+                        <td colspan="4">{{status.errorMsg}}</td>
+                    </tr>
                     <tr ng-repeat="item in bangumis|filter:bgmFilter track by $index">
                         <td>
                             <a href="{{item.officalSite}}" ng-class="{'new':item.newBgm}" title="{{item.titleJP}}"
-                                target="{{linkTarget}}">
+                                target="{{status.linkTarget}}">
                                 {{item.titleCN}}
                             </a>
                         </td>
@@ -168,7 +170,7 @@
                             <ul class="link-list">
                                 <li ng-repeat="site in item.onAirSite|linkFilter:siteList" 
                                     ng-class="{'lastLink':$last}">
-                                    <a href="{{site}}" target="{{linkTarget}}" ng-click="linkHandler(site,$event)" 
+                                    <a href="{{site}}" target="{{status.linkTarget}}" ng-click="linkHandler(site,$event)" 
                                         ng-class="{'disabled':site==='#'}">
                                         {{site|onair}}
                                     </a>

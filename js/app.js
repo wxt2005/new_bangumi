@@ -15,40 +15,72 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
     var i = 0, l = 0;
 
     $scope.ipCookie = ipCookie;
-    $scope.reversed = true;
-    $scope.ordered = 'cn';
-    $scope.navList = [{name: '周一', index: 1, order: 'cn'}, {name: '周二', index: 2, order: 'cn'}, {name: '周三', index: 3, order: 'cn'}, {name: '周四', index: 4, order: 'cn'}, {name: '周五', index: 5, order: 'cn'}, {name: '周六', index: 6, order: 'cn'}, {name: '周日', index: 0, order: 'cn'}, {name: '全部', index: -1, order: 'jp'}];
-    $scope.siteList = [{name: 'A站', domain: 'acfun', show: true}, {name: 'B站', domain: 'bilibili', show: true}, {name: '搜狐', domain: 'sohu', show: true}, {name: '优酷', domain: 'youku', show: true}, {name: '腾讯', domain: 'qq', show: true}, {name: '爱奇艺', domain: 'iqiyi', show: true}, {name: '乐视', domain: 'letv', show: true}, {name: 'PPTV', domain: 'pptv', show: true}, {name:'土豆', domain: 'tudou', show: true}, {name: '迅雷', domain: 'movie', show: true}];
+    $scope.navList = [
+        {name: '周一', index: 1, order: 'cn'},
+        {name: '周二', index: 2, order: 'cn'},
+        {name: '周三', index: 3, order: 'cn'},
+        {name: '周四', index: 4, order: 'cn'},
+        {name: '周五', index: 5, order: 'cn'},
+        {name: '周六', index: 6, order: 'cn'},
+        {name: '周日', index: 0, order: 'cn'},
+        {name: '全部', index: -1, order: 'jp'}
+    ];
+    $scope.siteList = [
+        {name: 'A站', domain: 'acfun', show: true}, 
+        {name: 'B站', domain: 'bilibili', show: true}, 
+        {name: '搜狐', domain: 'sohu', show: true}, 
+        {name: '优酷', domain: 'youku', show: true}, 
+        {name: '腾讯', domain: 'qq', show: true},
+        {name: '爱奇艺', domain: 'iqiyi', show: true},
+        {name: '乐视', domain: 'letv', show: true},
+        {name: 'PPTV', domain: 'pptv', show: true},
+        {name: '土豆', domain: 'tudou', show: true},
+        {name: '迅雷', domain: 'movie', show: true}
+    ];
+
+    //searching query
     $scope.query = {
         'nextDayTime': 24,
         'weekDayCN': -1,
         'titleCN': '',
         'newBgm': false
     };
-    $scope.selectFlag = null;
-    $scope.errorFlag = false;
-    $scope.errorMessage = '';
-    $scope.lastModifi = '';
-    $scope.allOnly = false; //new bangumi only flag
-    $scope.menuArchive = false; //topnav archive menu
-    $scope.menuDisplay = false; //topnav display menu
-    $scope.menuSites = false; //topnav sites menu
-    $scope.shadow = false; //div shadow
-    $scope.newWindow = false; //new window
-    $scope.nextDayTimeFlag = '';
-    $scope.nextDayTimeMax = 24;
-    $scope.nextDayTimeMin = 20;
-    $scope.linkTarget = '_self';
-    $scope.allData = false;
+
+    //app settings
+    $scope.setting = {
+        'nextTimeMax': 24,   
+        'nextTimeMin': 20,
+        'linkTarget': '_self',
+        'showAll': false,
+        'newTab': false,
+        'showNew': false
+    };
+
+    //app status
+    $scope.status = {
+        'nextDayTime': '',
+        'error': false,
+        'errorMsg': '',
+        'reversed': true,
+        'ordered': 'cn',
+        'status.lastModifieded': '',
+        'selectAll': true,
+        'shadow': false,
+        'menu': {
+            'archive': false,
+            'display': false,
+            'sites': false
+        }
+    };
 
     //change link target
     $scope.changeTarget = function() {
-        if($scope.newWindow) {
-            $scope.linkTarget = '_blank';
+        if($scope.setting.newTab) {
+            $scope.status.linkTarget = '_blank';
         } else {
-            $scope.linkTarget = '_self';
+            $scope.status.linkTarget = '_self';
         }
-        ipCookie('newWindow', $scope.newWindow, {expires: 365});
+        ipCookie('newTab', $scope.setting.newTab, {expires: 365});
     };
 
     //clear all cookie
@@ -66,7 +98,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
                 $scope.siteList[i].show = true;
             }
             $scope.checkSiteList();
-            $scope.newWindow = false;
+            $scope.setting.newTab = false;
             $scope.changeTarget();
         }
     };
@@ -85,7 +117,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
     //change back to init weekDayCN
     $scope.resumeSearch = function() {
         $scope.query.titleCN = '';
-        if (!$scope.allOnly && !$scope.allData) {
+        if (!$scope.allOnly && !$scope.setting.showAll) {
             $scope.query.weekDayCN = weekDayNow;
         }
     };
@@ -106,9 +138,9 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
         $scope.query.weekDayCN = index;
         $scope.order($scope.bangumis, order, false);
         if(index === -1) {
-            $scope.allData = true;
+            $scope.setting.showAll = true;
         } else {
-            $scope.allData = false;
+            $scope.setting.showAll = false;
         }
     };
 
@@ -138,23 +170,23 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
     //to handle hour selecter
     $scope.hourSelectHandler = function(flag) {
        if (flag === '+') {
-           $scope.query.nextDayTime = ($scope.query.nextDayTime === $scope.nextDayTimeMax ? $scope.nextDayTimeMax : $scope.query.nextDayTime + 1);
+           $scope.query.nextDayTime = ($scope.query.nextDayTime === $scope.setting.nextTimeMax ? $scope.setting.nextTimeMax : $scope.query.nextDayTime + 1);
            $scope.checkNextDayTimeFlag();
        } else if (flag === '-') {
-           $scope.query.nextDayTime = ($scope.query.nextDayTime === $scope.nextDayTimeMin ? $scope.nextDayTimeMin : $scope.query.nextDayTime - 1);
+           $scope.query.nextDayTime = ($scope.query.nextDayTime === $scope.setting.nextTimeMin ? $scope.setting.nextTimeMin : $scope.query.nextDayTime - 1);
            $scope.checkNextDayTimeFlag();
        }
        ipCookie('nextDayTime', $scope.query.nextDayTime, {expires:365});
     };
 
-    //to check nextDayTimeFlag
+    //to check status.nextDayTime
     $scope.checkNextDayTimeFlag = function() {
-        if ($scope.query.nextDayTime === $scope.nextDayTimeMax) {
-            $scope.nextDayTimeFlag = 'max';
-        } else if ($scope.query.nextDayTime === $scope.nextDayTimeMin) { 
-            $scope.nextDayTimeFlag = 'min';
+        if ($scope.query.nextDayTime === $scope.setting.nextTimeMax) {
+            $scope.status.nextDayTime = 'max';
+        } else if ($scope.query.nextDayTime === $scope.setting.nextTimeMin) { 
+            $scope.status.nextDayTime = 'min';
         } else {
-            $scope.nextDayTimeFlag = '';
+            $scope.status.nextDayTime = '';
         }
     };
 
@@ -175,10 +207,10 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
         $scope.checkSiteList();
     };
 
-    //newOnly switch
+    //setting.showNew switch
     $scope.switchNewOnly = function() {
-        $scope.query.newBgm = $scope.newOnly;
-        ipCookie('newOnly', $scope.query.newBgm, {expires: 365});
+        $scope.query.newBgm = $scope.setting.showNew;
+        ipCookie('showNew', $scope.query.newBgm, {expires: 365});
     };
 
     //allOnly switch
@@ -197,22 +229,22 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
     $scope.archiveHandler = function(year, month) {
         $scope.readBgm($scope.getJsonPath(year, month, $scope.archive), 'jp', false);
         $scope.query.weekDayCN = -1;
-        $scope.allData = true;
+        $scope.setting.showAll = true;
     };
 
-    //handle shadow layer
-    $scope.shadowHandler = function() {
-        $scope.menuArchive = false;
-        $scope.menuDisplay = false;
-        $scope.menuSites = false;
-        $scope.shadow = false;
+    //handle status.shadow layer
+    $scope.status.shadowHandler = function() {
+        $scope.status.menu.archive = false;
+        $scope.status.menu.display = false;
+        $scope.status.menu.display = false;
+        $scope.status.shadow = false;
     };
 
     //handle top bar menu button
     $scope.topMenuHandler = function(menuName, flag) {
-        $scope[menuName] = !$scope[menuName];
+        $scope.status.menu[menuName] = !$scope.status.menu[menuName];
         if(!flag) {
-            $scope.shadow = !$scope.shadow;
+            $scope.status.shadow = !$scope.status.shadow;
         }
     };
 
@@ -220,10 +252,10 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
     $scope.checkSiteList = function() {
         for(i = 0, l = $scope.siteList.length; i < l; i++) {
             if($scope.siteList[i].show === false) {
-                $scope.selectFlag = true;
+                $scope.status.selectAll = true;
                 break;
             }
-            $scope.selectFlag = false;
+            $scope.status.selectAll = false;
         }
     };
     
@@ -233,7 +265,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
            $scope.siteList[i].show = flag; 
            ipCookie($scope.siteList[i].domain,$scope.siteList[i].show,{expires:365});
         }
-        $scope.selectFlag = !$scope.selectFlag;
+        $scope.status.selectAll = !$scope.status.selectAll;
     };
 
     //order bangumi list
@@ -241,8 +273,8 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
         var weekDay = 'weekDay' + target.toUpperCase(),
         time = 'time' + target.toUpperCase();
 
-        $scope.reversed = !reverseFlag;
-        $scope.ordered = target;
+        $scope.status.reversed = !reverseFlag;
+        $scope.status.ordered = target;
         reverseFlag = reverseFlag ? -1 : 1;
 
         return items.sort(function(a, b) {
@@ -311,14 +343,14 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
                 $scope.query.titleCN = '';
                 if (headers('Last-Modified')) {
                     var tempDate = new Date(headers('Last-Modified'));
-                    $scope.lastModified = '数据更新日期: ' + tempDate.getFullYear() + '年' + 
+                    $scope.status.lastModifieded = '数据更新日期: ' + tempDate.getFullYear() + '年' + 
                         (tempDate.getMonth() + 1) + '月' + tempDate.getDate() + '日';
                 }
                 //ngProgressLite.done();
             })
             .error(function(data, status) {
-                $scope.errorFlag = true;
-                $scope.errorMessage = '读取 ' + filePath + ' 出错. 错误代码: ' + status + '. 请点击上方的“提交问题”按钮.';
+                $scope.status.error = true;
+                $scope.status.errorMsg = '读取 ' + filePath + ' 出错. 错误代码: ' + status + '. 请点击上方的“提交问题”按钮.';
             });
     };
 
@@ -340,25 +372,26 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
                 $scope.readBgm($scope.getJsonPath(yearNow, monthNow, data), 'jp', false);
                 $scope.query.weekDayCN = -1;
             } else {
-                $scope.readBgm($scope.getJsonPath(yearNow, monthNow, data), $scope.ordered, !$scope.reversed);
+                $scope.readBgm($scope.getJsonPath(yearNow, monthNow, data), $scope.status.ordered, !$scope.status.reversed);
             }
         })
         .error(function(data, status) {
-            $scope.errorFlag = true;
-            $scope.errorMessage = '读取 archive.json 出错. 错误代码: ' + status + '. 请点击上方的“提交问题”按钮.';
+            $scope.status.error = true;
+            $scope.status.errorMsg = '读取 archive.json 出错. 错误代码: ' + status + '. 请点击上方的“提交问题”按钮.';
         });
     $scope.siteList = $scope.getSiteCookie($scope.siteList);
-    $scope.query.newBgm = ipCookie('newOnly') || false;
+    $scope.query.newBgm = ipCookie('showNew') || false;
     $scope.query.nextDayTime = ipCookie('nextDayTime') || 24;
     $scope.allOnly = ipCookie('allOnly') || false;
-    $scope.newWindow = ipCookie('newWindow') || false;
+    $scope.setting.newTab = ipCookie('newTab') || false;
     $scope.changeTarget();
     $scope.checkSiteList();
     $scope.checkNextDayTimeFlag();
 }])
 
+/*
 //nav bar template
-/*.directive('navBar', function() {
+.directive('navBar', function() {
     return {
         restrict: 'E',
         templateUrl: 'nav.html'
@@ -379,10 +412,10 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
         restrict: 'E',
         templateUrl: 'sidebar.html'
     };
-})*/
+})
 
 //used to filter bangumi data
-/*.filter('bgmFilter', '$scope', function($scope) {
+.filter('bgmFilter', '$scope', function($scope) {
    return function(item) {
        if (item.weekDayCN === $scope.query.weekDayCN) {
             return true;
