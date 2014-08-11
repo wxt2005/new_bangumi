@@ -52,6 +52,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
             for(i = 0, l = $scope.siteList.length; i < l; i++) {
                 $scope.siteList[i].show = true;
             }
+            $scope.checkSiteList();
         }
     };
 

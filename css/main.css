@@ -120,6 +120,7 @@ a:active {
 
 #topbar #topnav .plain {
     cursor: default;
+    margin-right: 8px;
 }
 
 #topbar #topnav li a {
@@ -324,7 +325,6 @@ a:active {
     zoom: 1;
     background-position: 0 0;
     text-indent: -9999px;
-    margin-left: 5px;
 }
 
 
