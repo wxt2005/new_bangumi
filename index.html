@@ -4,30 +4,29 @@
         <meta charset="utf-8">
         <title>番组放送</title>
         <link type="text/css" rel="stylesheet" href="css/main.css">
-        <link type="text/css" rel="stylesheet" href="css/ngprogress-lite.css">
     </head>
     <body ng-controller="ListController">
         <div id="topbar">
-            <ul id=topnav>
+            <ul id="topnav">
                 <li class="title">
                     <a href="http://bgmlist.com/">番组放送</a>
                 </li>
-                <li class="menu" ng-mouseenter="menuArchive=true;shadow=!shadow" 
-                    ng-mouseleave="menuArchive=false;shadow=!shadow">
-                    <a href="javascript:;" ng-click="menuArchive=!menuArchive;shadow=!shadow">历史数据</a>
-                    <ul class="submenu year" ng-show="menuArchive===true" ng-cloak>
+                <li class="menu" ng-mouseenter="topMenuHandler('menuArchive')" 
+                    ng-mouseleave="topMenuHandler('menuArchive')">
+                    <a href="javascript:;" ng-click="topMenuHandler('menuArchive')">历史数据</a>
+                    <ul class="submenu year" ng-show="menuArchive" ng-cloak>
                         <li ng-repeat="file in archive">
-                            <a href="javascript:;" ng-mouseenter="$parent['year'+file.year]=true" ng-mouseleave="$parent['year'+file.year]=false" 
-                                ng-click="$parent['year'+file.year]=!$parent['year'+file.year]" ng-init="$parent['year'+file.year]=false">
+                            <a href="javascript:;" ng-mouseenter="topMenuHandler('year'+file.year,true)" 
+                                ng-mouseleave="topMenuHandler('year'+file.year,true)" 
+                                ng-click="topMenuHandler('year'+file.year,true)">
                                 {{file.year}}年
                             </a>
-                            <ul class="submenu month" ng-show="$parent['year'+file.year]===true"
-                                ng-mouseenter="$parent['year'+file.year]=true" ng-mouseleave="$parent['year'+file.year]=false">
+                            <ul class="submenu month" ng-show="$parent['year'+file.year]"
+                                ng-mouseenter="topMenuHandler('year'+file.year,true)" 
+                                ng-mouseleave="topMenuHandler('year'+file.year,true)">
                                 <li ng-repeat="data in file.months">
                                     <a href="javascript:;" 
-                                        ng-click="readBangumi(getJsonPath(file.year, data.month, archive),'jp',false);
-                                        query.weekDayCN=-1;$parent.$parent.menuArchive=false;
-                                        $parent.$parent.allData=true">
+                                        ng-click="archiveHandler(file.year,data.month)">
                                         {{data.month|monthCN}}
                                     </a>
                                 </li>
@@ -35,66 +34,69 @@
                         </li>
                     </ul>
                 </li>
-                <li class="menu" ng-mouseenter="menuDisplay=true;shadow=!shadow" 
-                    ng-mouseleave="menuDisplay=false;shadow=!shadow">
-                    <a href="javascript:;" ng-click="menuDisplay=!menuDisplay;shadow=!shadow">显示设置</a>
-                    <ul class="submenu display" ng-show="menuDisplay===true" ng-cloak>
+                <li class="menu" ng-mouseenter="topMenuHandler('menuDisplay')" 
+                    ng-mouseleave="topMenuHandler('menuDisplay')">
+                    <a href="javascript:;" ng-click="topMenuHandler('menuDisplay')">显示设置</a>
+                    <ul class="submenu display" ng-show="menuDisplay" ng-cloak>
                         <li>
                             <label for="newOnly" title="只在列表中显示当月开播的番组">只显示新番
-                                <span ng-class="{'toggleON':query.newBgm,'toggleOFF':!query.newBgm}"></span>
+                                <span class="toggle" ng-class="{'ON':query.newBgm}"></span>
                             </label>
                             <input type="checkbox" name="newOnly" id="newOnly" 
-                            ng-model="query.newBgm" ng-false-value="" 
-                            ng-change="ipCookie('newOnly',query.newBgm,{expires:365})">
+                            ng-model="newOnly" ng-change="switchNewOnly()">
                         </li>
                         <li>
                             <label for="allOnly" title="打开页面后直接显示全部番组">关闭自动切换
-                                <span ng-class="{'toggleON':allOnly,'toggleOFF':!allOnly}"></span>
+                                <span class="toggle" ng-class="{'ON':allOnly}"></span>
                             </label>
                             <input type="checkbox" name="allOnly" id="allOnly" 
-                            ng-model="allOnly" 
-                            ng-change="switchAllOnly();ipCookie('allOnly',allOnly,{expires:365})">
+                            ng-model="allOnly" ng-change="switchAllOnly()">
                         </li>
                         <li>
                             <label for="newWindow" title="在新窗口（标签）中打开所有链接，包括番组官网">打开新页面
-                                <span ng-class="{'toggleON':newWindow,'toggleOFF':!newWindow}"></span>
+                                <span class="toggle" ng-class="{'ON':newWindow}"></span>
                             </label>
                             <input type="checkbox" name="newWindow" id="newWindow" 
-                            ng-model="newWindow" 
-                            ng-change="changeTarget();ipCookie('newWindow',newWindow,{expires:365})">
+                            ng-model="newWindow" ng-change="changeTarget()">
                         </li>
                         <li>
                             <label for="toNextDay" title="将该时间点及之后的番组顺延到第二天显示">转到次日</label>
                             <div class="hourSelecter">
-                                <span class="left" ng-click="changeNextDayTime('-');ipCookie('nextDayTime',query.nextDayTime,{expires:365})" 
+                                <span class="left" ng-click="hourSelectHandler('-')" 
                                     ng-class="{'disable':nextDayTimeFlag==='min'}"></span>
                                 <p>{{query.nextDayTime}}点</p>
-                                <span class="right" ng-click="changeNextDayTime('+');ipCookie('nextDayTime',query.nextDayTime,{expires:365})" 
+                                <span class="right" ng-click="hourSelectHandler('+')" 
                                     ng-class="{'disable':nextDayTimeFlag==='max'}"></span>
                             </div>
                         </li>
-                        <li><span class="all" ng-click="clearCookie()" title="清除显示设置和站点过滤，下次打开本站时将使用默认设置">清除所有设置</span></li>
+                        <li>
+                            <span class="all" ng-click="clearCookie()" 
+                                title="清除显示设置和站点过滤，下次打开本站时将使用默认设置">清除所有设置</span>
+                        </li>
                     </ul>
                 </li>
-                <li class="menu" ng-mouseenter="menuSites=true;shadow=!shadow" 
-                    ng-mouseleave="menuSites=false;shadow=!shadow">
-                    <a href="javascript:;" ng-click="menuSites=!menuSites;shadow=!shadow">站点过滤</a>
-                    <ul class="submenu sites" ng-show="menuSites===true" ng-cloak>
+                <li class="menu" ng-mouseenter="topMenuHandler('menuSites')" ng-mouseleave="topMenuHandler('menuSites')">
+                    <a href="javascript:;" ng-click="topMenuHandler('menuSites')">站点过滤</a>
+                    <ul class="submenu sites" ng-show="menuSites" ng-cloak>
                         <li ng-repeat="airSite in siteList">
                             <label for="{{airSite.domain}}">{{airSite.name}}
-                                <span class="toggleON" 
-                                    ng-class="{'toggleON':airSite.show,'toggleOFF':!airSite.show}">
+                                <span class="toggle" ng-class="{'ON':airSite.show}">
                                 </span>
                             </label>
                             <input type="checkbox" name="{{airSite.domain}}" id="{{airSite.domain}}" 
                                 ng-model="airSite.show" 
-                                ng-change="ipCookie(airSite.domain,airSite.show,{expires:365});checkSiteList()">
+                                ng-change="switchSite(airSite.domain,airSite.show)">
                         </li>
-                        <li><span class="all" ng-click="selectAll(selectFlag)">{{selectFlag|selectAllButton}}</span></li>
+                        <li>
+                            <span class="all" ng-click="selectAll(selectFlag)">
+                                {{selectFlag|selectAllButton}}
+                            </span>
+                        </li>
                     </ul> 
                 </li>
                 <li class="menu">
-                    <a href="m&#97;i&#108;t&#111;:&#119;xt&#50;&#48;&#48;&#53;@gma&#105;l&#46;&#99;&#111;&#109;?subject=%e7%95%aa%e7%bb%84%e6%94%be%e9%80%81-%e9%94%99%e8%af%af%e6%8f%90%e4%ba%a4" title="如果您发现数据错误，或者其它问题，请联系我">提交问题</a>
+                    <a href="m&#97;i&#108;t&#111;:&#119;xt&#50;&#48;&#48;&#53;@gma&#105;l&#46;&#99;&#111;&#109;?subject=%e7%95%aa%e7%bb%84%e6%94%be%e9%80%81-%e9%94%99%e8%af%af%e6%8f%90%e4%ba%a4" 
+                        title="如果您发现数据错误，或者其它问题，请联系我">提交问题</a>
                 </li>
                 <li class="share twitter">
                     <a href="https://twitter.com/share?url=http%3A%2F%2Fbgmlist.com%2F&text=%e6%96%b9%e4%be%bf%e5%bf%ab%e6%8d%b7%e7%9a%84%e6%ad%a3%e7%89%88%e6%96%b0%e7%95%aa%e6%94%be%e9%80%81%e8%81%9a%e5%90%88%e7%ab%99+-+%e7%95%aa%e7%bb%84%e6%94%be%e9%80%81" title="分享到Twitter" target="_blank">分享到Twitter</a>
@@ -108,7 +110,7 @@
 
             </ul>
         </div>
-        <div id="shadow" ng-click="menuArchive=false;menuDisplay=false;menuSites=false" ng-show="shadow===true"></div>
+        <div id="shadow" ng-click="shadowHandler()" ng-show="shadow"></div>
         <div id="header" ng-cloak>
             <h1>{{yearRead}}年{{monthRead}}月番组</h1>
             <p class="total">当季共有{{bangumis.length}}部番组</p>
@@ -118,7 +120,7 @@
             <ul id='switcher' ng-cloak>
                 <li ng-repeat="nav in navList" 
                     ng-class="{'selected':$parent.query.weekDayCN===nav.index}" 
-                    ng-click="$parent.switcherHandler(nav.index,nav.order)">{{nav.name}}</li>
+                    ng-click="switcherHandler(nav.index,nav.order)">{{nav.name}}</li>
             </ul> 
             <div id="search">
                 <input type="text" ng-model="query.titleCN" 
@@ -152,7 +154,7 @@
                     </tr>
                 </thead>
                 <tbody id="bangumi_list">
-                    <tr class="errorMessage" ng-show="errorFlag===true"><td colspan="4">{{errorMessage}}</td></tr>
+                    <tr class="errorMessage" ng-show="errorFlag"><td colspan="4">{{errorMessage}}</td></tr>
                     <tr ng-repeat="item in bangumis|filter:bgmFilter track by $index">
                         <td>
                             <a href="{{item.officalSite}}" ng-class="{'new':item.newBgm}" title="{{item.titleJP}}"

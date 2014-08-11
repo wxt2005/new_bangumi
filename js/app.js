@@ -48,6 +48,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
         } else {
             $scope.linkTarget = '_self';
         }
+        ipCookie('newWindow', $scope.newWindow, {expires: 365});
     };
 
     //clear all cookie
@@ -134,8 +135,8 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
         return flag;
     };
 
-    //to change query.netDaytime
-    $scope.changeNextDayTime = function(flag) {
+    //to handle hour selecter
+    $scope.hourSelectHandler = function(flag) {
        if (flag === '+') {
            $scope.query.nextDayTime = ($scope.query.nextDayTime === $scope.nextDayTimeMax ? $scope.nextDayTimeMax : $scope.query.nextDayTime + 1);
            $scope.checkNextDayTimeFlag();
@@ -143,6 +144,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
            $scope.query.nextDayTime = ($scope.query.nextDayTime === $scope.nextDayTimeMin ? $scope.nextDayTimeMin : $scope.query.nextDayTime - 1);
            $scope.checkNextDayTimeFlag();
        }
+       ipCookie('nextDayTime', $scope.query.nextDayTime, {expires:365});
     };
 
     //to check nextDayTimeFlag
@@ -167,14 +169,50 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
         });
     };
     
+    //site switch
+    $scope.switchSite = function(domain, show) {
+        ipCookie(domain, show, {expires: 365});
+        $scope.checkSiteList();
+    };
+
+    //newOnly switch
+    $scope.switchNewOnly = function() {
+        $scope.query.newBgm = $scope.newOnly;
+        ipCookie('newOnly', $scope.query.newBgm, {expires: 365});
+    };
+
     //allOnly switch
     $scope.switchAllOnly = function() {
         if ($scope.allOnly) {
             $scope.query.weekDayCN = -1;
-            $scope.order($scope.bangumis,'jp',false);
+            $scope.order($scope.bangumis, 'jp', false);
         } else {
             $scope.query.weekDayCN = weekDayNow;
-            $scope.order($scope.bangumis,'cn',false);
+            $scope.order($scope.bangumis, 'cn', false);
+        }
+        ipCookie('allOnly', $scope.allOnly, {expires: 365});
+    };
+    
+    //handle archive file button
+    $scope.archiveHandler = function(year, month) {
+        $scope.readBgm($scope.getJsonPath(year, month, $scope.archive), 'jp', false);
+        $scope.query.weekDayCN = -1;
+        $scope.allData = true;
+    };
+
+    //handle shadow layer
+    $scope.shadowHandler = function() {
+        $scope.menuArchive = false;
+        $scope.menuDisplay = false;
+        $scope.menuSites = false;
+        $scope.shadow = false;
+    };
+
+    //handle top bar menu button
+    $scope.topMenuHandler = function(menuName, flag) {
+        $scope[menuName] = !$scope[menuName];
+        if(!flag) {
+            $scope.shadow = !$scope.shadow;
         }
     };
 
@@ -265,7 +303,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
     };
 
     //use $http to get bangumi data
-    $scope.readBangumi = function(filePath, order, reverse) {
+    $scope.readBgm = function(filePath, order, reverse) {
         //ngProgressLite.start();
         $http.get(filePath)
             .success(function(data, status, headers) {
@@ -280,7 +318,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
             })
             .error(function(data, status) {
                 $scope.errorFlag = true;
-                $scope.errorMessage = '读取 ' + filePath + ' 出错. 错误代码: ' + status + '. 请点击上方的“提交问题”按钮';
+                $scope.errorMessage = '读取 ' + filePath + ' 出错. 错误代码: ' + status + '. 请点击上方的“提交问题”按钮.';
             });
     };
 
@@ -299,15 +337,15 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
             }
             $scope.archive = data;
             if ($scope.allOnly) {
-                $scope.readBangumi($scope.getJsonPath(yearNow, monthNow, data), 'jp', false);
+                $scope.readBgm($scope.getJsonPath(yearNow, monthNow, data), 'jp', false);
                 $scope.query.weekDayCN = -1;
             } else {
-                $scope.readBangumi($scope.getJsonPath(yearNow, monthNow, data), $scope.ordered, !$scope.reversed);
+                $scope.readBgm($scope.getJsonPath(yearNow, monthNow, data), $scope.ordered, !$scope.reversed);
             }
         })
         .error(function(data, status) {
             $scope.errorFlag = true;
-            $scope.errorMessage = '读取 archive.json 出错. 错误代码: ' + status + '. 请点击上方的“提交问题”按钮';
+            $scope.errorMessage = '读取 archive.json 出错. 错误代码: ' + status + '. 请点击上方的“提交问题”按钮.';
         });
     $scope.siteList = $scope.getSiteCookie($scope.siteList);
     $scope.query.newBgm = ipCookie('newOnly') || false;

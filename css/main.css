@@ -5,7 +5,7 @@
 
 /*全局*/
 body, a, th, td, p, h1, ul, li, blockquote {
-    font-family: "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", "SimSun", sans-serif;
+    font-family: "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", "SimSun", "宋体", sans-serif;
     margin: 0px;
     padding: 0px;
 }
@@ -273,12 +273,12 @@ a:active {
     cursor: pointer;
 }
 
-#topbar #topnav .menu .submenu .toggleON {
-    background-position: 20px 0;
+#topbar #topnav .menu .submenu .toggle {
+    background-position: 0 0;
 }
 
-#topbar #topnav .menu .submenu .toggleOFF {
-    background-position: 0 0;
+#topbar #topnav .menu .submenu .toggle.ON {
+    background-position: 20px 0;
 }
 
 #topbar #topnav .menu .submenu input[type="checkbox"] {
@@ -332,11 +332,11 @@ a:active {
 
 
 #topbar #topnav .share.twitter a {
-    background: url("../images/twitter.png") no-repeat #34495e;
+    background: url("../images/twitter.png") 0 0 #34495e;
 }
 
 #topbar #topnav .share.weibo a {
-    background: url("../images/weibo.png") no-repeat #34495e;
+    background: url("../images/weibo.png") 0 0 #34495e;
 }
 
 #topbar #topnav .share.twitter a:focus,
@@ -521,6 +521,7 @@ table tbody tr td .link-list .lastLink:after {
     left: 15px;
 }
 
+/*搜索框*/
 #search {
     float: right;
     width: auto;
@@ -546,6 +547,7 @@ table tbody tr td .link-list .lastLink:after {
     width: 170px;
 }
 
+/*清除按钮*/
 #search input:focus {
     background: #fff;
 }
@@ -553,7 +555,7 @@ table tbody tr td .link-list .lastLink:after {
 #search .clear {
     height: 20px;
     width: 20px;
-    background: url("../images/clear.png") no-repeat transparent;
+    background: url("../images/clear.png") 0 0 no-repeat transparent;
     position: absolute;
     right: 10px;
     top: 8px;
