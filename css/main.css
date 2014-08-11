@@ -365,7 +365,7 @@ table {
     line-height: 1.4;
 }
 
-table .errorMessage {
+table .errorMsg {
     /*for lte IE7*/
     *display: none;
 }
@@ -437,6 +437,7 @@ table tbody tr td .link-list li {
 /*修复IE7inline-block失效的问题*/
 table tbody tr td .link-list li {
     *display: inline;
+    *margin-right: 10px;
 }
 
 table tbody tr td .link-list li .disabled {

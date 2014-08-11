@@ -172,10 +172,20 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
     //小时选择按钮的控制器
     $scope.hourSelectHandler = function(flag) {
         if (flag === '+') {
-            $scope.query.nextTime = ($scope.query.nextTime === $scope.setting.nextTimeMax ? $scope.setting.nextTimeMax : $scope.query.nextTime + 1);
+            //$scope.query.nextTime = ($scope.query.nextTime === $scope.setting.nextTimeMax ? $scope.setting.nextTimeMax : $scope.query.nextTime + 1);
+            if ($scope.query.nextTime >= $scope.setting.nextTimeMax) {
+                $scope.query.nextTime = $scope.setting.nextTimeMax;
+            } else {
+                $scope.query.nextTime = $scope.query.nextTime + 1;
+            }
             $scope.checkNextTime();
         } else if (flag === '-') {
-            $scope.query.nextTime = ($scope.query.nextTime === $scope.setting.nextTimeMin ? $scope.setting.nextTimeMin : $scope.query.nextTime - 1);
+            //$scope.query.nextTime = ($scope.query.nextTime === $scope.setting.nextTimeMin ? $scope.setting.nextTimeMin : $scope.query.nextTime - 1);
+            if ($scope.query.nextTime <= $scope.setting.nextTimeMin) {
+                $scope.query.nextTime = $scope.setting.nextTimeMin;
+            } else {
+                $scope.query.nextTime = $scope.query.nextTime - 1;
+            }
             $scope.checkNextTime();
         }
         ipCookie('nextTime', $scope.query.nextTime, {expires:365});
@@ -371,7 +381,6 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
         if ($scope.setting.showAll) {
             $scope.readBgm($scope.getJsonPath(yearNow, monthNow, data), 'jp', false);
             $scope.query.weekDayCN = -1;
-            console.log($scope.query.weekDayCN);
         } else {
             $scope.readBgm($scope.getJsonPath(yearNow, monthNow, data), $scope.status.ordered, !$scope.status.reversed);
         }

@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>番组放送</title>
         <link type="text/css" rel="stylesheet" href="css/main.css">
+        <!--[if lte IE 7]><script type="text/javascript" src="js/json2.js"></script><![endif]-->
     </head>
     <body ng-controller="ListController">
         <div id="topbar">
@@ -154,7 +155,7 @@
                     </tr>
                 </thead>
                 <tbody id="bangumi_list">
-                    <tr class="status.errorMsg" ng-show="status.error">
+                    <tr class="errorMsg" ng-show="status.error">
                         <td colspan="4">{{status.errorMsg}}</td>
                     </tr>
                     <tr ng-repeat="item in bangumis|filter:bgmFilter track by $index">
