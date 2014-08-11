@@ -26,7 +26,8 @@
                                 <li ng-repeat="data in file.months">
                                     <a href="javascript:;" 
                                         ng-click="readBangumi(getJsonPath(file.year, data.month, archive),'jp',false);
-                                        query.weekDayCN=-1;$parent.$parent.menuArchive=false">
+                                        query.weekDayCN=-1;$parent.$parent.menuArchive=false;
+                                        $parent.$parent.allData=true">
                                         {{data.month|monthCN}}
                                     </a>
                                 </li>
@@ -107,20 +108,19 @@
         <div id="shadow" ng-click="menuArchive=false;menuDisplay=false;menuSites=false" ng-show="shadow===true"></div>
         <div id="header" ng-cloak>
             <h1>{{yearRead}}年{{monthRead}}月番组</h1>
-            <p class="total">本季度共有{{bangumis.length}}部番组</p>
+            <p class="total">当季共有{{bangumis.length}}部番组</p>
             <p class="lastModified">{{lastModified}}</p>
         </div>
         <div id="nav">
             <ul id='switcher' ng-cloak>
                 <li ng-repeat="nav in navList" 
                     ng-class="{'selected':$parent.query.weekDayCN===nav.index}" 
-                    ng-click="$parent.query.titleCN='';$parent.query.weekDayCN=nav.index;
-                    order(bangumis,nav.order,false)">{{nav.name}}</li>
+                    ng-click="$parent.switcherHandler(nav.index,nav.order)">{{nav.name}}</li>
             </ul> 
             <div id="search">
                 <input type="text" ng-model="query.titleCN" 
-                placeholder="搜索本季度番组" ng-keydown="query.weekDayCN=-1">
-                <span class="clear" ng-show="query.titleCN" ng-click="query.titleCN=''">delete</span>
+                placeholder="搜索本季度番组" ng-keydown="searchHandler($event)">
+                <span class="clear" ng-show="query.titleCN!==''" ng-click="resumeSearch()">delete</span>
             </div>
         </div>
         <div id="container">
@@ -163,7 +163,7 @@
                             <ul class="link-list">
                                 <li ng-repeat="site in item.onAirSite|linkFilter:siteList" 
                                     ng-class="{'lastLink':$last}">
-                                    <a href="{{site}}" target="{{linkTarget}}" ng-click="linkClick(site,$event)" 
+                                    <a href="{{site}}" target="{{linkTarget}}" ng-click="linkHandler(site,$event)" 
                                         ng-class="{'disabled':site==='#'}">
                                         {{site|onair}}
                                     </a>

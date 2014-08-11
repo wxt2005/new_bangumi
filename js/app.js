@@ -39,6 +39,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
     $scope.nextDayTimeMax = 24;
     $scope.nextDayTimeMin = 20;
     $scope.linkTarget = '_self';
+    $scope.allData = false;
 
     //change link target
     $scope.changeTarget = function() {
@@ -70,14 +71,43 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
     };
 
     //handle link click event
-    $scope.linkClick = function(site, event) {
-        console.log(site);
+    $scope.linkHandler = function(site, event) {
         if(site === "#") {
             if(event.preventDefault) {
                 event.preventDefault();
             } else {
                 event.returnValue = false;
             }
+        }
+    };
+
+    //change back to init weekDayCN
+    $scope.resumeSearch = function() {
+        $scope.query.titleCN = '';
+        if (!$scope.allOnly && !$scope.allData) {
+            $scope.query.weekDayCN = weekDayNow;
+        }
+    };
+
+    //handle search input event
+    $scope.searchHandler = function(event) {
+        if ($scope.query.weekDayCN !== -1) {
+            $scope.query.weekDayCN = -1;
+        }
+        if(event.keyCode === 27 || (event.keyCode === 8 && event.target.value.length === 1)) {
+            $scope.resumeSearch();
+        }
+    };
+    
+    //handel switch event
+    $scope.switcherHandler = function(index, order) {
+        $scope.query.titleCN = '';
+        $scope.query.weekDayCN = index;
+        $scope.order($scope.bangumis, order, false);
+        if(index === -1) {
+            $scope.allData = true;
+        } else {
+            $scope.allData = false;
         }
     };
 
