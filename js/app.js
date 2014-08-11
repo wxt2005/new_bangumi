@@ -94,7 +94,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
         if ($scope.query.weekDayCN !== -1) {
             $scope.query.weekDayCN = -1;
         }
-        if(event.keyCode === 27 || (event.keyCode === 8 && event.target.value.length === 1)) {
+        if(event.keyCode === 27 || (event.keyCode === 8 && event.target.value.length <= 1)) {
             $scope.resumeSearch();
         }
     };
