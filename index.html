@@ -112,6 +112,7 @@
             <div id="search">
                 <input type="text" ng-model="query.titleCN" 
                 placeholder="搜索本季度番组" ng-keydown="query.weekDayCN=-1">
+                <span class="clear" ng-show="query.titleCN" ng-click="query.titleCN=''">delete</span>
             </div>
         </div>
         <div id="container">

@@ -540,15 +540,15 @@ table tbody tr td .link-list .lastLink:after {
     background: #fff;
 }
 
-#search:after {
-    content: "";
+#search .clear {
     height: 20px;
     width: 20px;
     background: url("../images/clear.png") no-repeat transparent;
     position: absolute;
     right: 10px;
     top: 8px;
-    display: none;
+    text-indent: 9999px;
+    cursor: pointer;
 }
 
 /*页脚*/
