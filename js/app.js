@@ -280,7 +280,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
             })
             .error(function(data, status) {
                 $scope.errorFlag = true;
-                $scope.errorMessage = '读取 ' + filePath + ' 出错. 错误代码: ' + status + '. 请联系: wxt2005#gmail.com, 或在Twitter上@wxt2005.';
+                $scope.errorMessage = '读取 ' + filePath + ' 出错. 错误代码: ' + status + '. 请点击上方的“提交问题”按钮';
             });
     };
 
@@ -307,7 +307,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
         })
         .error(function(data, status) {
             $scope.errorFlag = true;
-            $scope.errorMessage = '读取 archive.json 出错. 错误代码: ' + status + '. 请联系: wxt2005#gmail.com, 或在Twitter上@wxt2005.';
+            $scope.errorMessage = '读取 archive.json 出错. 错误代码: ' + status + '. 请点击上方的“提交问题”按钮';
         });
     $scope.siteList = $scope.getSiteCookie($scope.siteList);
     $scope.query.newBgm = ipCookie('newOnly') || false;
