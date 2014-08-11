@@ -396,14 +396,14 @@ table thead tr th span.ordered {
 }
 
 table tbody tr td a.new:after {
-    content: "\00A0\00A0new";
+    content: "new";
     font-size: 12px;
     font-family: sans-serif;
     color: #e74c3c;
     font-weight: normal;
     vertical-align: super;
     position: absolute;
-    right: -30px;
+    margin-left: 4px;
 }
 
 table tbody tr {
@@ -422,6 +422,7 @@ table tbody tr td {
 
 table tbody tr td:first-child a {
     position: relative;
+    display: block;
 }
 
 table tbody tr td:last-child {
