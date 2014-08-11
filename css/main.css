@@ -1,155 +1,418 @@
-* {
-    margin: 0px;
-    padding: 0px;
-}
-
-/* for angularJS ng-cloak attribute */
+/*防止angularjs加载时出现的闪烁*/
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
     display: none !important;
 }
 
+/*全局*/
+body, a, th, td, p, h1, ul, li, blockquote {
+    font-family: "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", "SimSun", "宋体", sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
 body {
-    background-color: #eee;
+    background: #eee;
     font-size: 16px;
-    text-align: center;
-    position: relative;
+    overflow-y: scroll;
 }
 
-body ul {
+ul {
     list-style: none;
-}
-
-a, th, td, p, h1, li {
-    font-family: "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", "SimSun", sans-serif;
 }
 
 a {
     text-decoration: none;
 }
 
-a:link, a:visited {
+a:link, 
+a:visited {
     color: black;
 }
 
-a:focus, a:hover, a:active {
-    color: #5dafe9;
+a:focus, 
+a:hover, 
+a:active {
+    color: #3498db;
 }
 
-input[type=search] {
-    -webkit-appearance: textfield;
-    -webkit-box-sizing: content-box;
-    font-family: inherit;
-    font-size: 100%;
+#shadow {
+    position: absolute;
+    min-width: 960px;
+    min-height: 1080px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /*for let IE7*/
+    *display: none;
+    background: rgba(230, 230, 230, 0.5);
 }
 
-input:-webkit-search-decoration {
-    display: none;
+#header {
+    width: 960px;
+    height: 75px;
+    margin: 15px auto;
+    position: relative;
+    vertical-align: bottom;
 }
 
-span.pointer {
-    color: black;
+#header h1 {
+    color: #34495e;
+    font-size: 50px;
+    text-align: left;
+    letter-spacing: 1px;
+    position: absolute;
+    left: 0;
+    height: 75px;
+    line-height: 75px;
+}
+
+#header p {
+    color: #34495e;
+    font-size: 16px;
+    width: 300px;
+    text-align: right;
+    float: right;
+    position: absolute;
+    right: 10px;
+}
+
+#header .lastModified {
+    bottom: 8px;
+}
+
+#header .total {
+    bottom: 32px;
+}
+
+/*顶部导航栏*/
+#topbar {
+    height: 40px;
+    background: #34495e;
+    position: relative;
+    color: #fff;
+    text-align: center;
+    min-width: 980px;
+    z-index: 2;
+}
+
+#topbar #topnav {
+    width: 960px;
+    margin: auto;
+    overflow: hidden;
+    zoom: 1;
+    height: 50px;
+}
+
+#topbar #topnav .title {
+    float: left;
+    margin-right: 20px;
+    width: 100px;
+}
+
+#topbar #topnav .menu {
+    float: left;
+    width: 80px;
+    height: 50px;
+}
+
+#topbar #topnav li {
     cursor: pointer;
+    line-height: 40px;
+    height: 40px;
+}
+
+#topbar #topnav .plain {
+    cursor: default;
+    margin-right: 8px;
+}
+
+#topbar #topnav li a {
+    font-size: 20px;
+    color: #fff;
+}
+
+#topbar #topnav li a:focus,
+#topbar #topnav li a:hover,
+#topbar #topnav li a:active {
+    color: #1abc9c;
+}
+
+#topbar #topnav .menu a {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+#topbar #topnav .menu a.active {
+    color: #1abc9c;
+}
+
+#topbar #topnav .menu .submenu {
+    background: #34495e;
+    border-radius: 4px;
+    float: none;
+    width: 100px;
+    position: absolute;
+    top: 50px;
+    /*hide submenu for let IE7*/
+    *display: none;
+}
+
+#topbar #topnav .menu .submenu a {
     display: block;
+    width: 110px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    text-indent: -12px;
 }
 
-span.pointer:focus,
-span.pointer:hover,
-span.pointer:active {
-    color: #5dafe9; 
+#topbar #topnav .menu .submenu a:focus,
+#topbar #topnav .menu .submenu a:hover,
+#topbar #topnav .menu .submenu a:active {
+    color: #fff;
 }
 
-div#container {
-    margin: 40px auto;
-    width: auto;
-    min-width: 750px;
-    /*IE hack*/
-    width: 1080px\9;
+#topbar #topnav .menu:hover>a {
+    color: #1abc9c;
 }
 
+#topbar #topnav .menu .submenu li:hover {
+    background: #1abc9c;
+}
+
+#topbar #topnav .menu .submenu li {
+    position: relative;
+    border-radius: 2px;
+    margin: 3px;
+    width: 94px;
+}
+
+#topbar #topnav .menu .submenu .hourSelecter {
+   position: absolute;
+   right: 10px;
+   top: 10px;
+   height: 20px;
+   overflow: hidden;
+   zoom: 1;
+}
+
+#topbar #topnav .menu .submenu .hourSelecter p {
+    height: 20px;
+    line-height: 20px;
+    float: left;
+}
+
+#topbar #topnav .menu .submenu .hourSelecter span {
+    position: static;
+    float: left;
+}
+
+#topbar #topnav .menu .submenu .hourSelecter .left {
+    margin-right: 5px;
+    background: url("../images/left-arrow.png") 0 0 transparent;
+}
+
+#topbar #topnav .menu .submenu .hourSelecter .right {
+    margin-left: 5px;
+    background: url("../images/right-arrow.png") 0 0 transparent;
+}
+
+#topbar #topnav .menu .submenu .hourSelecter .disable {
+    background-position: 20px 0;
+}
+
+/*三角形*/
+#topbar #topnav .menu>.submenu:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-width: 0 9px 9px 9px;
+    border-style: solid;
+    border-color: transparent transparent #34495e transparent;
+    top: -9px;
+    left: 15px;
+    position: absolute;
+}
+
+#topbar #topnav .menu .submenu.year .submenu.month {
+    left: 100px;
+    top: -3px;
+}
+
+#topbar #topnav .menu .submenu.display {
+    width: 200px;
+}
+
+#topbar #topnav .menu .submenu.display li {
+    width: 194px;
+}
+
+#topbar #topnav .menu .submenu.display li:hover,
+#topbar #topnav .menu .submenu.sites li:hover {
+    background: #34495e;
+}
+
+#topbar #topnav .menu .submenu label {
+    position: relative;
+    display: block;
+    left: 10px;
+    width: 194px;
+    text-align: left;
+}
+
+#topbar #topnav .menu .submenu span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: #34495e;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    cursor: pointer;
+}
+
+#topbar #topnav .menu .submenu .toggle {
+    background-image: url("../images/checkbox.png");
+    background-position: 0 0;
+}
+
+#topbar #topnav .menu .submenu .toggle.ON {
+    background-position: 20px 0;
+}
+
+#topbar #topnav .menu .submenu input[type="checkbox"] {
+    position: absolute;
+    left: -9999px;
+}
+
+#topbar #topnav .menu .submenu.sites {
+    width: 150px;
+}
+
+#topbar #topnav .menu .submenu.sites li {
+    width: 144px;
+}
+
+#topbar #topnav .menu .submenu.sites label {
+    width: 144px;
+}
+
+#topbar #topnav .menu .submenu li .all {
+    background: #1abc9c;
+    display: block;
+    width: 100%;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    position: absolute;
+    bottom: -3px;
+    left: -3px;
+    cursor: pointer;
+    height: 40px;
+    padding: 0 3px;
+}
+
+#topbar #topnav .menu .submenu li .all:hover {
+    background: #16a085;
+}
+
+#topbar #topnav .share {
+    float: right;
+}
+
+#topbar #topnav .share a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    zoom: 1;
+    background-position: 0 0;
+    text-indent: -9999px;
+}
+
+
+#topbar #topnav .share.twitter a {
+    background: url("../images/twitter.png") 0 0 #34495e;
+}
+
+#topbar #topnav .share.weibo a {
+    background: url("../images/weibo.png") 0 0 #34495e;
+}
+
+#topbar #topnav .share.twitter a:focus,
+#topbar #topnav .share.twitter a:hover,
+#topbar #topnav .share.twitter a:active,
+#topbar #topnav .share.weibo a:focus,
+#topbar #topnav .share.weibo a:hover,
+#topbar #topnav .share.weibo a:active {
+    background-position: -40px 0;
+}
+
+/*表格容器*/
+#container {
+    margin: 0 auto;
+    width: 960px;
+    border: 8px solid #1abc9c;
+    border-radius: 6px;
+}
+
+/*表格*/
 table {
     border-collapse: collapse;
     margin-left: auto;
     margin-right: auto;
-    width: 750px;
-    border: 2px solid #7fb80e;
+    width: 960px;
     table-layout: fixed;
-    line-height: 1.6;
+    line-height: 1.4;
 }
 
-table col#name {
-    width: 49%;
+table .errorMsg {
+    /*for lte IE7*/
+    *display: none;
 }
 
-table col#time-jp, 
-table col#time-cn {
-    width: 14%;
+table #name {
+    width: 40%;
 }
 
-table thead th {
-    border-right: 1px solid white;
-    background-color: #cde6c7;
+table #time-jp, 
+table #time-cn {
+    width: 15%;
 }
 
-table thead th span.ordered {
+table thead tr th {
+    background: #1abc9c;
+    height: 30px;
+    vertical-align: -4px;
+}
+
+table thead tr th span:hover {
+    color: #3498db;
+    cursor: pointer;
+}
+
+table thead tr th span.ordered {
     text-decoration: underline;
 }
 
-table tbody td {
-    border-right: 1px solid white;
-    border-top: 1px solid white;
-    height: 28px;
-}
-
-table tbody td a.new:after {
-    content: "\00A0\00A0new";
-    font-size: 10px;
+table tbody tr td a.new:after {
+    content: "new";
+    font-size: 12px;
     font-family: sans-serif;
-    color: gray;
+    color: #e74c3c;
     font-weight: normal;
     vertical-align: super;
     position: absolute;
-}
-
-table tbody tr.color {
-    background-color: #f6f5ec;
-}
-
-table thead th#header {
-    border-right: none;
-    height: 100px;
-    text-align: left;
-    padding-left: 120px;
-    font-size: 36px;
-    background-image: url("../images/header.gif");
-    /*IE hack*/
-    background-image: url("../images/header-IE.gif")\9;
-    background-size: auto 100px;
-    background-position: 3% 100%;
-    background-repeat: no-repeat;
-    background-color: #7fb80e;
-}
-
-table thead th#search {
-    background-color: #7fb80e;
-    text-align: center;
-    font-size: 16px;
-    border-left: 2px solid #7fb80e;
-}
-
-table thead th#search input {
-    vertical-align: baseline;
-    width: 150px;
-    height: 25px;
-    font-size: 16px;
-    background-image: url("../images/search-icon.png");
-    background-repeat: no-repeat;
-    background-position: 2% 50%;
-    padding-left: 25px;
-    line-height: 25px;
+    margin-left: 4px;
 }
 
 table tbody tr {
-    height: 30px;
+    height: 50px;
+    border-bottom: 1px solid #ddd;
+    padding-left: 20px;
+}
+
+table tbody tr:hover {
+    background: #d7e8e4;
 }
 
 table tbody tr td {
@@ -158,6 +421,7 @@ table tbody tr td {
 
 table tbody tr td:first-child a {
     position: relative;
+    display: block;
 }
 
 table tbody tr td:last-child {
@@ -166,192 +430,194 @@ table tbody tr td:last-child {
     font-size: 15px;
 }
 
-table tbody #link-list ul {
-    text-align: center;
-}
-
-table tbody #link-list li {
+table tbody tr td .link-list li {
     display: inline-block;
 }
 
-/*fix lte IE 7 inline block bug*/
-table tbody #link-list li {
+/*修复IE7inline-block失效的问题*/
+table tbody tr td .link-list li {
     *display: inline;
+    *margin-right: 10px;
 }
 
-table tbody #link-list li:after {
+table tbody tr td .link-list li .disabled {
+    color: #aaa;
+    cursor: default;
+}
+
+table tbody tr td .link-list li:after {
     content: "\00A0\007C\00A0";
     vertical-align: 6%;
 }
 
-table tbody #link-list .lastLink:after {
-    content: "";
+table tbody tr td .link-list .lastLink:after {
+    content: "\00A0";
 }
 
-table tbody tr td:first-child a span {
-    position: absolute;
-    background-color: rgba(206, 230, 201, 0.9);
-    top: 15px;
-    left: -9999px;
-    font-size: 14px;
-    color: gray;
-    width: 150px;
-    line-height: 1.5;
-    border: 1px solid white;
-    border-radius: 5px;
-    padding: 2px;
-    z-index: 1;
-}
-
-table tbody tr td:first-child a:hover span,
-table tbody tr td:first-child a:focus span {
-    left:100%;
-    margin-left: -7px;
-}
-
-table span.hide {
-    display: none;
-}
-
-ul#nav {
-    margin-left: auto;
-    margin-right: auto;
-    width: 750px;
+/*导航条*/
+#nav {
+    width: 960px;
+    margin: 0 auto;
+    margin-top: 10px;
     zoom: 1;
     overflow: hidden;
 }
 
-ul#nav li {
+/*切换按钮*/
+#switcher {
+    margin-left: auto;
+    margin-right: auto;
+    zoom: 1;
+    overflow: hidden;
+    padding-bottom: 16px;
     float: left;
-    width: 65px;
-    height: 30px;
-    border: 2px solid #7fb80e;
-    border-bottom: none;
+}
+
+#switcher li {
+    float: left;
+    width: 60px;
+    border-top: 2px solid #1abc9c;
+    border-bottom: 2px solid #1abc9c;
+    border-right: 2px solid #1abc9c;
     text-align: center;
     line-height: 2;
-    margin-right: 10px;
+    cursor: pointer;
+    height: 32px;
+    position: relative;
+    /*for let IE7*/
+    *border-left: 2px solid #1abc9c;
+    *margin-left: -2px;
+}
+
+#switcher li:first-child {
+    border-left: 2px solid #1abc9c;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+#switcher li:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+#switcher li:hover {
+    background: rgba(26, 188, 156, 0.1);
+}
+
+#switcher li.selected {
+    background: #1abc9c;
+}
+
+/*三角形*/
+#switcher li.selected:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-width: 0 15px 15px 15px;
+    border-color: transparent transparent #1abc9c transparent;
+    border-style: solid;
+    top: 36px;
+    left: 15px;
+}
+
+/*搜索框*/
+#search {
+    float: right;
+    width: auto;
+    position: relative;
+    background: url("../images/search.png") 0 0 no-repeat transparent;
+    width: 230px;
+    text-align: right;
+}
+
+#search:hover {
+    background-color: transparent;
+}
+
+#search input {
+    color: #1abc9c;
+    border: 2px solid #1abc9c;
+    border-radius: 6px;
+    box-shadow: none;
+    outline: none;
+    font-size: 16px;
+    padding: 6px 12px;
+    background: #eee;
+    width: 170px;
+}
+
+/*清除按钮*/
+#search input:focus {
+    background: #fff;
+}
+
+#search .clear {
+    height: 20px;
+    width: 20px;
+    background: url("../images/clear.png") 0 0 no-repeat transparent;
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    text-indent: 9999px;
     cursor: pointer;
 }
 
-ul#nav li:last-child {
-    border-right: 2px solid #7fb80e;
-}
-
-ul#nav li:focus, ul#nav li:hover {
-    background-color: #cde6c7;
-}
-
-ul#nav li.selected {
-    background-color: #7fb80e;
-}
-
-p#footer {
+/*页脚*/
+#footer {
     text-align: center;
-    margin-top: 10px;
-    font-size: 12px;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #34495e;
 }
 
-p#footer a {
-    font-size: 12px;
+#footer a {
+    font-size: 14px;
 }
 
-p#footer a:link,
-p#footer a:visited,
-p#footer a:focus,
-p#footer a:hover,
-p#footer a:active {
+#footer a:link,
+#footer a:visited,
+#footer a:focus,
+#footer a:hover,
+#footer a:active {
     text-decoration: underline;
+    color: #34495e;
 }
 
-div.sidebar {
-    position: absolute;
-    width: 100px;
-    top: 32px;
-    display: none;
-    /*IE hack*/
-    display: block\9;
-    _display: none;
-    right: 50%;
-    margin-right: 400px;
-}
+@media screen and (-webkit-min-device-pixel-ratio: 2), 
+screen and (max--moz-device-pixel-ratio: 2) {
+    #topbar #topnav .menu .submenu .toggle {
+        background-image: url("../images/checkbox-2x.png");
+        background-size:  40px 20px;
+    }
 
-div.sidebar #archive,
-div.sidebar #option {
-    border: 2px solid #7fb80e;
-}
+    #search .clear {
+        background-image: url("../images/clear-2x.png");
+        background-size: 20px 20px;
+    }
 
-div.sidebar #option {
-    margin-top: 15px;
-}
+    #topbar #topnav .menu .submenu .hourSelecter .left {
+        background-image: url("../images/left-arrow-2x.png");
+        background-size: 40px 20px;
+    }
 
-div.sidebar h3 {
-    text-align: center;
-    font-size: 20px;
-    margin: 5px 0;
-}
+    #topbar #topnav .menu .submenu .hourSelecter .right {
+        background-image: url("../images/right-arrow-2x.png");
+        background-size: 40px 20px;
+    }
 
-
-div.sidebar li.s-title {
-    font-size: 16px;
-    padding: 0 5px;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-div.sidebar li.s-title span {
-    background-color: #cde6c7;
-    height: 25px;
-    line-height: 25px;
-}
-
-div.sidebar li.s-title span.read:before {
-    content:"\02C3\00A0\00A0";
-}
-
-div.sidebar li.s-title ul.s-items li span {
-    border-top: 1px solid #cde6c7;
-    text-align: right;
-    background-color: #eee;
-    font-size: 13px;
-    line-height: 22px;
-    height: 22px;
-    margin: 0 10px;
-}
-
-div.sidebar li.s-title ul.s-items li input {
-    margin-right: 3px;
-}
-
-div.sidebar li.s-title ul.s-items li label {
-    font-size: 12px;
-    border-top: 1px solid #cde6c7;
-    display: block;
-}
-
-div.sidebar li.s-title ul.s-items li:first-child label {
-    border-top: none;
-}
-
-div.sidebar li.s-title ul.s-items li:first-child {
-    border-top: none;
-}
-
-div.sidebar #option li.s-title ul.s-items li {
-    text-align: left;
-    line-height: 30px;
-    height: 30px;
-}
-
-div.sidebar #option li.s-title ul.s-items li.sites {
-    padding-left: 10px;
-}
-
-div.sidebar #option li.s-title ul.s-items li.display input {
-    margin: 0;
-}
-
-@media screen and (min-width: 1024px) {
-    div.sidebar { 
-        display: block; 
+    #search {
+        background-image: url("../images/search-2x.png");
+        background-size: 32px 32px;
+    }
+    
+    #topbar #topnav .share.weibo a {
+        background-image: url("../images/weibo-2x.png");
+        background-size: 80px 40px;
+    }
+    
+    #topbar #topnav .share.twitter a {
+        background-image: url("../images/twitter-2x.png");
+        background-size: 80px 40px;
     }
 }
