@@ -62,6 +62,7 @@
                                     ng-class="{'disable':nextDayTimeFlag==='max'}"></span>
                             </div>
                         </li>
+                        <li><span class="all" ng-click="clearCookie()" title="清除显示设置和站点过滤，下次打开本站时将使用默认设置">清除所有设置</span></li>
                     </ul>
                 </li>
                 <li class="menu" ng-mouseenter="menuSites=true;shadow=true" ng-mouseleave="menuSites=false;shadow=false">
@@ -77,7 +78,7 @@
                                 ng-model="airSite.show" 
                                 ng-change="ipCookie(airSite.domain,airSite.show,{expires:365});checkSiteList()">
                         </li>
-                        <li><span class="selectAll" ng-click="selectAll(selectFlag)">{{selectFlag|selectAllButton}}</span></li>
+                        <li><span class="all" ng-click="selectAll(selectFlag)">{{selectFlag|selectAllButton}}</span></li>
                     </ul> 
                 </li>
                 <li class="share twitter">

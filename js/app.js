@@ -12,6 +12,7 @@ function getDomain(url) {
 angular.module('BangumiList', ['ieFix', 'ipCookie'])
 .controller('ListController', ['$scope', '$http', 'ipCookie', function($scope, $http, ipCookie) {
     var dateNow, weekDayNow, yearNow, monthNow;
+    var i = 0, l = 0;
 
     $scope.ipCookie = ipCookie;
     $scope.reversed = true;
@@ -37,16 +38,38 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
     $scope.nextDayTimeMax = 24;
     $scope.nextDayTimeMin = 20;
 
+    //clear all cookie
+    $scope.clearCookie = function() {
+        var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+        if (keys) {
+            for (i = 0, l = keys.length; i < l; i++) {
+                ipCookie.remove(keys[i]);
+            }
+            $scope.query.nextDayTime = 24;
+            $scope.checkNextDayTimeFlag();
+            $scope.query.newBgm = false;
+            $scope.allOnly = false;
+            for(i = 0, l = $scope.siteList.length; i < l; i++) {
+                $scope.siteList[i].show = true;
+            }
+        }
+    };
+
     //filter bangumi data
     $scope.bgmFilter = function(item) {
+        var flag = false;
         if ($scope.query.weekDayCN === -1 ) {
-            return true;
-        } else if ((item.weekDayCN === $scope.query.weekDayCN && +item.timeCN.slice(0, 2) < $scope.query.nextDayTime) || 
-                  ((item.weekDayCN === 6 ? 0 : item.weekDayCN + 1) === $scope.query.weekDayCN && +item.timeCN.slice(0,2) >= $scope.query.nextDayTime)) {
-            return true;
-        } else {
-            return false;
+            flag = true;
+        } else if ((item.weekDayCN === $scope.query.weekDayCN && 
+                    +item.timeCN.slice(0, 2) < $scope.query.nextDayTime) || 
+                  ((item.weekDayCN === 6 ? 0 : item.weekDayCN + 1) === $scope.query.weekDayCN && 
+                   +item.timeCN.slice(0,2) >= $scope.query.nextDayTime)) {
+            flag = true;
+        } 
+        if ($scope.query.newBgm && item.newBgm === false) {
+            flag = false;
         }
+        return flag;
     };
 
     //to change query.netDaytime
@@ -95,7 +118,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
 
     //check if all bangumi's show is true
     $scope.checkSiteList = function() {
-        for(var i = 0, l = $scope.siteList.length; i < l; i++) {
+        for(i = 0, l = $scope.siteList.length; i < l; i++) {
             if($scope.siteList[i].show === false) {
                 $scope.selectFlag = true;
                 break;
@@ -106,7 +129,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
     
     //for select all button
     $scope.selectAll = function(flag) {
-        for(var i = 0, l = $scope.siteList.length; i < l; i++) {
+        for(i = 0, l = $scope.siteList.length; i < l; i++) {
            $scope.siteList[i].show = flag; 
            ipCookie($scope.siteList[i].domain,$scope.siteList[i].show,{expires:365});
         }
@@ -161,7 +184,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
                 var months = archive[file].months;
                 $scope.yearRead = archive[file].year;
                 $scope.monthRead = $scope.monthToSeason(month); 
-                for (var i = 0, l = months.length; i < l; i++ ) {
+                for (i = 0, l = months.length; i < l; i++ ) {
                     if ($scope.monthRead === months[i].month && months[i].json) {
                         return months[i].json;
                     }
