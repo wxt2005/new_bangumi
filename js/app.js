@@ -158,7 +158,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
                          +item.timeCN.slice(0,2) >= $scope.query.nextTime)) {
             flag = true;
         } 
-        if ($scope.query.showNew && item.new === false) {
+        if ($scope.query.showNew && item.newBgm === false) {
             flag = false;
         }
         if ($scope.query.titleCN) {
