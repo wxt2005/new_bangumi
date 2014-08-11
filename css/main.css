@@ -41,6 +41,7 @@ a:active {
     z-index: 1;
     /*for let IE7*/
     *display: none;
+    background: rgba(230, 230, 230, 0.5);
 }
 
 #header {

@@ -12,7 +12,8 @@
                 <li class="title">
                     <a href="http://bgmlist.com/">番组放送</a>
                 </li>
-                <li class="menu" ng-mouseenter="menuArchive=true;shadow=true" ng-mouseleave="menuArchive=false;shadow=false">
+                <li class="menu" ng-mouseenter="menuArchive=true;shadow=!shadow" 
+                    ng-mouseleave="menuArchive=false;shadow=!shadow" ng-click="shadow=!shadow">
                     <a href="javascript:;" ng-click="menuArchive=!menuArchive">历史数据</a>
                     <ul class="submenu year" ng-show="menuArchive===true" ng-cloak>
                         <li ng-repeat="file in archive">
@@ -33,7 +34,8 @@
                         </li>
                     </ul>
                 </li>
-                <li class="menu" ng-mouseenter="menuDisplay=true;shadow=true" ng-mouseleave="menuDisplay=false;shadow=false">
+                <li class="menu" ng-mouseenter="menuDisplay=true;shadow=!shadow" 
+                    ng-mouseleave="menuDisplay=false;shadow=!shadow" ng-click="shadow=!shadow">
                     <a href="javascript:;" ng-click="menuDisplay=!menuDisplay">显示设置</a>
                     <ul class="submenu display" ng-show="menuDisplay===true" ng-cloak>
                         <li>
@@ -65,7 +67,8 @@
                         <li><span class="all" ng-click="clearCookie()" title="清除显示设置和站点过滤，下次打开本站时将使用默认设置">清除所有设置</span></li>
                     </ul>
                 </li>
-                <li class="menu" ng-mouseenter="menuSites=true;shadow=true" ng-mouseleave="menuSites=false;shadow=false">
+                <li class="menu" ng-mouseenter="menuSites=true;shadow=!shadow" 
+                    ng-mouseleave="menuSites=false;shadow=!shadow" ng-click="shadow=!shadow">
                     <a href="javascript:;" ng-click="menuSites=!menuSites">站点过滤</a>
                     <ul class="submenu sites" ng-show="menuSites===true" ng-cloak>
                         <li ng-repeat="airSite in siteList">
