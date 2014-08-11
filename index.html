@@ -55,6 +55,14 @@
                             ng-change="switchAllOnly();ipCookie('allOnly',allOnly,{expires:365})">
                         </li>
                         <li>
+                            <label for="newWindow" title="在新窗口（标签）中打开所有链接，包括番组官网">打开新页面
+                                <span ng-class="{'toggleON':newWindow,'toggleOFF':!newWindow}"></span>
+                            </label>
+                            <input type="checkbox" name="newWindow" id="newWindow" 
+                            ng-model="newWindow" 
+                            ng-change="changeTarget();ipCookie('newWindow',newWindow,{expires:365})">
+                        </li>
+                        <li>
                             <label for="toNextDay" title="将该时间点及之后的番组顺延到第二天显示">转到次日</label>
                             <div class="hourSelecter">
                                 <span class="left" ng-click="changeNextDayTime('-');ipCookie('nextDayTime',query.nextDayTime,{expires:365})" 
@@ -144,7 +152,8 @@
                     <tr class="errorMessage" ng-show="errorFlag===true"><td colspan="4">{{errorMessage}}</td></tr>
                     <tr ng-repeat="item in bangumis|filter:bgmFilter track by $index">
                         <td>
-                            <a href="{{item.officalSite}}" ng-class="{'new':item.newBgm}" title="{{item.titleJP}}">
+                            <a href="{{item.officalSite}}" ng-class="{'new':item.newBgm}" title="{{item.titleJP}}"
+                                target="{{linkTarget}}">
                                 {{item.titleCN}}
                             </a>
                         </td>
@@ -154,7 +163,7 @@
                             <ul class="link-list">
                                 <li ng-repeat="site in item.onAirSite|linkFilter:siteList" 
                                     ng-class="{'lastLink':$last}">
-                                    <a href="{{site}}">{{site | onair}}</a>
+                                    <a href="{{site}}" target="{{linkTarget}}">{{site | onair}}</a>
                                 </li>
                             </ul>    
                         </td>

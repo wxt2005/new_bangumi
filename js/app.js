@@ -34,9 +34,20 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
     $scope.menuDisplay = false; //topnav display menu
     $scope.menuSites = false; //topnav sites menu
     $scope.shadow = false; //div shadow
+    $scope.newWindow = false; //new window
     $scope.nextDayTimeFlag = '';
     $scope.nextDayTimeMax = 24;
     $scope.nextDayTimeMin = 20;
+    $scope.linkTarget = '_self';
+
+    //change link target
+    $scope.changeTarget = function() {
+        if($scope.newWindow) {
+            $scope.linkTarget = '_blank';
+        } else {
+            $scope.linkTarget = '_self';
+        }
+    };
 
     //clear all cookie
     $scope.clearCookie = function() {
@@ -53,6 +64,8 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
                 $scope.siteList[i].show = true;
             }
             $scope.checkSiteList();
+            $scope.newWindow = false;
+            $scope.changeTarget();
         }
     };
 
@@ -258,6 +271,8 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
     $scope.query.newBgm = ipCookie('newOnly') || false;
     $scope.query.nextDayTime = ipCookie('nextDayTime') || 24;
     $scope.allOnly = ipCookie('allOnly') || false;
+    $scope.newWindow = ipCookie('newWindow') || false;
+    $scope.changeTarget();
     $scope.checkSiteList();
     $scope.checkNextDayTimeFlag();
 }])
