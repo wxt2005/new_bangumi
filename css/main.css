@@ -268,11 +268,11 @@ a:active {
     position: absolute;
     right: 20px;
     top: 10px;
-    background-image: url("../images/checkbox.png");
     cursor: pointer;
 }
 
 #topbar #topnav .menu .submenu .toggle {
+    background-image: url("../images/checkbox.png");
     background-position: 0 0;
 }
 
@@ -584,3 +584,40 @@ table tbody tr td .link-list .lastLink:after {
     color: #34495e;
 }
 
+@media screen and (-webkit-min-device-pixel-ratio: 2), 
+screen and (max--moz-device-pixel-ratio: 2) {
+    #topbar #topnav .menu .submenu .toggle {
+        background-image: url("../images/checkbox-2x.png");
+        background-size:  40px 20px;
+    }
+
+    #search .clear {
+        background-image: url("../images/clear-2x.png");
+        background-size: 20px 20px;
+    }
+
+    #topbar #topnav .menu .submenu .hourSelecter .left {
+        background-image: url("../images/left-arrow-2x.png");
+        background-size: 40px 20px;
+    }
+
+    #topbar #topnav .menu .submenu .hourSelecter .right {
+        background-image: url("../images/right-arrow-2x.png");
+        background-size: 40px 20px;
+    }
+
+    #search {
+        background-image: url("../images/search-2x.png");
+        background-size: 32px 32px;
+    }
+    
+    #topbar #topnav .share.weibo a {
+        background-image: url("../images/weibo-2x.png");
+        background-size: 80px 40px;
+    }
+    
+    #topbar #topnav .share.twitter a {
+        background-image: url("../images/twitter-2x.png");
+        background-size: 80px 40px;
+    }
+}

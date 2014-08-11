@@ -257,6 +257,9 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
 
     //顶部菜单按钮的控制器
     $scope.topMenuHandler = function(menuName, flag) {
+        for (var item in $scope.status.menu) {
+            item = false;
+        }
         $scope.status.menu[menuName] = !$scope.status.menu[menuName];
         if(!flag) {
             $scope.status.shadow = !$scope.status.shadow;
