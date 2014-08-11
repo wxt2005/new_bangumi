@@ -13,6 +13,7 @@ body, a, th, td, p, h1, ul, li, blockquote {
 body {
     background: #eee;
     font-size: 16px;
+    overflow-y: scroll;
 }
 
 ul {
