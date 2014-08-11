@@ -437,6 +437,11 @@ table tbody tr td .link-list li {
     *display: inline;
 }
 
+table tbody tr td .link-list li .disabled {
+    color: #aaa;
+    cursor: default;
+}
+
 table tbody tr td .link-list li:after {
     content: "\00A0\007C\00A0";
     vertical-align: 6%;

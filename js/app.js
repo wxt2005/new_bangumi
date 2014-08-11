@@ -28,7 +28,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
     $scope.selectFlag = null;
     $scope.errorFlag = false;
     $scope.errorMessage = '';
-    $scope.lastModified = '';
+    $scope.lastModifi = '';
     $scope.allOnly = false; //new bangumi only flag
     $scope.menuArchive = false; //topnav archive menu
     $scope.menuDisplay = false; //topnav display menu
@@ -66,6 +66,18 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
             $scope.checkSiteList();
             $scope.newWindow = false;
             $scope.changeTarget();
+        }
+    };
+
+    //handle link click event
+    $scope.linkClick = function(site, event) {
+        console.log(site);
+        if(site === "#") {
+            if(event.preventDefault) {
+                event.preventDefault();
+            } else {
+                event.returnValue = false;
+            }
         }
     };
 

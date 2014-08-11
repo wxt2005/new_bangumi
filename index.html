@@ -163,7 +163,10 @@
                             <ul class="link-list">
                                 <li ng-repeat="site in item.onAirSite|linkFilter:siteList" 
                                     ng-class="{'lastLink':$last}">
-                                    <a href="{{site}}" target="{{linkTarget}}">{{site | onair}}</a>
+                                    <a href="{{site}}" target="{{linkTarget}}" ng-click="linkClick(site,$event)" 
+                                        ng-class="{'disabled':site==='#'}">
+                                        {{site|onair}}
+                                    </a>
                                 </li>
                             </ul>    
                         </td>
