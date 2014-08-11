@@ -39,34 +39,34 @@
                     <a href="javascript:;" ng-click="topMenuHandler('display')">显示设置</a>
                     <ul class="submenu display" ng-show="status.menu.display" ng-cloak>
                         <li>
-                            <label for="setting.showNew" title="只在列表中显示当月开播的番组">只显示新番
-                                <span class="toggle" ng-class="{'ON':query.newBgm}"></span>
+                            <label for="showNew" title="只在列表中显示当月开播的番组">只显示新番
+                                <span class="toggle" ng-class="{'ON':query.showNew}"></span>
                             </label>
-                            <input type="checkbox" name="setting.showNew" id="setting.showNew" 
-                            ng-model="setting.showNew" ng-change="switchNewOnly()">
+                            <input type="checkbox" name="showNew" id="showNew" 
+                            ng-model="query.showNew" ng-change="switchNewOnly()">
                         </li>
                         <li>
-                            <label for="allOnly" title="打开页面后直接显示全部番组">关闭自动切换
-                                <span class="toggle" ng-class="{'ON':allOnly}"></span>
+                            <label for="showAll" title="打开页面后直接显示全部番组">关闭自动切换
+                                <span class="toggle" ng-class="{'ON':setting.showAll}"></span>
                             </label>
-                            <input type="checkbox" name="allOnly" id="allOnly" 
-                            ng-model="allOnly" ng-change="switchAllOnly()">
+                            <input type="checkbox" name="showAll" id="showAll" 
+                            ng-model="setting.showAll" ng-change="switchAllOnly()">
                         </li>
                         <li>
-                            <label for="newWindow" title="在新窗口（标签）中打开所有链接，包括番组官网">打开新页面
-                                <span class="toggle" ng-class="{'ON':newWindow}"></span>
+                            <label for="newTab" title="在新窗口（标签）中打开所有链接，包括番组官网">打开新页面
+                                <span class="toggle" ng-class="{'ON':setting.newTab}"></span>
                             </label>
-                            <input type="checkbox" name="newWindow" id="newWindow" 
-                            ng-model="newWindow" ng-change="changeTarget()">
+                            <input type="checkbox" name="newTab" id="newTab" 
+                            ng-model="setting.newTab" ng-change="changeTarget()">
                         </li>
                         <li>
                             <label for="toNextDay" title="将该时间点及之后的番组顺延到第二天显示">转到次日</label>
                             <div class="hourSelecter">
                                 <span class="left" ng-click="hourSelectHandler('-')" 
-                                    ng-class="{'disable':status.nextDayTime==='min'}"></span>
-                                <p>{{query.nextDayTime}}点</p>
+                                    ng-class="{'disable':status.nextTime==='min'}"></span>
+                                <p>{{query.nextTime}}点</p>
                                 <span class="right" ng-click="hourSelectHandler('+')" 
-                                    ng-class="{'disable':status.nextDayTime==='max'}"></span>
+                                    ng-class="{'disable':status.nextTime==='max'}"></span>
                             </div>
                         </li>
                         <li>
