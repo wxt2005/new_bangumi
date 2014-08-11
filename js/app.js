@@ -68,6 +68,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
         'status.lastModifieded': '',
         'selectAll': true,
         'shadow': false,
+        'showAll': false,
         'menu': {
             'archive': false,
             'display': false,
@@ -119,7 +120,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
     //搜索框清空后恢复原有状态
     $scope.resumeSearch = function() {
         $scope.query.titleCN = '';
-        if (!$scope.setting.showAll && !$scope.setting.showAll) {
+        if (!$scope.setting.showAll && !$scope.status.showAll) {
             $scope.query.weekDayCN = weekDayNow;
         }
     };
@@ -140,9 +141,9 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
         $scope.query.weekDayCN = index;
         $scope.order($scope.bangumis, order, false);
         if(index === -1) {
-            $scope.setting.showAll = true;
+            $scope.status.showAll = true;
         } else {
-            $scope.setting.showAll = false;
+            $scope.status.showAll = false;
         }
     };
 
@@ -228,6 +229,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
 
     //直接显示全部按钮的控制器
     $scope.showAllHandler = function() {
+        $scope.status.showAll = $scope.setting.showAll;
         if ($scope.setting.showAll) {
             $scope.query.weekDayCN = -1;
             $scope.order($scope.bangumis, 'jp', false);
