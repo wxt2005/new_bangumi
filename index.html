@@ -2,66 +2,143 @@
 <html id="ng-app" ng-app="BangumiList">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="renderer" content="webkit">
         <title>番组放送</title>
+        <meta name="description" content="番组放送：方便快捷的版权动画播放地址聚合站">
+        <meta name="keywords" content="番组放送, 新番, 动画, 动漫, 正版">
+        <meta name="author" content="@wxt2005">
         <link type="text/css" rel="stylesheet" href="css/main.css">
-        <link type="text/css" rel="stylesheet" href="css/ngprogress-lite.css">
         <!--[if lte IE 7]><script type="text/javascript" src="js/json2.js"></script><![endif]-->
     </head>
-    <body ng-controller="ListController" ng-cloak>
-        <noscript>
-            <img src="images/no-js.gif" alt="没有打开Javascript！">
-            <p style="text-align:center;">请打开javascript支持以显示本页面</p>
-        </noscript>
-        <div class="sidebar">
-            <div id="archive">
-                <h3>归档</h3>
-                <ul>
-                    <li class="s-title" ng-repeat="file in archive"><span class="pointer" 
-                            ng-click="file.show=!file.show">{{file.year}}年({{file.months.length}})</span>
-                        <ul class="s-items" ng-show="file.show===true" class-fix>
-                            <li ng-repeat="data in file.months" ng-hide="data.json===''||data.done===false" class-fix>
-                                <span class="pointer" ng-class="{'read':(file.year===yearRead&&data.month===monthRead)}"
-                                    ng-click="readBangumi(getJsonPath(file.year, data.month, archive),'jp',false);query.weekDayCN=undefined">{{data.month | monthCN}}</span>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div> 
-            <div id="option">
-                <h3>选项</h3>
-                <ul>
-                    <li class="s-title"><span class="pointer" ng-init="display.show=false"
-                            ng-click="display.show=!display.show">显示</span>
-                        <ul class="s-items" ng-show="display.show===true" class-fix>
-                            <li class="display">
-                                <label><input type="checkbox" ng-model="query.newBgm" 
-                                    ng-change="ipCookie('newOnly',query.newBgm,{expires:365})" 
-                                    ng-false-value=""> 仅显示新番</label>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="s-title"><span class="pointer" ng-init="sites.show=false"
-                            ng-click="sites.show=!sites.show">站点</span>
-                        <ul class="s-items" ng-show="sites.show===true" class-fix>
-                            <li ng-repeat="airSite in siteList" class="sites">
-                                <label><input type="checkbox" ng-model="airSite.show" 
-                                    ng-change="ipCookie(airSite.domain,airSite.show,{expires:365})">{{airSite.name}}</label>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+    <body ng-controller="ListController">
+        <div id="topbar">
+            <ul id="topnav">
+                <li class="title">
+                    <a href="http://bgmlist.com/">番组放送</a>
+                </li>
+                <li class="menu" ng-mouseenter="topMenuHandler('archive')" 
+                    ng-mouseleave="topMenuHandler('archive')">
+                    <a href="javascript:;" ng-click="topMenuHandler('archive')">历史数据</a>
+                    <ul class="submenu year" ng-show="status.menu.archive" ng-cloak>
+                        <li ng-repeat="file in archive">
+                            <a href="javascript:;" ng-mouseenter="topMenuHandler('year'+file.year,true)" 
+                                ng-mouseleave="topMenuHandler('year'+file.year,true)" 
+                                ng-click="topMenuHandler('year'+file.year,true)">
+                                {{file.year}}年
+                            </a>
+                            <ul class="submenu month" ng-show="$parent.status.menu['year'+file.year]"
+                                ng-mouseenter="topMenuHandler('year'+file.year,true)" 
+                                ng-mouseleave="topMenuHandler('year'+file.year,true)">
+                                <li ng-repeat="data in file.months">
+                                    <a href="javascript:;" 
+                                        ng-click="archiveHandler(file.year,data.month)">
+                                        {{data.month|monthCN}}
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu" ng-mouseenter="topMenuHandler('display')" 
+                    ng-mouseleave="topMenuHandler('display')">
+                    <a href="javascript:;" ng-click="topMenuHandler('display')">显示设置</a>
+                    <ul class="submenu display" ng-show="status.menu.display" ng-cloak>
+                        <li>
+                            <label for="showNew" title="只在列表中显示当月开播的番组">只显示新番
+                                <span class="toggle" ng-class="{'ON':query.showNew}"></span>
+                            </label>
+                            <input type="checkbox" name="showNew" id="showNew" 
+                            ng-model="query.showNew" ng-change="newOnlyHandler()">
+                        </li>
+                        <li>
+                            <label for="showAll" title="打开页面后直接显示全部番组">关闭自动切换
+                                <span class="toggle" ng-class="{'ON':setting.showAll}"></span>
+                            </label>
+                            <input type="checkbox" name="showAll" id="showAll" 
+                            ng-model="setting.showAll" ng-change="showAllHandler()">
+                        </li>
+                        <li>
+                            <label for="newTab" title="在新窗口（标签）中打开所有链接，包括番组官网">打开新页面
+                                <span class="toggle" ng-class="{'ON':setting.newTab}"></span>
+                            </label>
+                            <input type="checkbox" name="newTab" id="newTab" 
+                            ng-model="setting.newTab" ng-change="changeTarget()">
+                        </li>
+                        <li>
+                            <label for="toNextDay" title="将该时间点及之后的番组顺延到第二天显示">转到次日</label>
+                            <div class="hourSelecter">
+                                <span class="left" ng-click="hourSelectHandler('-')" 
+                                    ng-class="{'disable':status.nextTime==='min'}"></span>
+                                <p>{{query.nextTime}}点</p>
+                                <span class="right" ng-click="hourSelectHandler('+')" 
+                                    ng-class="{'disable':status.nextTime==='max'}"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="all" ng-click="clearCookie()" 
+                                title="清除显示设置和站点过滤，下次打开本站时将使用默认设置">清除所有设置</span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu" ng-mouseenter="topMenuHandler('sites')" ng-mouseleave="topMenuHandler('sites')">
+                    <a href="javascript:;" ng-click="topMenuHandler('sites')">站点过滤</a>
+                    <ul class="submenu sites" ng-show="status.menu.sites" ng-cloak>
+                        <li ng-repeat="airSite in siteList">
+                            <label for="{{airSite.domain}}">{{airSite.name}}
+                                <span class="toggle" ng-class="{'ON':airSite.show}">
+                                </span>
+                            </label>
+                            <input type="checkbox" name="{{airSite.domain}}" id="{{airSite.domain}}" 
+                                ng-model="airSite.show" 
+                                ng-change="siteHandler(airSite.domain,airSite.show)">
+                        </li>
+                        <li>
+                            <span class="all" ng-click="selectAllHandler(status.selectAll)">
+                                {{status.selectAll|selectAllButton}}
+                            </span>
+                        </li>
+                    </ul> 
+                </li>
+                <li class="menu">
+                    <a href="m&#97;i&#108;t&#111;:&#119;xt&#50;&#48;&#48;&#53;@gma&#105;l&#46;&#99;&#111;&#109;?subject=%e7%95%aa%e7%bb%84%e6%94%be%e9%80%81-%e9%94%99%e8%af%af%e6%8f%90%e4%ba%a4" 
+                        title="如果您发现数据错误，或者其它问题，请联系我">提交问题</a>
+                </li>
+                <li class="share twitter">
+                    <a href="https://twitter.com/share?url=http%3A%2F%2Fbgmlist.com%2F&text=%e6%96%b9%e4%be%bf%e5%bf%ab%e6%8d%b7%e7%9a%84%e7%89%88%e6%9d%83%e5%8a%a8%e7%94%bb%e6%92%ad%e6%94%be%e5%9c%b0%e5%9d%80%e8%81%9a%e5%90%88%e7%ab%99+-+%e7%95%aa%e7%bb%84%e6%94%be%e9%80%81" title="分享到Twitter" target="_blank">分享到Twitter</a>
+                </li>
+                <li class="share weibo">
+                    <a href="http://service.weibo.com/share/share.php?title=%e6%96%b9%e4%be%bf%e5%bf%ab%e6%8d%b7%e7%9a%84%e7%89%88%e6%9d%83%e5%8a%a8%e7%94%bb%e6%92%ad%e6%94%be%e5%9c%b0%e5%9d%80%e8%81%9a%e5%90%88%e7%ab%99+-+%e7%95%aa%e7%bb%84%e6%94%be%e9%80%81&url=http%3A%2F%2Fbgmlist.com%2F" title="分享到微博" target="_blank">分享到微博</a>
+                </li>
+                <li class="share plain">
+                    分享本站
+                </li>
+
+            </ul>
+        </div>
+        <div id="shadow" ng-click="shadowHandler()" ng-show="status.shadow"></div>
+        <div id="header" ng-cloak>
+            <h1>{{yearRead}}年{{monthRead}}月番组</h1>
+            <p class="total">当季共有{{bangumis.length}}部番组</p>
+            <p class="lastModified">{{status.lastModifieded}}</p>
+        </div>
+        <div id="nav">
+            <ul id='switcher' ng-cloak>
+                <li ng-repeat="switcher in switcherList" 
+                    ng-class="{'selected':$parent.query.weekDayCN===switcher.index}" 
+                    ng-click="switcherHandler(switcher.index,switcher.order)">{{switcher.name}}</li>
+            </ul> 
+            <div id="search">
+                <input type="text" ng-model="query.titleCN" 
+                placeholder="搜索本季度番组" ng-keydown="searchHandler($event)">
+                <span class="clear" ng-show="query.titleCN!==''" ng-click="resumeSearch()">delete</span>
             </div>
         </div>
         <div id="container">
-            <ul id='nav'>
-                <li ng-repeat="nav in navList" 
-                    ng-class="{'selected':$parent.query.weekDayCN===nav.index}" 
-                    class-fix ng-click="$parent.query.titleCN='';$parent.query.weekDayCN=nav.index;
-                    order(bangumis,nav.order,false);">{{nav.name}}</li>
-            </ul> 
-            <table>
+            <noscript>
+                <p style="text-align:center;">请打开javascript支持以完整显示本站点</p>
+            </noscript>
+            <table ng-cloak>
                 <colgroup>
                     <col id="name">
                     <col id="time-jp">
@@ -70,55 +147,54 @@
                 </colgroup>
                 <thead>
                     <tr>
-                        <th id="header" colspan="2">{{yearRead}}年{{monthRead}}月番组</th>
-                        <th id="search" colspan="2">
-                            <input type="search" ng-model="query.titleCN" placeholder="搜索本月番组"
-                            ng-keydown="query.weekDayCN=undefined">
-                        </th>
-                    </tr>
-                    <tr>
                         <th>作品名</th>
                         <th>
-                            <span class="pointer" ng-click="order(bangumis,'jp',reversed)" 
-                                ng-class="{'ordered':ordered==='jp'}" class-fix>日本放送时间</span>
+                            <span ng-click="order(bangumis,'jp',status.reversed)" 
+                                ng-class="{'ordered':status.ordered==='jp'}">日本放送时间</span>
                         </th>
                         <th>
-                            <span class="pointer"  ng-click="order(bangumis,'cn',reversed)" 
-                                ng-class="{'ordered':ordered==='cn'}" class-fix>大陆放送时间</span>
+                            <span ng-click="order(bangumis,'cn',status.reversed)" 
+                                ng-class="{'ordered':status.ordered==='cn'}">大陆放送时间</span>
                         </th>
                         <th>播放网址</th>
                     </tr>
                 </thead>
                 <tbody id="bangumi_list">
-                    <tr ng-repeat="item in bangumis | filter:query track by $index" 
-                        ng-class-even="'color'" class-fix>
+                    <tr class="errorMsg" ng-show="status.error">
+                        <td colspan="4">{{status.errorMsg}}</td>
+                    </tr>
+                    <tr ng-repeat="item in bangumis|filter:bgmFilter track by $index">
                         <td>
-                            <a href="{{item.officalSite}}" ng-class="{'new':item.newBgm}" class-fix>
-                                {{item.titleCN}}<span span-fix>{{item.titleJP}}</span></a>
+                            <a href="{{item.officalSite}}" ng-class="{'new':item.new}" title="{{item.titleJP}}"
+                                target="{{status.linkTarget}}">
+                                {{item.titleCN}}
+                            </a>
                         </td>
-                        <td>{{item.weekDayJP | weekday}}&#160;&#160;{{item.timeJP | time}}</td>
-                        <td>{{item.weekDayCN | weekday}}&#160;&#160;{{item.timeCN | time}}</td>
+                        <td>{{item.weekDayJP|weekday}}&#160;&#160;{{item.timeJP|time}}</td>
+                        <td>{{item.weekDayCN|weekday}}&#160;&#160;{{item.timeCN|time}}</td>
                         <td>
-                            <ul id="link-list">
-                                <li ng-repeat="site in item.onAirSite | linkFilter:siteList" 
+                            <ul class="link-list">
+                                <li ng-repeat="site in item.onAirSite|linkFilter:siteList" 
                                     ng-class="{'lastLink':$last}">
-                                    <a href="{{site}}">{{site | onair}}</a></li>
+                                    <a href="{{site}}" target="{{status.linkTarget}}" ng-click="linkHandler(site,$event)" 
+                                        ng-class="{'disabled':site==='#'}">
+                                        {{site|onair}}
+                                    </a>
+                                </li>
                             </ul>    
-                            <p ng-show="item.onAirSite.length===0" style="color:gray" class-fix>暂无</p>
                         </td>
                     </tr>
                 </tbody>
             </table>
-            <p id="footer">Copyright &copy; 
-                <a href="http://bgmlist.com/">番组放送</a> | All Rights Reserved | Powered by 
-                <a href="https://angularjs.org">AngularJS</a>
-                and <a href="https://github.com/wxt2005/new_bangumi">GitHub</a>
-            </p>
         </div>
+        <p id="footer">&copy; 
+            <a href="http://bgmlist.com/">番组放送</a> &#124; All Rights Reserved &#124; Powered by 
+            <a href="https://angularjs.org/">AngularJS</a>
+            and <a href="https://github.com/wxt2005/new_bangumi/">GitHub</a>
+        </p>
         <script type="text/javascript" src="js/angular.min.js"></script> 
         <script type="text/javascript" src="js/angular-cookie.min.js"></script> 
         <script type="text/javascript" src="js/app.js"></script> 
         <script type="text/javascript" src="js/iefix.js"></script> 
-        <script type="text/javascript" src="js/ngprogress-lite.min.js"></script> 
     </body>
 </html>
