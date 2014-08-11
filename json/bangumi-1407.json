@@ -268,10 +268,11 @@
     "weekDayJP": 1,
     "weekDayCN": 2,
     "timeJP": "2256",
-    "timeCN": "",
+    "timeCN": "0005",
     "onAirSite": [
       "http://www.acfun.tv/a/aa2673",
-      "http://www.bilibili.com/sp/搞姬日常"
+      "http://www.bilibili.com/sp/搞姬日常",
+      "http://www.iqiyi.com/a_19rrhbvwad.html"
     ],
     "newBgm": true
   },
