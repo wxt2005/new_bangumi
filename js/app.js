@@ -70,6 +70,12 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
         if ($scope.query.newBgm && item.newBgm === false) {
             flag = false;
         }
+        if ($scope.query.titleCN) {
+            var re = new RegExp($scope.query.titleCN, 'i');
+            if (!re.test(item.titleCN)) {
+                flag = false;
+            }
+        }
         return flag;
     };
 
