@@ -43,14 +43,14 @@
                                 <span class="toggle" ng-class="{'ON':query.showNew}"></span>
                             </label>
                             <input type="checkbox" name="showNew" id="showNew" 
-                            ng-model="query.showNew" ng-change="switchNewOnly()">
+                            ng-model="query.showNew" ng-change="newOnlyHandler()">
                         </li>
                         <li>
                             <label for="showAll" title="打开页面后直接显示全部番组">关闭自动切换
                                 <span class="toggle" ng-class="{'ON':setting.showAll}"></span>
                             </label>
                             <input type="checkbox" name="showAll" id="showAll" 
-                            ng-model="setting.showAll" ng-change="switchAllOnly()">
+                            ng-model="setting.showAll" ng-change="showAllHandler()">
                         </li>
                         <li>
                             <label for="newTab" title="在新窗口（标签）中打开所有链接，包括番组官网">打开新页面
@@ -85,10 +85,10 @@
                             </label>
                             <input type="checkbox" name="{{airSite.domain}}" id="{{airSite.domain}}" 
                                 ng-model="airSite.show" 
-                                ng-change="switchSite(airSite.domain,airSite.show)">
+                                ng-change="siteHandler(airSite.domain,airSite.show)">
                         </li>
                         <li>
-                            <span class="all" ng-click="selectAll(status.selectAll)">
+                            <span class="all" ng-click="selectAllHandler(status.selectAll)">
                                 {{status.selectAll|selectAllButton}}
                             </span>
                         </li>
@@ -118,9 +118,9 @@
         </div>
         <div id="nav">
             <ul id='switcher' ng-cloak>
-                <li ng-repeat="nav in navList" 
-                    ng-class="{'selected':$parent.query.weekDayCN===nav.index}" 
-                    ng-click="switcherHandler(nav.index,nav.order)">{{nav.name}}</li>
+                <li ng-repeat="switcher in switcherList" 
+                    ng-class="{'selected':$parent.query.weekDayCN===switcher.index}" 
+                    ng-click="switcherHandler(switcher.index,switcher.order)">{{switcher.name}}</li>
             </ul> 
             <div id="search">
                 <input type="text" ng-model="query.titleCN" 
