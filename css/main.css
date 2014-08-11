@@ -129,7 +129,6 @@ a:active {
 #topbar #topnav li a {
     font-size: 20px;
     color: #fff;
-    font-weight: bold;
 }
 
 #topbar #topnav li a:focus,
@@ -572,7 +571,7 @@ table tbody tr td .link-list .lastLink:after {
 }
 
 #footer a {
-    font-size: 12px;
+    font-size: 14px;
 }
 
 #footer a:link,
