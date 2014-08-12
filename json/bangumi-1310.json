@@ -1,5 +1,56 @@
 [
   {
+    "titleCN": "名侦探柯南",
+    "titleJP": "名探偵コナン",
+    "officalSite": "http://www.ytv.co.jp/conan/",
+    "weekDayJP": 6,
+    "weekDayCN": 0,
+    "timeJP": "1800",
+    "timeCN": "",
+    "onAirSite": [
+      "http://www.acfun.tv/a/aa127"
+    ],
+    "newBgm": false
+  },
+  {
+    "titleCN": "海贼王",
+    "titleJP": "ONE PIECE",
+    "officalSite": "http://www.toei-anim.co.jp/tv/onep/",
+    "weekDayJP": 0,
+    "weekDayCN": 0,
+    "timeJP": "0930",
+    "timeCN": "",
+    "onAirSite": [
+      "http://www.bilibili.com/sp/海贼王",
+      "http://www.acfun.tv/a/aa126"
+    ],
+    "newBgm": false
+  },
+  {
+    "titleCN": "火影忍者 疾风传",
+    "titleJP": "NARUTO -ナルト- 疾風伝",
+    "officalSite": "http://www.tv-tokyo.co.jp/anime/naruto/index2.html",
+    "weekDayJP": 4,
+    "weekDayCN": 5,
+    "timeJP": "1930",
+    "timeCN": "",
+    "onAirSite": [],
+    "newBgm": false
+  },
+  {
+    "titleCN": "偶像活动! 二期",
+    "titleJP": "アイカツ!アイドルカツドウ!",
+    "officalSite": "http://www.aikatsu.net",
+    "weekDayJP": 4,
+    "weekDayCN": 5,
+    "timeJP": "1800",
+    "timeCN": "",
+    "onAirSite": [
+      "http://www.bilibili.com/sp/偶像活动"
+    ],
+    "newBgm": true
+  },
+  {
     "titleCN": "王者天下2",
     "titleJP": "キングダム2",
     "officalSite": "http://www9.nhk.or.jp/anime/kingdom2/",
