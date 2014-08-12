@@ -298,21 +298,6 @@
     "newBgm": true
   },
   {
-    "titleCN": "噬魂师NOT",
-    "titleJP": "ソウルイーターノット！",
-    "officalSite": "http://www.souleaternot.tv/",
-    "weekDayJP": 3,
-    "weekDayCN": 3,
-    "timeJP": "0040",
-    "timeCN": "0110",
-    "onAirSite": [
-      "http://www.iqiyi.com/a_19rrgi8v2x.html",
-      "http://www.bilibili.com/sp/噬魂师NOT！",
-      "http://www.acfun.tv/a/aa1271"
-    ],
-    "newBgm": false
-  },
-  {
     "titleCN": "搞姬日常",
     "titleJP": "ひめゴト",
     "officalSite": "http://www.himegoto-tv.jp/",
@@ -470,21 +455,6 @@
       "http://www.bilibili.com/sp/东京ESP"
     ],
     "newBgm": true
-  },
-  {
-    "titleCN": "漆黑的子弹",
-    "titleJP": "ブラック・ブレット",
-    "officalSite": "http://www.black-bullet.net/",
-    "weekDayJP": 2,
-    "weekDayCN": 3,
-    "timeJP": "2330",
-    "timeCN": "0300",
-    "onAirSite": [
-      "http://tv.sohu.com/s2014/hszd",
-      "http://www.bilibili.com/sp/漆黑的子弹",
-      "http://www.acfun.tv/a/aa1105"
-    ],
-    "newBgm": false
   },
   {
     "titleCN": "ALDNOAH·ZERO",
@@ -889,20 +859,6 @@
       "http://www.iqiyi.com/a_19rrgjao65.html",
       "http://www.bilibili.com/sp/钻石王牌",
       "http://www.acfun.tv/sp/diamondace/"
-    ],
-    "newBgm": false
-  },
-  {
-    "titleCN": "监督不行届",
-    "titleJP": "監督不行届（あにむす!内）",
-    "officalSite": "http://www.fuyukitodoki.com/",
-    "weekDayJP": 5,
-    "weekDayCN": 5,
-    "timeJP": "0105",
-    "timeCN": "",
-    "onAirSite": [
-      "http://www.bilibili.com/sp/监督不行届",
-      "http://www.acfun.tv/a/aa1200"
     ],
     "newBgm": false
   },
