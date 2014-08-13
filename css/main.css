@@ -132,8 +132,7 @@ a:active {
 }
 
 #topbar #topnav li a:focus,
-#topbar #topnav li a:hover,
-#topbar #topnav li a:active {
+#topbar #topnav li a:hover {
     color: #1abc9c;
 }
 
