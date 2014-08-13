@@ -251,18 +251,20 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
     $scope.status.shadowHandler = function() {
         $scope.status.menu.archive = false;
         $scope.status.menu.display = false;
-        $scope.status.menu.display = false;
+        $scope.status.menu.sites = false;
         $scope.status.shadow = false;
     };
 
     //顶部菜单按钮的控制器
-    $scope.topMenuHandler = function(menuName, flag) {
+    $scope.topMenuHandler = function(menuName, menuDisplay, shadowDisplay) {
         for (var item in $scope.status.menu) {
             item = false;
         }
-        $scope.status.menu[menuName] = !$scope.status.menu[menuName];
-        if(!flag) {
-            $scope.status.shadow = !$scope.status.shadow;
+        $scope.status.menu[menuName] = menuDisplay;
+        if(shadowDisplay !== undefined) {
+            $scope.status.shadow = shadowDisplay;
+        } else {
+            $scope.status.shadow = menuDisplay;
         }
     };
 
