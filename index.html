@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="renderer" content="webkit">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no>
         <title>番组放送</title>
         <meta name="description" content="番组放送：方便快捷的版权动画播放地址聚合站">
         <meta name="keywords" content="番组放送, 新番, 动画, 动漫, 正版">
@@ -149,12 +150,12 @@
                     <tr>
                         <th>作品名</th>
                         <th>
-                            <span ng-click="order(bangumis,'jp',status.reversed)" 
-                                ng-class="{'ordered':status.ordered==='jp'}">日本放送时间</span>
+                            <p ng-click="order(bangumis,'jp',status.reversed)" 
+                                ng-class="{'ordered':status.ordered==='jp'}">日本<span>放送时间</span></p>
                         </th>
                         <th>
-                            <span ng-click="order(bangumis,'cn',status.reversed)" 
-                                ng-class="{'ordered':status.ordered==='cn'}">大陆放送时间</span>
+                            <p ng-click="order(bangumis,'cn',status.reversed)" 
+                                ng-class="{'ordered':status.ordered==='cn'}">大陆<span>放送时间</span></p>
                         </th>
                         <th>播放网址</th>
                     </tr>
@@ -170,8 +171,8 @@
                                 {{item.titleCN}}
                             </a>
                         </td>
-                        <td>{{item.weekDayJP|weekday}}&#160;&#160;{{item.timeJP|time}}</td>
-                        <td>{{item.weekDayCN|weekday}}&#160;&#160;{{item.timeCN|time}}</td>
+                        <td><span class="weekDay">{{item.weekDayJP|weekday}}</span><span class="time">{{item.timeJP|time}}</span></td>
+                        <td><span class="weekDay">{{item.weekDayCN|weekday}}</span><span class="time">{{item.timeCN|time}}</span></td>
                         <td>
                             <ul class="link-list">
                                 <li ng-repeat="site in item.onAirSite|linkFilter:siteList" 
