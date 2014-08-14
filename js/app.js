@@ -11,7 +11,7 @@ function getDomain(url) {
 }
 
 angular.module('BangumiList', ['ieFix', 'ipCookie'])
-.controller('ListController', ['$scope', '$http', 'ipCookie', function($scope, $http, ipCookie) {
+.controller('ListController', ['$scope', '$http', 'ipCookie', '$window', function($scope, $http, ipCookie, $window) {
     var dateNow, weekDayNow, yearNow, monthNow;
     var i = 0, l = 0;
 
@@ -463,6 +463,11 @@ return false;
 .filter('weekday', function() {
     var weekDayList = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
     return function(weekDayNum) {
+        /*if (window.innerWidth <= 320) {
+            return weekDayList[weekDayNum];
+        } else {
+            return weekDayList[weekDayNum];
+        }*/
         return weekDayList[weekDayNum];
     };
 })
@@ -470,6 +475,12 @@ return false;
 //格式化播放时间
 .filter('time', function() {
     return function(originTime) {
+        /*console.log(window.innerWidth);
+        if (window.innerWidth <= 400) {
+            return originTime ? originTime.slice(0,2) + ':' + originTime.slice(2) : '--';
+        } else {
+            return originTime ? originTime.slice(0,2) + ':' + originTime.slice(2) : '(预计)';
+        }*/
         return originTime ? originTime.slice(0,2) + ':' + originTime.slice(2) : '(预计)';
     };
 })
