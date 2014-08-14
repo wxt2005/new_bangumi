@@ -69,11 +69,13 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
         'selectAll': true,
         'shadow': false,
         'showAll': false,
+        'history': false,
         'menu': {
             'archive': false,
             'display': false,
             'sites': false
-        }
+        },
+        'subMenu': {}
     };
 
     //切换a标签的target
@@ -140,7 +142,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
         $scope.query.titleCN = '';
         $scope.query.weekDayCN = index;
         $scope.order($scope.bangumis, order, false);
-        if(index === -1) {
+        if (index === -1) {
             $scope.status.showAll = true;
         } else {
             $scope.status.showAll = false;
@@ -230,10 +232,10 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
     //直接显示全部按钮的控制器
     $scope.showAllHandler = function() {
         $scope.status.showAll = $scope.setting.showAll;
-        if ($scope.setting.showAll) {
+        if ($scope.setting.showAll && !$scope.status.history) {
             $scope.query.weekDayCN = -1;
             $scope.order($scope.bangumis, 'jp', false);
-        } else {
+        } else if (!$scope.status.history) {
             $scope.query.weekDayCN = weekDayNow;
             $scope.order($scope.bangumis, 'cn', false);
         }
@@ -244,27 +246,31 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
     $scope.archiveHandler = function(year, month) {
         $scope.readBgm($scope.getJsonPath(year, month, $scope.archive), 'jp', false);
         $scope.query.weekDayCN = -1;
-        $scope.setting.showAll = true;
+        $scope.status.showAll = true;
+        $scope.status.history = true;
     };
 
+    /*
     //页面遮罩的控制器
-    $scope.status.shadowHandler = function() {
+    $scope.shadowHandler = function() {
         $scope.status.menu.archive = false;
         $scope.status.menu.display = false;
         $scope.status.menu.sites = false;
         $scope.status.shadow = false;
-    };
+    };*/
 
     //顶部菜单按钮的控制器
-    $scope.topMenuHandler = function(menuName, menuDisplay, shadowDisplay) {
-        for (var item in $scope.status.menu) {
-            item = false;
+    $scope.topMenuHandler = function(menuName, menuPath, menuDisplay, shadowDisplay) {
+        for (var item in $scope.status[menuPath]) {
+            $scope.status[menuPath][item] = false;
         }
-        $scope.status.menu[menuName] = menuDisplay;
-        if(shadowDisplay !== undefined) {
-            $scope.status.shadow = shadowDisplay;
-        } else {
-            $scope.status.shadow = menuDisplay;
+        if (menuName !== '') {
+            $scope.status[menuPath][menuName] = menuDisplay;
+            if(shadowDisplay !== undefined) {
+                $scope.status.shadow = shadowDisplay;
+            } else {
+                $scope.status.shadow = menuDisplay;
+            }
         }
     };
 

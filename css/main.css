@@ -47,6 +47,17 @@ a:active {
     background: rgba(230, 230, 230, 0.5);
 }
 
+#shadow .loading {
+    background: url("../images/loading.gif") 0 0 transparent;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -20px -20px 0 0;
+}
+
 #header {
     width: 960px;
     height: 75px;
@@ -229,7 +240,7 @@ a:active {
     border-style: solid;
     border-color: transparent transparent #34495e transparent;
     top: -9px;
-    left: 33px;
+    left: 15px;
     position: absolute;
 }
 
