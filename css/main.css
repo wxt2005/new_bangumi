@@ -4,7 +4,7 @@
 }
 
 /*全局*/
-body, a, th, td, p, h1, ul, li, blockquote {
+body, a, th, td, p, h1, ul, li, blockquote, input {
     font-family: "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", "SimSun", "宋体", sans-serif;
     margin: 0px;
     padding: 0px;
@@ -14,6 +14,9 @@ body {
     background: #eee;
     font-size: 16px;
     overflow-y: scroll;
+    /*fix IE7 double scroll bar*/
+    *overflow-y: visible;
+    position: relative;
 }
 
 ul {
@@ -35,66 +38,6 @@ a:active {
     color: #3498db;
 }
 
-#shadow {
-    position: absolute;
-    min-width: 960px;
-    min-height: 1080px;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    /*for let IE7*/
-    *display: none;
-    background: rgba(230, 230, 230, 0.5);
-}
-
-#shadow .loading {
-    background: url("../images/loading.gif") 0 0 transparent;
-    z-index: 2;
-    width: 40px;
-    height: 40px;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    margin: -20px -20px 0 0;
-}
-
-#header {
-    width: 960px;
-    height: 75px;
-    margin: 15px auto;
-    position: relative;
-    vertical-align: bottom;
-}
-
-#header h1 {
-    color: #34495e;
-    font-size: 50px;
-    text-align: left;
-    letter-spacing: 1px;
-    position: absolute;
-    left: 0;
-    height: 75px;
-    line-height: 75px;
-}
-
-#header p {
-    color: #34495e;
-    font-size: 16px;
-    width: 300px;
-    text-align: right;
-    float: right;
-    position: absolute;
-    right: 10px;
-}
-
-#header .lastModified {
-    bottom: 8px;
-}
-
-#header .total {
-    bottom: 32px;
-}
-
 /*顶部导航栏*/
 #topbar {
     height: 40px;
@@ -102,12 +45,13 @@ a:active {
     position: relative;
     color: #fff;
     text-align: center;
-    min-width: 980px;
+    min-width: 730px;
     z-index: 2;
 }
 
 #topbar #topnav {
-    width: 960px;
+    max-width: 960px;
+    min-width: 730px;
     margin: auto;
     overflow: hidden;
     zoom: 1;
@@ -165,6 +109,7 @@ a:active {
     top: 50px;
     /*hide submenu for let IE7*/
     *display: none;
+    margin-left: 1px;
 }
 
 #topbar #topnav .menu .submenu a {
@@ -357,116 +302,60 @@ a:active {
     background-position: -40px 0;
 }
 
-/*表格容器*/
-#container {
-    margin: 0 auto;
-    width: 960px;
-    border: 8px solid #1abc9c;
-    border-radius: 6px;
-}
-
-/*表格*/
-table {
-    border-collapse: collapse;
-    margin-left: auto;
-    margin-right: auto;
-    width: 960px;
-    table-layout: fixed;
-    line-height: 1.4;
-}
-
-table .errorMsg {
-    /*for lte IE7*/
-    *display: none;
-}
-
-table #name {
-    width: 40%;
-}
-
-table #time-jp, 
-table #time-cn {
-    width: 15%;
-}
-
-table thead tr th {
-    background: #1abc9c;
-    height: 30px;
-    vertical-align: -4px;
-}
-
-table thead tr th span:hover {
-    color: #3498db;
-    cursor: pointer;
-}
-
-table thead tr th span.ordered {
-    text-decoration: underline;
-}
-
-table tbody tr td a.new:after {
-    content: "new";
-    font-size: 12px;
-    font-family: sans-serif;
-    color: #e74c3c;
-    font-weight: normal;
-    vertical-align: super;
+/*遮罩*/
+#shadow {
     position: absolute;
-    margin-left: 4px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /*for let IE7*/
+    *display: none;
+    background: rgba(230, 230, 230, 0.5);
 }
 
-table tbody tr {
-    height: 50px;
-    border-bottom: 1px solid #ddd;
-    padding-left: 20px;
-}
-
-table tbody tr:hover {
-    background: #d7e8e4;
-}
-
-table tbody tr td {
-    text-align: center;
-}
-
-table tbody tr td:first-child a {
+/*标题栏*/
+#header {
+    max-width: 960px;
+    min-width: 730px;
+    height: 75px;
+    margin: 15px auto;
     position: relative;
-    display: block;
+    vertical-align: bottom;
 }
 
-table tbody tr td:last-child {
-    padding: 0 5px;
-    text-align: center;
-    font-size: 15px;
+#header h1 {
+    color: #34495e;
+    font-size: 50px;
+    text-align: left;
+    letter-spacing: 1px;
+    position: absolute;
+    left: 0;
+    height: 75px;
+    line-height: 75px;
 }
 
-table tbody tr td .link-list li {
-    display: inline-block;
+#header p {
+    color: #34495e;
+    font-size: 16px;
+    width: 300px;
+    text-align: right;
+    float: right;
+    position: absolute;
+    right: 10px;
 }
 
-/*修复IE7inline-block失效的问题*/
-table tbody tr td .link-list li {
-    *display: inline;
-    *margin-right: 10px;
+#header .lastModified {
+    bottom: 8px;
 }
 
-table tbody tr td .link-list li .disabled {
-    color: #aaa;
-    cursor: default;
-}
-
-table tbody tr td .link-list li:after {
-    content: "\00A0\007C\00A0";
-    vertical-align: 6%;
-}
-
-table tbody tr td .link-list .lastLink:after {
-    content: "\00A0";
+#header .total {
+    bottom: 32px;
 }
 
 /*导航条*/
 #nav {
-    width: 960px;
+    max-width: 960px;
+    min-width: 730px;
     margin: 0 auto;
     margin-top: 10px;
     zoom: 1;
@@ -474,16 +363,15 @@ table tbody tr td .link-list .lastLink:after {
 }
 
 /*切换按钮*/
-#switcher {
-    margin-left: auto;
-    margin-right: auto;
+#nav #switcher {
     zoom: 1;
     overflow: hidden;
     padding-bottom: 16px;
     float: left;
+    height: 36px;
 }
 
-#switcher li {
+#nav #switcher li {
     float: left;
     width: 60px;
     border-top: 2px solid #1abc9c;
@@ -497,29 +385,30 @@ table tbody tr td .link-list .lastLink:after {
     /*for let IE7*/
     *border-left: 2px solid #1abc9c;
     *margin-left: -2px;
+    height: 32px;
 }
 
-#switcher li:first-child {
+#nav #switcher li:first-child {
     border-left: 2px solid #1abc9c;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
 }
 
-#switcher li:last-child {
+#nav #switcher li:last-child {
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
 }
 
-#switcher li:hover {
+#nav #switcher li:hover {
     background: rgba(26, 188, 156, 0.1);
 }
 
-#switcher li.selected {
+#nav #switcher li.selected {
     background: #1abc9c;
 }
 
 /*三角形*/
-#switcher li.selected:after {
+#nav #switcher li.selected:after {
     content: "";
     position: absolute;
     width: 0;
@@ -532,20 +421,21 @@ table tbody tr td .link-list .lastLink:after {
 }
 
 /*搜索框*/
-#search {
+#nav #search {
     float: right;
     width: auto;
     position: relative;
     background: url("../images/search.png") 0 0 no-repeat transparent;
     width: 230px;
     text-align: right;
+    height: 36px;
 }
 
-#search:hover {
+#nav #search:hover {
     background-color: transparent;
 }
 
-#search input {
+#nav #search input {
     color: #1abc9c;
     border: 2px solid #1abc9c;
     border-radius: 6px;
@@ -555,14 +445,15 @@ table tbody tr td .link-list .lastLink:after {
     padding: 6px 12px;
     background: #eee;
     width: 170px;
+    height: 20px;
 }
 
 /*清除按钮*/
-#search input:focus {
+#nav #search input:focus {
     background: #fff;
 }
 
-#search .clear {
+#nav #search .clear {
     height: 20px;
     width: 20px;
     background: url("../images/clear.png") 0 0 no-repeat transparent;
@@ -573,10 +464,124 @@ table tbody tr td .link-list .lastLink:after {
     cursor: pointer;
 }
 
+/*表格容器*/
+#container {
+    margin: 0 auto;
+    max-width: 960px;
+    min-width: 730px;
+    border: 8px solid #1abc9c;
+    border-radius: 6px;
+}
+
+/*表格*/
+#container table {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    table-layout: fixed;
+    line-height: 1.4;
+}
+
+#container table .errorMsg {
+    /*for lte IE7*/
+    *display: none;
+}
+
+#container table #name {
+    width: 40%;
+}
+
+#container table #time-jp, 
+#container table #time-cn {
+    width: 15%;
+}
+
+#container table thead tr th {
+    background: #1abc9c;
+    height: 30px;
+    vertical-align: -4px;
+}
+
+#container table thead tr th p:hover {
+    color: #3498db;
+    cursor: pointer;
+}
+
+#container table thead tr th .ordered {
+    text-decoration: underline;
+}
+
+#container table tbody tr td a.new:after {
+    content: "new";
+    font-size: 12px;
+    font-family: sans-serif;
+    color: #e74c3c;
+    font-weight: normal;
+    vertical-align: super;
+    position: absolute;
+    margin-left: 4px;
+}
+
+#container table tbody tr {
+    height: 50px;
+    border-bottom: 1px solid #ddd;
+    padding-left: 20px;
+}
+
+#container table tbody tr:hover {
+    background: #d7e8e4;
+}
+
+#container table tbody tr td {
+    text-align: center;
+}
+
+#container table tbody tr td:first-child a {
+    position: relative;
+    display: block;
+}
+
+#container table tbody tr td:last-child {
+    padding: 0 5px;
+    text-align: center;
+    font-size: 15px;
+}
+
+#container table tbody tr td .weekDay {
+    margin-right: 5px;
+}
+
+#container table tbody tr td .link-list li {
+    display: inline-block;
+}
+
+/*修复IE7inline-block失效的问题*/
+#container table tbody tr td .link-list li {
+    *display: inline;
+    *margin-right: 10px;
+}
+
+#container table tbody tr td .link-list li .disabled {
+    color: #aaa;
+    cursor: default;
+}
+
+#container table tbody tr td .link-list li:after {
+    content: "\00A0\007C\00A0";
+    vertical-align: 6%;
+}
+
+#container table tbody tr td .link-list .lastLink:after {
+    content: "\00A0";
+}
+
 /*页脚*/
 #footer {
+    max-width: 980px;
+    min-width: 730px;
     text-align: center;
-    margin: 10px 0;
+    margin: 10px auto;
     font-size: 14px;
     color: #34495e;
 }
@@ -629,5 +634,366 @@ screen and (max--moz-device-pixel-ratio: 2) {
     #topbar #topnav .share.twitter a {
         background-image: url("../images/twitter-2x.png");
         background-size: 80px 40px;
+    }
+}
+
+@media screen and (max-width:729px){
+    #topbar {
+        min-width: 531px;
+    }
+
+    #topbar #topnav {
+        min-width: 531px;
+    }
+    
+    #topbar #topnav .title {
+        display: none;
+    }
+    
+    #header {
+        min-width: 531px;
+        margin: 0;
+    }
+
+    #header h1 {
+        font-size: 40px;
+        position: static;
+        margin-left: 5px;
+        overflow: hidden;
+    }
+
+    #header p {
+        display: none;
+    }
+
+    #nav {
+        overflow: hidden;
+        zoom: 1;
+        min-width: 531px;
+        margin: 0;
+        position: static;
+    }
+
+    #nav #switcher {
+        float: left;
+        width: 100%;
+        padding-bottom: 0;
+        height: 32px;
+    }
+
+    #nav #switcher li {
+        width: 12.5%;
+        font-size: 16px;
+        border-bottom: none;
+        box-sizing: border-box; 
+        -webkit-box-sizing: border-box; 
+        -moz-box-sizing: border-box; 
+    }
+
+    #nav #switcher li:first-child,
+    #nav #switcher li:last-child {
+        border-radius: 0;
+    }
+
+    #nav #switcher li:first-child {
+        border-left: none;
+    }
+
+    #nav #switcher li:last-child {
+        border-right: none;
+    }
+
+    #nav #switcher li.selected:after {
+        display: none;
+    }
+
+    #nav #search {
+        position: absolute;
+        top: 60px;
+        right: 5px;
+        width: 160px;
+        overflow: hidden;
+        height: 32px;
+    }
+
+    #nav #search .clear {
+        right: 20px;
+    }
+
+    #nav #search input {
+        width: 140px;
+        border-radius: 0;
+        font-size: 14px;
+        padding: 4px 8px;
+    }
+
+    #nav #search input::-webkit-input-placeholder {
+        color: transparent;
+    }
+
+    #nav #search input::-webkit-input-placeholder:before {
+        color: #a9a9a9;
+        content: "搜索";
+    }
+
+    #container {
+        min-width: 531px;
+        border: none;
+    }
+
+    #container table {
+        min-width: 531px;
+    }
+
+    #container table #name { 
+        width: 35%;
+    }
+
+    #container table thead tr th,
+    #container table tbody tr td {
+        padding: 6px 5px;
+        overflow: hidden;
+        font-size: 16px;
+        word-wrap: break-word;
+        vertical-align: middle;
+    }
+
+    #container table thead tr th p span {
+        display: none;
+    }
+
+    #container table tbody tr td a.new:after {
+        content: '*';
+        margin-left: 1px;
+    }
+
+    #container table tbody tr td .weekDay,
+    #container table tbody tr td .time {
+        display: block;
+        margin: 0;
+    }
+
+    #footer {
+        min-width: 531px;
+        font-size: 10px;
+        background: #1abc9c;
+        margin: 0;
+        min-height: 30px;
+        line-height: 30px;
+    }
+
+    #footer a {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:530px) {
+    body {
+        min-width: 320px;
+    }
+
+    #topbar {
+        min-width: 320px;
+        height: 30px;
+    }
+
+    #topbar #topnav {
+        min-width: 320px;
+        height: 40px;
+    }    
+
+    #topbar #topnav li {
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px;
+    }
+
+    #topbar #topnav .menu {
+        height: 40px;
+    }
+
+    #topbar #topnav .menu a {
+        font-size: 14px;
+    }
+
+    #topbar #topnav .menu .submenu {
+        top: 40px;
+        width: 80px;
+    }
+
+    #topbar #topnav .menu .submenu a {
+        width: 90px;
+    }
+
+    #topbar #topnav .menu .submenu li {
+        width: 74px;
+    }
+
+    #topbar #topnav .menu .submenu.year .submenu.month {
+        left: 78px;
+        top: -3px;
+    }
+
+    #topbar #topnav .menu .submenu.display {
+        width: 170px;
+    }
+
+    #topbar #topnav .menu .submenu.display li,
+    #topbar #topnav .menu .submenu label {
+        width: 164px;
+    }
+
+    #topbar #topnav .menu .submenu.sites {
+        width: 120px;
+    }
+
+    #topbar #topnav .menu .submenu.sites li,
+    #topbar #topnav .menu .submenu.sites label {
+        width: 114px;
+    }
+
+    #topbar #topnav .menu .submenu li .all {
+        height: 30px;
+    }
+
+    #topbar #topnav .menu .submenu span {
+        width: 15px;
+        height: 15px;
+    }
+
+    #topbar #topnav .menu .submenu .hourSelecter {
+        height: 15px;
+        top: 7.5px;
+    }
+
+    #topbar #topnav .menu .submenu .hourSelecter p {
+        height: 15px;
+        line-height: 15px;
+    }
+
+    #topbar #topnav .menu .submenu .hourSelecter .left,
+    #topbar #topnav .menu .submenu .hourSelecter .right,
+    #topbar #topnav .menu .submenu .toggle {
+        background-size: 30px 15px;
+        background-position: 0 0;
+    }
+
+    #topbar #topnav .menu .submenu .hourSelecter .disable {
+        background-position: 15px 0;
+    }
+
+    #topbar #topnav .menu .submenu .toggle.ON {
+        background-position: 15px 0;
+    }
+
+    #topbar #topnav .share a {
+        width: 30px;
+        height: 30px;
+    }
+
+    #topbar #topnav .share.plain {
+        display: none;
+    }
+
+    #topbar #topnav .share.twitter a,
+    #topbar #topnav .share.weibo a {
+        background-size: 60px 30px;
+    }
+
+    #topbar #topnav .share.twitter a:focus,
+    #topbar #topnav .share.twitter a:hover,
+    #topbar #topnav .share.twitter a:active,
+    #topbar #topnav .share.weibo a:focus,
+    #topbar #topnav .share.weibo a:hover,
+    #topbar #topnav .share.weibo a:active {
+        background-position: -30px 0;
+    }
+
+    #header {
+        min-width: 320px;
+        height: 50px;
+    }
+
+    #header h1 {
+        font-size: 22px;
+        letter-spacing: normal;
+        width: 40%;
+        height: 50px;
+        line-height: 50px;
+    }    
+
+    #nav {
+        min-width: 320px;
+    }
+
+    #nav #switcher li {
+        font-size: 14px;
+    }
+
+    #nav #search {
+        top: 40px;
+    }
+
+    #container {
+        min-width: 320px;
+    }
+
+    #container table {
+        min-width: 320px;
+    }
+
+    #container table thead tr th,
+    #container table tbody tr td {
+        font-size: 14px;
+    }
+
+    #container table tbody tr td a {
+        font-size: 14px;
+    }
+
+    #container table thead tr th:first-child,
+    #container table tbody tr td:first-child  {
+        text-align: left;
+        padding: 6px 8px;
+    }
+
+    #container table thead tr th:last-child,
+    #container table tbody tr td:last-child {
+        text-align: right;
+        padding: 6px 8px;
+    }
+
+    #container table tbody tr td .link-list {
+        text-align: right;
+        margin-right: -10px;
+    }
+
+    #container table tbody tr td .link-list li {
+        width: auto;
+    }
+
+    #container table tbody tr td .link-list li a {
+        margin-right: 10px;
+    }
+
+    #container table tbody tr td .link-list li:after {
+        content: '';
+        display: none;
+    }
+
+    #container table tbody tr td .weekDay,
+    #container table tbody tr td .time {
+        display: block;
+        margin: 0;
+    }
+
+    #footer {
+        min-width: 320px;
+    }
+}
+
+@media screen and (max-width:399px) {
+    #topbar #topnav .share.weibo {
+        display: none;
     }
 }
