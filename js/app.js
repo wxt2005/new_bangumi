@@ -73,7 +73,8 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
             'archive': false,
             'display': false,
             'sites': false
-        }
+        },
+        'subMenu': {}
     };
 
     //切换a标签的target
@@ -140,7 +141,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
         $scope.query.titleCN = '';
         $scope.query.weekDayCN = index;
         $scope.order($scope.bangumis, order, false);
-        if(index === -1) {
+        if (index === -1) {
             $scope.status.showAll = true;
         } else {
             $scope.status.showAll = false;
@@ -247,24 +248,27 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
         $scope.setting.showAll = true;
     };
 
+    /*
     //页面遮罩的控制器
-    $scope.status.shadowHandler = function() {
+    $scope.shadowHandler = function() {
         $scope.status.menu.archive = false;
         $scope.status.menu.display = false;
         $scope.status.menu.sites = false;
         $scope.status.shadow = false;
-    };
+    };*/
 
     //顶部菜单按钮的控制器
-    $scope.topMenuHandler = function(menuName, menuDisplay, shadowDisplay) {
-        for (var item in $scope.status.menu) {
-            item = false;
+    $scope.topMenuHandler = function(menuName, menuPath, menuDisplay, shadowDisplay) {
+        for (var item in $scope.status[menuPath]) {
+            $scope.status[menuPath][item] = false;
         }
-        $scope.status.menu[menuName] = menuDisplay;
-        if(shadowDisplay !== undefined) {
-            $scope.status.shadow = shadowDisplay;
-        } else {
-            $scope.status.shadow = menuDisplay;
+        if (menuName !== '') {
+            $scope.status[menuPath][menuName] = menuDisplay;
+            if(shadowDisplay !== undefined) {
+                $scope.status.shadow = shadowDisplay;
+            } else {
+                $scope.status.shadow = menuDisplay;
+            }
         }
     };
 

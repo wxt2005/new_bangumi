@@ -17,23 +17,20 @@
                 <li class="title">
                     <a href="http://bgmlist.com/">番组放送</a>
                 </li>
-                <li class="menu" ng-mouseenter="topMenuHandler('archive',true)" 
-                    ng-mouseleave="topMenuHandler('archive',false)">
-                    <a href="javascript:;" ng-click="topMenuHandler('archive',!status.menu.archive)">历史数据</a>
+                <li class="menu" ng-mouseenter="topMenuHandler('archive','menu',true)" 
+                    ng-mouseleave="topMenuHandler('archive','menu',false);topMenuHandler('','subMenu',false)">
+                    <a href="javascript:;" ng-click="topMenuHandler('archive','menu',!status.menu.archive);
+                        topMenuHandler('','subMenu',false)">历史数据</a>
                     <ul class="submenu year" ng-show="status.menu.archive" ng-cloak>
                         <li ng-repeat="file in archive">
-                            <a href="javascript:;" ng-mouseenter="topMenuHandler('year'+file.year,true,true)" 
-                                ng-mouseleave="topMenuHandler('year'+file.year,false,true)" 
-                                ng-click="topMenuHandler('year'+file.year,!('year'+file.year))">
+                            <a href="javascript:;" ng-mouseenter="topMenuHandler('year'+file.year,'subMenu',true)">
                                 {{file.year}}年
                             </a>
-                            <ul class="submenu month" ng-show="$parent.status.menu['year'+file.year]"
-                                ng-mouseenter="topMenuHandler('year'+file.year,true)" 
-                                ng-mouseleave="topMenuHandler('year'+file.year,false,true)"
-                                ng-click="topMenuHandler('archive',false)">
+                            <ul class="submenu month" ng-show="$parent.status.subMenu['year'+file.year]"
+                                >
                                 <li ng-repeat="data in file.months">
-                                    <a href="javascript:;" 
-                                        ng-click="archiveHandler(file.year,data.month)">
+                                    <a href="javascript:;" ng-click="archiveHandler(file.year,data.month);
+                                        topMenuHandler('archive','menu',false);topMenuHandler('','subMenu',false)">
                                         {{data.month|monthCN}}
                                     </a>
                                 </li>
@@ -41,9 +38,9 @@
                         </li>
                     </ul>
                 </li>
-                <li class="menu" ng-mouseenter="topMenuHandler('display',true)" 
-                    ng-mouseleave="topMenuHandler('display',false)">
-                    <a href="javascript:;" ng-click="topMenuHandler('display',!status.menu.display)">显示设置</a>
+                <li class="menu" ng-mouseenter="topMenuHandler('display','menu',true)" 
+                    ng-mouseleave="topMenuHandler('display','menu',false)">
+                    <a href="javascript:;" ng-click="topMenuHandler('display','menu',!status.menu.display)">显示设置</a>
                     <ul class="submenu display" ng-show="status.menu.display" ng-cloak>
                         <li>
                             <label for="showNew" title="只在列表中显示当月开播的番组">只显示新番
@@ -82,8 +79,8 @@
                         </li>
                     </ul>
                 </li>
-                <li class="menu" ng-mouseenter="topMenuHandler('sites',true)" ng-mouseleave="topMenuHandler('sites',false)">
-                    <a href="javascript:;" ng-click="topMenuHandler('sites',!status.menu.sites)">站点过滤</a>
+                <li class="menu" ng-mouseenter="topMenuHandler('sites','menu',true)" ng-mouseleave="topMenuHandler('sites','menu',false)">
+                    <a href="javascript:;" ng-click="topMenuHandler('sites','menu',!status.menu.sites)">站点过滤</a>
                     <ul class="submenu sites" ng-show="status.menu.sites" ng-cloak>
                         <li ng-repeat="airSite in siteList">
                             <label for="{{airSite.domain}}">{{airSite.name}}
@@ -117,7 +114,9 @@
 
             </ul>
         </div>
-        <div id="shadow" ng-click="shadowHandler()" ng-show="status.shadow"></div>
+        <div id="shadow" ng-mouseover="topMenuHandler('','menu',false)" 
+            ng-show="status.shadow">
+        </div>
         <div id="header" ng-cloak>
             <h1>{{yearRead}}年{{monthRead}}月番组</h1>
             <p class="total">当季共有{{bangumis.length}}部番组</p>
