@@ -69,6 +69,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
         'selectAll': true,
         'shadow': false,
         'showAll': false,
+        'history': false,
         'menu': {
             'archive': false,
             'display': false,
@@ -231,10 +232,10 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
     //直接显示全部按钮的控制器
     $scope.showAllHandler = function() {
         $scope.status.showAll = $scope.setting.showAll;
-        if ($scope.setting.showAll) {
+        if ($scope.setting.showAll && !$scope.status.history) {
             $scope.query.weekDayCN = -1;
             $scope.order($scope.bangumis, 'jp', false);
-        } else {
+        } else if (!$scope.status.history) {
             $scope.query.weekDayCN = weekDayNow;
             $scope.order($scope.bangumis, 'cn', false);
         }
@@ -245,7 +246,8 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
     $scope.archiveHandler = function(year, month) {
         $scope.readBgm($scope.getJsonPath(year, month, $scope.archive), 'jp', false);
         $scope.query.weekDayCN = -1;
-        $scope.setting.showAll = true;
+        $scope.status.showAll = true;
+        $scope.status.history = true;
     };
 
     /*
