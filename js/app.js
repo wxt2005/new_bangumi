@@ -14,6 +14,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
 .controller('ListController', ['$scope', '$http', 'ipCookie', '$window', function($scope, $http, ipCookie, $window) {
     var dateNow, weekDayNow, yearNow, monthNow;
     var i = 0, l = 0;
+    $scope.bangumis = null;
 
     //选择器的tab列表
     $scope.switcherList = [
@@ -55,7 +56,8 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
         'nextTimeMin': 20,
         'linkTarget': '_self',
         'showAll': false,
-        'newTab': false
+        'newTab': false,
+        'jpTime': false,
     };
 
     //APP状态
@@ -75,7 +77,8 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
             'display': false,
             'sites': false
         },
-        'subMenu': {}
+        'subMenu': {},
+        'jpTimeZone': 8
     };
 
     //切换a标签的target
@@ -223,6 +226,48 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
         ipCookie(domain, show, {expires: 365});
         $scope.checkSiteList();
     };
+    
+    //显示日本时区的控制器
+    $scope.jpTimeHandler = function() {
+        if ($scope.setting.jpTime) {
+            $scope.changeTimeZone('jp', 9);
+        } else {
+            $scope.changeTimeZone('jp', 8);
+        }
+        ipCookie('jpTime', $scope.setting.jpTime, {expires: 365});
+    };
+    
+    //修改时区
+    $scope.changeTimeZone = function(country, utc) {
+        console.log('change', country, utc);
+        var offset = utc - $scope.status[country.toLowerCase() + 'TimeZone']; 
+        var timeStr = 'time' + country.toUpperCase();
+        var weekDayStr = 'weekDay' + country.toUpperCase();
+        var time, weekDay;
+        for (i = 0, l = $scope.bangumis.length; i < l; i++) {
+            time = +$scope.bangumis[i][timeStr].slice(0, 2);
+            weekDay = +$scope.bangumis[i][weekDayStr];
+            time = time + offset;
+            if (time < 0) {
+                time += 24;
+                weekDay--;
+            } else if (time >= 24) {
+                time -= 24;
+                weekDay++;
+            }
+            if (time < 10) {
+                time = '0' + time;
+            }
+            if (weekDay < 0) {
+                weekDay += 7;
+            } else if (weekDay > 6) {
+                weekDay -= 7;
+            }
+            $scope.bangumis[i][timeStr] = time + $scope.bangumis[i][timeStr].slice(2);
+            $scope.bangumis[i][weekDayStr] = weekDay + '';
+        }
+        $scope.status[country.toLowerCase() + 'TimeZone'] = utc;
+    };
 
     //只显示新番按钮的控制器
     $scope.newOnlyHandler = function() {
@@ -249,15 +294,6 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
         $scope.status.showAll = true;
         $scope.status.history = true;
     };
-
-    /*
-    //页面遮罩的控制器
-    $scope.shadowHandler = function() {
-        $scope.status.menu.archive = false;
-        $scope.status.menu.display = false;
-        $scope.status.menu.sites = false;
-        $scope.status.shadow = false;
-    };*/
 
     //顶部菜单按钮的控制器
     $scope.topMenuHandler = function(menuName, menuPath, menuDisplay, shadowDisplay) {
@@ -368,6 +404,14 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
                 $scope.status.lastModifieded = '数据更新日期: ' + tempDate.getFullYear() + '年' + 
                     (tempDate.getMonth() + 1) + '月' + tempDate.getDate() + '日';
             }
+
+            if ($scope.status.history) {
+                $scope.status.jpTimeZone = 8;
+            }
+            $scope.setting.jpTime = ipCookie('jpTime') || false;
+            if ($scope.setting.jpTime) {
+                $scope.changeTimeZone('jp', 9);
+            }
         })
         .error(function(data, status) {
             $scope.status.error = true;
@@ -408,6 +452,8 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
 
         $scope.setting.newTab = ipCookie('newTab') || false;
         $scope.changeTarget();
+
+        
     })
     .error(function(data, status) {
         $scope.status.error = true;
@@ -461,26 +507,20 @@ return false;
 
 //格式化星期名称
 .filter('weekday', function() {
-    var weekDayList = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
-    return function(weekDayNum) {
-        /*if (window.innerWidth <= 320) {
-            return weekDayList[weekDayNum];
+    var weekDayListCN = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+    var weekDayListJP = ['日曜', '月曜', '火曜', '水曜', '木曜', '金曜', '土曜'];
+    return function(weekDayNum, scope) {
+        if (scope && scope.setting.jpTime) {
+            return weekDayListJP[weekDayNum];
         } else {
-            return weekDayList[weekDayNum];
-        }*/
-        return weekDayList[weekDayNum];
+            return weekDayListCN[weekDayNum];
+        }
     };
 })
 
 //格式化播放时间
 .filter('time', function() {
     return function(originTime) {
-        /*console.log(window.innerWidth);
-        if (window.innerWidth <= 400) {
-            return originTime ? originTime.slice(0,2) + ':' + originTime.slice(2) : '--';
-        } else {
-            return originTime ? originTime.slice(0,2) + ':' + originTime.slice(2) : '(预计)';
-        }*/
         return originTime ? originTime.slice(0,2) + ':' + originTime.slice(2) : '(预计)';
     };
 })
