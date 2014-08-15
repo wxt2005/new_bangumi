@@ -70,6 +70,13 @@
                             ng-model="setting.newTab" ng-change="changeTarget()">
                         </li>
                         <li>
+                            <label for="jpTime" title="用日本时区显示日本放送时间">还原日本放送时间
+                                <span class="toggle" ng-class="{'ON':setting.jpTime}"></span>
+                            </label>
+                            <input type="checkbox" name="jpTime" id="jpTime" ng-model="setting.jpTime" 
+                                ng-change="jpTimeHandler()">
+                        </li>
+                        <li>
                             <label for="toNextDay" title="将该时间点及之后的番组顺延到第二天显示">转到次日</label>
                             <div class="hourSelecter">
                                 <span class="left" ng-click="hourSelectHandler('-')" 
@@ -176,7 +183,7 @@
                                 {{item.titleCN}}
                             </a>
                         </td>
-                        <td><span class="weekDay">{{item.weekDayJP|weekday}}</span><span class="time">{{item.timeJP|time}}</span></td>
+                        <td><span class="weekDay">{{item.weekDayJP|weekday:$parent}}</span><span class="time">{{item.timeJP|time}}</span></td>
                         <td><span class="weekDay">{{item.weekDayCN|weekday}}</span><span class="time">{{item.timeCN|time}}</span></td>
                         <td>
                             <ul class="link-list">
