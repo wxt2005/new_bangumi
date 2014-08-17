@@ -681,8 +681,11 @@
     "weekDayJP": 6,
     "weekDayCN": 0,
     "timeJP": "1800",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0900",
+    "onAirSite": [
+      "http://tv.sohu.com/s2014/hwy/",
+      "http://www.bilibili.com/sp/花物语"
+    ],
     "newBgm": true
   },
   {
