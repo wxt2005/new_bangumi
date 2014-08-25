@@ -1,7 +1,7 @@
 /*防止angularjs加载时出现的闪烁*/
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+/*[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
     display: none !important;
-}
+}*/
 
 /*全局*/
 body, a, th, td, p, h1, ul, li, blockquote, input {
@@ -27,13 +27,13 @@ a {
     text-decoration: none;
 }
 
-a:link, 
+a:link,
 a:visited {
     color: black;
 }
 
-a:focus, 
-a:hover, 
+a:focus,
+a:hover,
 a:active {
     color: #3498db;
 }
@@ -492,7 +492,7 @@ a:active {
     width: 40%;
 }
 
-#container table #time-jp, 
+#container table #time-jp,
 #container table #time-cn {
     width: 15%;
 }
@@ -599,7 +599,7 @@ a:active {
     color: #34495e;
 }
 
-@media screen and (-webkit-min-device-pixel-ratio: 2), 
+@media screen and (-webkit-min-device-pixel-ratio: 2),
 screen and (max--moz-device-pixel-ratio: 2) {
     #topbar #topnav .menu .submenu .toggle {
         background-image: url("../images/checkbox-2x.png");
@@ -625,12 +625,12 @@ screen and (max--moz-device-pixel-ratio: 2) {
         background-image: url("../images/search-2x.png");
         background-size: 32px 32px;
     }
-    
+
     #topbar #topnav .share.weibo a {
         background-image: url("../images/weibo-2x.png");
         background-size: 80px 40px;
     }
-    
+
     #topbar #topnav .share.twitter a {
         background-image: url("../images/twitter-2x.png");
         background-size: 80px 40px;
@@ -645,11 +645,11 @@ screen and (max--moz-device-pixel-ratio: 2) {
     #topbar #topnav {
         min-width: 531px;
     }
-    
+
     #topbar #topnav .title {
         display: none;
     }
-    
+
     #header {
         min-width: 531px;
         margin: 0;
@@ -685,9 +685,9 @@ screen and (max--moz-device-pixel-ratio: 2) {
         width: 12.5%;
         font-size: 16px;
         border-bottom: none;
-        box-sizing: border-box; 
-        -webkit-box-sizing: border-box; 
-        -moz-box-sizing: border-box; 
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
     }
 
     #nav #switcher li:first-child,
@@ -745,7 +745,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
         min-width: 531px;
     }
 
-    #container table #name { 
+    #container table #name {
         width: 35%;
     }
 
@@ -800,7 +800,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
     #topbar #topnav {
         min-width: 320px;
         height: 40px;
-    }    
+    }
 
     #topbar #topnav li {
         height: 30px;
@@ -920,7 +920,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
         width: 40%;
         height: 50px;
         line-height: 50px;
-    }    
+    }
 
     #nav {
         min-width: 320px;
@@ -996,4 +996,8 @@ screen and (max--moz-device-pixel-ratio: 2) {
     #topbar #topnav .share.weibo {
         display: none;
     }
+}
+
+.submenu, #shadow {
+    display: none !important;
 }
