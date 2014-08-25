@@ -22,14 +22,10 @@
                     <a href="javascript:;">历史数据</a>
                     <ul class="submenu year">
                         <li>
-                            <a href="javascript:;">
-                                {{file.year}}年
-                            </a>
+                            <a href="javascript:;">{{file.year}}年</a>
                             <ul class="submenu month">
                                 <li>
-                                    <a href="javascript:;">
-                                        {{data.month|monthCN}}
-                                    </a>
+                                    <a href="javascript:;">{{data.month|monthCN}}</a>
                                 </li>
                             </ul>
                         </li>
@@ -102,15 +98,13 @@
                 <li class="share plain">
                     分享本站
                 </li>
-
             </ul>
         </div>
-        <div id="shadow">
-        </div>
+        <div id="shadow"></div>
         <div id="header">
-            <h1>2014年7月番组</h1>
-            <p class="total">当季共有76部番组</p>
-            <p class="lastModified">2014年8月17日</p>
+            <h1>番组列表</h1>
+            <p class="total"></p>
+            <p class="lastModified"></p>
         </div>
         <div id="nav">
             <ul id='switcher'>
@@ -129,9 +123,7 @@
             </div>
         </div>
         <div id="container">
-            <noscript>
-                <p style="text-align:center;">请打开javascript支持以完整显示本站点</p>
-            </noscript>
+
             <table>
                 <colgroup>
                     <col id="name">
@@ -142,37 +134,17 @@
                 <thead>
                     <tr>
                         <th>作品名</th>
-                        <th>
-                            <p>日本<span>放送时间</span></p>
-                        </th>
-                        <th>
-                            <p>大陆<span>放送时间</span></p>
-                        </th>
+                        <th><p>日本<span>放送时间</span></p></th>
+                        <th><p>大陆<span>放送时间</span></p></th>
                         <th>播放网址</th>
                     </tr>
                 </thead>
                 <tbody id="bangumi_list">
-                    <!--tr class="errorMsg">
-                        <td colspan="4">{{status.errorMsg}}</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="{{item.officalSite}}" title="{{item.titleJP}}" target="{{status.linkTarget}}">
-                                {{item.titleCN}}
-                            </a>
-                        </td>
-                        <td><span class="weekDay">{{item.weekDayJP|weekday:$parent}}</span><span class="time">{{item.timeJP|time}}</span></td>
-                        <td><span class="weekDay">{{item.weekDayCN|weekday}}</span><span class="time">{{item.timeCN|time}}</span></td>
-                        <td>
-                            <ul class="link-list">
-                                <li>
-                                    <a href="{{site}}" target="{{status.linkTarget}}">
-                                        {{site|onair}}
-                                    </a>
-                                </li>
-                            </ul>
-                        </td>
-                    </tr-->
+                <noscript>
+                <tr>
+                    <td colspan="4"><p style="text-align:center;">请打开javascript支持以显示本站点</p></td>
+                </tr>
+                </noscript>
                 </tbody>
             </table>
         </div>
