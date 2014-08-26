@@ -23,7 +23,15 @@ $(function() {
     var status = {
         reverse: true,
         switch: 7,
-        lastModified: ''
+        lastModified: '',
+        nextTime: 24
+    };
+
+    var query = {
+        weekDay: -1,
+        nextTime: 22,
+        title: '',
+        newBgm: true
     };
 
     //不分辨大小写的:contains
@@ -156,7 +164,6 @@ $(function() {
             $tbody.find('tr').remove();
         }
         $tbody.append(HTML);
-        $switcher.trigger('click', [status.switch]);
     }
 
     //控制排序按钮
@@ -166,6 +173,7 @@ $(function() {
             $(this).addClass('ordered');
             sortData(bgmData, !status.reverse, country);
             showTable(dataToHTML(bgmData));
+            tableFilter();
         };
     }
 
@@ -258,18 +266,65 @@ $(function() {
         $topNav.find('li ul.year').append($node);
     }
 
+    function tableFilter() {
+        var $items = $tbody.children('tr');
+        $items.each(function() {
+            if(decideShow($(this))) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+        console.log(query);
+    }
 
-    //读取bangumi的json
+    function decideShow(item) {
+        var showFlag = false;
+        var itemWeekDay = item.find('td:eq(2) .weekDay').text();
+        var itemTime = +(item.find('td:eq(2) .time').text().slice(0,2));
+        if (!itemTime) {
+            itemTime = 0;
+        }
+        if (query.weekDay === -1 ) {
+            showFlag = true;
+        } else if ((itemWeekDay === weekDayCN[query.weekDay] && itemTime < query.nextTime) ||
+                        (itemWeekDay ===  weekDayCN[(query.weekDay === 0 ? 6 : query.weekDay - 1)] &&
+                        itemTime >= query.nextTime)) {
+            showFlag = true;
+        }
+        if (query.newBgm && !item.find('td:eq(0) a').is('.new')) {
+            showFlag = false;
+        }
+        if (query.title) {
+            var re = new RegExp(query.title, 'i');
+            if (!re.test(item.find('td:eq(0)').text())) {
+                showFlag = false;
+            }
+        }
+        return showFlag;
+    }
+
+
+    //ajax读取bangumi的json
     function getBgmJSON(path) {
         $.ajax({
+            //bangumi JSON
             url: path,
+            //成功时
             success: function(data, stat, xhr) {
+                //将获得的番组数据存入变量
                 bgmData = data;
-                //初始化选择器
+                //模拟点击排序按钮(中国时间)
                 $orderCN.trigger('click');
+                //模拟点击switcher按钮，传入保存的序号
+                $switcher.trigger('click', [status.switch]);
+                //过滤表格
+                tableFilter();
                 //获取数据文件最后修改时间
                 if (xhr.getResponseHeader('Last-Modified')) {
+                    //将获得的header数据转换为Date对象
                     var tempDate = new Date(xhr.getResponseHeader('Last-Modified'));
+                    //将数据组合传入变量
                     status.lastModified = '数据更新日期: ' + tempDate.getFullYear() + '年' +
                         (tempDate.getMonth() + 1) + '月' + tempDate.getDate() + '日';
                 }
@@ -280,41 +335,49 @@ $(function() {
                 //更新最后修改时间
                 $('#header .lastModified').text(status.lastModified);
             },
+            //失败时
             error: function(xhr, stat, error) {
+                //在表格中添加显示错误信息的行
                 $tbody.append('<tr><td colspan="4">读取 ' + path + ' 出错，错误代码：' +
-                xhr.status + ' ' + error + '</td></tr>');
+                    xhr.status + ' ' + error + '</td></tr>');
             }
         });
     }
 
-    //读取archive
+    //ajax读取archive
     $.ajax({
+        //archive JSON
         url: 'json/archive.json',
+        //成功时
         success: function(data, stat, xhr) {
+            //获取当前服务器时间。如服务器时间不可用，使用本地时间
             dateNow = xhr.getResponseHeader('Date') ? new Date(xhr.getResponseHeader('Date')) : new Date();
             yearNow = dateNow.getFullYear();
             monthNow = dateNow.getMonth() + 1;
             weekDayNow = dateNow.getDay();
-
+            //将获取的星期几传唤为switcher的序号，存入变量
             status.switch = convertWeekDay(weekDayNow, false);
-
+            //将获取的数据存入变量
             archive = data;
-
+            //获取番组json路径，读取
             getBgmJSON(getPath(yearNow, monthNow, data));
             //初始化历史数据菜单
             buildArchive(data);
         },
+        //出错时
         error: function(xhr, stat, error) {
+            //在表格中添加显示错误信息的行
             $tbody.append('<tr><td colspan="4">读取 json/archive.json 出错，错误代码：' +
-            xhr.status + ' ' + error + '</td></tr>');
+                xhr.status + ' ' + error + '</td></tr>');
         }
     });
 
     //选择器点击事件
-    $switcher.click(function(event, index, flag) {
+    $switcher.click(function(event, index) {
             var $target = $(event.target);
             //将所有选择器按钮的class清空
             $switcher.children().removeClass('selected');
+            //使用undefined判断，防止误判数字0
             if (index !== undefined) {
                 //给指定的按钮添加class
                 $switcher.find('li:eq(' + index + ')').addClass('selected');
@@ -324,47 +387,58 @@ $(function() {
                 //给指定的按钮添加class
                 $target.addClass('selected');
             }
-            if (!flag) {
-                status.switch = index;
-            }
-            if (index === 7) {
-                //点击全部时，显示所有条t目
-                $tbody.children().show();
+            //'周日'-->'weekDay:0'
+            if (index === 6) {
+                query.weekDay = 0;
+            //'全部'-->'weekDay:-1'
+            } else if (index === 7) {
+                query.weekDay = -1;
             } else {
-                //将所有条目隐藏，然后显示符合的条目
-                $tbody.find('tr').hide()
-                    .find('td:eq(2)').filter(':contains("' + weekDayCN[convertWeekDay(index, true)] + '")')
-                    .parent().show();
+                query.weekDay = index + 1;
             }
+            //过滤表格
+            tableFilter();
     });
 
+    //排序按钮点击事件
     $orderCN.click(orderHandler('CN'));
     $orderJP.click(orderHandler('JP'));
+
+    //导航栏主按钮hover事件
     $topNav.find('.menu').hover(function() {
         $(this).children('ul').show();
     }, function() {
         $(this).children('ul').hide();
     }).children('ul').hide();
 
-    //搜索框事件
+    //搜索框keyup事件
     $search.keyup(function(event) {
-        $switcher.trigger('click', [7, true]);
+        $switcher.trigger('click', [7]);
         $(this).next().show();
-        $tbody.find('tr').hide()
-            .find('td:eq(0)').filter(':containsI("' + $(this).val() + '")')
-            .parent().show();
+        query.title = $(this).val();
+        tableFilter();
+        //按下ESC键
         if(event.keyCode === 27) {
+            //清空搜索框，失去焦点
             $(this).blur().val('');
+            //清空查询对象中的标题字符串
+            query.title = '';
+            //模拟点击switcher，传入保存的switch序号
             $switcher.trigger('click', [status.switch]);
+            //隐藏清除按钮
             $(this).next().hide();
+        //回车清空搜索栏
         } else if (event.keyCode === 8 && event.target.value.length <= 0) {
             $switcher.trigger('click', [status.switch]);
             $(this).next().hide();
         }
     })
+        //清除按钮的点击事件
         .next().hide().click(function() {
             $search.blur().val('');
+            query.title = '';
             $switcher.trigger('click', [status.switch]);
+            //隐藏清除按钮
             $(this).hide();
         });
 });
