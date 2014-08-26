@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <meta name="renderer" content="webkit">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <title>番组放送</title>
@@ -10,7 +10,6 @@
         <meta name="keywords" content="番组放送, 新番, 动画, 动漫, 正版">
         <meta name="author" content="@wxt2005">
         <link type="text/css" rel="stylesheet" href="css/main.css">
-        <!--[if lte IE 7]><script type="text/javascript" src="js/json2.js"></script><![endif]-->
     </head>
     <body>
         <div id="topbar">
@@ -20,16 +19,7 @@
                 </li>
                 <li class="menu">
                     <a href="javascript:;">历史数据</a>
-                    <ul class="submenu year">
-                        <li>
-                            <a href="javascript:;">{{file.year}}年</a>
-                            <ul class="submenu month">
-                                <li>
-                                    <a href="javascript:;">{{data.month|monthCN}}</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <ul class="submenu year"></ul>
                 </li>
                 <li class="menu">
                     <a href="javascript:;">显示设置</a>
@@ -123,7 +113,6 @@
             </div>
         </div>
         <div id="container">
-
             <table>
                 <colgroup>
                     <col id="name">
@@ -153,10 +142,6 @@
             <a href="https://angularjs.org/">AngularJS</a>
             and <a href="https://github.com/wxt2005/new_bangumi/">GitHub</a>
         </p>
-        <!--script type="text/javascript" src="js/angular.min.js"></script>
-        <script type="text/javascript" src="js/angular-cookie.min.js"></script>
-        <script type="text/javascript" src="js/app.js"></script>
-        <script type="text/javascript" src="js/iefix.js"></script-->
         <script src="js/jquery-1.11.1.js" charset="utf-8" type="text/javascript"></script>
         <script src="js/main.js" charset="utf-8" type="text/javascript"></script>
     </body>

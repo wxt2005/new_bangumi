@@ -998,6 +998,6 @@ screen and (max--moz-device-pixel-ratio: 2) {
     }
 }
 
-.submenu, #shadow {
+#shadow {
     display: none !important;
 }

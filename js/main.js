@@ -15,6 +15,7 @@ $(function() {
     var $orderJP = $('table th:eq(1) p');
     var $orderCN = $('table th:eq(2) p');
     var $search = $('#search input');
+    var $topNav = $('#topnav');
 
     var archive = null,
         bgmData = null;
@@ -86,14 +87,14 @@ $(function() {
 
     //通过年份和月份得到数据文件的路径
     function getPath(year, month, archive) {
-        for (var file in archive) {
-            if (archive[file].year == year) {
-                var months = archive[file].months;
-                yearRead = archive[file].year;
+        for (i = 0; i < archive.length; i++) {
+            if (archive[i].year == year) {
+                var months = archive[i].months;
+                yearRead = archive[i].year;
                 monthRead = monthToSeason(month);
-                for (i = 0; i < months.length; i++ ) {
-                    if (monthRead === months[i].month && months[i].json) {
-                        return months[i].json;
+                for (j = 0; j < months.length; j++ ) {
+                    if (monthRead === months[j].month && months[j].json) {
+                        return months[j].json;
                     }
                 }
                 if (monthRead === 1) {
@@ -225,6 +226,39 @@ $(function() {
         return trHTML;
     }
 
+    //构建历史数据菜单
+    function buildArchive(archive) {
+        var html = '';
+        var $node = null;
+        for(i = 0; i < archive.length; i++) {
+            var months = archive[i].months;
+            html += '<li><a href="#">' + archive[i].year + '年</a><ul class="submenu month">';
+            for (j = 0; j < months.length; j++) {
+                html += '<li><a href="#" data-json="' + months[j].json + '">' + months[j].month + '月</a></li>';
+            }
+            html += '</ul></li>';
+        }
+        $node = $(html);
+
+        $node.each(function() {
+            $(this).hover(function() {
+                $(this).find('ul').show();
+            }, function() {
+                $(this).find('ul').hide();
+            }).find('ul').hide();
+        });
+        $node.find('ul a').click(function() {
+            var path = $(this).attr('data-json');
+            getBgmJSON(path);
+            yearRead = +('20' + path.match(/(\d{2})(\d{2})/)[1]);
+            monthRead = +(path.match(/(\d{2})(\d{2})/)[2]);
+            return false;
+        });
+
+        $topNav.find('li ul.year').append($node);
+    }
+
+
     //读取bangumi的json
     function getBgmJSON(path) {
         $.ajax({
@@ -267,6 +301,8 @@ $(function() {
             archive = data;
 
             getBgmJSON(getPath(yearNow, monthNow, data));
+            //初始化历史数据菜单
+            buildArchive(data);
         },
         error: function(xhr, stat, error) {
             $tbody.append('<tr><td colspan="4">读取 json/archive.json 出错，错误代码：' +
@@ -276,7 +312,6 @@ $(function() {
 
     //选择器点击事件
     $switcher.click(function(event, index, flag) {
-            console.log(index);
             var $target = $(event.target);
             //将所有选择器按钮的class清空
             $switcher.children().removeClass('selected');
@@ -305,6 +340,11 @@ $(function() {
 
     $orderCN.click(orderHandler('CN'));
     $orderJP.click(orderHandler('JP'));
+    $topNav.find('.menu').hover(function() {
+        $(this).children('ul').show();
+    }, function() {
+        $(this).children('ul').hide();
+    }).children('ul').hide();
 
     //搜索框事件
     $search.keyup(function(event) {
