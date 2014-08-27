@@ -25,7 +25,8 @@ $(function() {
         switch: 7,
         lastModified: '',
         nextTime: 24,
-        showAll: false
+        showAll: false,
+        history: false
     };
 
     var query = {
@@ -326,6 +327,7 @@ $(function() {
         });
         $node.find('ul a').click(function() {
             var path = $(this).attr('data-json');
+            status.history = true;
             getBgmJSON(path);
             yearRead = +('20' + path.match(/(\d{2})(\d{2})/)[1]);
             monthRead = +(path.match(/(\d{2})(\d{2})/)[2]);
@@ -430,7 +432,7 @@ $(function() {
                 // 模拟点击排序按钮(中国时间)，声明为初始化
                 $orderCN.trigger('click', [true]);
                 // 模拟点击switcher按钮，传入序号，声明为初始化
-                if (status.showAll) {
+                if (status.history || status.showAll) {
                     $switcher.trigger('click', [7, true]);
                 } else {
                     $switcher.trigger('click', [status.switch, true]);
@@ -567,7 +569,7 @@ $(function() {
         tableFilter();
     });
 
-    // 只显示新番按钮绑定事件
+    // 显示全部按钮绑定时间
     $topNav.find('#showAll').change(function() {
         if (this.checked) {
             $(this).prev().children('span').addClass('ON');
