@@ -26,7 +26,8 @@ $(function() {
         lastModified: '',
         nextTime: 24,
         showAll: false,
-        history: false
+        history: false,
+        newTab: false
     };
 
     var query = {
@@ -354,6 +355,19 @@ $(function() {
     }
 
     /**
+     * 改变表格中所有链接的target
+     * @method changeTarget
+     * @param {string} target 链接目标
+     */
+    function changeTarget(target) {
+        if (target) {
+            $tbody.find('a').attr('target', target);
+        } else {
+            $tbody.find('a').attr('target', '_self');
+        }
+    }
+
+    /**
      * 传入表格行，返回是否输出
      * @method decideShow
      * @param {jquery object} item 表格的行
@@ -415,6 +429,15 @@ $(function() {
             $topNav.find('#showAll').attr('checked', true)
                 .prev().children('span').addClass('ON');
         }
+
+        // 打开新窗口
+        if ($.cookie('newTab') !== undefined) {
+            status.newTab = $.cookie('newTab', revertBoolean);
+        }
+        if (status.newTab) {
+            $topNav.find('#newTab').attr('checked', true)
+                .prev().children('span').addClass('ON');
+        }
     }
 
     /**
@@ -431,14 +454,20 @@ $(function() {
                 checkOptions();
                 // 模拟点击排序按钮(中国时间)，声明为初始化
                 $orderCN.trigger('click', [true]);
-                // 模拟点击switcher按钮，传入序号，声明为初始化
+                // 模拟点击switcher按钮，声明为初始化
+                // 如果为显示历史数据，则临时关闭自动切换功能
                 if (status.history || status.showAll) {
                     $switcher.trigger('click', [7, true]);
                 } else {
                     $switcher.trigger('click', [status.switch, true]);
                 }
-                //过滤表格
+                // 过滤表格
                 tableFilter();
+
+                // 如果选项打开，设置链接为_blank
+                if(status.newTab) {
+                    changeTarget('_blank');
+                }
 
                 // 获取数据文件最后修改时间
                 if (xhr.getResponseHeader('Last-Modified')) {
@@ -558,7 +587,7 @@ $(function() {
 
 
     // 只显示新番按钮绑定事件
-    $topNav.find('#showNew').change(function() {
+    $('#showNew').change(function() {
         if (this.checked) {
             $(this).prev().children('span').addClass('ON');
         } else {
@@ -569,8 +598,8 @@ $(function() {
         tableFilter();
     });
 
-    // 显示全部按钮绑定时间
-    $topNav.find('#showAll').change(function() {
+    // 显示全部按钮绑定事件
+    $('#showAll').change(function() {
         if (this.checked) {
             $(this).prev().children('span').addClass('ON');
         } else {
@@ -584,5 +613,17 @@ $(function() {
         }
         $.cookie('showAll', this.checked, {expires: 365});
         tableFilter();
+    });
+
+    // 打开新链接按钮绑定事件
+    $('#newTab').change(function() {
+        if (this.checked) {
+            $(this).prev().children('span').addClass('ON');
+        } else {
+            $(this).prev().children('span').removeClass('ON');
+        }
+        status.newTab = this.checked;
+        $.cookie('newTab', this.checked, {expires: 365});
+        changeTarget((status.newTab ? '_blank' : '_self'));
     });
 });
