@@ -24,7 +24,8 @@ $(function() {
         reverse: true,
         switch: 7,
         lastModified: '',
-        nextTime: 24
+        nextTime: 24,
+        showAll: false
     };
 
     var query = {
@@ -403,6 +404,15 @@ $(function() {
             $topNav.find('#showNew').attr('checked', true)
                 .prev().children('span').addClass('ON');
         }
+
+        // 显示全部
+        if ($.cookie('showAll') !== undefined) {
+            status.showAll = $.cookie('showAll', revertBoolean);
+        }
+        if (status.showAll) {
+            $topNav.find('#showAll').attr('checked', true)
+                .prev().children('span').addClass('ON');
+        }
     }
 
     /**
@@ -419,8 +429,12 @@ $(function() {
                 checkOptions();
                 // 模拟点击排序按钮(中国时间)，声明为初始化
                 $orderCN.trigger('click', [true]);
-                // 模拟点击switcher按钮，传入保存的序号，声明为初始化
-                $switcher.trigger('click', [status.switch, true]);
+                // 模拟点击switcher按钮，传入序号，声明为初始化
+                if (status.showAll) {
+                    $switcher.trigger('click', [7, true]);
+                } else {
+                    $switcher.trigger('click', [status.switch, true]);
+                }
                 //过滤表格
                 tableFilter();
 
@@ -550,7 +564,23 @@ $(function() {
         }
         query.showNew = this.checked;
         $.cookie('showNew', this.checked, {expires: 365});
-        console.log('只显示新番按钮filter');
+        tableFilter();
+    });
+
+    // 只显示新番按钮绑定事件
+    $topNav.find('#showAll').change(function() {
+        if (this.checked) {
+            $(this).prev().children('span').addClass('ON');
+        } else {
+            $(this).prev().children('span').removeClass('ON');
+        }
+        status.showAll = this.checked;
+        if (this.checked) {
+            $switcher.trigger('click', [7]);
+        } else {
+            $switcher.trigger('click', [status.switch]);
+        }
+        $.cookie('showAll', this.checked, {expires: 365});
         tableFilter();
     });
 });
