@@ -574,28 +574,39 @@ $(function() {
     // 选择器点击事件
     $switcher.click(function(event, index, init) {
             var $target = $(event.target);
-            // 将所有选择器按钮的class清空
-            $switcher.children().removeClass('selected');
-            // 使用undefined判断，防止误判数字0
-            if (index !== undefined) {
-                $switcher.find('li:eq(' + index + ')').addClass('selected');
-            } else {
-                // 如果index参数不存在，使用event目标在ul中的序列代替
-                index = $target.index();
-                $target.addClass('selected');
-            }
-            // '周日'-->'weekDay:0'
-            if (index === 6) {
-                query.weekDay = 0;
-            // '全部'-->'weekDay:-1'
-            } else if (index === 7) {
-                query.weekDay = -1;
-            } else {
-                query.weekDay = index + 1;
-            }
-            // 如果不是初始化，过滤表格
-            if (!init) {
-                tableFilter();
+            // 防止触到li以外的区域触发事件
+            if (event.target !== this || init) {
+                // 将所有选择器按钮的class清空
+                $switcher.children().removeClass('selected');
+                // 使用undefined判断，防止误判数字0
+                if (index !== undefined) {
+                    $switcher.find('li:eq(' + index + ')').addClass('selected');
+                } else {
+                    // 如果index参数不存在，使用event目标在ul中的序列代替
+                    index = $target.index();
+                    $target.addClass('selected');
+                }
+                // '周日'-->'weekDay:0'
+                if (index === 6) {
+                    query.weekDay = 0;
+                // '全部'-->'weekDay:-1'
+                } else if (index === 7) {
+                    query.weekDay = -1;
+                } else {
+                    query.weekDay = index + 1;
+                }
+                if (index === 7) {
+                    // 模拟点击排序按钮(日本时间)，声明为初始化，防止重复调用tableFilter
+                    status.reverse = true;
+                    $orderJP.trigger('click', [true]);
+                } else {
+                    status.reverse = true;
+                    $orderCN.trigger('click', [true]);
+                }
+                // 如果不是初始化，过滤表格
+                if (!init) {
+                    tableFilter();
+                }
             }
     });
 
