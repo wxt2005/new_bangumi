@@ -576,6 +576,10 @@ a:active {
     content: "\00A0";
 }
 
+#container table tbody tr .empty {
+    color: #aaa;
+}
+
 /*页脚*/
 #footer {
     max-width: 980px;
