@@ -343,7 +343,6 @@ $(function() {
      * @method tableFilter
      */
     function tableFilter() {
-        console.log('filted');
         var $items = $tbody.children('tr');
         $items.each(function() {
             if(decideShow($(this))) {
@@ -560,19 +559,27 @@ $(function() {
         // 显示清除按钮
         $(this).next().show();
         query.title = $(this).val();
-        console.log('搜索框filter');
         tableFilter();
         // 按下ESC键
         if(event.keyCode === 27) {
             $(this).blur().val('');
             query.title = '';
             // 模拟点击switcher，传入保存的switch序号
-            $switcher.trigger('click', [status.switch]);
+            if (status.showAll || status.history) {
+                $switcher.trigger('click', [7]);
+            } else {
+                $switcher.trigger('click', [status.switch]);
+            }
             // 隐藏清除按钮
             $(this).next().hide();
         // 回车清空搜索栏
         } else if (event.keyCode === 8 && event.target.value.length <= 0) {
-            $switcher.trigger('click', [status.switch]);
+            if (status.showAll || status.history) {
+                $switcher.trigger('click', [7]);
+            } else {
+                $switcher.trigger('click', [status.switch]);
+            }
+            // 隐藏清除按钮
             $(this).next().hide();
         }
     })
