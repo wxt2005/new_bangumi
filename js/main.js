@@ -27,7 +27,9 @@ $(function() {
         nextTime: 24,
         showAll: false,
         history: false,
-        newTab: false
+        newTab: false,
+        jpTime: false,
+        jpTimeZone: 8
     };
 
     var query = {
@@ -274,8 +276,9 @@ $(function() {
             html += '<tr><td><a href="' + data[i].officalSite + '" title="' +
                 data[i].titleJP + (data[i].newBgm ? '" class="new">' : '">') +
                 data[i].titleCN + '</a></td><td><span class="weekDay">' +
-                formatWeekDay(data[i].weekDayJP, 'cn') + '</span><span class="time">' +
-                formatTime(data[i].timeJP) + '</span></td><td><span class="weekDay">' +
+                formatWeekDay(data[i].weekDayJP, (status.jpTime ? 'jp' : 'cn')) +
+                '</span><span class="time">' + formatTime(data[i].timeJP) +
+                '</span></td><td><span class="weekDay">' +
                 formatWeekDay(data[i].weekDayCN, 'cn') + '</span><span class="time">' +
                 formatTime(data[i].timeCN) + '</span></td>';
             if (data[i].onAirSite.length) {
@@ -437,6 +440,52 @@ $(function() {
             $topNav.find('#newTab').attr('checked', true)
                 .prev().children('span').addClass('ON');
         }
+
+        // 还原日本时区
+        if ($.cookie('jpTime') !== undefined) {
+            status.jpTime = $.cookie('jpTime', revertBoolean);
+        }
+        if (status.jpTime) {
+            $topNav.find('#jpTime').attr('checked', true)
+                .prev().children('span').addClass('ON');
+        }
+    }
+
+    /**
+     * 修改时区
+     * @method changeTimeZone
+     * @param {string} country 需要修改时区的国家的代码 'cn' 'jp'
+     * @param {number} utc 时区 GMT '+8' '-8'
+     */
+    function changeTimeZone(country, utc) {
+        console.log('change', country, utc);
+        var offset = utc - status[country.toLowerCase() + 'TimeZone'];
+        var timeStr = 'time' + country.toUpperCase();
+        var weekDayStr = 'weekDay' + country.toUpperCase();
+        var time, weekDay;
+        for (i = 0; i < bgmData.length; i++) {
+            time = +bgmData[i][timeStr].slice(0, 2);
+            weekDay = +bgmData[i][weekDayStr];
+            time = time + offset;
+            if (time < 0) {
+                time += 24;
+                weekDay--;
+            } else if (time >= 24) {
+                time -= 24;
+                weekDay++;
+            }
+            if (time < 10) {
+                time = '0' + time;
+            }
+            if (weekDay < 0) {
+                weekDay += 7;
+            } else if (weekDay > 6) {
+                weekDay -= 7;
+            }
+            bgmData[i][timeStr] = time + bgmData[i][timeStr].slice(2);
+            bgmData[i][weekDayStr] = weekDay + '';
+        }
+        status[country.toLowerCase() + 'TimeZone'] = utc;
     }
 
     /**
@@ -451,6 +500,14 @@ $(function() {
                 bgmData = data;
                 // 检查各选项状态
                 checkOptions();
+                // 如果为显示历史数据，则将jpTimeZone回归到GMT+8
+                if (status.history) {
+                    status.jpTimeZone = 8;
+                }
+                // 如果打开还原日本时区选项，则改变日本时区
+                if (status.jpTime) {
+                    changeTimeZone('jp', 9);
+                }
                 // 模拟点击排序按钮(中国时间)，声明为初始化
                 $orderCN.trigger('click', [true]);
                 // 模拟点击switcher按钮，声明为初始化
@@ -460,6 +517,7 @@ $(function() {
                 } else {
                     $switcher.trigger('click', [status.switch, true]);
                 }
+
                 // 过滤表格
                 tableFilter();
 
@@ -632,5 +690,23 @@ $(function() {
         status.newTab = this.checked;
         $.cookie('newTab', this.checked, {expires: 365});
         changeTarget((status.newTab ? '_blank' : '_self'));
+    });
+
+    // 还原日本时区绑定按钮
+    $('#jpTime').change(function() {
+        if (this.checked) {
+            $(this).prev().children('span').addClass('ON');
+        } else {
+            $(this).prev().children('span').removeClass('ON');
+        }
+        status.jpTime = this.checked;
+        $.cookie('jpTime', this.checked, {expires: 365});
+        if (status.jpTime) {
+            changeTimeZone('jp', 9);
+        } else {
+            changeTimeZone('jp', 8);
+        }
+        showTable(dataToHTML(bgmData));
+        tableFilter();
     });
 });
