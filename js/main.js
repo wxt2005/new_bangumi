@@ -31,8 +31,25 @@ $(function() {
         weekDay: -1,
         nextTime: 24,
         title: '',
-        newBgm: false
+        showNew: false
     };
+
+    /**
+     * 将字符串还原为布尔值
+     * @method revertBoolean
+     * @param {string} a 还原前字符串
+     * @return 还原后布尔值
+     */
+    function revertBoolean(a) {
+        switch (a) {
+            case 'true':
+                return true;
+            case 'false':
+                return false;
+            default:
+                return !!a;
+        }
+    }
 
     /**
      * 格式化周天
@@ -180,8 +197,6 @@ $(function() {
                 return 'A站';
             case 'movie':
                 return '迅雷';
-            case 'empty':
-                return '暂无';
             default:
                 return '未知';
         }
@@ -204,12 +219,14 @@ $(function() {
      * @return {function} 排序按钮的处理函数
      */
     function orderHandler(country) {
-        return function() {
+        return function(event, init) {
             $(this).parents('tr').find('p').removeClass('ordered');
             $(this).addClass('ordered');
             sortData(bgmData, !status.reverse, country);
             showTable(dataToHTML(bgmData));
-            tableFilter();
+            if (!init) {
+                tableFilter();
+            }
         };
     }
 
@@ -322,6 +339,7 @@ $(function() {
      * @method tableFilter
      */
     function tableFilter() {
+        console.log('filted');
         var $items = $tbody.children('tr');
         $items.each(function() {
             if(decideShow($(this))) {
@@ -358,7 +376,8 @@ $(function() {
             showFlag = true;
         }
         // 如果仅显示新番开关打开，该行的首个单元格内链接的class不为new，则隐藏
-        if (query.newBgm && !item.find('td:eq(0) a').is('.new')) {
+        if (query.showNew && !(item.find('td:eq(0) a').is('.new'))) {
+            console.log(query.showNew, 'bgm filted');
             showFlag = false;
         }
         // 如果存在标题查询字符串，则检测首个单元格内的文字是否匹配，否则隐藏
@@ -376,7 +395,11 @@ $(function() {
      * @method checkOptions
      */
     function checkOptions() {
-        if (query.newBgm) {
+        // 只显示新番
+        if ($.cookie('showNew') !== undefined) {
+            query.showNew = $.cookie('showNew', revertBoolean);
+        }
+        if (query.showNew) {
             $topNav.find('#showNew').attr('checked', true)
                 .prev().children('span').addClass('ON');
         }
@@ -392,20 +415,21 @@ $(function() {
             url: path,
             success: function(data, stat, xhr) {
                 bgmData = data;
-                // 模拟点击排序按钮(中国时间)
-                $orderCN.trigger('click');
-                // 模拟点击switcher按钮，传入保存的序号
-                $switcher.trigger('click', [status.switch]);
-                // 过滤表格
+                // 检查各选项状态
+                checkOptions();
+                // 模拟点击排序按钮(中国时间)，声明为初始化
+                $orderCN.trigger('click', [true]);
+                // 模拟点击switcher按钮，传入保存的序号，声明为初始化
+                $switcher.trigger('click', [status.switch, true]);
+                //过滤表格
                 tableFilter();
+
                 // 获取数据文件最后修改时间
                 if (xhr.getResponseHeader('Last-Modified')) {
                     var tempDate = new Date(xhr.getResponseHeader('Last-Modified'));
                     status.lastModified = '数据更新日期: ' + tempDate.getFullYear() + '年' +
                         (tempDate.getMonth() + 1) + '月' + tempDate.getDate() + '日';
                 }
-                // 检查各选项状态
-                checkOptions();
                 // 更新标题
                 $('#header h1').text(yearRead + '年' + monthRead + '月番组');
                 // 更新番组数目
@@ -446,7 +470,7 @@ $(function() {
     });
 
     // 选择器点击事件
-    $switcher.click(function(event, index) {
+    $switcher.click(function(event, index, init) {
             var $target = $(event.target);
             // 将所有选择器按钮的class清空
             $switcher.children().removeClass('selected');
@@ -467,8 +491,10 @@ $(function() {
             } else {
                 query.weekDay = index + 1;
             }
-            // 过滤表格
-            tableFilter();
+            // 如果不是初始化，过滤表格
+            if (!init) {
+                tableFilter();
+            }
     });
 
     // 排序按钮绑定点击事件
@@ -489,6 +515,7 @@ $(function() {
         // 显示清除按钮
         $(this).next().show();
         query.title = $(this).val();
+        console.log('搜索框filter');
         tableFilter();
         // 按下ESC键
         if(event.keyCode === 27) {
@@ -521,7 +548,9 @@ $(function() {
         } else {
             $(this).prev().children('span').removeClass('ON');
         }
-        query.newBgm = this.checked;
+        query.showNew = this.checked;
+        $.cookie('showNew', this.checked, {expires: 365});
+        console.log('只显示新番按钮filter');
         tableFilter();
     });
 });
