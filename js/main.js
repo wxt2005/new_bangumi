@@ -274,7 +274,6 @@ $(function() {
      * @param {string} html 要插入的HTML代码
      */
     function showTable(html) {
-        console.log('showTable');
         $tbody.children('tr').remove();
         $tbody.append(html);
         $tbody.find('.links li:last-child').addClass('lastLink');
@@ -777,10 +776,10 @@ $(function() {
                     status.weekDay = index + 1;
                 }
                 // 如果选择全部，则用日本时间排序，否则用中国事件排序
-                if (index === 7) {
+                if (index === 7 && (status.ordered !== 'JP' || status.reverse !== false)) {
                     // 模拟点击排序按钮(日本时间)，声明为初始化，防止重复调用tableFilter
                     $orderJP.trigger('click', [false, true]);
-                } else {
+                } else if (status.ordered !== 'CN' || status.reverse !== false) {
                     $orderCN.trigger('click', [false, true]);
                 }
                 // 如果没有声明noFilter，则过滤表格
