@@ -26,9 +26,14 @@ $(function() {
             {name: '迅雷', domain: 'movie', show: true}
         ],
         turnAll: function(bool) {
+            var result = [];
             for (k = 0; k < this.list.length; k++) {
-                this.list[k].show = bool;
+                if (this.list[k].show !== bool) {
+                    this.list[k].show = bool;
+                    result.push(this.list[k].domain);
+                }
             }
+            return result;
         },
         show: function(item, flag) {
             for (k = 0; k < this.list.length; k++) {
@@ -319,6 +324,7 @@ $(function() {
         $node.find(':checkbox').change(function() {
             sites.show(this.id, this.checked);
             checkSiteOptions();
+            showTable(dataToHTML(bgmData));
             // 使用记录的switch值
             $switcher.trigger('click', [status.switchLog, true]);
             $.cookie(this.id, this.checked, {expires: 365});
@@ -915,4 +921,20 @@ $(function() {
 
     // 清除所有设置按钮绑定事件
     $('#reset').click(resetOptions);
+
+    // 站点过滤全选按钮绑定事件
+    $('#selectAll').click(function() {
+        var changed = null;
+        if ($(this).text() === '全选') {
+            changed = sites.turnAll(true);
+        } else if ($(this).text() === '全不选') {
+            changed = sites.turnAll(false);
+        }
+        showTable(dataToHTML(bgmData));
+        $switcher.trigger('click', [status.switchLog, true]);
+        checkSiteOptions();
+        for (i = 0; i < changed.length; i++) {
+            $.cookie(changed[i], sites.show(changed[i]), {expires: 365});
+        }
+    });
 });
