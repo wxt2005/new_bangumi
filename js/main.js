@@ -5,11 +5,59 @@
 /* jshint -W097 */
 
 $(function() {
-    var i = 0, j = 0;
+    var i = 0, j = 0, k = 0;
     var dateNow, weekDayNow, yearNow, monthNow;
     var yearRead, monthRead;
     var weekDayCN = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
     var weekDayJP = ['日曜', '月曜', '火曜', '水曜', '木曜', '金曜', '土曜'];
+
+    // 支持的站点列表
+    var sites = {
+        list: [
+            {name: 'A站', domain: 'acfun', show: true},
+            {name: 'B站', domain: 'bilibili', show: true},
+            {name: '搜狐', domain: 'sohu', show: true},
+            {name: '优酷', domain: 'youku', show: true},
+            {name: '腾讯', domain: 'qq', show: true},
+            {name: '爱奇艺', domain: 'iqiyi', show: true},
+            {name: '乐视', domain: 'letv', show: true},
+            {name: 'PPTV', domain: 'pptv', show: true},
+            {name: '土豆', domain: 'tudou', show: true},
+            {name: '迅雷', domain: 'movie', show: true}
+        ],
+        turnAll: function(bool) {
+            for (k = 0; k < this.list.length; k++) {
+                this.list[k].show = bool;
+            }
+        },
+        show: function(item, flag) {
+            for (k = 0; k < this.list.length; k++) {
+                if (this.list[k].name === item || this.list[k].domain === item) {
+                    if (flag !== undefined) {
+                        this.list[k].show = flag;
+                    }
+                    return this.list[k].show;
+                }
+            }
+            return undefined;
+        },
+        getDomain: function(name) {
+            for (k = 0; k < this.list.length; k++) {
+                if (this.list[k].name === name) {
+                    return this.list[k].domain;
+                }
+            }
+            return undefined;
+        },
+        getName: function(domain) {
+            for (k = 0; k < this.list.length; k++) {
+                if (this.list[k].domain === domain) {
+                    return this.list[k].domain;
+                }
+            }
+            return undefined;
+        }
+    };
 
     var $tbody = $('#bangumiList');
     var $switcher = $('#switcher');
@@ -24,7 +72,9 @@ $(function() {
 
     var status = {
         reverse: true,
+        ordered: 'CN',
         switch: 7,
+        switchLog: 7,
         weekDay: -1,
         nextTime: 24,
         title: '',
@@ -79,7 +129,11 @@ $(function() {
      * @return {string} 格式化后的时间 '12:00'
      */
     function formatTime(time) {
-        return time ? time.slice(0, 2) + ':' + time.slice(2) : '(预计)';
+        if (time === -1) {
+            return '(未知)';
+        } else {
+            return time ? time.slice(0, 2) + ':' + time.slice(2) : '(预计)';
+        }
     }
 
     /**
@@ -100,6 +154,31 @@ $(function() {
                 return 10;
             default:
                 throw new Error('failed convrting to season');
+        }
+    }
+
+    /**
+     * 检查站点过滤选项是否选中
+     * @method checkSiteOptions
+     */
+    function checkSiteOptions() {
+        var count = 0;
+        var $siteOptions = $topNav.find('.sites :checkbox');
+        $siteOptions.each(function() {
+            if (sites.show(this.id)) {
+                $(this).attr('checked', true)
+                    .prev().children('span').addClass('ON');
+                count++;
+            } else {
+                $(this).attr('checked', false)
+                    .prev().children('span').removeClass('ON');
+            }
+        });
+        // 如果所有选项都被选中，则按钮显示为"全不选"，否则显示为"全选"
+        if (count === $siteOptions.length) {
+            $('#selectAll').text('全不选');
+        } else {
+            $('#selectAll').text('全选');
         }
     }
 
@@ -211,8 +290,10 @@ $(function() {
      * @param {string} html 要插入的HTML代码
      */
     function showTable(html) {
+        console.log('showTable');
         $tbody.children('tr').remove();
         $tbody.append(html);
+        $tbody.find('.links li:last-child').addClass('lastLink');
     }
 
     /**
@@ -227,10 +308,36 @@ $(function() {
             $(this).addClass('ordered');
             sortData(bgmData, !status.reverse, country);
             showTable(dataToHTML(bgmData));
+            status.ordered = country;
             if (!init) {
                 tableFilter();
             }
         };
+    }
+
+    /**
+     * 构建站点过滤菜单
+     * @method buildSites
+     */
+    function buildSites() {
+        var html = '';
+        var $node = null;
+        for (i = 0; i < sites.list.length; i++) {
+            html += '<li><label for="' + sites.list[i].domain + '">' +
+                sites.list[i].name + '<span class="toggle"></span></label>' +
+                '<input type="checkbox" name="' + sites.list[i].domain + '" id="' +
+                sites.list[i].domain + '"></li>';
+        }
+        $node = $(html);
+        // 单选框事件
+        $node.find(':checkbox').change(function() {
+            sites.show(this.id, this.checked);
+            checkSiteOptions();
+            // 使用记录的switch值
+            $switcher.trigger('click', [status.switchLog, true]);
+            $.cookie(this.id, this.checked);
+        });
+        $topNav.find('.sites').prepend($node);
     }
 
     /**
@@ -243,6 +350,8 @@ $(function() {
     function sortData(data, reverse, country) {
         var weekDay = '', time = '';
         var flag = (reverse ? -1 : 1);
+        var aTime = 0,
+            bTime = 0;
         status.reverse = reverse;
         if (country) {
             weekDay = 'weekDay' + country.toUpperCase();
@@ -254,8 +363,14 @@ $(function() {
         data.sort(function(a, b) {
             // 周天相等时，比较时间
             if(a[weekDay] === b[weekDay]) {
-                return flag * ((a[time] === '' ? -1 : +a[time]) -
-                    (b[time] === '' ? -1 : +b[time]));
+                aTime = (a[time] === '' ? -1 : +a[time]);
+                bTime = (b[time] === '' ? -1 : +b[time]);
+                // 防止同时间的项目随机排序
+                if (aTime === bTime) {
+                    return flag * (a.titleCN - b.titleCN);
+                } else {
+                    return flag * (aTime - bTime);
+                }
             } else {
                 return flag * (a[weekDay] - b[weekDay]);
             }
@@ -269,7 +384,8 @@ $(function() {
      * @return {string} HTML代码
      */
     function dataToHTML(data) {
-        var html = '';
+        var html = '',
+            linkHtml = '';
         for (i = 0; i < data.length; i++) {
             html += '<tr><td><a href="' + data[i].officalSite + '" title="' +
                 data[i].titleJP + (data[i].newBgm ? '" class="new">' : '">') +
@@ -280,23 +396,31 @@ $(function() {
                 formatWeekDay(data[i].weekDayCN, 'cn') + '</span><span class="time">' +
                 formatTime(data[i].timeCN) + '</span></td>';
             if (data[i].onAirSite.length) {
+                linkHtml = '';
                 // 将链接排序
                 data[i].onAirSite.sort(sortLink);
                 html += '<td><ul class="links">';
                 for (j = 0; j < data[i].onAirSite.length; j++) {
-                    // 最后一个链接添加lastLink类，用于CSS
-                    if (j === data[i].onAirSite.length - 1) {
-                        html +=  '<li class="lastLink">';
-                    } else {
-                        html += '<li>';
+                    // 是否显示该站点
+                    if (sites.show(getDomain(data[i].onAirSite[j]))) {
+                        // 最后一个链接添加lastLink类，用于CSS
+                        if (j === data[i].onAirSite.length - 1) {
+                            linkHtml +=  '<li>';
+                        } else {
+                            linkHtml += '<li>';
+                        }
+                        linkHtml += '<a href="' + data[i].onAirSite[j] + '" target="_self">' +
+                            formatLink(data[i].onAirSite[j]) + '</a></li>';
                     }
-                    html += '<a href="' + data[i].onAirSite[j] + '" target="_self">' +
-                        formatLink(data[i].onAirSite[j]) + '</a></li>';
                 }
-                html += '</ul></td></tr>';
+                // 如果站点全部被过滤，显示'过滤'
+                if (linkHtml === '') {
+                    linkHtml += '<li class="empty">过滤</li>';
+                }
+                html += linkHtml + '</ul></td></tr>';
             } else {
                 // 如果没有链接，则显示为'暂无'
-                html += '<td class="empty">暂无</td></tr>';
+                html += '<td><ul class="links"><li class="empty">暂无</li></ul></td></tr>';
             }
         }
         return html;
@@ -467,6 +591,13 @@ $(function() {
         }
         checkHourSelecter();
 
+        // 站点列表
+        for (i = 0; i < sites.list.length; i++) {
+            if ($.cookie(sites.list[i].domain) !== undefined) {
+                sites.list[i].show = $.cookie(sites.list[i].domain, revertBoolean);
+            }
+        }
+
     }
 
     /**
@@ -492,6 +623,8 @@ $(function() {
         status.title = '';
         $search.blur().val('');
         changeTimeZone('jp', 8);
+        sites.turnAll(true);
+        checkSiteOptions();
         if (status.history) {
             $switcher.trigger('click', [7, true]);
         } else {
@@ -579,7 +712,10 @@ $(function() {
                 if(status.newTab) {
                     changeTarget('_blank');
                 }
-
+                // 构建站点过滤菜单
+                buildSites();
+                // 检查站点过滤选项开关
+                checkSiteOptions();
                 // 获取数据文件最后修改时间
                 if (xhr.getResponseHeader('Last-Modified')) {
                     var tempDate = new Date(xhr.getResponseHeader('Last-Modified'));
@@ -640,6 +776,8 @@ $(function() {
                     index = $target.index();
                     $target.addClass('selected');
                 }
+                // 记录index
+                status.switchLog = index;
                 // '周日'-->'weekDay:0'
                 if (index === 6) {
                     status.weekDay = 0;

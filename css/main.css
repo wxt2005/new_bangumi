@@ -577,7 +577,7 @@ a:active {
     content: "\00A0";
 }
 
-#container table tbody tr .empty {
+#container table tbody tr td .links .empty {
     color: #aaa;
 }
 
