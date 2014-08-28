@@ -40,22 +40,6 @@ $(function() {
                 }
             }
             return undefined;
-        },
-        getDomain: function(name) {
-            for (k = 0; k < this.list.length; k++) {
-                if (this.list[k].name === name) {
-                    return this.list[k].domain;
-                }
-            }
-            return undefined;
-        },
-        getName: function(domain) {
-            for (k = 0; k < this.list.length; k++) {
-                if (this.list[k].domain === domain) {
-                    return this.list[k].domain;
-                }
-            }
-            return undefined;
         }
     };
 
@@ -303,12 +287,15 @@ $(function() {
      * @return {function} 排序按钮的处理函数
      */
     function orderHandler(country) {
-        return function(event, init) {
+        return function(event, reverse, init) {
             $(this).parents('tr').find('p').removeClass('ordered');
             $(this).addClass('ordered');
-            sortData(bgmData, !status.reverse, country);
+            if (reverse !== undefined) {
+                sortData(bgmData, reverse, country);
+            } else {
+                sortData(bgmData, !status.reverse, country);
+            }
             showTable(dataToHTML(bgmData));
-            status.ordered = country;
             if (!init) {
                 tableFilter();
             }
@@ -335,7 +322,7 @@ $(function() {
             checkSiteOptions();
             // 使用记录的switch值
             $switcher.trigger('click', [status.switchLog, true]);
-            $.cookie(this.id, this.checked);
+            $.cookie(this.id, this.checked, {expires: 365});
         });
         $topNav.find('.sites').prepend($node);
     }
@@ -352,7 +339,9 @@ $(function() {
         var flag = (reverse ? -1 : 1);
         var aTime = 0,
             bTime = 0;
+        // 记录
         status.reverse = reverse;
+        status.ordered = country;
         if (country) {
             weekDay = 'weekDay' + country.toUpperCase();
             time = 'time' + country.toUpperCase();
@@ -790,11 +779,9 @@ $(function() {
                 // 如果选择全部，则用日本时间排序，否则用中国事件排序
                 if (index === 7) {
                     // 模拟点击排序按钮(日本时间)，声明为初始化，防止重复调用tableFilter
-                    status.reverse = true;
-                    $orderJP.trigger('click', [true]);
+                    $orderJP.trigger('click', [false, true]);
                 } else {
-                    status.reverse = true;
-                    $orderCN.trigger('click', [true]);
+                    $orderCN.trigger('click', [false, true]);
                 }
                 // 如果没有声明noFilter，则过滤表格
                 if (!noFilter) {
