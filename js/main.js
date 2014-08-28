@@ -62,7 +62,7 @@ $(function() {
     var status = {
         reverse: true,
         ordered: 'CN',
-        switch: 7,
+        switchInit: 7,
         switchLog: 7,
         weekDay: -1,
         nextTime: 24,
@@ -622,7 +622,7 @@ $(function() {
         if (status.history) {
             $switcher.trigger('click', [7, true]);
         } else {
-            $switcher.trigger('click', [status.switch, true]);
+            $switcher.trigger('click', [status.switchInit, true]);
         }
         changeTarget('_self');
         checkHourSelecter();
@@ -696,7 +696,7 @@ $(function() {
                 if (status.history || status.showAll) {
                     $switcher.trigger('click', [7, true, true]);
                 } else {
-                    $switcher.trigger('click', [status.switch, true, true]);
+                    $switcher.trigger('click', [status.switchInit, true, true]);
                 }
 
                 // 过滤表格
@@ -741,7 +741,7 @@ $(function() {
             monthNow = dateNow.getMonth() + 1;
             weekDayNow = dateNow.getDay();
             // 将获取的星期几转换为switcher的序号，存入变量
-            status.switch = (weekDayNow === 0 ? 7 : weekDayNow - 1);
+            status.switchInit = (weekDayNow === 0 ? 7 : weekDayNow - 1);
             archive = data;
             // 获取番组json路径，读取
             getBgmJSON(getPath(yearNow, monthNow, data));
@@ -822,7 +822,7 @@ $(function() {
             if (status.showAll || status.history) {
                 $switcher.trigger('click', [7, true]);
             } else {
-                $switcher.trigger('click', [status.switch, true]);
+                $switcher.trigger('click', [status.switchInit, true]);
             }
             // 隐藏清除按钮
             $(this).next().hide();
@@ -831,7 +831,7 @@ $(function() {
             if (status.showAll || status.history) {
                 $switcher.trigger('click', [7, true]);
             } else {
-                $switcher.trigger('click', [status.switch, true]);
+                $switcher.trigger('click', [status.switchInit, true]);
             }
             // 隐藏清除按钮
             $(this).next().hide();
@@ -841,7 +841,7 @@ $(function() {
         .next().hide().click(function() {
             $search.blur().val('');
             status.title = '';
-            $switcher.trigger('click', [status.switch, true]);
+            $switcher.trigger('click', [status.switchInit, true]);
             // 隐藏清除按钮
             $(this).hide();
         });
@@ -870,7 +870,7 @@ $(function() {
         if (this.checked) {
             $switcher.trigger('click', [7, true]);
         } else {
-            $switcher.trigger('click', [status.switch, true]);
+            $switcher.trigger('click', [status.switchInit, true]);
         }
         $.cookie('showAll', this.checked, {expires: 365});
         tableFilter();
