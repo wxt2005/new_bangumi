@@ -49,15 +49,15 @@
                             <input type="checkbox" name="jpTime" id="jpTime">
                         </li>
                         <li>
-                            <label for="toNextDay" title="将该时间点及之后的番组顺延到第二天显示">转到次日</label>
-                            <div class="hourSelecter">
+                            <p class="label" title="将该时间点及之后的番组顺延到第二天显示">转到次日</p>
+                            <div id="hourSelecter">
                                 <span class="left"></span>
-                                <p>{{query.nextTime}}点</p>
+                                <p>24点</p>
                                 <span class="right"></span>
                             </div>
                         </li>
                         <li>
-                            <span class="all" title="清除显示设置和站点过滤，下次打开本站时将使用默认设置">清除所有设置</span>
+                            <span class="all" id="reset" title="清除显示设置和站点过滤，下次打开本站时将使用默认设置">清除所有设置</span>
                         </li>
                     </ul>
                 </li>
@@ -116,8 +116,8 @@
             <table>
                 <colgroup>
                     <col id="name">
-                    <col id="time-jp">
-                    <col id="time-cn">
+                    <col id="timeJP">
+                    <col id="timeCN">
                     <col id="site">
                 </colgroup>
                 <thead>
@@ -128,7 +128,7 @@
                         <th>播放网址</th>
                     </tr>
                 </thead>
-                <tbody id="bangumi_list">
+                <tbody id="bangumiList">
                 <noscript>
                 <tr>
                     <td colspan="4"><p style="text-align:center;">请打开javascript支持以显示本站点</p></td>

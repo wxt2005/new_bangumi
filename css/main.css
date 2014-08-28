@@ -142,7 +142,7 @@ a:active {
     width: 94px;
 }
 
-#topbar #topnav .menu .submenu .hourSelecter {
+#topbar #topnav .menu .submenu #hourSelecter {
    position: absolute;
    right: 10px;
    top: 10px;
@@ -151,28 +151,28 @@ a:active {
    zoom: 1;
 }
 
-#topbar #topnav .menu .submenu .hourSelecter p {
+#topbar #topnav .menu .submenu #hourSelecter p {
     height: 20px;
     line-height: 20px;
     float: left;
 }
 
-#topbar #topnav .menu .submenu .hourSelecter span {
+#topbar #topnav .menu .submenu #hourSelecter span {
     position: static;
     float: left;
 }
 
-#topbar #topnav .menu .submenu .hourSelecter .left {
+#topbar #topnav .menu .submenu #hourSelecter .left {
     margin-right: 5px;
     background: url("../images/left-arrow.png") 0 0 transparent;
 }
 
-#topbar #topnav .menu .submenu .hourSelecter .right {
+#topbar #topnav .menu .submenu #hourSelecter .right {
     margin-left: 5px;
     background: url("../images/right-arrow.png") 0 0 transparent;
 }
 
-#topbar #topnav .menu .submenu .hourSelecter .disable {
+#topbar #topnav .menu .submenu #hourSelecter .disable {
     background-position: 20px 0;
 }
 
@@ -207,7 +207,8 @@ a:active {
     background: #34495e;
 }
 
-#topbar #topnav .menu .submenu label {
+#topbar #topnav .menu .submenu label,
+#topbar #topnav .menu .submenu .label {
     position: relative;
     display: block;
     left: 10px;
@@ -492,8 +493,8 @@ a:active {
     width: 40%;
 }
 
-#container table #time-jp,
-#container table #time-cn {
+#container table #timeJP,
+#container table #timeCN {
     width: 15%;
 }
 
@@ -552,27 +553,27 @@ a:active {
     margin-right: 5px;
 }
 
-#container table tbody tr td .link-list li {
+#container table tbody tr td .links li {
     display: inline-block;
 }
 
 /*修复IE7inline-block失效的问题*/
-#container table tbody tr td .link-list li {
+#container table tbody tr td .links li {
     *display: inline;
     *margin-right: 10px;
 }
 
-#container table tbody tr td .link-list li .disabled {
+#container table tbody tr td .links li .disabled {
     color: #aaa;
     cursor: default;
 }
 
-#container table tbody tr td .link-list li:after {
+#container table tbody tr td .links li:after {
     content: "\00A0\007C\00A0";
     vertical-align: 6%;
 }
 
-#container table tbody tr td .link-list .lastLink:after {
+#container table tbody tr td .links .lastLink:after {
     content: "\00A0";
 }
 
@@ -615,12 +616,12 @@ screen and (max--moz-device-pixel-ratio: 2) {
         background-size: 20px 20px;
     }
 
-    #topbar #topnav .menu .submenu .hourSelecter .left {
+    #topbar #topnav .menu .submenu #hourSelecter .left {
         background-image: url("../images/left-arrow-2x.png");
         background-size: 40px 20px;
     }
 
-    #topbar #topnav .menu .submenu .hourSelecter .right {
+    #topbar #topnav .menu .submenu #hourSelecter .right {
         background-image: url("../images/right-arrow-2x.png");
         background-size: 40px 20px;
     }
@@ -843,7 +844,8 @@ screen and (max--moz-device-pixel-ratio: 2) {
     }
 
     #topbar #topnav .menu .submenu.display li,
-    #topbar #topnav .menu .submenu label {
+    #topbar #topnav .menu .submenu label,
+    #topbar #topnav .menu .submenu .label {
         width: 164px;
     }
 
@@ -865,24 +867,24 @@ screen and (max--moz-device-pixel-ratio: 2) {
         height: 15px;
     }
 
-    #topbar #topnav .menu .submenu .hourSelecter {
+    #topbar #topnav .menu .submenu #hourSelecter {
         height: 15px;
         top: 7.5px;
     }
 
-    #topbar #topnav .menu .submenu .hourSelecter p {
+    #topbar #topnav .menu .submenu #hourSelecter p {
         height: 15px;
         line-height: 15px;
     }
 
-    #topbar #topnav .menu .submenu .hourSelecter .left,
-    #topbar #topnav .menu .submenu .hourSelecter .right,
+    #topbar #topnav .menu .submenu #hourSelecter .left,
+    #topbar #topnav .menu .submenu #hourSelecter .right,
     #topbar #topnav .menu .submenu .toggle {
         background-size: 30px 15px;
         background-position: 0 0;
     }
 
-    #topbar #topnav .menu .submenu .hourSelecter .disable {
+    #topbar #topnav .menu .submenu #hourSelecter .disable {
         background-position: 15px 0;
     }
 
@@ -967,20 +969,20 @@ screen and (max--moz-device-pixel-ratio: 2) {
         padding: 6px 8px;
     }
 
-    #container table tbody tr td .link-list {
+    #container table tbody tr td .links {
         text-align: right;
         margin-right: -10px;
     }
 
-    #container table tbody tr td .link-list li {
+    #container table tbody tr td .links li {
         width: auto;
     }
 
-    #container table tbody tr td .link-list li a {
+    #container table tbody tr td .links li a {
         margin-right: 10px;
     }
 
-    #container table tbody tr td .link-list li:after {
+    #container table tbody tr td .links li:after {
         content: '';
         display: none;
     }

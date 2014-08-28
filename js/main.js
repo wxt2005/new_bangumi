@@ -1,5 +1,6 @@
 'use strict';
 /* global console */
+/* global document */
 /* jshint jquery:true */
 /* jshint -W097 */
 
@@ -10,12 +11,13 @@ $(function() {
     var weekDayCN = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
     var weekDayJP = ['日曜', '月曜', '火曜', '水曜', '木曜', '金曜', '土曜'];
 
-    var $tbody = $('#bangumi_list');
+    var $tbody = $('#bangumiList');
     var $switcher = $('#switcher');
     var $orderJP = $('table th:eq(1) p');
     var $orderCN = $('table th:eq(2) p');
     var $search = $('#search input');
     var $topNav = $('#topnav');
+    var $hourSelecter = $('#hourSelecter');
 
     var archive = null,
         bgmData = null;
@@ -23,19 +25,15 @@ $(function() {
     var status = {
         reverse: true,
         switch: 7,
-        lastModified: '',
+        weekDay: -1,
         nextTime: 24,
+        title: '',
+        lastModified: '',
         showAll: false,
         history: false,
         newTab: false,
         jpTime: false,
-        jpTimeZone: 8
-    };
-
-    var query = {
-        weekDay: -1,
-        nextTime: 24,
-        title: '',
+        jpTimeZone: 8,
         showNew: false
     };
 
@@ -284,7 +282,7 @@ $(function() {
             if (data[i].onAirSite.length) {
                 // 将链接排序
                 data[i].onAirSite.sort(sortLink);
-                html += '<td><ul class="link-list">';
+                html += '<td><ul class="links">';
                 for (j = 0; j < data[i].onAirSite.length; j++) {
                     // 最后一个链接添加lastLink类，用于CSS
                     if (j === data[i].onAirSite.length - 1) {
@@ -370,6 +368,20 @@ $(function() {
     }
 
     /**
+     * 检查小时选择器的按钮状态
+     * @method checkHourSelecter
+     */
+    function checkHourSelecter() {
+        $hourSelecter.children('span').removeClass('disable');
+        if (status.nextTime === 24) {
+            $hourSelecter.children('.right').addClass('disable');
+        } else if (status.nextTime === 20) {
+            $hourSelecter.children('.left').addClass('disable');
+        }
+        $hourSelecter.children('p').text(status.nextTime + '点');
+    }
+
+    /**
      * 传入表格行，返回是否输出
      * @method decideShow
      * @param {jquery object} item 表格的行
@@ -386,22 +398,21 @@ $(function() {
             itemTime = 0;
         }
         // 全部显示
-        if (query.weekDay === -1 ) {
+        if (status.weekDay === -1 ) {
             showFlag = true;
         // 该行数据的周天等于查询的周天且时间早于转天时间，或该行周天早查询的周天一日且时间晚于等于转天时间，则显示
-        } else if ((itemWeekDay === weekDayCN[query.weekDay] && itemTime < query.nextTime) ||
-                        (itemWeekDay ===  weekDayCN[(query.weekDay === 0 ? 6 : query.weekDay - 1)] &&
-                        itemTime >= query.nextTime)) {
+        } else if ((itemWeekDay === weekDayCN[status.weekDay] && itemTime < status.nextTime) ||
+                        (itemWeekDay ===  weekDayCN[(status.weekDay === 0 ? 6 : status.weekDay - 1)] &&
+                        itemTime >= status.nextTime)) {
             showFlag = true;
         }
         // 如果仅显示新番开关打开，该行的首个单元格内链接的class不为new，则隐藏
-        if (query.showNew && !(item.find('td:eq(0) a').is('.new'))) {
-            console.log(query.showNew, 'bgm filted');
+        if (status.showNew && !(item.find('td:eq(0) a').is('.new'))) {
             showFlag = false;
         }
         // 如果存在标题查询字符串，则检测首个单元格内的文字是否匹配，否则隐藏
-        if (query.title) {
-            var re = new RegExp(query.title, 'i');
+        if (status.title) {
+            var re = new RegExp(status.title, 'i');
             if (!re.test(item.find('td:eq(0)').text())) {
                 showFlag = false;
             }
@@ -416,9 +427,9 @@ $(function() {
     function checkOptions() {
         // 只显示新番
         if ($.cookie('showNew') !== undefined) {
-            query.showNew = $.cookie('showNew', revertBoolean);
+            status.showNew = $.cookie('showNew', revertBoolean);
         }
-        if (query.showNew) {
+        if (status.showNew) {
             $topNav.find('#showNew').attr('checked', true)
                 .prev().children('span').addClass('ON');
         }
@@ -449,6 +460,45 @@ $(function() {
             $topNav.find('#jpTime').attr('checked', true)
                 .prev().children('span').addClass('ON');
         }
+
+        // 转到次日
+        if ($.cookie('nextTime') !== undefined) {
+            status.nextTime = $.cookie('nextTime', Number);
+        }
+        checkHourSelecter();
+
+    }
+
+    /**
+     * 清除所有设置以及cookies
+     * @method resetOptions
+     */
+    function resetOptions() {
+        var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+        if (keys) {
+            for (i = 0; i < keys.length; i++) {
+                $.removeCookie(keys[i]);
+            }
+        }
+        $('#showNew, #showAll, #newTab, #jpTime').each(function() {
+            $(this).attr('checked', false)
+                .prev().children('span').removeClass('ON');
+        });
+        status.nextTime = 24;
+        status.showNew = false;
+        status.showAll = false;
+        status.jpTime = false;
+        status.newTab = false;
+        status.title = '';
+        $search.blur().val('');
+        changeTimeZone('jp', 8);
+        if (status.history) {
+            $switcher.trigger('click', [7, true]);
+        } else {
+            $switcher.trigger('click', [status.switch, true]);
+        }
+        changeTarget('_self');
+        checkHourSelecter();
     }
 
     /**
@@ -458,7 +508,7 @@ $(function() {
      * @param {number} utc 时区 GMT '+8' '-8'
      */
     function changeTimeZone(country, utc) {
-        console.log('change', country, utc);
+        // 和原本时区之间的差值
         var offset = utc - status[country.toLowerCase() + 'TimeZone'];
         var timeStr = 'time' + country.toUpperCase();
         var weekDayStr = 'weekDay' + country.toUpperCase();
@@ -467,24 +517,30 @@ $(function() {
             time = +bgmData[i][timeStr].slice(0, 2);
             weekDay = +bgmData[i][weekDayStr];
             time = time + offset;
+            // 时间往回倒一天
             if (time < 0) {
                 time += 24;
                 weekDay--;
+            // 时间往前进一天
             } else if (time >= 24) {
                 time -= 24;
                 weekDay++;
             }
+            // 补前导0
             if (time < 10) {
                 time = '0' + time;
             }
+            // 周天往前一天
             if (weekDay < 0) {
                 weekDay += 7;
+            // 周天往后一天
             } else if (weekDay > 6) {
                 weekDay -= 7;
             }
             bgmData[i][timeStr] = time + bgmData[i][timeStr].slice(2);
             bgmData[i][weekDayStr] = weekDay + '';
         }
+        // 记录现在时区
         status[country.toLowerCase() + 'TimeZone'] = utc;
     }
 
@@ -508,14 +564,12 @@ $(function() {
                 if (status.jpTime) {
                     changeTimeZone('jp', 9);
                 }
-                // 模拟点击排序按钮(中国时间)，声明为初始化
-                $orderCN.trigger('click', [true]);
                 // 模拟点击switcher按钮，声明为初始化
                 // 如果为显示历史数据，则临时关闭自动切换功能
                 if (status.history || status.showAll) {
-                    $switcher.trigger('click', [7, true]);
+                    $switcher.trigger('click', [7, true, true]);
                 } else {
-                    $switcher.trigger('click', [status.switch, true]);
+                    $switcher.trigger('click', [status.switch, true, true]);
                 }
 
                 // 过滤表格
@@ -572,10 +626,10 @@ $(function() {
     });
 
     // 选择器点击事件
-    $switcher.click(function(event, index, init) {
+    $switcher.click(function(event, index, direct, noFilter) {
             var $target = $(event.target);
             // 防止触到li以外的区域触发事件
-            if (event.target !== this || init) {
+            if (event.target !== this || direct) {
                 // 将所有选择器按钮的class清空
                 $switcher.children().removeClass('selected');
                 // 使用undefined判断，防止误判数字0
@@ -588,13 +642,14 @@ $(function() {
                 }
                 // '周日'-->'weekDay:0'
                 if (index === 6) {
-                    query.weekDay = 0;
+                    status.weekDay = 0;
                 // '全部'-->'weekDay:-1'
                 } else if (index === 7) {
-                    query.weekDay = -1;
+                    status.weekDay = -1;
                 } else {
-                    query.weekDay = index + 1;
+                    status.weekDay = index + 1;
                 }
+                // 如果选择全部，则用日本时间排序，否则用中国事件排序
                 if (index === 7) {
                     // 模拟点击排序按钮(日本时间)，声明为初始化，防止重复调用tableFilter
                     status.reverse = true;
@@ -603,8 +658,8 @@ $(function() {
                     status.reverse = true;
                     $orderCN.trigger('click', [true]);
                 }
-                // 如果不是初始化，过滤表格
-                if (!init) {
+                // 如果没有声明noFilter，则过滤表格
+                if (!noFilter) {
                     tableFilter();
                 }
             }
@@ -624,29 +679,29 @@ $(function() {
     // 搜索框绑定keyup事件
     $search.keyup(function(event) {
         // 模拟按下switcher第七个按钮来显示所有番组
-        $switcher.trigger('click', [7]);
+        $switcher.trigger('click', [7, true]);
         // 显示清除按钮
         $(this).next().show();
-        query.title = $(this).val();
+        status.title = $(this).val();
         tableFilter();
         // 按下ESC键
         if(event.keyCode === 27) {
             $(this).blur().val('');
-            query.title = '';
+            status.title = '';
             // 模拟点击switcher，传入保存的switch序号
             if (status.showAll || status.history) {
-                $switcher.trigger('click', [7]);
+                $switcher.trigger('click', [7, true]);
             } else {
-                $switcher.trigger('click', [status.switch]);
+                $switcher.trigger('click', [status.switch, true]);
             }
             // 隐藏清除按钮
             $(this).next().hide();
         // 回车清空搜索栏
         } else if (event.keyCode === 8 && event.target.value.length <= 0) {
             if (status.showAll || status.history) {
-                $switcher.trigger('click', [7]);
+                $switcher.trigger('click', [7, true]);
             } else {
-                $switcher.trigger('click', [status.switch]);
+                $switcher.trigger('click', [status.switch, true]);
             }
             // 隐藏清除按钮
             $(this).next().hide();
@@ -655,8 +710,8 @@ $(function() {
         // 清除按钮点击事件
         .next().hide().click(function() {
             $search.blur().val('');
-            query.title = '';
-            $switcher.trigger('click', [status.switch]);
+            status.title = '';
+            $switcher.trigger('click', [status.switch, true]);
             // 隐藏清除按钮
             $(this).hide();
         });
@@ -669,7 +724,7 @@ $(function() {
         } else {
             $(this).prev().children('span').removeClass('ON');
         }
-        query.showNew = this.checked;
+        status.showNew = this.checked;
         $.cookie('showNew', this.checked, {expires: 365});
         tableFilter();
     });
@@ -683,9 +738,9 @@ $(function() {
         }
         status.showAll = this.checked;
         if (this.checked) {
-            $switcher.trigger('click', [7]);
+            $switcher.trigger('click', [7, true]);
         } else {
-            $switcher.trigger('click', [status.switch]);
+            $switcher.trigger('click', [status.switch, true]);
         }
         $.cookie('showAll', this.checked, {expires: 365});
         tableFilter();
@@ -720,4 +775,20 @@ $(function() {
         showTable(dataToHTML(bgmData));
         tableFilter();
     });
+
+    // 转到次日按钮绑定事件
+    $hourSelecter.children('span').click(function(event) {
+        if (event.target.className === "right" && status.nextTime < 24) {
+            status.nextTime++;
+            tableFilter();
+        } else if (event.target.className === "left" && status.nextTime > 20) {
+            status.nextTime--;
+            tableFilter();
+        }
+        checkHourSelecter();
+        $.cookie('nextTime', status.nextTime, {expires: 365});
+    });
+
+    // 清除所有设置按钮绑定事件
+    $('#reset').click(resetOptions);
 });
