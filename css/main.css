@@ -573,7 +573,7 @@ a:active {
     vertical-align: 6%;
 }
 
-#container table tbody tr td .links .lastLink:after {
+#container table tbody tr td .links .last:after {
     content: "\00A0";
 }
 

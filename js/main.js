@@ -281,7 +281,7 @@ $(function() {
     function showTable(html) {
         $tbody.children('tr').remove();
         $tbody.append(html);
-        $tbody.find('.links li:last-child').addClass('lastLink');
+        $tbody.find('.links li:last-child').addClass('last');
     }
 
     /**
@@ -397,7 +397,7 @@ $(function() {
                 for (j = 0; j < data[i].onAirSite.length; j++) {
                     // 是否显示该站点
                     if (sites.show(getDomain(data[i].onAirSite[j]))) {
-                        // 最后一个链接添加lastLink类，用于CSS
+                        // 最后一个链接添加last类，用于CSS
                         if (j === data[i].onAirSite.length - 1) {
                             linkHtml +=  '<li>';
                         } else {
