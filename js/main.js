@@ -458,6 +458,7 @@ $(function() {
             yearRead = +('20' + path.match(/(\d{2})(\d{2})/)[1]);
             monthRead = +(path.match(/(\d{2})(\d{2})/)[2]);
             $(this).parents('.submenu').hide();
+            return false;
         });
 
         $topNav.find('li ul.year').append($node);
