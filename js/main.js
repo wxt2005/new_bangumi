@@ -6,6 +6,7 @@
 
 $(function() {
     var i = 0, j = 0, k = 0;
+    var l = 0, m = 0, n = 0;
     var dateNow, weekDayNow, yearNow, monthNow;
     var yearRead, monthRead;
     var weekDayCN = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
@@ -27,7 +28,7 @@ $(function() {
         ],
         turnAll: function(bool) {
             var result = [];
-            for (k = 0; k < this.list.length; k++) {
+            for (k = 0, n = this.list.length; k < n; k++) {
                 if (this.list[k].show !== bool) {
                     this.list[k].show = bool;
                     result.push(this.list[k].domain);
@@ -36,7 +37,7 @@ $(function() {
             return result;
         },
         show: function(item, flag) {
-            for (k = 0; k < this.list.length; k++) {
+            for (k = 0, n = this.list.length; k < n; k++) {
                 if (this.list[k].name === item || this.list[k].domain === item) {
                     if (flag !== undefined) {
                         this.list[k].show = flag;
@@ -49,6 +50,10 @@ $(function() {
     };
 
     var $tbody = $('#bangumiList');
+
+    // 删除noscipt标签
+    $tbody.find('noscirpt').remove();
+
     var $switcher = $('#switcher');
     var $orderJP = $('table th:eq(1) p');
     var $orderCN = $('table th:eq(2) p');
@@ -153,7 +158,17 @@ $(function() {
     function checkSiteOptions() {
         var count = 0;
         var $siteOptions = $topNav.find('.sites :checkbox');
-        $siteOptions.each(function() {
+        for (i = 0, l = $siteOptions.length; i < l; i++) {
+            if (sites.show($siteOptions.get(i).id)) {
+                $siteOptions.eq(i).attr('checked', true)
+                    .prev().find('span').addClass('ON');
+                count++;
+            } else {
+                $siteOptions.eq(i).attr('checked', false)
+                    .prev().find('span').removeClass('ON');
+            }
+        }
+        /*$siteOptions.each(function() {
             if (sites.show(this.id)) {
                 $(this).attr('checked', true)
                     .prev().children('span').addClass('ON');
@@ -162,7 +177,7 @@ $(function() {
                 $(this).attr('checked', false)
                     .prev().children('span').removeClass('ON');
             }
-        });
+        });*/
         // 如果所有选项都被选中，则按钮显示为"全不选"，否则显示为"全选"
         if (count === $siteOptions.length) {
             $('#selectAll').text('全不选');
@@ -198,10 +213,10 @@ $(function() {
     function getPath(year, month, archive) {
         yearRead = year;
         monthRead = monthToSeason(month);
-        for (i = 0; i < archive.length; i++) {
+        for (i = 0, l = archive.length; i < l; i++) {
             if (archive[i].year === year) {
                 var months = archive[i].months;
-                for (j = 0; j < months.length; j++ ) {
+                for (j = 0, m = months.length; j < m; j++ ) {
                     if (monthRead === months[j].month && months[j].json) {
                         return months[j].json;
                     }
@@ -279,7 +294,7 @@ $(function() {
      * @param {string} html 要插入的HTML代码
      */
     function showTable(html) {
-        $tbody.children('tr').remove();
+        $tbody.find('tr').remove();
         $tbody.append(html);
         $tbody.find('.links li:last-child').addClass('last');
     }
@@ -313,7 +328,7 @@ $(function() {
     function buildSites() {
         var html = '';
         var $node = null;
-        for (i = 0; i < sites.list.length; i++) {
+        for (i = 0, l = sites.length; i < l; i++) {
             html += '<li><label for="' + sites.list[i].domain + '">' +
                 sites.list[i].name + '<span class="toggle"></span></label>' +
                 '<input type="checkbox" name="' + sites.list[i].domain + '" id="' +
@@ -380,7 +395,7 @@ $(function() {
     function dataToHTML(data) {
         var html = '',
             linkHtml = '';
-        for (i = 0; i < data.length; i++) {
+        for (i = 0, l = data.length; i < l; i++) {
             html += '<tr><td><a href="' + data[i].officalSite + '" title="' +
                 data[i].titleJP + (data[i].newBgm ? '" class="new">' : '">') +
                 data[i].titleCN + '</a></td><td><span class="weekDay">' +
@@ -394,11 +409,11 @@ $(function() {
                 // 将链接排序
                 data[i].onAirSite.sort(sortLink);
                 html += '<td><ul class="links">';
-                for (j = 0; j < data[i].onAirSite.length; j++) {
+                for (j = 0, m = data[i].onAirSite.length; j < m; j++) {
                     // 是否显示该站点
                     if (sites.show(getDomain(data[i].onAirSite[j]))) {
                         // 最后一个链接添加last类，用于CSS
-                        if (j === data[i].onAirSite.length - 1) {
+                        if (j === m - 1) {
                             linkHtml +=  '<li>';
                         } else {
                             linkHtml += '<li>';
@@ -428,10 +443,10 @@ $(function() {
     function buildArchive(archive) {
         var html = '';
         var $node = null;
-        for(i = 0; i < archive.length; i++) {
+        for(i = 0, l = archive.length; i < l; i++) {
             var months = archive[i].months;
             html += '<li><a href="#">' + archive[i].year + '年</a><ul class="submenu month">';
-            for (j = 0; j < months.length; j++) {
+            for (j = 0, m = months.length; j < m; j++) {
                 html += '<li><a href="#" data-json="' + months[j].json + '">' + months[j].month + '月</a></li>';
             }
             html += '</ul></li>';
@@ -446,7 +461,7 @@ $(function() {
             }).find('ul').hide();
         });
         $node.find('ul a').click(function() {
-            var path = $(this).attr('data-json');
+            var path = $(this).data('json');
             status.history = true;
             getBgmJSON(path);
             yearRead = +('20' + path.match(/(\d{2})(\d{2})/)[1]);
@@ -462,14 +477,22 @@ $(function() {
      * @method tableFilter
      */
     function tableFilter() {
-        var $items = $tbody.children('tr');
+        var $items = $tbody.find('tr');
+        for (i = 0, l = $items.length; i < l; i++) {
+            if (decideShow($items.eq(i))) {
+                $items.eq(i).show();
+            } else {
+                $items.eq(i).hide();
+            }
+        }
+        /*
         $items.each(function() {
             if(decideShow($(this))) {
                 $(this).show();
             } else {
                 $(this).hide();
             }
-        });
+        });*/
     }
 
     /**
@@ -490,13 +513,13 @@ $(function() {
      * @method checkHourSelecter
      */
     function checkHourSelecter() {
-        $hourSelecter.children('span').removeClass('disable');
+        $hourSelecter.find('span').removeClass('disable');
         if (status.nextTime === 24) {
-            $hourSelecter.children('.right').addClass('disable');
+            $hourSelecter.find('.right').addClass('disable');
         } else if (status.nextTime === 20) {
-            $hourSelecter.children('.left').addClass('disable');
+            $hourSelecter.find('.left').addClass('disable');
         }
-        $hourSelecter.children('p').text(status.nextTime + '点');
+        $hourSelecter.find('p').text(status.nextTime + '点');
     }
 
     /**
@@ -549,7 +572,7 @@ $(function() {
         }
         if (status.showNew) {
             $topNav.find('#showNew').attr('checked', true)
-                .prev().children('span').addClass('ON');
+                .prev().find('span').addClass('ON');
         }
 
         // 显示全部
@@ -558,7 +581,7 @@ $(function() {
         }
         if (status.showAll) {
             $topNav.find('#showAll').attr('checked', true)
-                .prev().children('span').addClass('ON');
+                .prev().find('span').addClass('ON');
         }
 
         // 打开新窗口
@@ -567,7 +590,7 @@ $(function() {
         }
         if (status.newTab) {
             $topNav.find('#newTab').attr('checked', true)
-                .prev().children('span').addClass('ON');
+                .prev().find('span').addClass('ON');
         }
 
         // 还原日本时区
@@ -576,7 +599,7 @@ $(function() {
         }
         if (status.jpTime) {
             $topNav.find('#jpTime').attr('checked', true)
-                .prev().children('span').addClass('ON');
+                .prev().find('span').addClass('ON');
         }
 
         // 转到次日
@@ -586,7 +609,7 @@ $(function() {
         checkHourSelecter();
 
         // 站点列表
-        for (i = 0; i < sites.list.length; i++) {
+        for (i = 0, l = sites.list.length; i < l; i++) {
             if ($.cookie(sites.list[i].domain) !== undefined) {
                 sites.list[i].show = $.cookie(sites.list[i].domain, revertBoolean);
             }
@@ -601,13 +624,13 @@ $(function() {
     function resetOptions() {
         var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
         if (keys) {
-            for (i = 0; i < keys.length; i++) {
+            for (i = 0, l = keys.length; i < l; i++) {
                 $.removeCookie(keys[i]);
             }
         }
         $('#showNew, #showAll, #newTab, #jpTime').each(function() {
             $(this).attr('checked', false)
-                .prev().children('span').removeClass('ON');
+                .prev().find('span').removeClass('ON');
         });
         status.nextTime = 24;
         status.showNew = false;
@@ -640,7 +663,7 @@ $(function() {
         var timeStr = 'time' + country.toUpperCase();
         var weekDayStr = 'weekDay' + country.toUpperCase();
         var time, weekDay;
-        for (i = 0; i < bgmData.length; i++) {
+        for (i = 0, l = bgmData.length; i < l; i++) {
             time = +bgmData[i][timeStr].slice(0, 2);
             weekDay = +bgmData[i][weekDayStr];
             time = time + offset;
@@ -761,7 +784,7 @@ $(function() {
             // 防止触到li以外的区域触发事件
             if (event.target !== this || direct) {
                 // 将所有选择器按钮的class清空
-                $switcher.children().removeClass('selected');
+                $switcher.find('li').removeClass('selected');
                 // 使用undefined判断，防止误判数字0
                 if (index !== undefined) {
                     $switcher.find('li:eq(' + index + ')').addClass('selected');
@@ -804,7 +827,7 @@ $(function() {
         $(this).children('ul').show();
     }, function() {
         $(this).children('ul').hide();
-    }).children('ul').hide();
+    }).find('ul').hide();
 
     // 搜索框绑定keyup事件
     $search.keyup(function(event) {
@@ -850,9 +873,9 @@ $(function() {
     // 只显示新番按钮绑定事件
     $('#showNew').change(function() {
         if (this.checked) {
-            $(this).prev().children('span').addClass('ON');
+            $(this).prev().find('span').addClass('ON');
         } else {
-            $(this).prev().children('span').removeClass('ON');
+            $(this).prev().find('span').removeClass('ON');
         }
         status.showNew = this.checked;
         $.cookie('showNew', this.checked, {expires: 365});
@@ -862,9 +885,9 @@ $(function() {
     // 显示全部按钮绑定事件
     $('#showAll').change(function() {
         if (this.checked) {
-            $(this).prev().children('span').addClass('ON');
+            $(this).prev().find('span').addClass('ON');
         } else {
-            $(this).prev().children('span').removeClass('ON');
+            $(this).prev().find('span').removeClass('ON');
         }
         status.showAll = this.checked;
         if (this.checked) {
@@ -879,9 +902,9 @@ $(function() {
     // 打开新链接按钮绑定事件
     $('#newTab').change(function() {
         if (this.checked) {
-            $(this).prev().children('span').addClass('ON');
+            $(this).prev().find('span').addClass('ON');
         } else {
-            $(this).prev().children('span').removeClass('ON');
+            $(this).prev().find('span').removeClass('ON');
         }
         status.newTab = this.checked;
         $.cookie('newTab', this.checked, {expires: 365});
@@ -891,9 +914,9 @@ $(function() {
     // 还原日本时区绑定按钮
     $('#jpTime').change(function() {
         if (this.checked) {
-            $(this).prev().children('span').addClass('ON');
+            $(this).prev().find('span').addClass('ON');
         } else {
-            $(this).prev().children('span').removeClass('ON');
+            $(this).prev().find('span').removeClass('ON');
         }
         status.jpTime = this.checked;
         $.cookie('jpTime', this.checked, {expires: 365});
@@ -907,7 +930,7 @@ $(function() {
     });
 
     // 转到次日按钮绑定事件
-    $hourSelecter.children('span').click(function(event) {
+    $hourSelecter.find('span').click(function(event) {
         if (event.target.className === "right" && status.nextTime < 24) {
             status.nextTime++;
             tableFilter();
@@ -933,7 +956,7 @@ $(function() {
         showTable(dataToHTML(bgmData));
         $switcher.trigger('click', [status.switchLog, true]);
         checkSiteOptions();
-        for (i = 0; i < changed.length; i++) {
+        for (i = 0, l = changed.length; i < l; i++) {
             $.cookie(changed[i], sites.show(changed[i]), {expires: 365});
         }
     });

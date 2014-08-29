@@ -110,6 +110,7 @@ a:active {
     /*hide submenu for let IE7*/
     *display: none;
     margin-left: 1px;
+    display: none;
 }
 
 #topbar #topnav .menu .submenu a {
