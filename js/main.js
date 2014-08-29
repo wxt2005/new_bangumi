@@ -467,7 +467,7 @@ $(function() {
             getBgmJSON(path);
             yearRead = +('20' + path.match(/(\d{2})(\d{2})/)[1]);
             monthRead = +(path.match(/(\d{2})(\d{2})/)[2]);
-            return false;
+            $(this).parents('.submenu').hide();
         });
 
         $topNav.find('li ul.year').append($node);
@@ -841,9 +841,12 @@ $(function() {
     }, function() {
         $(this).children('ul').hide();
         $shadow.hide();
-    }).click(function() {
-        $(this).children('ul').toggle();
-        $shadow.toggle();
+    }).children('a').click(function(event) {
+        // 单击链接时隐藏菜单
+        if (event.target === this) {
+            $(this).next().toggle();
+            $shadow.toggle();
+        }
     }).find('ul').hide();
 
     // 搜索框绑定keyup事件
