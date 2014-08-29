@@ -560,7 +560,7 @@ $(function() {
         }
         // 如果存在标题查询字符串，则检测首个单元格内链接的文字或者title是否匹配，否则隐藏
         if (status.title) {
-            var re = new RegExp(status.title, 'i');
+            var re = /status.title/i;
             var titleLink = item.find('td:eq(0) a');
             if (!re.test(titleLink.text()) && !re.test(titleLink.attr('title'))) {
                 showFlag = false;
