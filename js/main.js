@@ -1,6 +1,7 @@
 'use strict';
 /* global console */
 /* global document */
+/* global window */
 /* jshint jquery:true */
 /* jshint -W097 */
 
@@ -968,5 +969,11 @@ $(function() {
     $shadow.click(function(event) {
         $(this).hide();
         $topNav.find('ul').hide();
+    });
+
+    // 分享按钮绑定事件
+    $topNav.find('.share a').click(function() {
+        window.open(this.href,'','height=420, width=550, scrollbars=yes');
+        return false;
     });
 });
