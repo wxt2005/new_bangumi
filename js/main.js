@@ -555,6 +555,22 @@ $(function() {
     }
 
     /**
+     * 用于在switcher中显示今天
+     * @method switcherToday
+     * @param {number} index switcher的序号
+     */
+    function switcherToday(index) {
+        var $switchToday = $switcher.find('li:eq(' + index + ')');
+        var old = $switchToday.text();
+        $switchToday.text('今天');
+        $switchToday.hover(function() {
+            $(this).text(old);
+        }, function() {
+            $(this).text('今天');
+        });
+    }
+
+    /**
      * 检查个选项初始状态
      * @method checkOptions
      */
@@ -761,6 +777,7 @@ $(function() {
             weekDayNow = dateNow.getDay();
             // 将获取的星期几转换为switcher的序号，存入变量
             status.switchInit = (weekDayNow === 0 ? 7 : weekDayNow - 1);
+            switcherToday(status.switchInit);
             archive = data;
             // 获取番组json路径，读取
             getBgmJSON(getPath(yearNow, monthNow, data));
