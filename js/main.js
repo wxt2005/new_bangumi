@@ -830,6 +830,7 @@ $(function() {
             $(this).next().toggle();
             $shadow.toggle();
         }
+        return false;
     }).find('ul').hide();
 
     // 搜索框绑定keyup事件
