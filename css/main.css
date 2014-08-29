@@ -582,6 +582,7 @@ a:active {
 
 #container table tbody tr td .links .empty {
     color: #aaa;
+    margin-right: 10px;
 }
 
 /*页脚*/
@@ -958,7 +959,8 @@ screen and (max--moz-device-pixel-ratio: 2) {
         font-size: 14px;
     }
 
-    #container table tbody tr td a {
+    #container table tbody tr td a,
+    #container table tbody tr td li {
         font-size: 14px;
     }
 
