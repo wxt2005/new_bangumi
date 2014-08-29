@@ -169,16 +169,6 @@ $(function() {
                     .prev().find('span').removeClass('ON');
             }
         }
-        /*$siteOptions.each(function() {
-            if (sites.show(this.id)) {
-                $(this).attr('checked', true)
-                    .prev().children('span').addClass('ON');
-                count++;
-            } else {
-                $(this).attr('checked', false)
-                    .prev().children('span').removeClass('ON');
-            }
-        });*/
         // 如果所有选项都被选中，则按钮显示为"全不选"，否则显示为"全选"
         if (count === $siteOptions.length) {
             $('#selectAll').text('全不选');
@@ -295,7 +285,7 @@ $(function() {
      * @param {string} html 要插入的HTML代码
      */
     function showTable(html) {
-        $tbody.find('tr').remove();
+        $tbody.empty();
         $tbody.append(html);
         $tbody.find('.links li:last-child').addClass('last');
     }
@@ -493,14 +483,6 @@ $(function() {
         if (count === 0) {
             $('<tr><td colspan="4">无结果</td></tr>').appendTo($tbody);
         }
-        /*
-        $items.each(function() {
-            if(decideShow($(this))) {
-                $(this).show();
-            } else {
-                $(this).hide();
-            }
-        });*/
     }
 
     /**
@@ -561,7 +543,8 @@ $(function() {
         }
         // 如果存在标题查询字符串，则检测首个单元格内链接的文字或者title是否匹配，否则隐藏
         if (status.title) {
-            var re = /status.title/i;
+            // 转义符防止问号等特殊符号出错
+            var re = new RegExp('\\' + status.title, 'i');
             var titleLink = item.find('td:eq(0) a');
             if (!re.test(titleLink.text()) && !re.test(titleLink.attr('title'))) {
                 showFlag = false;
@@ -852,7 +835,7 @@ $(function() {
     // 搜索框绑定keyup事件
     $search.keyup(function(event) {
         // 模拟按下switcher第七个按钮来显示所有番组
-        $switcher.trigger('click', [7, true]);
+        $switcher.trigger('click', [7, true, true]);
         // 显示清除按钮
         $(this).next().show();
         status.title = $(this).val();
