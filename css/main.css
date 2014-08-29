@@ -1004,7 +1004,3 @@ screen and (max--moz-device-pixel-ratio: 2) {
         display: none;
     }
 }
-
-#shadow {
-    display: none !important;
-}

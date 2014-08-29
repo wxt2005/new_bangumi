@@ -54,6 +54,7 @@ $(function() {
     // 删除noscipt标签
     $('noscript').remove();
 
+    var $shadow = $('#shadow');
     var $switcher = $('#switcher');
     var $orderJP = $('table th:eq(1) p');
     var $orderCN = $('table th:eq(2) p');
@@ -753,6 +754,9 @@ $(function() {
                 $('#header .total').text('当季共有' + data.length + '部番组');
                 // 更新最后修改时间
                 $('#header .lastModified').text(status.lastModified);
+
+                // 隐藏遮罩
+                $shadow.hide();
             },
             error: function(xhr, stat, error) {
                 // 在表格中添加显示错误信息的行
@@ -833,8 +837,13 @@ $(function() {
     // 导航栏主按钮绑定hover事件
     $topNav.find('.menu').hover(function() {
         $(this).children('ul').show();
+        $shadow.show();
     }, function() {
         $(this).children('ul').hide();
+        $shadow.hide();
+    }).click(function() {
+        $(this).children('ul').toggle();
+        $shadow.toggle();
     }).find('ul').hide();
 
     // 搜索框绑定keyup事件
@@ -967,5 +976,11 @@ $(function() {
         for (i = 0, l = changed.length; i < l; i++) {
             $.cookie(changed[i], sites.show(changed[i]), {expires: 365});
         }
+    });
+
+    // 遮罩绑定事件
+    $shadow.click(function(event) {
+        $(this).hide();
+        $topNav.find('ul').hide();
     });
 });
