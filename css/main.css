@@ -816,11 +816,13 @@ screen and (max--moz-device-pixel-ratio: 2) {
         font-size: 14px;
     }
 
-    #topbar #topnav .menu {
+    #topbar #topnav .menu,
+    #topbar #topnav .link {
         height: 40px;
     }
 
-    #topbar #topnav .menu a {
+    #topbar #topnav .menu a,
+    #topbar #topnav .link a {
         font-size: 14px;
     }
 
