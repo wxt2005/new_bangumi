@@ -52,7 +52,7 @@ $(function() {
     var $tbody = $('#bangumiList');
 
     // 删除noscipt标签
-    $tbody.find('noscirpt').remove();
+    $('noscript').remove();
 
     var $switcher = $('#switcher');
     var $orderJP = $('table th:eq(1) p');
@@ -328,7 +328,7 @@ $(function() {
     function buildSites() {
         var html = '';
         var $node = null;
-        for (i = 0, l = sites.length; i < l; i++) {
+        for (i = 0, l = sites.list.length; i < l; i++) {
             html += '<li><label for="' + sites.list[i].domain + '">' +
                 sites.list[i].name + '<span class="toggle"></span></label>' +
                 '<input type="checkbox" name="' + sites.list[i].domain + '" id="' +
@@ -478,12 +478,19 @@ $(function() {
      */
     function tableFilter() {
         var $items = $tbody.find('tr');
+        var count = 0;
+        $items.detach();
         for (i = 0, l = $items.length; i < l; i++) {
             if (decideShow($items.eq(i))) {
                 $items.eq(i).show();
+                count++;
             } else {
                 $items.eq(i).hide();
             }
+        }
+        $items.appendTo($tbody);
+        if (count === 0) {
+            $('<tr><td colspan="4">无结果</td></tr>').appendTo($tbody);
         }
         /*
         $items.each(function() {
@@ -551,10 +558,11 @@ $(function() {
         if (status.showNew && !(item.find('td:eq(0) a').is('.new'))) {
             showFlag = false;
         }
-        // 如果存在标题查询字符串，则检测首个单元格内的文字是否匹配，否则隐藏
+        // 如果存在标题查询字符串，则检测首个单元格内链接的文字或者title是否匹配，否则隐藏
         if (status.title) {
             var re = new RegExp(status.title, 'i');
-            if (!re.test(item.find('td:eq(0)').text())) {
+            var titleLink = item.find('td:eq(0) a');
+            if (!re.test(titleLink.text()) && !re.test(titleLink.attr('title'))) {
                 showFlag = false;
             }
         }
