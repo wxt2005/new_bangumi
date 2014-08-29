@@ -6,6 +6,9 @@
 /* jshint -W097 */
 
 $(function() {
+    // 删除noscipt标签
+    $('noscript').remove();
+
     var i = 0, j = 0, k = 0;
     var l = 0, m = 0, n = 0;
     var dateNow, weekDayNow, yearNow, monthNow;
@@ -51,10 +54,6 @@ $(function() {
     };
 
     var $tbody = $('#bangumiList');
-
-    // 删除noscipt标签
-    $('noscript').remove();
-
     var $shadow = $('#shadow');
     var $switcher = $('#switcher');
     var $orderJP = $('table th:eq(1) p');
