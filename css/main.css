@@ -589,6 +589,10 @@ a:active {
     margin-left: 2px;
 }
 
+#container table tbody tr td a.new.hideMark:after {
+    content: "";
+}
+
 #container table tbody tr {
     height: 50px;
     border-bottom: 1px solid #ddd;

@@ -370,7 +370,7 @@ $(function() {
                 bTime = (b[time] === '' ? -1 : +b[time]);
                 // 防止同时间的项目随机排序
                 if (aTime === bTime) {
-                    return flag * (a.titleCN - b.titleCN);
+                    return flag * (a.officalSite - b.officalSite);
                 } else {
                     return flag * (aTime - bTime);
                 }
@@ -480,6 +480,12 @@ $(function() {
         var count = 0;
         $items.detach();
         for (i = 0, l = $items.length; i < l; i++) {
+            // 如果选中仅显示新番，则不再显示新番标志
+            if (status.showNew && $items.eq(i).find('.new').length) {
+                $items.eq(i).find('.new').addClass('hideMark');
+            } else {
+                $items.eq(i).find('.new').removeClass('hideMark');
+            }
             if (decideShow($items.eq(i))) {
                 $items.eq(i).show();
                 count++;
@@ -489,7 +495,7 @@ $(function() {
         }
         $items.appendTo($tbody);
         if (count === 0) {
-            $('<tr><td colspan="4">无结果</td></tr>').appendTo($tbody);
+            $('<tr><td colspan="5">无结果</td></tr>').appendTo($tbody);
         }
     }
 
