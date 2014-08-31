@@ -1116,5 +1116,34 @@
       "http://www.bilibili.com/sp/抓狂一族"
     ],
     "newBgm": true
+  },
+  {
+    "titleCN": "虫师 续章 荆棘之路",
+    "titleJP": "蟲師 続章 特別篇「棘のみち」",
+    "officalSite": "http://www.mushishi-anime.com",
+    "weekDayJP": 3,
+    "weekDayCN": 4,
+    "timeJP": "2200",
+    "timeCN": "",
+    "onAirSite": [
+      "http://www.bilibili.com/video/av1463269/",
+      "http://www.acfun.tv/v/ac1348872"
+    ],
+    "newBgm": true,
+    "comment": "8/20 特别篇<br>全一话"
+  },
+  {
+  "titleCN": "荷包蛋的蛋黄什么时候戳破才好？",
+  "titleJP": "蟲目玉焼きの黄身 いつつぶす？",
+  "officalSite": "http://www9.nhk.or.jp/anime/medamayaki/",
+  "weekDayJP": 1,
+  "weekDayCN": 2,
+  "timeJP": "2310",
+  "timeCN": "",
+  "onAirSite": [
+    "http://www.bilibili.com/sp/荷包蛋的蛋黄什么时候戳破才好？"
+  ],
+  "newBgm": true,
+  "comment": "全四话"
   }
 ]
