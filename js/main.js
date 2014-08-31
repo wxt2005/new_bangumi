@@ -288,6 +288,7 @@ $(function() {
         $tbody.empty();
         $tbody.append(html);
         $tbody.find('.links li:last-child').addClass('last');
+        addCommentListener();
     }
 
     /**
@@ -389,7 +390,9 @@ $(function() {
         for (i = 0, l = data.length; i < l; i++) {
             html += '<tr><td><a href="' + data[i].officalSite + '" title="' +
                 data[i].titleJP + (data[i].newBgm ? '" class="new">' : '">') +
-                data[i].titleCN + '</a></td><td><span class="weekDay">' +
+                data[i].titleCN + '</a></td><td>' + (data[i].comment ? '<div class="comment">' +
+                '<div class="tooltip">' + data[i].comment + '</div></div>' : '') +
+                '</td><td><span class="weekDay">' +
                 formatWeekDay(data[i].weekDayJP, (status.jpTime ? 'jp' : 'cn')) +
                 '</span><span class="time">' + formatTime(data[i].timeJP) +
                 '</span></td><td><span class="weekDay">' +
@@ -487,6 +490,20 @@ $(function() {
     }
 
     /**
+     * 为comment按钮绑定事件
+     * @method addCommentListener
+     */
+    function addCommentListener() {
+        $tbody.find('.comment').click(function() {
+            $(this).find('div').toggle();
+        }).hover(function() {
+            $(this).find('div').show();
+        }, function() {
+            $(this).find('div').hide();
+        });
+    }
+
+    /**
      * 改变表格中所有链接的target
      * @method changeTarget
      * @param {string} target 链接目标
@@ -522,9 +539,9 @@ $(function() {
     function decideShow(item) {
         var showFlag = false;
         // 星期几
-        var itemWeekDay = item.find('td:eq(2) .weekDay').text();
+        var itemWeekDay = item.find('td:eq(3) .weekDay').text();
         // 时间
-        var itemTime = +(item.find('td:eq(2) .time').text().slice(0,2));
+        var itemTime = +(item.find('td:eq(3) .time').text().slice(0,2));
         // 如果时间非法，则记为0
         if (!itemTime) {
             itemTime = 0;

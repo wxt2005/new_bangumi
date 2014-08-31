@@ -492,8 +492,12 @@ a:active {
     *display: none;
 }
 
+#container table #comments {
+    width: 25px;
+}
+
 #container table #name {
-    width: 40%;
+    width: 38%;
 }
 
 #container table #timeJP,
@@ -515,6 +519,47 @@ a:active {
 #container table thead tr th .ordered {
     text-decoration: underline;
 }
+
+#container table tbody tr td .comment {
+    width: 20px;
+    height: 20px;
+    background: url('../images/comment.png') 0 0 no-repeat;
+    position: relative;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+#container table tbody tr td .comment .tooltip {
+    color: #000;
+    position: absolute;
+    width: 150px;
+    z-index: 2;
+    padding: 5px 7px;
+    background: #1abc9c;
+    border-radius: 6px;
+    margin-left: -72px;
+    bottom: 31px;
+    cursor: default;
+    word-wrap: break-word;
+    display: none;
+}
+
+#container table tbody tr td .comment .tooltip:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-width: 10px 10px 0 10px;
+    border-style: solid;
+    border-color: #1abc9c transparent transparent transparent;
+    bottom: -10px;
+    left: 50%;
+    margin-left: -9px;
+    position: absolute;
+}
+
+/*#container table tbody tr td .comment:hover .tooltip {
+    display: block;
+}*/
 
 #container table tbody tr td a.new:after {
     content: "new";
@@ -541,10 +586,10 @@ a:active {
     text-align: center;
 }
 
-#container table tbody tr td:first-child a {
+/*#container table tbody tr td:first-child a {
     position: relative;
     display: block;
-}
+}*/
 
 #container table tbody tr td:last-child {
     padding: 0 5px;
@@ -643,6 +688,11 @@ screen and (max--moz-device-pixel-ratio: 2) {
     #topbar #topnav .share.twitter a {
         background-image: url("../images/twitter-2x.png");
         background-size: 80px 40px;
+    }
+
+    #container table tbody tr td .comment {
+        background: url('../images/comment-2x.png') 0 0 no-repeat;
+        background-size: 20px;
     }
 }
 
@@ -761,7 +811,6 @@ screen and (max--moz-device-pixel-ratio: 2) {
     #container table thead tr th,
     #container table tbody tr td {
         padding: 6px 5px;
-        overflow: hidden;
         font-size: 16px;
         word-wrap: break-word;
         vertical-align: middle;
@@ -998,6 +1047,15 @@ screen and (max--moz-device-pixel-ratio: 2) {
     #container table tbody tr td .time {
         display: block;
         margin: 0;
+    }
+
+    #container table tbody tr td .comment {
+        font-size: 14px;
+    }
+
+    #container table tbody tr td .comment .tooltip{
+        width: 100px;
+        margin-left: -48px;
     }
 
     #footer {
