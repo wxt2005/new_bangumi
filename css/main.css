@@ -1052,7 +1052,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
     }
 
     #container table tbody tr td .links li a {
-        margin-right: 10px;
+        margin-right: 4px;
     }
 
     #container table tbody tr td .links li:after {
