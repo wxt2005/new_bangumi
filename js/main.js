@@ -2,6 +2,7 @@
 /* global console */
 /* global document */
 /* global window */
+/* global location */
 /* jshint jquery:true */
 /* jshint -W097 */
 
@@ -675,7 +676,7 @@ $(function() {
                 $.removeCookie(keys[i]);
             }
         }
-        $('#showNew, #showAll, #newTab, #jpTime, #jpTitle').each(function() {
+        /*$('#showNew, #showAll, #newTab, #jpTime, #jpTitle').each(function() {
             $(this).attr('checked', false)
                 .prev().find('span').removeClass('ON');
         });
@@ -697,7 +698,8 @@ $(function() {
             $switcher.trigger('click', [status.switchInit, true]);
         }
         changeTarget('_self');
-        checkHourSelecter();
+        checkHourSelecter();*/
+        location.reload(true);
     }
 
     /**
