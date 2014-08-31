@@ -493,11 +493,11 @@ a:active {
     *display: none;
 }
 
-#container table #comments {
+#container table #comment {
     width: 25px;
 }
 
-#container table #name {
+#container table #title {
     width: 38%;
 }
 
@@ -817,7 +817,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
         min-width: 531px;
     }
 
-    #container table #name {
+    #container table #title {
         width: 35%;
     }
 
