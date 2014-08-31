@@ -1,8 +1,3 @@
-/*防止angularjs加载时出现的闪烁*/
-/*[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-    display: none !important;
-}*/
-
 /*全局*/
 body, a, th, td, p, h1, ul, li, blockquote, input {
     font-family: "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", "SimSun", "宋体", sans-serif;
@@ -1049,7 +1044,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
 
     #container table tbody tr td .links {
         text-align: right;
-        margin-right: -10px;
+        margin-right: -8px;
     }
 
     #container table tbody tr td .links li {
