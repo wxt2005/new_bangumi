@@ -475,6 +475,7 @@ a:active {
     min-width: 730px;
     border: 8px solid #1abc9c;
     border-radius: 6px;
+    position: relative;
 }
 
 /*表格*/
@@ -555,6 +556,18 @@ a:active {
     left: 50%;
     margin-left: -9px;
     position: absolute;
+}
+
+#container table tbody tr td .comment .tooltip.opposite {
+    top: 31px;
+    bottom: auto;
+}
+
+#container table tbody tr td .comment .tooltip.opposite:after {
+    bottom: auto;
+    top: -10px;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #1abc9c transparent;
 }
 
 /*#container table tbody tr td .comment:hover .tooltip {

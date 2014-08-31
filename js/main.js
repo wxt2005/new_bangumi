@@ -495,9 +495,18 @@ $(function() {
      */
     function addCommentListener() {
         $tbody.find('.comment').click(function() {
-            $(this).find('div').toggle();
+            var $tooltip = $(this).find('div');
+            if ($(this).position().top <= $tooltip.innerHeight() * 2) {
+                $tooltip.addClass('opposite');
+            }
+            $tooltip.toggle();
         }).hover(function() {
-            $(this).find('div').show();
+            var $tooltip = $(this).find('div');
+            if ($(this).position().top <= $tooltip.innerHeight() * 2) {
+                $tooltip.addClass('opposite').show();
+            } else {
+                $tooltip.show();
+            }
         }, function() {
             $(this).find('div').hide();
         });
