@@ -236,8 +236,9 @@ $(function() {
      * @return {number} 1 0 -1
      */
     function sortLink(a, b) {
-        a = getDomain(a);
-        b = getDomain(b);
+        a = formatLink(getDomain(a));
+        b = formatLink(getDomain(b));
+        console.log(a, b);
         if (a < b) {
             return -1;
         } else if (a > b) {
@@ -250,12 +251,12 @@ $(function() {
     /**
      * 格式化链接
      * @method formatLink
-     * @param {string} url 链接
+     * @param {string} domain 主域名
      * @return {string} 链接站点的名称
      * @TODO 正确识别迅雷域名，需和getDomain一起改进
      */
-    function formatLink(url) {
-        switch (getDomain(url)) {
+    function formatLink(domain) {
+        switch (domain) {
             case 'youku':
                 return '优酷';
             case 'sohu':
@@ -417,7 +418,7 @@ $(function() {
                             linkHtml += '<li>';
                         }
                         linkHtml += '<a href="' + data[i].onAirSite[j] + '" target="_self">' +
-                            formatLink(data[i].onAirSite[j]) + '</a></li>';
+                            formatLink(getDomain(data[i].onAirSite[j])) + '</a></li>';
                     }
                 }
                 // 如果站点全部被过滤，显示'过滤'
