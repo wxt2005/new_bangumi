@@ -776,7 +776,7 @@ $(function() {
             monthNow = dateNow.getMonth() + 1;
             weekDayNow = dateNow.getDay();
             // 将获取的星期几转换为switcher的序号，存入变量
-            status.switchInit = (weekDayNow === 0 ? 7 : weekDayNow - 1);
+            status.switchInit = (weekDayNow === 0 ? 6 : weekDayNow - 1);
             switcherToday(status.switchInit);
             archive = data;
             // 获取番组json路径，读取
