@@ -498,7 +498,7 @@ a:active {
 }
 
 #container table #title {
-    width: 38%;
+    width: 40%;
 }
 
 #container table #timeJP,
@@ -579,14 +579,14 @@ a:active {
 }*/
 
 #container table tbody tr td a.new:after {
-    content: "new";
+    content: "新";
     font-size: 12px;
     font-family: sans-serif;
     color: #e74c3c;
     font-weight: normal;
     vertical-align: super;
     position: absolute;
-    margin-left: 4px;
+    margin-left: 2px;
 }
 
 #container table tbody tr {

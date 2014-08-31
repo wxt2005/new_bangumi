@@ -79,6 +79,7 @@ $(function() {
         newTab: false,
         jpTime: false,
         jpTimeZone: 8,
+        jpTitle: false,
         showNew: false
     };
 
@@ -389,8 +390,10 @@ $(function() {
             linkHtml = '';
         for (i = 0, l = data.length; i < l; i++) {
             html += '<tr><td><a href="' + data[i].officalSite + '" title="' +
-                data[i].titleJP + (data[i].newBgm ? '" class="new">' : '">') +
-                data[i].titleCN + '</a></td><td>' + (data[i].comment ? '<div class="comment">' +
+                (status.jpTitle ? data[i].titleCN : data[i].titleJP) +
+                (data[i].newBgm ? '" class="new">' : '">') +
+                (status.jpTitle ? data[i].titleJP : data[i].titleCN) + '</a></td><td>' +
+                (data[i].comment ? '<div class="comment">' +
                 '<div class="tooltip">' + data[i].comment + '</div></div>' : '') +
                 '</td><td><span class="weekDay">' +
                 formatWeekDay(data[i].weekDayJP, (status.jpTime ? 'jp' : 'cn')) +
@@ -637,6 +640,15 @@ $(function() {
                 .prev().find('span').addClass('ON');
         }
 
+        // 日文标题
+        if ($.cookie('jpTitle') !== undefined) {
+            status.jpTitle = $.cookie('jpTitle', revertBoolean);
+        }
+        if (status.jpTitle) {
+            $topNav.find('#jpTitle').attr('checked', true)
+                .prev().find('span').addClass('ON');
+        }
+
         // 转到次日
         if ($.cookie('nextTime') !== undefined) {
             status.nextTime = $.cookie('nextTime', Number);
@@ -663,7 +675,7 @@ $(function() {
                 $.removeCookie(keys[i]);
             }
         }
-        $('#showNew, #showAll, #newTab, #jpTime').each(function() {
+        $('#showNew, #showAll, #newTab, #jpTime, #jpTitle').each(function() {
             $(this).attr('checked', false)
                 .prev().find('span').removeClass('ON');
         });
@@ -671,12 +683,14 @@ $(function() {
         status.showNew = false;
         status.showAll = false;
         status.jpTime = false;
+        status.jpTitle = false;
         status.newTab = false;
         status.title = '';
         $search.blur().val('');
         changeTimeZone('jp', 8);
         sites.turnAll(true);
         checkSiteOptions();
+        showTable(dataToHTML(bgmData));
         if (status.history) {
             $switcher.trigger('click', [7, true]);
         } else {
@@ -973,6 +987,19 @@ $(function() {
         } else {
             changeTimeZone('jp', 8);
         }
+        showTable(dataToHTML(bgmData));
+        tableFilter();
+    });
+
+    // 日本标题按钮绑定事件
+    $('#jpTitle').change(function() {
+        if (this.checked) {
+            $(this).prev().find('span').addClass('ON');
+        } else {
+            $(this).prev().find('span').removeClass('ON');
+        }
+        status.jpTitle = this.checked;
+        $.cookie('jpTitle', this.checked, {expires: 365});
         showTable(dataToHTML(bgmData));
         tableFilter();
     });
