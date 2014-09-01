@@ -644,7 +644,6 @@ a:active {
 
 #container table tbody tr td .links .empty {
     color: #aaa;
-    margin-right: 10px;
 }
 
 /*页脚*/
@@ -1076,6 +1075,9 @@ screen and (max--moz-device-pixel-ratio: 2) {
         margin-left: -48px;
     }
 
+    #container table tbody tr td .links .empty {
+        margin-right: 4px;
+    }
     #footer {
         min-width: 320px;
     }
