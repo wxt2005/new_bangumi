@@ -104,10 +104,11 @@ a:active {
     width: 100px;
     position: absolute;
     top: 50px;
-    /*hide submenu for let IE7*/
-    *display: none;
     margin-left: 1px;
     display: none;
+    /*hide submenu for let IE7*/
+    *top: 40px;
+    *margin-left: -100px;
 }
 
 #topbar #topnav .menu .submenu a {

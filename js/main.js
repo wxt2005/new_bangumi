@@ -898,11 +898,16 @@ $(function() {
         $(this).children('ul').show();
         $shadow.show();
     }, function() {
-        window.clearTimeout(timer);
-        timer = window.setTimeout(function() {
+        if (Function.prototype.bind) {
+            window.clearTimeout(timer);
+            timer = window.setTimeout(function() {
+                $(this).children('ul').hide();
+                $shadow.hide();
+            }.bind(this), 300);
+        } else {
             $(this).children('ul').hide();
             $shadow.hide();
-        }.bind(this), 300);
+        }
     }).children('a').click(function(event) {
         // 单击链接时隐藏菜单
         if (event.target === this) {
