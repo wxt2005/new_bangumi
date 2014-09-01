@@ -335,6 +335,8 @@ $(function() {
             sites.show(this.id, this.checked);
             checkSiteOptions();
             showTable(dataToHTML(bgmData));
+            // 让下一次排序为JP
+            status.ordered = "CN";
             // 使用记录的switch值
             $switcher.trigger('click', [status.switchLog, true]);
             $.cookie(this.id, this.checked, {expires: 365});
