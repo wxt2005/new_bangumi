@@ -526,7 +526,7 @@ a:active {
 #container table tbody tr td .comment {
     width: 20px;
     height: 20px;
-    background: url('../images/comment.png') 0 0 no-repeat;
+    background: url("../images/comment.png") 0 0 no-repeat;
     position: relative;
     margin: 0 auto;
     cursor: pointer;
@@ -845,7 +845,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
     }
 
     #container table tbody tr td a.new:after {
-        content: '*';
+        content: "*";
         margin-left: 1px;
     }
 
@@ -1066,7 +1066,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
     }
 
     #container table tbody tr td .links li:after {
-        content: '';
+        content: "";
         display: none;
     }
 
