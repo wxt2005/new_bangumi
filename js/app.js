@@ -30,10 +30,10 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
 
     //支持的站点列表
     $scope.siteList = [
-        {name: 'A站', domain: 'acfun'}, 
-        {name: 'B站', domain: 'bilibili'}, 
-        {name: '搜狐', domain: 'sohu'}, 
-        {name: '优酷', domain: 'youku'}, 
+        {name: 'A站', domain: 'acfun'},
+        {name: 'B站', domain: 'bilibili'},
+        {name: '搜狐', domain: 'sohu'},
+        {name: '优酷', domain: 'youku'},
         {name: '腾讯', domain: 'qq'},
         {name: '爱奇艺', domain: 'iqiyi'},
         {name: '乐视', domain: 'letv'},
@@ -52,7 +52,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
 
     //APP设置
     $scope.setting = {
-        'nextTimeMax': 24,   
+        'nextTimeMax': 24,
         'nextTimeMin': 20,
         'linkTarget': '_self',
         'showAll': false,
@@ -157,12 +157,12 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
         var flag = false;
         if ($scope.query.weekDayCN === -1 ) {
             flag = true;
-        } else if ((item.weekDayCN === $scope.query.weekDayCN && 
-                    +item.timeCN.slice(0, 2) < $scope.query.nextTime) || 
-                        ((item.weekDayCN === 6 ? 0 : item.weekDayCN + 1) === $scope.query.weekDayCN && 
+        } else if ((item.weekDayCN === $scope.query.weekDayCN &&
+                    +item.timeCN.slice(0, 2) < $scope.query.nextTime) ||
+                        ((item.weekDayCN === 6 ? 0 : item.weekDayCN + 1) === $scope.query.weekDayCN &&
                          +item.timeCN.slice(0,2) >= $scope.query.nextTime)) {
             flag = true;
-        } 
+        }
         if ($scope.query.showNew && item.newBgm === false) {
             flag = false;
         }
@@ -201,7 +201,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
     $scope.checkNextTime = function() {
         if ($scope.query.nextTime === $scope.setting.nextTimeMax) {
             $scope.status.nextTime = 'max';
-        } else if ($scope.query.nextTime === $scope.setting.nextTimeMin) { 
+        } else if ($scope.query.nextTime === $scope.setting.nextTimeMin) {
             $scope.status.nextTime = 'min';
         } else {
             $scope.status.nextTime = '';
@@ -217,7 +217,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
             } else {
                 site.show = true;
             }
-            return site; 
+            return site;
         });
     };
 
@@ -226,7 +226,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
         ipCookie(domain, show, {expires: 365});
         $scope.checkSiteList();
     };
-    
+
     //显示日本时区的控制器
     $scope.jpTimeHandler = function() {
         if ($scope.setting.jpTime) {
@@ -236,11 +236,11 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
         }
         ipCookie('jpTime', $scope.setting.jpTime, {expires: 365});
     };
-    
+
     //修改时区
     $scope.changeTimeZone = function(country, utc) {
         console.log('change', country, utc);
-        var offset = utc - $scope.status[country.toLowerCase() + 'TimeZone']; 
+        var offset = utc - $scope.status[country.toLowerCase() + 'TimeZone'];
         var timeStr = 'time' + country.toUpperCase();
         var weekDayStr = 'weekDay' + country.toUpperCase();
         var time, weekDay;
@@ -324,7 +324,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
     //全选按钮的控制器
     $scope.selectAllHandler = function(flag) {
         for(i = 0, l = $scope.siteList.length; i < l; i++) {
-            $scope.siteList[i].show = flag; 
+            $scope.siteList[i].show = flag;
             ipCookie($scope.siteList[i].domain,$scope.siteList[i].show,{expires:365});
         }
         $scope.status.selectAll = !$scope.status.selectAll;
@@ -376,7 +376,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
             if (archive[file].year == year) {
                 var months = archive[file].months;
                 $scope.yearRead = archive[file].year;
-                $scope.monthRead = $scope.monthToSeason(month); 
+                $scope.monthRead = $scope.monthToSeason(month);
                 for (i = 0, l = months.length; i < l; i++ ) {
                     if ($scope.monthRead === months[i].month && months[i].json) {
                         return months[i].json;
@@ -401,7 +401,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
             //获取数据文件最后修改时间
             if (headers('Last-Modified')) {
                 var tempDate = new Date(headers('Last-Modified'));
-                $scope.status.lastModifieded = '数据更新日期: ' + tempDate.getFullYear() + '年' + 
+                $scope.status.lastModifieded = '数据更新日期: ' + tempDate.getFullYear() + '年' +
                     (tempDate.getMonth() + 1) + '月' + tempDate.getDate() + '日';
             }
 
@@ -441,7 +441,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
         } else {
             $scope.readBgm($scope.getJsonPath(yearNow, monthNow, data), $scope.status.ordered, !$scope.status.reversed);
         }
-        
+
         $scope.siteList = $scope.getSiteCookie();
         $scope.checkSiteList();
 
@@ -453,7 +453,7 @@ angular.module('BangumiList', ['ieFix', 'ipCookie'])
         $scope.setting.newTab = ipCookie('newTab') || false;
         $scope.changeTarget();
 
-        
+
     })
     .error(function(data, status) {
         $scope.status.error = true;
@@ -548,7 +548,7 @@ return false;
     return function(link) {
         switch (getDomain(link)) {
             case 'youku':
-                return '优酷';     
+                return '优酷';
             case 'sohu':
                 return '搜狐';
             case 'qq':
@@ -604,4 +604,3 @@ return false;
         }
     };
 });
-
