@@ -332,6 +332,8 @@ a:active {
     left: 0;
     height: 75px;
     line-height: 75px;
+    background: url("../images/shimakaze.png") 0 3px no-repeat #eee;
+    padding-left: 75px;
 }
 
 #header p {
@@ -707,8 +709,13 @@ screen and (max--moz-device-pixel-ratio: 2) {
     }
 
     #container table tbody tr td .comment {
-        background: url('../images/comment-2x.png') 0 0 no-repeat;
+        background-image: url("../images/comment-2x.png");
         background-size: 20px;
+    }
+
+    #header h1 {
+        background-image: url("../images/shimakaze-2x.png");
+        background-size: 70px;
     }
 }
 
@@ -998,6 +1005,8 @@ screen and (max--moz-device-pixel-ratio: 2) {
         width: 40%;
         height: 50px;
         line-height: 50px;
+        background: #eee;
+        padding-left: 0;
     }
 
     #nav {
