@@ -12,8 +12,9 @@ $(function() {
 
     var i = 0, j = 0, k = 0;
     var l = 0, m = 0, n = 0;
-    var dateNow, weekDayNow, yearNow, monthNow;
-    var yearRead, monthRead;
+    var dateNow = 0, weekDayNow = 0, yearNow = 0, monthNow = 0;
+    var yearRead = 0, monthRead = 0;
+    var timer = null;
     var weekDayCN = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
     var weekDayJP = ['日曜', '月曜', '火曜', '水曜', '木曜', '金曜', '土曜'];
 
@@ -238,7 +239,6 @@ $(function() {
     function sortLink(a, b) {
         a = formatLink(getDomain(a));
         b = formatLink(getDomain(b));
-        console.log(a, b);
         if (a < b) {
             return -1;
         } else if (a > b) {
@@ -888,11 +888,16 @@ $(function() {
 
     // 导航栏主按钮绑定hover事件
     $topNav.find('.menu').hover(function() {
+        window.clearTimeout(timer);
+        $topNav.find('ul').hide();
         $(this).children('ul').show();
         $shadow.show();
     }, function() {
-        $(this).children('ul').hide();
-        $shadow.hide();
+        window.clearTimeout(timer);
+        timer = window.setTimeout(function() {
+            $(this).children('ul').hide();
+            $shadow.hide();
+        }.bind(this), 300);
     }).children('a').click(function(event) {
         // 单击链接时隐藏菜单
         if (event.target === this) {
