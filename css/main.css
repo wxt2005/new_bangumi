@@ -332,7 +332,7 @@ a:active {
     left: 0;
     height: 75px;
     line-height: 75px;
-    background: url("../images/shimakaze.png") 0 3px no-repeat #eee;
+    background: url("http://bgmlist.qiniudn.com/images/shimakaze.png") 0 3px no-repeat #eee;
     padding-left: 75px;
 }
 
@@ -526,7 +526,7 @@ a:active {
 #container table tbody tr td .comment {
     width: 20px;
     height: 20px;
-    background: url("../images/comment.png") 0 0 no-repeat;
+    background: url("http://bgmlist.qiniudn.com/images/comment.png") 0 0 no-repeat;
     position: relative;
     margin: 0 auto;
     cursor: pointer;
@@ -684,12 +684,12 @@ screen and (max--moz-device-pixel-ratio: 2) {
     }
 
     #topbar #topnav .menu .submenu #hourSelecter .left {
-        background-image: url("../images/left-arrow-2x.png");
+        background-image: url("http://bgmlist.qiniudn.com/images/left-arrow-2x.png");
         background-size: 40px 20px;
     }
 
     #topbar #topnav .menu .submenu #hourSelecter .right {
-        background-image: url("../images/right-arrow-2x.png");
+        background-image: url("http://bgmlist.qiniudn.com/images/right-arrow-2x.png");
         background-size: 40px 20px;
     }
 
@@ -709,12 +709,12 @@ screen and (max--moz-device-pixel-ratio: 2) {
     }
 
     #container table tbody tr td .comment {
-        background-image: url("../images/comment-2x.png");
+        background-image: url("http://bgmlist.qiniudn.com/images/comment-2x.png");
         background-size: 20px;
     }
 
     #header h1 {
-        background-image: url("../images/shimakaze-2x.png");
+        background-image: url("http://bgmlist.qiniudn.com/images/shimakaze-2x.png");
         background-size: 70px;
     }
 }
