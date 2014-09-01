@@ -792,7 +792,8 @@ screen and (max--moz-device-pixel-ratio: 2) {
     }
 
     #nav #search .clear {
-        right: 20px;
+        right: 6px;
+        top: 6px;
     }
 
     #nav #search input {
