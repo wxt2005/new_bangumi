@@ -33,6 +33,19 @@ a:active {
     color: #3498db;
 }
 
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:after {
+    content: ".";
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    clear: both;
+    display: block;
+}
+
 /*顶部导航栏*/
 #topbar {
     height: 40px;
@@ -48,7 +61,6 @@ a:active {
     max-width: 960px;
     min-width: 730px;
     margin: auto;
-    overflow: hidden;
     zoom: 1;
     height: 50px;
 }
@@ -62,8 +74,12 @@ a:active {
 #topbar #topnav .menu,
 #topbar #topnav .link {
     float: left;
-    width: 80px;
+    padding: 0 20px 0 10px;
     height: 50px;
+}
+
+#topbar #topnav .menu {
+    position: relative;
 }
 
 #topbar #topnav li {
@@ -91,10 +107,19 @@ a:active {
 #topbar #topnav .link a {
     font-size: 16px;
     font-weight: normal;
+    transition: color 0.2s ease;
 }
 
-#topbar #topnav .menu a.active {
-    color: #1abc9c;
+#topbar #topnav .menu:before {
+    content: "";
+    height: 0;
+    width: 0;
+    border-color: #fff transparent transparent transparent;
+    border-style: solid;
+    border-width: 5px;
+    position: absolute;
+    top: 18px;
+    right: 6px;
 }
 
 #topbar #topnav .menu .submenu {
@@ -109,6 +134,10 @@ a:active {
     /*hide submenu for let IE7*/
     *top: 40px;
     *margin-left: -100px;
+}
+
+#topbar #topnav .menu.active .submenu {
+    display: block;
 }
 
 #topbar #topnav .menu .submenu a {
@@ -146,8 +175,6 @@ a:active {
    right: 10px;
    top: 10px;
    height: 20px;
-   overflow: hidden;
-   zoom: 1;
 }
 
 #topbar #topnav .menu .submenu #hourSelecter p {
@@ -278,8 +305,6 @@ a:active {
     display: block;
     width: 40px;
     height: 40px;
-    overflow: hidden;
-    zoom: 1;
     background-position: 0 0;
     text-indent: -9999px;
 }
@@ -360,14 +385,10 @@ a:active {
     min-width: 730px;
     margin: 0 auto;
     margin-top: 10px;
-    zoom: 1;
-    overflow: hidden;
 }
 
 /*切换按钮*/
 #nav #switcher {
-    zoom: 1;
-    overflow: hidden;
     padding-bottom: 16px;
     float: left;
     height: 36px;
@@ -388,6 +409,7 @@ a:active {
     *border-left: 2px solid #1abc9c;
     *margin-left: -2px;
     height: 32px;
+    transition: background-color 0.3s ease-in-out;
 }
 
 #nav #switcher li:first-child {
@@ -572,10 +594,6 @@ a:active {
     border-color: transparent transparent #1abc9c transparent;
 }
 
-/*#container table tbody tr td .comment:hover .tooltip {
-    display: block;
-}*/
-
 #container table tbody tr td a.new:after {
     content: "新";
     font-size: 12px;
@@ -604,11 +622,6 @@ a:active {
 #container table tbody tr td {
     text-align: center;
 }
-
-/*#container table tbody tr td:first-child a {
-    position: relative;
-    display: block;
-}*/
 
 #container table tbody tr td:last-child {
     padding: 0 5px;
@@ -739,7 +752,6 @@ screen and (max--moz-device-pixel-ratio: 2) {
 
     #header h1 {
         font-size: 40px;
-        position: static;
         margin-left: 5px;
         overflow: hidden;
     }
@@ -749,8 +761,6 @@ screen and (max--moz-device-pixel-ratio: 2) {
     }
 
     #nav {
-        overflow: hidden;
-        zoom: 1;
         min-width: 531px;
         margin: 0;
         position: static;
@@ -900,6 +910,16 @@ screen and (max--moz-device-pixel-ratio: 2) {
         font-size: 14px;
     }
 
+    #topbar #topnav .menu,
+    #topbar #topnav .link {
+        padding: 0;
+        width: 25%;
+    }
+
+    #topbar #topnav .menu:before {
+        top: 13px;
+    }
+
     #topbar #topnav .menu .submenu {
         top: 40px;
         width: 80px;
@@ -976,7 +996,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
         height: 30px;
     }
 
-    #topbar #topnav .share.plain {
+    #topbar #topnav .share {
         display: none;
     }
 
