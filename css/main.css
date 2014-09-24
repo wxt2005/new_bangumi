@@ -507,6 +507,8 @@ input::-webkit-search-cancel-button {
     -o-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
     box-sizing: content-box;
 }
 
@@ -831,9 +833,9 @@ screen and (max--moz-device-pixel-ratio: 2) {
         width: 12.5%;
         font-size: 16px;
         border-bottom: none;
-        box-sizing: border-box;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
+        box-sizing: border-box;
     }
 
     #nav #switcher li:first-child,
@@ -968,7 +970,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
     }
 
     #topbar #topnav .menu::before {
-        top: 13px;
+        border-top-color: transparent;
     }
 
     #topbar #topnav .menu .submenu {
