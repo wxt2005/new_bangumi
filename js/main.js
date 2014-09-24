@@ -62,6 +62,8 @@ $(function() {
     var $orderCN = $('table th:eq(2) p');
     var $search = $('#search input');
     var $topNav = $('#topnav');
+    var $topNavMenus = $topNav.find('.menu');
+    var $topNavMenuButtons = $topNavMenus.children('a');
     var $hourSelecter = $('#hourSelecter');
 
     var archive = null,
@@ -892,7 +894,7 @@ $(function() {
     $orderJP.click(orderHandler('JP'));
 
     // 导航栏主按钮绑定hover事件
-    $topNav.find('.menu').hover(function() {
+/*    $topNav.find('.menu').hover(function() {
         window.clearTimeout(timer);
         $topNav.find('ul').hide();
         $(this).children('ul').show();
@@ -915,7 +917,17 @@ $(function() {
             $shadow.toggle();
         }
         return false;
-    }).find('ul').hide();
+    }).find('ul').hide();*/
+
+    $topNavMenuButtons.click(function(event) {
+        if ($(this).parent().hasClass('active')) {
+            $topNavMenus.removeClass('active');
+        } else {
+            $topNavMenus.removeClass('active');
+            $(this).parent().addClass('active');
+        }
+        return false;
+    });
 
     // 搜索框绑定keyup事件
     $search.keyup(function(event) {

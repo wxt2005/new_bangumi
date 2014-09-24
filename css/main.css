@@ -62,8 +62,6 @@ a:active {
     max-width: 960px;
     min-width: 730px;
     margin: auto;
-    zoom: 1;
-    height: 50px;
 }
 
 #topbar #topnav .title {
@@ -76,7 +74,6 @@ a:active {
 #topbar #topnav .link {
     float: left;
     padding: 0 20px 0 10px;
-    height: 50px;
 }
 
 #topbar #topnav .menu {
@@ -84,7 +81,6 @@ a:active {
 }
 
 #topbar #topnav li {
-    cursor: pointer;
     line-height: 40px;
     height: 40px;
 }
@@ -155,11 +151,15 @@ a:active {
     color: #fff;
 }
 
-#topbar #topnav .menu:hover>a {
+#topbar #topnav .menu a:hover {
     color: #1abc9c;
 }
 
-#topbar #topnav .menu .submenu li:hover {
+#topbar #topnav .menu .submenu.year li {
+    transition: background-color 0.2s ease;
+}
+
+#topbar #topnav .menu .submenu.year li:hover {
     background: #1abc9c;
 }
 
@@ -230,7 +230,6 @@ a:active {
 
 #topbar #topnav .menu .submenu.display li:hover,
 #topbar #topnav .menu .submenu.sites li:hover {
-    background: #34495e;
 }
 
 #topbar #topnav .menu .submenu label,
@@ -291,6 +290,7 @@ a:active {
     cursor: pointer;
     height: 40px;
     padding: 0 3px;
+    transition: background-color 0.2s ease;
 }
 
 #topbar #topnav .menu .submenu li .all:hover {
@@ -615,6 +615,7 @@ a:active {
     height: 50px;
     border-bottom: 1px solid #ddd;
     padding-left: 20px;
+    transition: background-color 0.3s ease-in-out;
 }
 
 #container table tbody tr:hover {
@@ -902,11 +903,6 @@ screen and (max--moz-device-pixel-ratio: 2) {
         font-size: 14px;
     }
 
-    #topbar #topnav .menu,
-    #topbar #topnav .link {
-        height: 40px;
-    }
-
     #topbar #topnav .menu a,
     #topbar #topnav .link a {
         font-size: 14px;
@@ -924,6 +920,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
 
     #topbar #topnav .menu .submenu {
         top: 40px;
+        left: 10px;
         width: 80px;
     }
 
