@@ -470,6 +470,7 @@ a:active {
     background: #eee;
     width: 170px;
     height: 20px;
+    transition: 0.3s ease;
 }
 
 /*清除按钮*/
