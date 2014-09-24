@@ -27,6 +27,10 @@ ul {
 
 a {
     text-decoration: none;
+    -webkit-transition: color 0.2s ease;
+    -ms-transition: color 0.2s ease;
+    -o-transition: color 0.2s ease;
+    -moz-transition: color 0.2s ease;
     transition: color 0.2s ease;
 }
 
@@ -132,6 +136,7 @@ input::-webkit-search-cancel-button {
 
 #topbar #topnav .menu .submenu {
     background: #34495e;
+    -webkit-border-radius: 4px;
     border-radius: 4px;
     float: none;
     width: 100px;
@@ -168,7 +173,11 @@ input::-webkit-search-cancel-button {
 }
 
 #topbar #topnav .menu .submenu.year li {
-    transition: background-color 0.2s ease;
+    -webkit-transition: background 0.2s ease;
+    -ms-transition: background 0.2s ease;
+    -o-transition: background 0.2s ease;
+    -moz-transition: background 0.2s ease;
+    transition: background 0.2s ease;
 }
 
 #topbar #topnav .menu .submenu.year li:hover {
@@ -177,6 +186,7 @@ input::-webkit-search-cancel-button {
 
 #topbar #topnav .menu .submenu li {
     position: relative;
+    -webkit-border-radius: 2px;
     border-radius: 2px;
     margin: 3px;
     width: 94px;
@@ -302,7 +312,11 @@ input::-webkit-search-cancel-button {
     cursor: pointer;
     height: 40px;
     padding: 0 3px;
-    transition: background-color 0.2s ease;
+    -webkit-transition: background 0.2s ease;
+    -ms-transition: background 0.2s ease;
+    -o-transition: background 0.2s ease;
+    -moz-transition: background 0.2s ease;
+    transition: background 0.2s ease;
 }
 
 #topbar #topnav .menu .submenu li .all:hover {
@@ -421,7 +435,11 @@ input::-webkit-search-cancel-button {
     *border-left: 2px solid #1abc9c;
     *margin-left: -2px;
     height: 32px;
-    transition: background-color 0.3s ease-in-out;
+    -webkit-transition: background 0.3s ease-in-out;
+    -ms-transition: background 0.3s ease-in-out;
+    -o-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out;
 }
 
 #nav #switcher li:first-child {
@@ -475,6 +493,7 @@ input::-webkit-search-cancel-button {
     -webkit-appearance: none;
     color: #1abc9c;
     border: 2px solid #1abc9c;
+    -webkit-border-radius: 6px;
     border-radius: 6px;
     box-shadow: none;
     outline: none;
@@ -483,7 +502,11 @@ input::-webkit-search-cancel-button {
     background: #eee;
     width: 170px;
     height: 20px;
-    transition: 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
     box-sizing: content-box;
 }
 
@@ -513,6 +536,7 @@ input::-webkit-search-cancel-button {
     max-width: 960px;
     min-width: 730px;
     border: 8px solid #1abc9c;
+    -webkit-border-radius: 6px;
     border-radius: 6px;
     position: relative;
 }
@@ -558,6 +582,10 @@ input::-webkit-search-cancel-button {
 #container table thead tr th p:hover {
     color: #3498db;
     cursor: pointer;
+    -webkit-transition: color 0.2s ease;
+    -ms-transition: color 0.2s ease;
+    -o-transition: color 0.2s ease;
+    -moz-transition: color 0.2s ease;
     transition: color 0.2s ease;
 }
 
@@ -581,6 +609,7 @@ input::-webkit-search-cancel-button {
     z-index: 2;
     padding: 5px 7px;
     background: #1abc9c;
+    -webkit-border-radius: 6px;
     border-radius: 6px;
     margin-left: -72px;
     bottom: 31px;
@@ -633,7 +662,11 @@ input::-webkit-search-cancel-button {
     height: 50px;
     border-bottom: 1px solid #ddd;
     padding-left: 20px;
-    transition: background-color 0.3s ease-in-out;
+    -webkit-transition: background 0.3s ease-in-out;
+    -ms-transition: background 0.3s ease-in-out;
+    -o-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out;
 }
 
 #container table tbody tr:hover {
@@ -805,6 +838,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
 
     #nav #switcher li:first-child,
     #nav #switcher li:last-child {
+        -webkit-border-radius: 0;
         border-radius: 0;
     }
 
@@ -836,6 +870,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
 
     #nav #search input {
         width: 140px;
+        -webkit-border-radius: 0;
         border-radius: 0;
         font-size: 14px;
         padding: 4px 8px;
