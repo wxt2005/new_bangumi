@@ -922,9 +922,11 @@ $(function() {
     $topNavMenuButtons.click(function(event) {
         if ($(this).parent().hasClass('active')) {
             $topNavMenus.removeClass('active');
+            $shadow.hide();
         } else {
             $topNavMenus.removeClass('active');
             $(this).parent().addClass('active');
+            $shadow.show();
         }
         return false;
     });
@@ -1077,7 +1079,7 @@ $(function() {
     // 遮罩绑定事件
     $shadow.click(function(event) {
         $(this).hide();
-        $topNav.find('ul').hide();
+        $topNavMenus.removeClass('active');
     });
 
     // 分享按钮绑定事件
