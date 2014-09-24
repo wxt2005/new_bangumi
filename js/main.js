@@ -894,31 +894,6 @@ $(function() {
     $orderJP.click(orderHandler('JP'));
 
     // 导航栏主按钮绑定hover事件
-/*    $topNav.find('.menu').hover(function() {
-        window.clearTimeout(timer);
-        $topNav.find('ul').hide();
-        $(this).children('ul').show();
-        $shadow.show();
-    }, function() {
-        if (Function.prototype.bind) {
-            window.clearTimeout(timer);
-            timer = window.setTimeout(function() {
-                $(this).children('ul').hide();
-                $shadow.hide();
-            }.bind(this), 300);
-        } else {
-            $(this).children('ul').hide();
-            $shadow.hide();
-        }
-    }).children('a').click(function(event) {
-        // 单击链接时隐藏菜单
-        if (event.target === this) {
-            $(this).next().toggle();
-            $shadow.toggle();
-        }
-        return false;
-    }).find('ul').hide();*/
-
     $topNavMenuButtons.click(function(event) {
         if ($(this).parent().hasClass('active')) {
             $topNavMenus.removeClass('active');
@@ -933,8 +908,10 @@ $(function() {
 
     // 搜索框绑定keyup事件
     $search.keyup(function(event) {
-        // 模拟按下switcher第七个按钮来显示所有番组
-        $switcher.trigger('click', [7, true, true]);
+        // 第一次按键时模拟按下switcher第七个按钮来显示所有番组
+        if (event.target.value.length === 1) {
+            $switcher.trigger('click', [7, true, true]);
+        }
         // 显示清除按钮
         $(this).next().show();
         status.title = $(this).val();

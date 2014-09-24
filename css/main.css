@@ -45,13 +45,18 @@ a:active {
     *zoom: 1;
 }
 
-.clearfix:after {
+.clearfix::after {
     content: ".";
     height: 0;
     width: 0;
     visibility: hidden;
     clear: both;
     display: block;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+	display: none;
 }
 
 /*顶部导航栏*/
@@ -113,7 +118,7 @@ a:active {
     font-weight: normal;
 }
 
-#topbar #topnav .menu:before {
+#topbar #topnav .menu::before {
     content: "";
     height: 0;
     width: 0;
@@ -210,7 +215,7 @@ a:active {
 }
 
 /*三角形*/
-#topbar #topnav .menu>.submenu:before {
+#topbar #topnav .menu>.submenu::before {
     content: "";
     width: 0;
     height: 0;
@@ -439,7 +444,7 @@ a:active {
 }
 
 /*三角形*/
-#nav #switcher li.selected:after {
+#nav #switcher li.selected::after {
     content: "";
     position: absolute;
     width: 0;
@@ -467,6 +472,7 @@ a:active {
 }
 
 #nav #search input {
+    -webkit-appearance: none;
     color: #1abc9c;
     border: 2px solid #1abc9c;
     border-radius: 6px;
@@ -478,6 +484,11 @@ a:active {
     width: 170px;
     height: 20px;
     transition: 0.3s ease;
+    box-sizing: content-box;
+}
+
+#nav #search input:focus::-webkit-input-placeholder {
+    color: transparent;
 }
 
 /*清除按钮*/
@@ -578,7 +589,7 @@ a:active {
     display: none;
 }
 
-#container table tbody tr td .comment .tooltip:after {
+#container table tbody tr td .comment .tooltip::after {
     content: "";
     width: 0;
     height: 0;
@@ -596,14 +607,14 @@ a:active {
     bottom: auto;
 }
 
-#container table tbody tr td .comment .tooltip.opposite:after {
+#container table tbody tr td .comment .tooltip.opposite::after {
     bottom: auto;
     top: -10px;
     border-width: 0 10px 10px 10px;
     border-color: transparent transparent #1abc9c transparent;
 }
 
-#container table tbody tr td a.new:after {
+#container table tbody tr td a.new::after {
     content: "新";
     font-size: 12px;
     font-family: sans-serif;
@@ -614,7 +625,7 @@ a:active {
     margin-left: 2px;
 }
 
-#container table tbody tr td a.new.hideMark:after {
+#container table tbody tr td a.new.hideMark::after {
     content: "";
 }
 
@@ -658,12 +669,12 @@ a:active {
     cursor: default;
 }
 
-#container table tbody tr td .links li:after {
+#container table tbody tr td .links li::after {
     content: "\00A0\007C\00A0";
     vertical-align: 6%;
 }
 
-#container table tbody tr td .links .last:after {
+#container table tbody tr td .links .last::after {
     content: "\00A0";
 }
 
@@ -805,7 +816,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
         border-right: none;
     }
 
-    #nav #switcher li.selected:after {
+    #nav #switcher li.selected::after {
         display: none;
     }
 
@@ -834,7 +845,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
         color: transparent;
     }
 
-    #nav #search input::-webkit-input-placeholder:before {
+    #nav #search input::-webkit-input-placeholder::before {
         color: #a9a9a9;
         content: "搜索";
     }
@@ -864,7 +875,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
         display: none;
     }
 
-    #container table tbody tr td a.new:after {
+    #container table tbody tr td a.new::after {
         content: "*";
         margin-left: 1px;
     }
@@ -921,7 +932,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
         width: 25%;
     }
 
-    #topbar #topnav .menu:before {
+    #topbar #topnav .menu::before {
         top: 13px;
     }
 
@@ -1091,7 +1102,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
         margin-right: 4px;
     }
 
-    #container table tbody tr td .links li:after {
+    #container table tbody tr td .links li::after {
         content: "";
         display: none;
     }
