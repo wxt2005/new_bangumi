@@ -1,8 +1,3 @@
-/*防止angularjs加载时出现的闪烁*/
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-    display: none !important;
-}
-
 /*全局*/
 body, a, th, td, p, h1, ul, li, blockquote, input {
     font-family: "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", "SimSun", "宋体", sans-serif;
@@ -27,13 +22,13 @@ a {
     text-decoration: none;
 }
 
-a:link, 
+a:link,
 a:visited {
     color: black;
 }
 
-a:focus, 
-a:hover, 
+a:focus,
+a:hover,
 a:active {
     color: #3498db;
 }
@@ -64,7 +59,8 @@ a:active {
     width: 100px;
 }
 
-#topbar #topnav .menu {
+#topbar #topnav .menu,
+#topbar #topnav .link {
     float: left;
     width: 80px;
     height: 50px;
@@ -91,7 +87,8 @@ a:active {
     color: #1abc9c;
 }
 
-#topbar #topnav .menu a {
+#topbar #topnav .menu a,
+#topbar #topnav .link a {
     font-size: 16px;
     font-weight: normal;
 }
@@ -107,9 +104,11 @@ a:active {
     width: 100px;
     position: absolute;
     top: 50px;
-    /*hide submenu for let IE7*/
-    *display: none;
     margin-left: 1px;
+    display: none;
+    /*hide submenu for let IE7*/
+    *top: 40px;
+    *margin-left: -100px;
 }
 
 #topbar #topnav .menu .submenu a {
@@ -142,7 +141,7 @@ a:active {
     width: 94px;
 }
 
-#topbar #topnav .menu .submenu .hourSelecter {
+#topbar #topnav .menu .submenu #hourSelecter {
    position: absolute;
    right: 10px;
    top: 10px;
@@ -151,28 +150,28 @@ a:active {
    zoom: 1;
 }
 
-#topbar #topnav .menu .submenu .hourSelecter p {
+#topbar #topnav .menu .submenu #hourSelecter p {
     height: 20px;
     line-height: 20px;
     float: left;
 }
 
-#topbar #topnav .menu .submenu .hourSelecter span {
+#topbar #topnav .menu .submenu #hourSelecter span {
     position: static;
     float: left;
 }
 
-#topbar #topnav .menu .submenu .hourSelecter .left {
+#topbar #topnav .menu .submenu #hourSelecter .left {
     margin-right: 5px;
     background: url("../images/left-arrow.png") 0 0 transparent;
 }
 
-#topbar #topnav .menu .submenu .hourSelecter .right {
+#topbar #topnav .menu .submenu #hourSelecter .right {
     margin-left: 5px;
     background: url("../images/right-arrow.png") 0 0 transparent;
 }
 
-#topbar #topnav .menu .submenu .hourSelecter .disable {
+#topbar #topnav .menu .submenu #hourSelecter .disable {
     background-position: 20px 0;
 }
 
@@ -207,7 +206,8 @@ a:active {
     background: #34495e;
 }
 
-#topbar #topnav .menu .submenu label {
+#topbar #topnav .menu .submenu label,
+#topbar #topnav .menu .submenu .label {
     position: relative;
     display: block;
     left: 10px;
@@ -332,6 +332,8 @@ a:active {
     left: 0;
     height: 75px;
     line-height: 75px;
+    background: url("../images/shimakaze.png") 0 3px no-repeat #eee;
+    padding-left: 75px;
 }
 
 #header p {
@@ -471,6 +473,7 @@ a:active {
     min-width: 730px;
     border: 8px solid #1abc9c;
     border-radius: 6px;
+    position: relative;
 }
 
 /*表格*/
@@ -488,12 +491,16 @@ a:active {
     *display: none;
 }
 
-#container table #name {
+#container table #comment {
+    width: 25px;
+}
+
+#container table #title {
     width: 40%;
 }
 
-#container table #time-jp, 
-#container table #time-cn {
+#container table #timeJP,
+#container table #timeCN {
     width: 15%;
 }
 
@@ -501,6 +508,10 @@ a:active {
     background: #1abc9c;
     height: 30px;
     vertical-align: -4px;
+}
+
+#container table thead tr th:first-child {
+    text-indent: -25px;
 }
 
 #container table thead tr th p:hover {
@@ -512,15 +523,72 @@ a:active {
     text-decoration: underline;
 }
 
+#container table tbody tr td .comment {
+    width: 20px;
+    height: 20px;
+    background: url("../images/comment.png") 0 0 no-repeat;
+    position: relative;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+#container table tbody tr td .comment .tooltip {
+    color: #000;
+    position: absolute;
+    width: 150px;
+    z-index: 2;
+    padding: 5px 7px;
+    background: #1abc9c;
+    border-radius: 6px;
+    margin-left: -72px;
+    bottom: 31px;
+    cursor: default;
+    word-wrap: break-word;
+    display: none;
+}
+
+#container table tbody tr td .comment .tooltip:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-width: 10px 10px 0 10px;
+    border-style: solid;
+    border-color: #1abc9c transparent transparent transparent;
+    bottom: -10px;
+    left: 50%;
+    margin-left: -9px;
+    position: absolute;
+}
+
+#container table tbody tr td .comment .tooltip.opposite {
+    top: 31px;
+    bottom: auto;
+}
+
+#container table tbody tr td .comment .tooltip.opposite:after {
+    bottom: auto;
+    top: -10px;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #1abc9c transparent;
+}
+
+/*#container table tbody tr td .comment:hover .tooltip {
+    display: block;
+}*/
+
 #container table tbody tr td a.new:after {
-    content: "new";
+    content: "新";
     font-size: 12px;
     font-family: sans-serif;
     color: #e74c3c;
     font-weight: normal;
     vertical-align: super;
     position: absolute;
-    margin-left: 4px;
+    margin-left: 2px;
+}
+
+#container table tbody tr td a.new.hideMark:after {
+    content: "";
 }
 
 #container table tbody tr {
@@ -537,10 +605,10 @@ a:active {
     text-align: center;
 }
 
-#container table tbody tr td:first-child a {
+/*#container table tbody tr td:first-child a {
     position: relative;
     display: block;
-}
+}*/
 
 #container table tbody tr td:last-child {
     padding: 0 5px;
@@ -552,28 +620,32 @@ a:active {
     margin-right: 5px;
 }
 
-#container table tbody tr td .link-list li {
+#container table tbody tr td .links li {
     display: inline-block;
 }
 
 /*修复IE7inline-block失效的问题*/
-#container table tbody tr td .link-list li {
+#container table tbody tr td .links li {
     *display: inline;
     *margin-right: 10px;
 }
 
-#container table tbody tr td .link-list li .disabled {
+#container table tbody tr td .links li .disabled {
     color: #aaa;
     cursor: default;
 }
 
-#container table tbody tr td .link-list li:after {
+#container table tbody tr td .links li:after {
     content: "\00A0\007C\00A0";
     vertical-align: 6%;
 }
 
-#container table tbody tr td .link-list .lastLink:after {
+#container table tbody tr td .links .last:after {
     content: "\00A0";
+}
+
+#container table tbody tr td .links .empty {
+    color: #aaa;
 }
 
 /*页脚*/
@@ -599,7 +671,7 @@ a:active {
     color: #34495e;
 }
 
-@media screen and (-webkit-min-device-pixel-ratio: 2), 
+@media screen and (-webkit-min-device-pixel-ratio: 2),
 screen and (max--moz-device-pixel-ratio: 2) {
     #topbar #topnav .menu .submenu .toggle {
         background-image: url("../images/checkbox-2x.png");
@@ -611,12 +683,12 @@ screen and (max--moz-device-pixel-ratio: 2) {
         background-size: 20px 20px;
     }
 
-    #topbar #topnav .menu .submenu .hourSelecter .left {
+    #topbar #topnav .menu .submenu #hourSelecter .left {
         background-image: url("../images/left-arrow-2x.png");
         background-size: 40px 20px;
     }
 
-    #topbar #topnav .menu .submenu .hourSelecter .right {
+    #topbar #topnav .menu .submenu #hourSelecter .right {
         background-image: url("../images/right-arrow-2x.png");
         background-size: 40px 20px;
     }
@@ -625,15 +697,25 @@ screen and (max--moz-device-pixel-ratio: 2) {
         background-image: url("../images/search-2x.png");
         background-size: 32px 32px;
     }
-    
+
     #topbar #topnav .share.weibo a {
         background-image: url("../images/weibo-2x.png");
         background-size: 80px 40px;
     }
-    
+
     #topbar #topnav .share.twitter a {
         background-image: url("../images/twitter-2x.png");
         background-size: 80px 40px;
+    }
+
+    #container table tbody tr td .comment {
+        background-image: url("../images/comment-2x.png");
+        background-size: 20px;
+    }
+
+    #header h1 {
+        background-image: url("../images/shimakaze-2x.png");
+        background-size: 70px;
     }
 }
 
@@ -645,11 +727,11 @@ screen and (max--moz-device-pixel-ratio: 2) {
     #topbar #topnav {
         min-width: 531px;
     }
-    
+
     #topbar #topnav .title {
         display: none;
     }
-    
+
     #header {
         min-width: 531px;
         margin: 0;
@@ -685,9 +767,9 @@ screen and (max--moz-device-pixel-ratio: 2) {
         width: 12.5%;
         font-size: 16px;
         border-bottom: none;
-        box-sizing: border-box; 
-        -webkit-box-sizing: border-box; 
-        -moz-box-sizing: border-box; 
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
     }
 
     #nav #switcher li:first-child,
@@ -717,7 +799,8 @@ screen and (max--moz-device-pixel-ratio: 2) {
     }
 
     #nav #search .clear {
-        right: 20px;
+        right: 6px;
+        top: 6px;
     }
 
     #nav #search input {
@@ -745,14 +828,13 @@ screen and (max--moz-device-pixel-ratio: 2) {
         min-width: 531px;
     }
 
-    #container table #name { 
+    #container table #title {
         width: 35%;
     }
 
     #container table thead tr th,
     #container table tbody tr td {
         padding: 6px 5px;
-        overflow: hidden;
         font-size: 16px;
         word-wrap: break-word;
         vertical-align: middle;
@@ -763,7 +845,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
     }
 
     #container table tbody tr td a.new:after {
-        content: '*';
+        content: "*";
         margin-left: 1px;
     }
 
@@ -800,7 +882,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
     #topbar #topnav {
         min-width: 320px;
         height: 40px;
-    }    
+    }
 
     #topbar #topnav li {
         height: 30px;
@@ -808,11 +890,13 @@ screen and (max--moz-device-pixel-ratio: 2) {
         font-size: 14px;
     }
 
-    #topbar #topnav .menu {
+    #topbar #topnav .menu,
+    #topbar #topnav .link {
         height: 40px;
     }
 
-    #topbar #topnav .menu a {
+    #topbar #topnav .menu a,
+    #topbar #topnav .link a {
         font-size: 14px;
     }
 
@@ -839,7 +923,8 @@ screen and (max--moz-device-pixel-ratio: 2) {
     }
 
     #topbar #topnav .menu .submenu.display li,
-    #topbar #topnav .menu .submenu label {
+    #topbar #topnav .menu .submenu label,
+    #topbar #topnav .menu .submenu .label {
         width: 164px;
     }
 
@@ -861,24 +946,24 @@ screen and (max--moz-device-pixel-ratio: 2) {
         height: 15px;
     }
 
-    #topbar #topnav .menu .submenu .hourSelecter {
+    #topbar #topnav .menu .submenu #hourSelecter {
         height: 15px;
         top: 7.5px;
     }
 
-    #topbar #topnav .menu .submenu .hourSelecter p {
+    #topbar #topnav .menu .submenu #hourSelecter p {
         height: 15px;
         line-height: 15px;
     }
 
-    #topbar #topnav .menu .submenu .hourSelecter .left,
-    #topbar #topnav .menu .submenu .hourSelecter .right,
+    #topbar #topnav .menu .submenu #hourSelecter .left,
+    #topbar #topnav .menu .submenu #hourSelecter .right,
     #topbar #topnav .menu .submenu .toggle {
         background-size: 30px 15px;
         background-position: 0 0;
     }
 
-    #topbar #topnav .menu .submenu .hourSelecter .disable {
+    #topbar #topnav .menu .submenu #hourSelecter .disable {
         background-position: 15px 0;
     }
 
@@ -920,7 +1005,9 @@ screen and (max--moz-device-pixel-ratio: 2) {
         width: 40%;
         height: 50px;
         line-height: 50px;
-    }    
+        background: #eee;
+        padding-left: 0;
+    }
 
     #nav {
         min-width: 320px;
@@ -947,7 +1034,8 @@ screen and (max--moz-device-pixel-ratio: 2) {
         font-size: 14px;
     }
 
-    #container table tbody tr td a {
+    #container table tbody tr td a,
+    #container table tbody tr td li {
         font-size: 14px;
     }
 
@@ -955,6 +1043,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
     #container table tbody tr td:first-child  {
         text-align: left;
         padding: 6px 8px;
+        text-indent: 0;
     }
 
     #container table thead tr th:last-child,
@@ -963,21 +1052,21 @@ screen and (max--moz-device-pixel-ratio: 2) {
         padding: 6px 8px;
     }
 
-    #container table tbody tr td .link-list {
+    #container table tbody tr td .links {
         text-align: right;
-        margin-right: -10px;
+        margin-right: -8px;
     }
 
-    #container table tbody tr td .link-list li {
+    #container table tbody tr td .links li {
         width: auto;
     }
 
-    #container table tbody tr td .link-list li a {
-        margin-right: 10px;
+    #container table tbody tr td .links li a {
+        margin-right: 4px;
     }
 
-    #container table tbody tr td .link-list li:after {
-        content: '';
+    #container table tbody tr td .links li:after {
+        content: "";
         display: none;
     }
 
@@ -987,6 +1076,18 @@ screen and (max--moz-device-pixel-ratio: 2) {
         margin: 0;
     }
 
+    #container table tbody tr td .comment {
+        font-size: 14px;
+    }
+
+    #container table tbody tr td .comment .tooltip{
+        width: 100px;
+        margin-left: -48px;
+    }
+
+    #container table tbody tr td .links .empty {
+        margin-right: 4px;
+    }
     #footer {
         min-width: 320px;
     }
