@@ -96,6 +96,7 @@ a:active {
 #topbar #topnav li a {
     font-size: 20px;
     color: #fff;
+    transition: color 0.2s ease;
 }
 
 #topbar #topnav li a:focus,
@@ -107,7 +108,6 @@ a:active {
 #topbar #topnav .link a {
     font-size: 16px;
     font-weight: normal;
-    transition: color 0.2s ease;
 }
 
 #topbar #topnav .menu:before {
