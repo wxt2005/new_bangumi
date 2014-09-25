@@ -62,6 +62,9 @@ $(function() {
     var $orderCN = $('table th:eq(2) p');
     var $search = $('#search input');
     var $topNav = $('#topnav');
+    var $topNavMenus = $topNav.find('.menu');
+    var $topNavMenuButtons = $topNavMenus.children('a');
+    var $subMenus = $topNavMenus.find('.submenu');
     var $hourSelecter = $('#hourSelecter');
 
     var archive = null,
@@ -514,19 +517,22 @@ $(function() {
     function addCommentListener() {
         $tbody.find('.comment').click(function() {
             var $tooltip = $(this).find('div');
-            if ($(this).position().top <= $tooltip.innerHeight() * 2) {
+            if ($tooltip.css('display') === 'block') {
+                $tooltip.fadeOut(200);
+            } else if ($(this).position().top <= $tooltip.innerHeight() * 2) {
                 $tooltip.addClass('opposite');
+                $tooltip.fadeIn(200);
+            } else {
+                $tooltip.fadeIn(200);
             }
-            $tooltip.toggle();
         }).hover(function() {
             var $tooltip = $(this).find('div');
             if ($(this).position().top <= $tooltip.innerHeight() * 2) {
-                $tooltip.addClass('opposite').show();
-            } else {
-                $tooltip.show();
+                $tooltip.addClass('opposite');
             }
+            $tooltip.fadeIn(200);
         }, function() {
-            $(this).find('div').hide();
+            $(this).find('div').fadeOut(200);
         });
     }
 
@@ -690,29 +696,6 @@ $(function() {
                 $.removeCookie(keys[i]);
             }
         }
-        /*$('#showNew, #showAll, #newTab, #jpTime, #jpTitle').each(function() {
-            $(this).attr('checked', false)
-                .prev().find('span').removeClass('ON');
-        });
-        status.nextTime = 24;
-        status.showNew = false;
-        status.showAll = false;
-        status.jpTime = false;
-        status.jpTitle = false;
-        status.newTab = false;
-        status.title = '';
-        $search.blur().val('');
-        changeTimeZone('jp', 8);
-        sites.turnAll(true);
-        checkSiteOptions();
-        showTable(dataToHTML(bgmData));
-        if (status.history) {
-            $switcher.trigger('click', [7, true]);
-        } else {
-            $switcher.trigger('click', [status.switchInit, true]);
-        }
-        changeTarget('_self');
-        checkHourSelecter();*/
         location.reload(true);
     }
 
@@ -765,6 +748,7 @@ $(function() {
      * @param {string} path JSON文件的路径
      */
     function getBgmJSON(path) {
+        $shadow.show();
         $.ajax({
             url: path,
             success: function(data, stat, xhr) {
@@ -812,7 +796,7 @@ $(function() {
                 $('#header .lastModified').text(status.lastModified);
 
                 // 隐藏遮罩
-                $shadow.hide();
+                $shadow.fadeOut(200);
             },
             error: function(xhr, stat, error) {
                 // 在表格中添加显示错误信息的行
@@ -892,35 +876,25 @@ $(function() {
     $orderJP.click(orderHandler('JP'));
 
     // 导航栏主按钮绑定hover事件
-    $topNav.find('.menu').hover(function() {
-        window.clearTimeout(timer);
-        $topNav.find('ul').hide();
-        $(this).children('ul').show();
-        $shadow.show();
-    }, function() {
-        if (Function.prototype.bind) {
-            window.clearTimeout(timer);
-            timer = window.setTimeout(function() {
-                $(this).children('ul').hide();
-                $shadow.hide();
-            }.bind(this), 300);
+    $topNavMenuButtons.click(function(event) {
+        var $subMenu = $(this).next();
+        if ($subMenu.css('display') === "block") {
+            $subMenu.fadeOut(200);
+            $shadow.fadeOut(200);
         } else {
-            $(this).children('ul').hide();
-            $shadow.hide();
-        }
-    }).children('a').click(function(event) {
-        // 单击链接时隐藏菜单
-        if (event.target === this) {
-            $(this).next().toggle();
-            $shadow.toggle();
+            $subMenus.hide();
+            $subMenu.fadeIn(200);
+            $shadow.fadeIn(200);
         }
         return false;
-    }).find('ul').hide();
+    });
 
     // 搜索框绑定keyup事件
     $search.keyup(function(event) {
-        // 模拟按下switcher第七个按钮来显示所有番组
-        $switcher.trigger('click', [7, true, true]);
+        // 第一次按键时模拟按下switcher第七个按钮来显示所有番组
+        if (event.target.value.length === 1) {
+            $switcher.trigger('click', [7, true, true]);
+        }
         // 显示清除按钮
         $(this).next().show();
         status.title = $(this).val();
@@ -1063,9 +1037,9 @@ $(function() {
     });
 
     // 遮罩绑定事件
-    $shadow.click(function(event) {
-        $(this).hide();
-        $topNav.find('ul').hide();
+    $shadow.click(function() {
+        $(this).fadeOut(200);
+        $subMenus.hide();
     });
 
     // 分享按钮绑定事件
