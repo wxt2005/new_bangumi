@@ -513,7 +513,7 @@ $(function() {
      * 为comment按钮绑定事件
      * @method addCommentListener
      */
-    function addCommentListener() {
+    /*function addCommentListener() {
         $tbody.find('.comment').click(function() {
             var $tooltip = $(this).find('div');
             if ($(this).position().top <= $tooltip.innerHeight() * 2) {
@@ -530,6 +530,23 @@ $(function() {
         }, function() {
             $(this).find('div').hide();
         });
+    }*/
+    function addCommentListener() {
+        $tbody.find('.comment').click(function() {
+            var $tooltip = $(this).find('div');
+            if ($(this).position().top <= $tooltip.innerHeight() * 2) {
+                $tooltip.addClass('opposite');
+            }
+            $tooltip.toggleClass('active');
+        })/*.hover(function() {
+            var $tooltip = $(this).find('div');
+            if ($(this).position().top <= $tooltip.innerHeight() * 2) {
+                $tooltip.addClass('opposite');
+            }
+            $tooltip.addClass('active');
+        }, function() {
+            $(this).find('div').removeClass('active');
+        })*/;
     }
 
     /**
@@ -814,7 +831,7 @@ $(function() {
                 $('#header .lastModified').text(status.lastModified);
 
                 // 隐藏遮罩
-                $shadow.hide();
+                //$shadow.hide();
             },
             error: function(xhr, stat, error) {
                 // 在表格中添加显示错误信息的行
@@ -897,11 +914,13 @@ $(function() {
     $topNavMenuButtons.click(function(event) {
         if ($(this).parent().hasClass('active')) {
             $topNavMenus.removeClass('active');
-            $shadow.hide();
+            //$shadow.hide();
+            $shadow.removeClass('active');
         } else {
             $topNavMenus.removeClass('active');
             $(this).parent().addClass('active');
-            $shadow.show();
+            //$shadow.show();
+            $shadow.addClass('active');
         }
         return false;
     });
@@ -1055,7 +1074,8 @@ $(function() {
 
     // 遮罩绑定事件
     $shadow.click(function(event) {
-        $(this).hide();
+        //$(this).hide();
+        $(this).removeClass('active');
         $topNavMenus.removeClass('active');
     });
 
