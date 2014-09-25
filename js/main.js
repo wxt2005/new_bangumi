@@ -538,15 +538,7 @@ $(function() {
                 $tooltip.addClass('opposite');
             }
             $tooltip.toggleClass('active');
-        })/*.hover(function() {
-            var $tooltip = $(this).find('div');
-            if ($(this).position().top <= $tooltip.innerHeight() * 2) {
-                $tooltip.addClass('opposite');
-            }
-            $tooltip.addClass('active');
-        }, function() {
-            $(this).find('div').removeClass('active');
-        })*/;
+        });
     }
 
     /**
