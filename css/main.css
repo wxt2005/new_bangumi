@@ -37,7 +37,7 @@ a {
 
 a:link,
 a:visited {
-    color: black;
+    color: #000;
 }
 
 a:focus,
@@ -47,7 +47,12 @@ a:active {
 }
 
 .clearfix {
+    overflow: hidden\9;
     *zoom: 1;
+}
+
+:root .clearfix {
+    overflow: visible;
 }
 
 .clearfix::after {
@@ -148,19 +153,21 @@ input::-webkit-search-cancel-button {
     *top: 40px;
     *margin-left: -100px;
     opacity: 0;
-    filter: alpha("opacity=0");
+    filter: alpha(opacity=0);
     pointer-events: none;
     -webkit-transition: 0.3s ease-in-out;
     -moz-transition: 0.3s ease-in-out;
     -o-transition: 0.3s ease-in-out;
     -ms-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
+    display: none;
 }
 
 #topbar #topnav .menu.active .submenu {
     opacity: 1;
-    filter: alpha("opacity=100");
+    filter: alpha(opacity=100);
     pointer-events: auto;
+    display: block;
 }
 
 #topbar #topnav .menu .submenu a {
@@ -374,15 +381,17 @@ input::-webkit-search-cancel-button {
     /*background: rgba(230, 230, 230, 0.5);*/
     background: rgb(230, 230, 230);
     opacity: 0;
-    filter: alpha("opacity=0");
+    filter: alpha(opacity=0);
     pointer-events: none;
     transition: 0.3s ease;
+    display: none;
 }
 
 #shadow.active {
     opacity: 0.5;
-    filter: alpha("opacity=50");
+    filter: alpha(opacity=50);
     pointer-events: auto;
+    display: block;
 }
 
 /*标题栏*/
@@ -639,19 +648,21 @@ input::-webkit-search-cancel-button {
     cursor: default;
     word-wrap: break-word;
     opacity: 0;
-    filter: alpha("opacity=0");
+    filter: alpha(opacity=0);
     pointer-events: none;
 	-webkit-transition: opacity 0.3s ease-in-out;
 	-moz-transition: opacity 0.3s ease-in-out;
 	-ms-transition: opacity 0.3s ease-in-out;
 	-o-transition: opacity 0.3s ease-in-out;
 	transition: opacity 0.3s ease-in-out;
+    display: none;
 }
 
 #container table tbody tr td .comment .tooltip.active {
     opacity: 1;
-    filter: alpha("opacity=100");
+    filter: alpha(opacity=100);
     pointer-events: auto;
+    display: block;
 }
 
 #container table tbody tr td .comment .tooltip::after {
