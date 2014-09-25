@@ -149,24 +149,9 @@ input::-webkit-search-cancel-button {
     width: 100px;
     position: absolute;
     top: 50px;
-    /*hide submenu for let IE7*/
     *top: 40px;
     *margin-left: -100px;
-    /*opacity: 0;
-    filter: alpha(opacity=0);
-    pointer-events: none;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition: 0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    -ms-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out;*/
     display: none;
-}
-
-#topbar #topnav .menu.active .submenu {
-    opacity: 1;
-    filter: alpha(opacity=100);
-    pointer-events: auto;
 }
 
 #topbar #topnav .menu .submenu a {
@@ -377,20 +362,8 @@ input::-webkit-search-cancel-button {
     z-index: 1;
     /*for let IE7*/
     *display: none;
-    /*background: rgba(230, 230, 230, 0.5);*/
     background: rgba(230, 230, 230, 0.5);
-    /*opacity: 0;
-    filter: alpha(opacity=0);
-    pointer-events: none;
-    transition: 0.3s ease;*/
     display: none;
-}
-
-#shadow.active {
-    opacity: 0.5;
-    filter: alpha(opacity=50);
-    pointer-events: auto;
-    display: block;
 }
 
 /*标题栏*/
@@ -646,22 +619,7 @@ input::-webkit-search-cancel-button {
     bottom: 31px;
     cursor: default;
     word-wrap: break-word;
-    /*opacity: 0;
-    filter: alpha(opacity=0);
-    pointer-events: none;
-	-webkit-transition: opacity 0.3s ease-in-out;
-	-moz-transition: opacity 0.3s ease-in-out;
-	-ms-transition: opacity 0.3s ease-in-out;
-	-o-transition: opacity 0.3s ease-in-out;
-	transition: opacity 0.3s ease-in-out;*/
     display: none;
-}
-
-#container table tbody tr td .comment .tooltip.active {
-    opacity: 1;
-    filter: alpha(opacity=100);
-    pointer-events: auto;
-    display: block;
 }
 
 #container table tbody tr td .comment .tooltip::after {

@@ -535,15 +535,6 @@ $(function() {
             $(this).find('div').fadeOut(200);
         });
     }
-    /*function addCommentListener() {
-        $tbody.find('.comment').click(function() {
-            var $tooltip = $(this).find('div');
-            if ($(this).position().top <= $tooltip.innerHeight() * 2) {
-                $tooltip.addClass('opposite');
-            }
-            $tooltip.toggleClass('active');
-        });
-    }*/
 
     /**
      * 改变表格中所有链接的target
@@ -705,29 +696,6 @@ $(function() {
                 $.removeCookie(keys[i]);
             }
         }
-        /*$('#showNew, #showAll, #newTab, #jpTime, #jpTitle').each(function() {
-            $(this).attr('checked', false)
-                .prev().find('span').removeClass('ON');
-        });
-        status.nextTime = 24;
-        status.showNew = false;
-        status.showAll = false;
-        status.jpTime = false;
-        status.jpTitle = false;
-        status.newTab = false;
-        status.title = '';
-        $search.blur().val('');
-        changeTimeZone('jp', 8);
-        sites.turnAll(true);
-        checkSiteOptions();
-        showTable(dataToHTML(bgmData));
-        if (status.history) {
-            $switcher.trigger('click', [7, true]);
-        } else {
-            $switcher.trigger('click', [status.switchInit, true]);
-        }
-        changeTarget('_self');
-        checkHourSelecter();*/
         location.reload(true);
     }
 
@@ -780,6 +748,7 @@ $(function() {
      * @param {string} path JSON文件的路径
      */
     function getBgmJSON(path) {
+        $shadow.show();
         $.ajax({
             url: path,
             success: function(data, stat, xhr) {
@@ -827,7 +796,7 @@ $(function() {
                 $('#header .lastModified').text(status.lastModified);
 
                 // 隐藏遮罩
-                //$shadow.hide();
+                $shadow.fadeOut(200);
             },
             error: function(xhr, stat, error) {
                 // 在表格中添加显示错误信息的行
