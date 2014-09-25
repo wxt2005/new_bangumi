@@ -64,6 +64,7 @@ $(function() {
     var $topNav = $('#topnav');
     var $topNavMenus = $topNav.find('.menu');
     var $topNavMenuButtons = $topNavMenus.children('a');
+    var $subMenus = $topNavMenus.find('.submenu');
     var $hourSelecter = $('#hourSelecter');
 
     var archive = null,
@@ -513,25 +514,28 @@ $(function() {
      * 为comment按钮绑定事件
      * @method addCommentListener
      */
-    /*function addCommentListener() {
+    function addCommentListener() {
         $tbody.find('.comment').click(function() {
+            var $tooltip = $(this).find('div');
+            if ($tooltip.css('display') === 'block') {
+                $tooltip.fadeOut(200);
+            } else if ($(this).position().top <= $tooltip.innerHeight() * 2) {
+                $tooltip.addClass('opposite');
+                $tooltip.fadeIn(200);
+            } else {
+                $tooltip.fadeIn(200);
+            }
+        }).hover(function() {
             var $tooltip = $(this).find('div');
             if ($(this).position().top <= $tooltip.innerHeight() * 2) {
                 $tooltip.addClass('opposite');
             }
-            $tooltip.toggle();
-        }).hover(function() {
-            var $tooltip = $(this).find('div');
-            if ($(this).position().top <= $tooltip.innerHeight() * 2) {
-                $tooltip.addClass('opposite').show();
-            } else {
-                $tooltip.show();
-            }
+            $tooltip.fadeIn(200);
         }, function() {
-            $(this).find('div').hide();
+            $(this).find('div').fadeOut(200);
         });
-    }*/
-    function addCommentListener() {
+    }
+    /*function addCommentListener() {
         $tbody.find('.comment').click(function() {
             var $tooltip = $(this).find('div');
             if ($(this).position().top <= $tooltip.innerHeight() * 2) {
@@ -539,7 +543,7 @@ $(function() {
             }
             $tooltip.toggleClass('active');
         });
-    }
+    }*/
 
     /**
      * 改变表格中所有链接的target
@@ -904,15 +908,14 @@ $(function() {
 
     // 导航栏主按钮绑定hover事件
     $topNavMenuButtons.click(function(event) {
-        if ($(this).parent().hasClass('active')) {
-            $topNavMenus.removeClass('active');
-            //$shadow.hide();
-            $shadow.removeClass('active');
+        var $subMenu = $(this).next();
+        if ($subMenu.css('display') === "block") {
+            $subMenu.fadeOut(200);
+            $shadow.fadeOut(200);
         } else {
-            $topNavMenus.removeClass('active');
-            $(this).parent().addClass('active');
-            //$shadow.show();
-            $shadow.addClass('active');
+            $subMenus.hide();
+            $subMenu.fadeIn(200);
+            $shadow.fadeIn(200);
         }
         return false;
     });
@@ -1065,10 +1068,9 @@ $(function() {
     });
 
     // 遮罩绑定事件
-    $shadow.click(function(event) {
-        //$(this).hide();
-        $(this).removeClass('active');
-        $topNavMenus.removeClass('active');
+    $shadow.click(function() {
+        $(this).fadeOut(200);
+        $subMenus.hide();
     });
 
     // 分享按钮绑定事件

@@ -84,6 +84,7 @@ input::-webkit-search-cancel-button {
     max-width: 960px;
     min-width: 730px;
     margin: auto;
+    overflow: visible\9;
 }
 
 #topbar #topnav .title {
@@ -148,18 +149,17 @@ input::-webkit-search-cancel-button {
     width: 100px;
     position: absolute;
     top: 50px;
-    margin-left: 1px;
     /*hide submenu for let IE7*/
     *top: 40px;
     *margin-left: -100px;
-    opacity: 0;
+    /*opacity: 0;
     filter: alpha(opacity=0);
     pointer-events: none;
     -webkit-transition: 0.3s ease-in-out;
     -moz-transition: 0.3s ease-in-out;
     -o-transition: 0.3s ease-in-out;
     -ms-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;*/
     display: none;
 }
 
@@ -167,7 +167,6 @@ input::-webkit-search-cancel-button {
     opacity: 1;
     filter: alpha(opacity=100);
     pointer-events: auto;
-    display: block;
 }
 
 #topbar #topnav .menu .submenu a {
@@ -379,11 +378,11 @@ input::-webkit-search-cancel-button {
     /*for let IE7*/
     *display: none;
     /*background: rgba(230, 230, 230, 0.5);*/
-    background: rgb(230, 230, 230);
-    opacity: 0;
+    background: rgba(230, 230, 230, 0.5);
+    /*opacity: 0;
     filter: alpha(opacity=0);
     pointer-events: none;
-    transition: 0.3s ease;
+    transition: 0.3s ease;*/
     display: none;
 }
 
@@ -647,14 +646,14 @@ input::-webkit-search-cancel-button {
     bottom: 31px;
     cursor: default;
     word-wrap: break-word;
-    opacity: 0;
+    /*opacity: 0;
     filter: alpha(opacity=0);
     pointer-events: none;
 	-webkit-transition: opacity 0.3s ease-in-out;
 	-moz-transition: opacity 0.3s ease-in-out;
 	-ms-transition: opacity 0.3s ease-in-out;
 	-o-transition: opacity 0.3s ease-in-out;
-	transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;*/
     display: none;
 }
 
