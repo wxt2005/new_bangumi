@@ -5,6 +5,12 @@ body, a, th, td, p, h1, ul, li, blockquote, input {
     padding: 0px;
 }
 
+html {
+    height: 100%;
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+
 body {
     background: #eee;
     font-size: 16px;
@@ -12,6 +18,8 @@ body {
     /*fix IE7 double scroll bar*/
     *overflow-y: visible;
     position: relative;
+    height: 100%;
+    width: 100%;
 }
 
 ul {
@@ -20,17 +28,45 @@ ul {
 
 a {
     text-decoration: none;
+    -webkit-transition: color 0.2s ease;
+    -ms-transition: color 0.2s ease;
+    -o-transition: color 0.2s ease;
+    -moz-transition: color 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 a:link,
 a:visited {
-    color: black;
+    color: #000;
 }
 
 a:focus,
 a:hover,
 a:active {
     color: #3498db;
+}
+
+.clearfix {
+    overflow: hidden\9;
+    *zoom: 1;
+}
+
+:root .clearfix {
+    overflow: visible;
+}
+
+.clearfix::after {
+    content: ".";
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    clear: both;
+    display: block;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+	display: none;
 }
 
 /*顶部导航栏*/
@@ -48,9 +84,7 @@ a:active {
     max-width: 960px;
     min-width: 730px;
     margin: auto;
-    overflow: hidden;
-    zoom: 1;
-    height: 50px;
+    overflow: visible\9;
 }
 
 #topbar #topnav .title {
@@ -62,12 +96,14 @@ a:active {
 #topbar #topnav .menu,
 #topbar #topnav .link {
     float: left;
-    width: 80px;
-    height: 50px;
+    padding: 0 20px 0 10px;
+}
+
+#topbar #topnav .menu {
+    position: relative;
 }
 
 #topbar #topnav li {
-    cursor: pointer;
     line-height: 40px;
     height: 40px;
 }
@@ -93,22 +129,29 @@ a:active {
     font-weight: normal;
 }
 
-#topbar #topnav .menu a.active {
-    color: #1abc9c;
+#topbar #topnav .menu::before {
+    content: "";
+    height: 0;
+    width: 0;
+    border-color: #fff transparent transparent transparent;
+    border-style: solid;
+    border-width: 5px;
+    position: absolute;
+    top: 18px;
+    right: 6px;
 }
 
 #topbar #topnav .menu .submenu {
     background: #34495e;
+    -webkit-border-radius: 4px;
     border-radius: 4px;
     float: none;
     width: 100px;
     position: absolute;
     top: 50px;
-    margin-left: 1px;
-    display: none;
-    /*hide submenu for let IE7*/
     *top: 40px;
     *margin-left: -100px;
+    display: none;
 }
 
 #topbar #topnav .menu .submenu a {
@@ -126,16 +169,25 @@ a:active {
     color: #fff;
 }
 
-#topbar #topnav .menu:hover>a {
+#topbar #topnav .menu a:hover {
     color: #1abc9c;
 }
 
-#topbar #topnav .menu .submenu li:hover {
+#topbar #topnav .menu .submenu.year li {
+    -webkit-transition: background 0.2s ease;
+    -ms-transition: background 0.2s ease;
+    -o-transition: background 0.2s ease;
+    -moz-transition: background 0.2s ease;
+    transition: background 0.2s ease;
+}
+
+#topbar #topnav .menu .submenu.year li:hover {
     background: #1abc9c;
 }
 
 #topbar #topnav .menu .submenu li {
     position: relative;
+    -webkit-border-radius: 2px;
     border-radius: 2px;
     margin: 3px;
     width: 94px;
@@ -146,8 +198,6 @@ a:active {
    right: 10px;
    top: 10px;
    height: 20px;
-   overflow: hidden;
-   zoom: 1;
 }
 
 #topbar #topnav .menu .submenu #hourSelecter p {
@@ -176,7 +226,7 @@ a:active {
 }
 
 /*三角形*/
-#topbar #topnav .menu>.submenu:before {
+#topbar #topnav .menu>.submenu::before {
     content: "";
     width: 0;
     height: 0;
@@ -203,7 +253,6 @@ a:active {
 
 #topbar #topnav .menu .submenu.display li:hover,
 #topbar #topnav .menu .submenu.sites li:hover {
-    background: #34495e;
 }
 
 #topbar #topnav .menu .submenu label,
@@ -264,6 +313,11 @@ a:active {
     cursor: pointer;
     height: 40px;
     padding: 0 3px;
+    -webkit-transition: background 0.2s ease;
+    -ms-transition: background 0.2s ease;
+    -o-transition: background 0.2s ease;
+    -moz-transition: background 0.2s ease;
+    transition: background 0.2s ease;
 }
 
 #topbar #topnav .menu .submenu li .all:hover {
@@ -278,8 +332,6 @@ a:active {
     display: block;
     width: 40px;
     height: 40px;
-    overflow: hidden;
-    zoom: 1;
     background-position: 0 0;
     text-indent: -9999px;
 }
@@ -306,11 +358,12 @@ a:active {
 #shadow {
     position: absolute;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     z-index: 1;
     /*for let IE7*/
     *display: none;
     background: rgba(230, 230, 230, 0.5);
+    display: none;
 }
 
 /*标题栏*/
@@ -360,14 +413,10 @@ a:active {
     min-width: 730px;
     margin: 0 auto;
     margin-top: 10px;
-    zoom: 1;
-    overflow: hidden;
 }
 
 /*切换按钮*/
 #nav #switcher {
-    zoom: 1;
-    overflow: hidden;
     padding-bottom: 16px;
     float: left;
     height: 36px;
@@ -388,6 +437,11 @@ a:active {
     *border-left: 2px solid #1abc9c;
     *margin-left: -2px;
     height: 32px;
+    -webkit-transition: background 0.3s ease-in-out;
+    -ms-transition: background 0.3s ease-in-out;
+    -o-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out;
 }
 
 #nav #switcher li:first-child {
@@ -410,7 +464,7 @@ a:active {
 }
 
 /*三角形*/
-#nav #switcher li.selected:after {
+#nav #switcher li.selected::after {
     content: "";
     position: absolute;
     width: 0;
@@ -438,8 +492,10 @@ a:active {
 }
 
 #nav #search input {
+    -webkit-appearance: none;
     color: #1abc9c;
     border: 2px solid #1abc9c;
+    -webkit-border-radius: 6px;
     border-radius: 6px;
     box-shadow: none;
     outline: none;
@@ -448,6 +504,18 @@ a:active {
     background: #eee;
     width: 170px;
     height: 20px;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+#nav #search input:focus::-webkit-input-placeholder {
+    color: transparent;
 }
 
 /*清除按钮*/
@@ -472,6 +540,7 @@ a:active {
     max-width: 960px;
     min-width: 730px;
     border: 8px solid #1abc9c;
+    -webkit-border-radius: 6px;
     border-radius: 6px;
     position: relative;
 }
@@ -517,6 +586,11 @@ a:active {
 #container table thead tr th p:hover {
     color: #3498db;
     cursor: pointer;
+    -webkit-transition: color 0.2s ease;
+    -ms-transition: color 0.2s ease;
+    -o-transition: color 0.2s ease;
+    -moz-transition: color 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 #container table thead tr th .ordered {
@@ -539,6 +613,7 @@ a:active {
     z-index: 2;
     padding: 5px 7px;
     background: #1abc9c;
+    -webkit-border-radius: 6px;
     border-radius: 6px;
     margin-left: -72px;
     bottom: 31px;
@@ -547,7 +622,7 @@ a:active {
     display: none;
 }
 
-#container table tbody tr td .comment .tooltip:after {
+#container table tbody tr td .comment .tooltip::after {
     content: "";
     width: 0;
     height: 0;
@@ -565,18 +640,14 @@ a:active {
     bottom: auto;
 }
 
-#container table tbody tr td .comment .tooltip.opposite:after {
+#container table tbody tr td .comment .tooltip.opposite::after {
     bottom: auto;
     top: -10px;
     border-width: 0 10px 10px 10px;
     border-color: transparent transparent #1abc9c transparent;
 }
 
-/*#container table tbody tr td .comment:hover .tooltip {
-    display: block;
-}*/
-
-#container table tbody tr td a.new:after {
+#container table tbody tr td a.new::after {
     content: "新";
     font-size: 12px;
     font-family: sans-serif;
@@ -587,7 +658,7 @@ a:active {
     margin-left: 2px;
 }
 
-#container table tbody tr td a.new.hideMark:after {
+#container table tbody tr td a.new.hideMark::after {
     content: "";
 }
 
@@ -595,6 +666,11 @@ a:active {
     height: 50px;
     border-bottom: 1px solid #ddd;
     padding-left: 20px;
+    -webkit-transition: background 0.3s ease-in-out;
+    -ms-transition: background 0.3s ease-in-out;
+    -o-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out;
 }
 
 #container table tbody tr:hover {
@@ -604,11 +680,6 @@ a:active {
 #container table tbody tr td {
     text-align: center;
 }
-
-/*#container table tbody tr td:first-child a {
-    position: relative;
-    display: block;
-}*/
 
 #container table tbody tr td:last-child {
     padding: 0 5px;
@@ -635,12 +706,12 @@ a:active {
     cursor: default;
 }
 
-#container table tbody tr td .links li:after {
+#container table tbody tr td .links li::after {
     content: "\00A0\007C\00A0";
     vertical-align: 6%;
 }
 
-#container table tbody tr td .links .last:after {
+#container table tbody tr td .links .last::after {
     content: "\00A0";
 }
 
@@ -739,7 +810,6 @@ screen and (max--moz-device-pixel-ratio: 2) {
 
     #header h1 {
         font-size: 40px;
-        position: static;
         margin-left: 5px;
         overflow: hidden;
     }
@@ -749,8 +819,6 @@ screen and (max--moz-device-pixel-ratio: 2) {
     }
 
     #nav {
-        overflow: hidden;
-        zoom: 1;
         min-width: 531px;
         margin: 0;
         position: static;
@@ -767,13 +835,14 @@ screen and (max--moz-device-pixel-ratio: 2) {
         width: 12.5%;
         font-size: 16px;
         border-bottom: none;
-        box-sizing: border-box;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
+        box-sizing: border-box;
     }
 
     #nav #switcher li:first-child,
     #nav #switcher li:last-child {
+        -webkit-border-radius: 0;
         border-radius: 0;
     }
 
@@ -785,7 +854,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
         border-right: none;
     }
 
-    #nav #switcher li.selected:after {
+    #nav #switcher li.selected::after {
         display: none;
     }
 
@@ -805,6 +874,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
 
     #nav #search input {
         width: 140px;
+        -webkit-border-radius: 0;
         border-radius: 0;
         font-size: 14px;
         padding: 4px 8px;
@@ -814,7 +884,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
         color: transparent;
     }
 
-    #nav #search input::-webkit-input-placeholder:before {
+    #nav #search input::-webkit-input-placeholder::before {
         color: #a9a9a9;
         content: "搜索";
     }
@@ -844,7 +914,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
         display: none;
     }
 
-    #container table tbody tr td a.new:after {
+    #container table tbody tr td a.new::after {
         content: "*";
         margin-left: 1px;
     }
@@ -890,18 +960,24 @@ screen and (max--moz-device-pixel-ratio: 2) {
         font-size: 14px;
     }
 
-    #topbar #topnav .menu,
-    #topbar #topnav .link {
-        height: 40px;
-    }
-
     #topbar #topnav .menu a,
     #topbar #topnav .link a {
         font-size: 14px;
     }
 
+    #topbar #topnav .menu,
+    #topbar #topnav .link {
+        padding: 0;
+        width: 25%;
+    }
+
+    #topbar #topnav .menu::before {
+        border-top-color: transparent;
+    }
+
     #topbar #topnav .menu .submenu {
         top: 40px;
+        left: 10px;
         width: 80px;
     }
 
@@ -976,7 +1052,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
         height: 30px;
     }
 
-    #topbar #topnav .share.plain {
+    #topbar #topnav .share {
         display: none;
     }
 
@@ -1065,7 +1141,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
         margin-right: 4px;
     }
 
-    #container table tbody tr td .links li:after {
+    #container table tbody tr td .links li::after {
         content: "";
         display: none;
     }
