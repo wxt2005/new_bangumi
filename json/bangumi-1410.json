@@ -266,8 +266,12 @@
     "weekDayJP": 5,
     "weekDayCN": 6,
     "timeJP": "2330",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0030",
+    "onAirSite": [
+        "http://www.tudou.com/albumcover/jGaFpdJqObQ.html",
+        "http://www.youku.com/show_page/id_zff86b776cf5f11e3b8b7.html",
+        "http://www.bilibili.com/sp/火星异种"
+    ],
     "newBgm": true
   },
   {
