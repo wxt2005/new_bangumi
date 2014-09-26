@@ -1133,6 +1133,22 @@
     "comment": "8/20 日本放送<br>特别篇 全一话"
   },
   {
+    "titleCN": "火星异种",
+    "titleJP": "TERRAFORMARS（テラフォーマーズ）",
+    "officalSite": "http://www.terraformars.tv/",
+    "weekDayJP": 5,
+    "weekDayCN": 6,
+    "timeJP": "2330",
+    "timeCN": "0030",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/jGaFpdJqObQ.html",
+      "http://www.youku.com/show_page/id_zff86b776cf5f11e3b8b7.html",
+      "http://www.bilibili.com/sp/火星异种"
+    ],
+    "newBgm": true,
+    "comment": "9/26 日本放送"
+  },
+  {
   "titleCN": "荷包蛋的蛋黄什么时候戳破才好？",
   "titleJP": "蟲目玉焼きの黄身 いつつぶす？",
   "officalSite": "http://www9.nhk.or.jp/anime/medamayaki/",
