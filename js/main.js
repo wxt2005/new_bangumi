@@ -773,15 +773,13 @@ $(function() {
 
                 // 过滤表格
                 tableFilter();
+                // 检查站点过滤选项开关
+                checkSiteOptions();
 
                 // 如果选项打开，设置链接为_blank
                 if(status.newTab) {
                     changeTarget('_blank');
                 }
-                // 构建站点过滤菜单
-                buildSites();
-                // 检查站点过滤选项开关
-                checkSiteOptions();
                 // 获取数据文件最后修改时间
                 if (xhr.getResponseHeader('Last-Modified')) {
                     var tempDate = new Date(xhr.getResponseHeader('Last-Modified'));
@@ -830,6 +828,9 @@ $(function() {
                 xhr.status + ' ' + error + '</td></tr>');
         }
     });
+
+    // 构建站点过滤菜单
+    buildSites();
 
     // 选择器点击事件
     $switcher.click(function(event, index, direct, noFilter) {
