@@ -51,6 +51,20 @@
     "newBgm": false
   },
   {
+    "titleCN": "游戏王ARC-V",
+    "titleJP": "遊☆戯☆王ARC-V ",
+    "officalSite": "http://www.tv-tokyo.co.jp/anime/yugioh-arcv/",
+    "weekDayJP": 0,
+    "weekDayCN": 1,
+    "timeJP": "1630",
+    "timeCN": "",
+    "onAirSite": [
+      "http://www.bilibili.com/sp/游☆戏☆王",
+      "http://www.acfun.tv/a/aa1259367"
+    ],
+    "newBgm": true
+  },
+  {
     "titleCN": "邻座同学是怪咖",
     "titleJP": "となりの関くん",
     "officalSite": "http://www.t-sekikun.jp/",
