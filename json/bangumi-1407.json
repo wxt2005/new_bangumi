@@ -51,6 +51,20 @@
     "newBgm": false
   },
   {
+    "titleCN": "游戏王ARC-V",
+    "titleJP": "遊☆戯☆王ARC-V ",
+    "officalSite": "http://www.tv-tokyo.co.jp/anime/yugioh-arcv/",
+    "weekDayJP": 0,
+    "weekDayCN": 1,
+    "timeJP": "1630",
+    "timeCN": "",
+    "onAirSite": [
+      "http://www.bilibili.com/sp/游☆戏☆王",
+      "http://www.acfun.tv/a/aa1259367"
+    ],
+    "newBgm": false
+  },
+  {
     "titleCN": "元气囝仔",
     "titleJP": "ばらかもん",
     "officalSite": "http://www.barakamon.jp/",
@@ -1074,7 +1088,8 @@
       "http://www.bilibili.com/sp/美少女战士",
       "http://www.acfun.tv/a/aa2659"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "comment": "两周一话"
   },
   {
     "titleCN": "Lady 宝石宠物",
