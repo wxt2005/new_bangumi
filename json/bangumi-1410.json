@@ -811,5 +811,23 @@
       "http://www.tudou.com/albumcover/NBDgX_W2aJk.html"
     ],
     "newBgm": false
+  },
+  {
+    "titleCN": "Buddy Complex 完结篇",
+    "titleJP": "バディ・コンプレックス 完結編 -あの空に還る未来で-",
+    "officalSite": "http://buddy-complex.jp/",
+    "weekDayJP": 1,
+    "weekDayCN": 3,
+    "timeJP": "2300",
+    "timeCN": "0000",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrhc1759.html",
+      "http://tv.sohu.com/s2014/buddycomplex/",
+      "http://data.movie.kankan.com/movie/75159",
+      "http://www.bilibili.com/sp/BUDDY%20COMPLEX",
+      "http://www.acfun.tv/a/aa1464854"
+    ],
+    "newBgm": true,
+    "comment": "完结篇 共两话<br>前后篇即14-15话"
   }
 ]
