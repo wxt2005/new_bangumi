@@ -31,10 +31,12 @@
     "titleJP": "NARUTO -ナルト- 疾風伝",
     "officalSite": "http://www.tv-tokyo.co.jp/anime/naruto/index2.html",
     "weekDayJP": 4,
-    "weekDayCN": 5,
-    "timeJP": "1930",
-    "timeCN": "",
-    "onAirSite": [],
+    "weekDayCN": 4,
+    "timeJP": "1830",
+    "timeCN": "1900",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/Lqfme5hSolM.html"
+    ],
     "newBgm": false
   },
   {
@@ -42,11 +44,13 @@
     "titleJP": "アイカツ!アイドルカツドウ!",
     "officalSite": "http://www.aikatsu.net",
     "weekDayJP": 4,
-    "weekDayCN": 5,
+    "weekDayCN": 4,
     "timeJP": "1700",
-    "timeCN": "",
+    "timeCN": "1900",
     "onAirSite": [
-      "http://www.bilibili.com/sp/偶像活动"
+      "http://www.bilibili.com/sp/偶像活动",
+      "http://www.acfun.tv/a/aa1464858",
+      "http://www.iqiyi.com/a_19rrhc0yjx.html"
     ],
     "newBgm": true
   },
@@ -91,9 +95,9 @@
     "titleJP": "寄生獣 セイの格率",
     "officalSite": "http://www.kiseiju.jp/",
     "weekDayJP": 4,
-    "weekDayCN": 5,
+    "weekDayCN": 4,
     "timeJP": "0029",
-    "timeCN": "",
+    "timeCN": "0330",
     "onAirSite": [],
     "newBgm": true
   },
@@ -120,13 +124,13 @@
     "newBgm": true
   },
   {
-    "titleCN": "GUNDAM G之复国运动",
+    "titleCN": "高达G之复国运动",
     "titleJP": "ガンダム Gのレコンギスタ",
     "officalSite": "http://www.g-reco.net/",
     "weekDayJP": 5,
-    "weekDayCN": 6,
+    "weekDayCN": 5,
     "timeJP": "0000",
-    "timeCN": "",
+    "timeCN": "0349",
     "onAirSite": [],
     "newBgm": true
   },
@@ -190,9 +194,9 @@
     "titleJP": "ガンダムビルドファイターズトライ",
     "officalSite": "http://gundam-bf.net/",
     "weekDayJP": 3,
-    "weekDayCN": 4,
+    "weekDayCN": 3,
     "timeJP": "1700",
-    "timeCN": "",
+    "timeCN": "1900",
     "onAirSite": [],
     "newBgm": true
   },
@@ -249,7 +253,7 @@
     "weekDayJP": 6,
     "weekDayCN": 0,
     "timeJP": "2300",
-    "timeCN": "",
+    "timeCN": "0030",
     "onAirSite": [],
     "newBgm": true
   },
@@ -296,9 +300,9 @@
     "titleJP": "クロスアンジュ 天使と竜の輪舞",
     "officalSite": "http://crossange.com/",
     "weekDayJP": 0,
-    "weekDayCN": 1,
+    "weekDayCN": 0,
     "timeJP": "0030",
-    "timeCN": "",
+    "timeCN": "1700",
     "onAirSite": [],
     "newBgm": true
   },
@@ -325,13 +329,13 @@
     "newBgm": true
   },
   {
-    "titleCN": "拂晓的尤娜",
+    "titleCN": "晨曦公主",
     "titleJP": "暁のヨナ",
     "officalSite": "http://www.marv.jp/special/yona/",
     "weekDayJP": 2,
-    "weekDayCN": 3,
+    "weekDayCN": 2,
     "timeJP": "2200",
-    "timeCN": "",
+    "timeCN": "2300",
     "onAirSite": [],
     "newBgm": true
   },
@@ -373,9 +377,9 @@
     "titleJP": "まじっく快斗1412",
     "officalSite": "http://www.ytv.co.jp/magickaito/",
     "weekDayJP": 6,
-    "weekDayCN": 0,
+    "weekDayCN": 6,
     "timeJP": "1630",
-    "timeCN": "",
+    "timeCN": "1900",
     "onAirSite": [],
     "newBgm": true
   },
@@ -417,9 +421,9 @@
     "titleJP": "牙狼〈GARO〉-炎の刻印-",
     "officalSite": "http://garo-project.jp/ANIME/",
     "weekDayJP": 6,
-    "weekDayCN": 0,
+    "weekDayCN": 6,
     "timeJP": "0023",
-    "timeCN": "",
+    "timeCN": "0130",
     "onAirSite": [],
     "newBgm": true
   },
@@ -428,9 +432,9 @@
     "titleJP": "繰繰れ！コックリさん",
     "officalSite": "http://www.gugukoku.com/",
     "weekDayJP": 1,
-    "weekDayCN": 2,
+    "weekDayCN": 1,
     "timeJP": "0005",
-    "timeCN": "",
+    "timeCN": "0105",
     "onAirSite": [],
     "newBgm": true
   },
@@ -472,9 +476,9 @@
     "titleJP": "四月は君の嘘",
     "officalSite": "http://www.kimiuso.jp/",
     "weekDayJP": 5,
-    "weekDayCN": 6,
+    "weekDayCN": 5,
     "timeJP": "0020",
-    "timeCN": "",
+    "timeCN": "0150",
     "onAirSite": [],
     "newBgm": true
   },
@@ -483,20 +487,20 @@
     "titleJP": "ガールフレンド（仮）",
     "officalSite": "http://girlfriend-kari-anime.jp/",
     "weekDayJP": 1,
-    "weekDayCN": 2,
+    "weekDayCN": 1,
     "timeJP": "0035",
-    "timeCN": "",
+    "timeCN": "0135",
     "onAirSite": [],
     "newBgm": true
   },
   {
-    "titleCN": "魔道书7使者",
+    "titleCN": "七人魔法使",
     "titleJP": "トリニティセブン",
     "officalSite": "http://trinity-7.com/",
     "weekDayJP": 3,
-    "weekDayCN": 4,
+    "weekDayCN": 3,
     "timeJP": "0040",
-    "timeCN": "",
+    "timeCN": "0140",
     "onAirSite": [],
     "newBgm": true
   },
@@ -505,9 +509,9 @@
     "titleJP": "異能バトルは日常系のなかで",
     "officalSite": "http://inou-anime.com/",
     "weekDayJP": 2,
-    "weekDayCN": 3,
+    "weekDayCN": 2,
     "timeJP": "0105",
-    "timeCN": "",
+    "timeCN": "0205",
     "onAirSite": [],
     "newBgm": true
   },
@@ -540,7 +544,7 @@
     "weekDayJP": 3,
     "weekDayCN": 4,
     "timeJP": "2330",
-    "timeCN": "",
+    "timeCN": "0030",
     "onAirSite": [],
     "newBgm": true
   },
