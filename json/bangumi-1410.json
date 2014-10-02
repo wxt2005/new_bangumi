@@ -212,10 +212,12 @@
     "titleJP": "デンキ街の本屋さん",
     "officalSite": "http://umanohone.jp/",
     "weekDayJP": 4,
-    "weekDayCN": 5,
+    "weekDayCN": 4,
     "timeJP": "2130",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "2330",
+    "onAirSite": [
+      "http://www.bilibili.com/sp/电器街的漫画店"
+    ],
     "newBgm": true
   },
   {
