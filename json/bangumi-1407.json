@@ -31,10 +31,12 @@
     "titleJP": "NARUTO -ナルト- 疾風伝",
     "officalSite": "http://www.tv-tokyo.co.jp/anime/naruto/index2.html",
     "weekDayJP": 4,
-    "weekDayCN": 5,
-    "timeJP": "1930",
-    "timeCN": "",
-    "onAirSite": [],
+    "weekDayCN": 4,
+    "timeJP": "1830",
+    "timeCN": "1900",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/Lqfme5hSolM.html"
+    ],
     "newBgm": false
   },
   {
