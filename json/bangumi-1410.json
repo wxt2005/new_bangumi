@@ -131,7 +131,10 @@
     "weekDayCN": 5,
     "timeJP": "0000",
     "timeCN": "0349",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/iU6KdfiaSxo.html",
+      "http://www.youku.com/show_page/id_z21e664b6b01011e3a705.html"
+    ],
     "newBgm": true
   },
   {
