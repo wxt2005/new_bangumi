@@ -133,7 +133,9 @@
     "timeCN": "0349",
     "onAirSite": [
       "http://www.tudou.com/albumcover/iU6KdfiaSxo.html",
-      "http://www.youku.com/show_page/id_z21e664b6b01011e3a705.html"
+      "http://www.youku.com/show_page/id_z21e664b6b01011e3a705.html",
+      "http://www.bilibili.com/sp/高达G之复国运动",
+      "http://www.acfun.tv/a/aa1464804"
     ],
     "newBgm": true
   },
@@ -394,7 +396,9 @@
     "weekDayCN": 1,
     "timeJP": "0600",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.acfun.tv/a/aa1464859"
+    ],
     "newBgm": true
   },
   {
@@ -548,7 +552,9 @@
     "weekDayCN": 4,
     "timeJP": "2330",
     "timeCN": "0030",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.bilibili.com/sp/大图书馆的牧羊人"
+    ],
     "newBgm": true
   },
   {
@@ -570,7 +576,9 @@
     "weekDayCN": 6,
     "timeJP": "0000",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.acfun.tv/a/aa1464852"
+    ],
     "newBgm": true
   },
   {
