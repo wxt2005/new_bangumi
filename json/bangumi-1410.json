@@ -106,10 +106,12 @@
     "titleJP": "曇天に笑う",
     "officalSite": "http://www.dontenniwarau.com/",
     "weekDayJP": 6,
-    "weekDayCN": 0,
+    "weekDayCN": 6,
     "timeJP": "0058",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0430",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrhc0xl1.html"
+    ],
     "newBgm": true
   },
   {
@@ -327,10 +329,13 @@
     "titleJP": "selector spread WIXOSS",
     "officalSite": "http://selector-wixoss.com/",
     "weekDayJP": 6,
-    "weekDayCN": 0,
+    "weekDayCN": 6,
     "timeJP": "0005",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0205",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrhc0xpd.html",
+      "http://www.bilibili.com/sp/选择感染者WIXOSS"
+    ],
     "newBgm": true
   },
   {
@@ -431,7 +436,11 @@
     "weekDayCN": 6,
     "timeJP": "0023",
     "timeCN": "0130",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrhc0xnt.html",
+      "http://www.tudou.com/albumcover/gdZUtuYLZdw.html",
+      "http://www.bilibili.com/sp/牙狼%20炎之刻印"
+    ],
     "newBgm": true
   },
   {
