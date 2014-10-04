@@ -147,9 +147,9 @@
     "titleJP": "俺、ツインテールになります。",
     "officalSite": "http://www.tbs.co.jp/anime/ore_twi/",
     "weekDayJP": 5,
-    "weekDayCN": 6,
+    "weekDayCN": 5,
     "timeJP": "0046",
-    "timeCN": "",
+    "timeCN": "0546",
     "onAirSite": [],
     "newBgm": true
   },
@@ -191,9 +191,9 @@
     "titleJP": "オレん家のフロ事情",
     "officalSite": "http://www.orefuro.jp/",
     "weekDayJP": 1,
-    "weekDayCN": 2,
+    "weekDayCN": 1,
     "timeJP": "2254",
-    "timeCN": "",
+    "timeCN": "2301",
     "onAirSite": [],
     "newBgm": true
   },
@@ -213,10 +213,12 @@
     "titleJP": "天体のメソッド",
     "officalSite": "http://sora-no-method.jp/",
     "weekDayJP": 0,
-    "weekDayCN": 1,
+    "weekDayCN": 0,
     "timeJP": "2130",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "2230",
+    "onAirSite": [
+      "http://www.bilibili.com/sp/天体的秩序"
+    ],
     "newBgm": true
   },
   {
@@ -240,7 +242,9 @@
     "weekDayCN": 1,
     "timeJP": "1930",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.bilibili.com/sp/寻找失去的未来"
+    ],
     "newBgm": true
   },
   {
@@ -262,7 +266,15 @@
     "weekDayCN": 0,
     "timeJP": "2300",
     "timeCN": "0030",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrhc107d.html",
+      "http://www.tudou.com/albumcover/RsfQldH8q6s.html",
+      "http://v.qq.com/detail/5/54v59r074ncc1kq.html",
+      "http://www.youku.com/show_page/id_z46465a1c711f11e38b3f.html",
+      "http://www.letv.com/comic/10005152.html",
+      "http://www.bilibili.com/sp/FATE%2FSTAY%20NIGHT%20-UBW-",
+      "http://www.acfun.tv/a/aa1464802"
+    ],
     "newBgm": true
   },
   {
@@ -299,7 +311,8 @@
         "http://www.tudou.com/albumcover/jGaFpdJqObQ.html",
         "http://www.youku.com/show_page/id_zff86b776cf5f11e3b8b7.html",
         "http://www.bilibili.com/sp/火星异种",
-        "http://www.acfun.tv/a/aa1464218"
+        "http://www.acfun.tv/a/aa1464218",
+        "http://www.iqiyi.com/a_19rrhc139h.html"
     ],
     "newBgm": true
   },
@@ -318,11 +331,16 @@
     "titleCN": "魔弹之王与战姬",
     "titleJP": "魔弾の王と戦姫",
     "officalSite": "http://www.madan-anime.jp/",
-    "weekDayJP": 0,
-    "weekDayCN": 1,
+    "weekDayJP": 6,
+    "weekDayCN": 6,
     "timeJP": "1900",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "2230",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrhc0xbh.html",
+      "http://www.bilibili.com/sp/魔弹之王与战姬",
+      "http://www.acfun.tv/a/aa1464820",
+      "http://v.pptv.com/show/srmTEXnfT43wbtY.html"
+    ],
     "newBgm": true
   },
   {
@@ -392,7 +410,14 @@
     "weekDayCN": 6,
     "timeJP": "1630",
     "timeCN": "1900",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://v.qq.com/detail/f/fm95ukbvs36ejzw.html",
+      "http://www.youku.com/show_page/id_zeebadce421c911e4a705.html",
+      "http://www.tudou.com/albumcover/2TdJoRW10F8.html",
+      "http://www.acfun.tv/a/aa1464847",
+      "http://www.iqiyi.com/a_19rrhc0x81.html",
+      "http://tv.sohu.com/s2014/gdjd1412/"
+    ],
     "newBgm": true
   },
   {
@@ -487,8 +512,13 @@
     "weekDayJP": 6,
     "weekDayCN": 0,
     "timeJP": "1630",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0100",
+    "onAirSite": [
+      "http://www.bilibili.com/sp/记录的地平线#S-1327",
+      "http://v.pptv.com/show/ibVs1sxuB8SibSEHg.html",
+      "http://www.iqiyi.com/a_19rrhc10bp.html",
+      "http://www.acfun.tv/a/aa1464807"
+    ],
     "newBgm": true
   },
   {
@@ -540,9 +570,9 @@
     "titleJP": "怪盗ジョーカー",
     "officalSite": "http://s.mxtv.jp/joker/",
     "weekDayJP": 1,
-    "weekDayCN": 2,
+    "weekDayCN": 1,
     "timeJP": "1800",
-    "timeCN": "",
+    "timeCN": "1830",
     "onAirSite": [],
     "newBgm": true
   },
