@@ -400,14 +400,18 @@
     "newBgm": true
   },
   {
-    "titleCN": "七原罪",
+    "titleCN": "七大罪",
     "titleJP": "七つの大罪",
     "officalSite": "http://www.7-taizai.net/",
     "weekDayJP": 0,
-    "weekDayCN": 1,
+    "weekDayCN": 0,
     "timeJP": "1600",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "2100",
+    "onAirSite": [
+      "http://tv.sohu.com/s2014/dhpqyz/",
+      "http://www.iqiyi.com/a_19rrhc0zl5.html",
+      "http://www.bilibili.com/sp/七大罪"
+    ],
     "newBgm": true
   },
   {
