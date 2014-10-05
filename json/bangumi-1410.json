@@ -209,7 +209,7 @@
     "newBgm": true
   },
   {
-    "titleCN": "天体的方式",
+    "titleCN": "天体的秩序",
     "titleJP": "天体のメソッド",
     "officalSite": "http://sora-no-method.jp/",
     "weekDayJP": 0,
@@ -238,12 +238,14 @@
     "titleCN": "寻找失去的未来",
     "titleJP": "失われた未来を求めて",
     "officalSite": "http://ushinawareta-mirai.com/",
-    "weekDayJP": 0,
-    "weekDayCN": 1,
+    "weekDayJP": 6,
+    "weekDayCN": 0,
     "timeJP": "1930",
-    "timeCN": "",
+    "timeCN": "0130",
     "onAirSite": [
-      "http://www.bilibili.com/sp/寻找失去的未来"
+      "http://www.bilibili.com/sp/寻找失去的未来",
+      "http://www.iqiyi.com/a_19rrhc108x.html",
+      "http://www.acfun.tv/a/aa1464840"
     ],
     "newBgm": true
   },
@@ -324,7 +326,13 @@
     "weekDayCN": 0,
     "timeJP": "0030",
     "timeCN": "1700",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrhc0zv1.html",
+      "http://www.tudou.com/albumcover/lHvXdgRhkLc.html",
+      "http://www.youku.com/show_page/id_zbf2687ec1d0c11e4b2ad.html",
+      "http://www.acfun.tv/a/aa1464811",
+      "http://www.bilibili.com/sp/CROSSANGE%20天使与龙的轮舞"
+    ],
     "newBgm": true
   },
   {
@@ -438,10 +446,14 @@
     "titleJP": "ワールドトリガー",
     "officalSite": "http://www.toei-anim.co.jp/tv/wt/",
     "weekDayJP": 0,
-    "weekDayCN": 1,
+    "weekDayCN": 0,
     "timeJP": "0530",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "1100",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrhc0zzx.html",
+      "http://www.acfun.tv/a/aa1464845",
+      "http://www.bilibili.com/sp/境界触发者"
+    ],
     "newBgm": true
   },
   {
