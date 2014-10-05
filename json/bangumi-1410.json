@@ -295,10 +295,14 @@
     "titleJP": "オオカミ少女と黒王子",
     "officalSite": "http://www.ookamishojo-anime.jp/",
     "weekDayJP": 0,
-    "weekDayCN": 1,
+    "weekDayCN": 0,
     "timeJP": "2100",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "2330",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrhc0zph.html",
+      "http://www.acfun.tv/a/aa1464857",
+      "http://www.bilibili.com/sp/狼少女与黑王子"
+    ],
     "newBgm": true
   },
   {
@@ -395,8 +399,12 @@
     "weekDayJP": 0,
     "weekDayCN": 1,
     "timeJP": "1930",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0000",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrhc0zfl.html",
+      "http://www.acfun.tv/a/aa1464838",
+      "http://www.bilibili.com/sp/灰色的果实"
+    ],
     "newBgm": true
   },
   {
@@ -410,7 +418,8 @@
     "onAirSite": [
       "http://tv.sohu.com/s2014/dhpqyz/",
       "http://www.iqiyi.com/a_19rrhc0zl5.html",
-      "http://www.bilibili.com/sp/七大罪"
+      "http://www.bilibili.com/sp/七大罪",
+      "http://www.acfun.tv/a/aa1464817"
     ],
     "newBgm": true
   },
@@ -496,7 +505,14 @@
     "weekDayCN": 1,
     "timeJP": "0005",
     "timeCN": "0105",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrhc0zdp.html",
+      "http://v.pptv.com/show/FTUfnQVr2xl8ibmI.html",
+      "http://www.youku.com/show_page/id_ze31f4ef6c92211e3a705.html",
+      "http://www.tudou.com/albumcover/pPuLbZdMqTY.html",
+      "http://www.acfun.tv/a/aa1464821",
+      "http://www.bilibili.com/sp/银仙"
+    ],
     "newBgm": true
   },
   {
