@@ -209,7 +209,10 @@
     "weekDayCN": 1,
     "timeJP": "2254",
     "timeCN": "2301",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.bilibili.com/sp/我家浴缸的二三事",
+      "http://www.iqiyi.com/a_19rrhc0z1p.html"
+    ],
     "newBgm": true,
     "showDate": "2014-10-06"
   },

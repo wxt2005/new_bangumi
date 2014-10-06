@@ -689,7 +689,12 @@ input::-webkit-search-cancel-button {
 
 #container table tbody tr td .weekDay,
 #container table tbody tr td .dateJP {
-    margin-right: 10px;
+    margin-right: 9px;
+    letter-spacing: 1px;
+}
+
+#container table tbody tr td .showDate {
+    margin-right: 5px;
 }
 
 #container table tbody tr td .links li {
@@ -720,7 +725,7 @@ input::-webkit-search-cancel-button {
     color: #aaa;
 }
 
-#container table tbody tr td abbr.weekDay {
+#container table tbody tr td abbr {
     border-bottom: 1px dashed #aaa;
     cursor: pointer;
 }
