@@ -138,7 +138,7 @@ $(function() {
     }
 
     /**
-     * 格式化日期（只显示月日）
+     * 格式化日期
      * @method formatDate
      * @param {string} 日期字符串
      * @return {string} 格式化的月日 10/01
@@ -741,6 +741,19 @@ $(function() {
     }
 
     /**
+     * 将日期对象转换为需要的日期格式文本
+     * @method dateToStr
+     * @param {obj} dateObj 时间对象
+     * return {string} 日期文本 2014-10-06
+     */
+    function dateToStr(dateObj) {
+        var year = '' + dateObj.getFullYear();
+        var month = '' + (dateObj.getMonth() + 1);
+        var day = '' + dateObj.getDate();
+        return year + '-' + (month.length === 1 ? '0' + month : month) + '-' + (day.length === 1 ? '0' + day : day);
+    }
+
+    /**
      * 修改时区
      * @method changeTimeZone
      * @param {string} country 需要修改时区的国家的代码 'cn' 'jp'
@@ -751,19 +764,22 @@ $(function() {
         var offset = utc - status[country.toLowerCase() + 'TimeZone'];
         var timeStr = 'time' + country.toUpperCase();
         var weekDayStr = 'weekDay' + country.toUpperCase();
-        var time, weekDay;
+        var time, weekDay, showDate;
         for (i = 0, l = bgmData.length; i < l; i++) {
             time = +bgmData[i][timeStr].slice(0, 2);
             weekDay = +bgmData[i][weekDayStr];
+            showDate = new Date(bgmData[i].showDate);
             time = time + offset;
             // 时间往回倒一天
             if (time < 0) {
                 time += 24;
                 weekDay--;
+                showDate.setDate(showDate.getDate() - 1);
             // 时间往前进一天
             } else if (time >= 24) {
                 time -= 24;
                 weekDay++;
+                showDate.setDate(showDate.getDate() + 1);
             }
             // 补前导0
             if (time < 10) {
@@ -778,6 +794,7 @@ $(function() {
             }
             bgmData[i][timeStr] = time + bgmData[i][timeStr].slice(2);
             bgmData[i][weekDayStr] = weekDay + '';
+            bgmData[i].showDate = dateToStr(showDate);
         }
         // 记录现在时区
         status[country.toLowerCase() + 'TimeZone'] = utc;
