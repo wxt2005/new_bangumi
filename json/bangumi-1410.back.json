@@ -10,8 +10,7 @@
     "onAirSite": [
       "http://www.acfun.tv/a/aa127"
     ],
-    "newBgm": false,
-    "showDate": "1996-01-08"
+    "newBgm": false
   },
   {
     "titleCN": "海贼王",
@@ -25,8 +24,7 @@
       "http://www.bilibili.com/sp/海贼王",
       "http://www.acfun.tv/a/aa126"
     ],
-    "newBgm": false,
-    "showDate": "1999-10-20"
+    "newBgm": false
   },
   {
     "titleCN": "火影忍者 疾风传",
@@ -39,8 +37,7 @@
     "onAirSite": [
       "http://www.tudou.com/albumcover/Lqfme5hSolM.html"
     ],
-    "newBgm": false,
-    "showDate": "2007-02-15"
+    "newBgm": false
   },
   {
     "titleCN": "偶像活动! 三期",
@@ -55,8 +52,7 @@
       "http://www.acfun.tv/a/aa1464858",
       "http://www.iqiyi.com/a_19rrhc0yjx.html"
     ],
-    "newBgm": true,
-    "showDate": "2014-10-02"
+    "newBgm": true
   },
   {
     "titleCN": "游戏王ARC-V",
@@ -70,8 +66,7 @@
       "http://www.bilibili.com/sp/游☆戏☆王",
       "http://www.acfun.tv/a/aa1259367"
     ],
-    "newBgm": false,
-    "showDate": "2014-04-06"
+    "newBgm": false
   },
   {
     "titleCN": "Hi★Schoool! 世嘉硬件女孩",
@@ -82,8 +77,7 @@
     "timeJP": "2100",
     "timeCN": "",
     "onAirSite": [],
-    "newBgm": true,
-    "showDate": "2014-10-08"
+    "newBgm": true
   },
   {
     "titleCN": "山贼女孩罗尼雅",
@@ -94,8 +88,7 @@
     "timeJP": "1800",
     "timeCN": "",
     "onAirSite": [],
-    "newBgm": true,
-    "showDate": "2014-10-11"
+    "newBgm": true
   },
   {
     "titleCN": "寄生兽",
@@ -106,8 +99,7 @@
     "timeJP": "0029",
     "timeCN": "0330",
     "onAirSite": [],
-    "newBgm": true,
-    "showDate": "2014-10-09"
+    "newBgm": true
   },
   {
     "titleCN": "笑对阴天",
@@ -121,8 +113,7 @@
       "http://www.iqiyi.com/a_19rrhc0xl1.html",
       "http://www.acfun.tv/a/aa1464836"
     ],
-    "newBgm": true,
-    "showDate": "2014-10-04"
+    "newBgm": true
   },
   {
     "titleCN": "甘城光辉游乐园",
@@ -133,8 +124,7 @@
     "timeJP": "0116",
     "timeCN": "",
     "onAirSite": [],
-    "newBgm": true,
-    "showDate": "2014-10-03"
+    "newBgm": true
   },
   {
     "titleCN": "高达G之复国运动",
@@ -150,8 +140,7 @@
       "http://www.bilibili.com/sp/高达G之复国运动",
       "http://www.acfun.tv/a/aa1464804"
     ],
-    "newBgm": true,
-    "showDate": "2014-10-03"
+    "newBgm": true
   },
   {
     "titleCN": "老子要成为双马尾",
@@ -162,8 +151,7 @@
     "timeJP": "0046",
     "timeCN": "0546",
     "onAirSite": [],
-    "newBgm": true,
-    "showDate": "2014-10-10"
+    "newBgm": true
   },
   {
     "titleCN": "BONJOUR♪恋味甜点坊",
@@ -174,8 +162,7 @@
     "timeJP": "2100",
     "timeCN": "",
     "onAirSite": [],
-    "newBgm": true,
-    "showDate": "2014-10-10"
+    "newBgm": true
   },
   {
     "titleCN": "结城友奈是勇者",
@@ -186,8 +173,7 @@
     "timeJP": "0119",
     "timeCN": "",
     "onAirSite": [],
-    "newBgm": true,
-    "showDate": "2014-10-17"
+    "newBgm": true
   },
   {
     "titleCN": "白箱",
@@ -198,8 +184,7 @@
     "timeJP": "2230",
     "timeCN": "",
     "onAirSite": [],
-    "newBgm": true,
-    "showDate": "2014-10-09"
+    "newBgm": true
   },
   {
     "titleCN": "我家浴缸的二三事",
@@ -210,8 +195,7 @@
     "timeJP": "2254",
     "timeCN": "2301",
     "onAirSite": [],
-    "newBgm": true,
-    "showDate": "2014-10-06"
+    "newBgm": true
   },
   {
     "titleCN": "高达创战者 Try",
@@ -222,8 +206,7 @@
     "timeJP": "1700",
     "timeCN": "1900",
     "onAirSite": [],
-    "newBgm": true,
-    "showDate": "2014-10-08"
+    "newBgm": true
   },
   {
     "titleCN": "天体的秩序",
@@ -236,8 +219,7 @@
     "onAirSite": [
       "http://www.bilibili.com/sp/天体的秩序"
     ],
-    "newBgm": true,
-    "showDate": "2014-10-05"
+    "newBgm": true
   },
   {
     "titleCN": "电器街的漫画店",
@@ -250,8 +232,7 @@
     "onAirSite": [
       "http://www.bilibili.com/sp/电器街的漫画店"
     ],
-    "newBgm": true,
-    "showDate": "2014-10-02"
+    "newBgm": true
   },
   {
     "titleCN": "寻找失去的未来",
@@ -266,8 +247,7 @@
       "http://www.iqiyi.com/a_19rrhc108x.html",
       "http://www.acfun.tv/a/aa1464840"
     ],
-    "newBgm": true,
-    "showDate": "2014-10-04"
+    "newBgm": true
   },
   {
     "titleCN": "棺姬嘉依卡 2期",
@@ -278,8 +258,7 @@
     "timeJP": "0005",
     "timeCN": "",
     "onAirSite": [],
-    "newBgm": true,
-    "showDate": "2014-10-09"
+    "newBgm": true
   },
   {
     "titleCN": "Fate/stay night [Unlimited Blade Works]",
@@ -298,8 +277,7 @@
       "http://www.bilibili.com/sp/FATE%2FSTAY%20NIGHT%20-UBW-",
       "http://www.acfun.tv/a/aa1464802"
     ],
-    "newBgm": true,
-    "showDate": "2014-10-04"
+    "newBgm": true
   },
   {
     "titleCN": "虫师 续章 2期",
@@ -310,8 +288,7 @@
     "timeJP": "2330",
     "timeCN": "",
     "onAirSite": [],
-    "newBgm": true,
-    "showDate": "2014-10-18"
+    "newBgm": true
   },
   {
     "titleCN": "狼少女与黑王子",
@@ -326,8 +303,7 @@
       "http://www.acfun.tv/a/aa1464857",
       "http://www.bilibili.com/sp/狼少女与黑王子"
     ],
-    "newBgm": true,
-    "showDate": "2014-10-05"
+    "newBgm": true
   },
   {
     "titleCN": "火星异种",
@@ -338,14 +314,13 @@
     "timeJP": "2330",
     "timeCN": "0030",
     "onAirSite": [
-      "http://www.tudou.com/albumcover/jGaFpdJqObQ.html",
-      "http://www.youku.com/show_page/id_zff86b776cf5f11e3b8b7.html",
-      "http://www.bilibili.com/sp/火星异种",
-      "http://www.acfun.tv/a/aa1464218",
-      "http://www.iqiyi.com/a_19rrhc139h.html"
+        "http://www.tudou.com/albumcover/jGaFpdJqObQ.html",
+        "http://www.youku.com/show_page/id_zff86b776cf5f11e3b8b7.html",
+        "http://www.bilibili.com/sp/火星异种",
+        "http://www.acfun.tv/a/aa1464218",
+        "http://www.iqiyi.com/a_19rrhc139h.html"
     ],
-    "newBgm": true,
-    "showDate": "2014-09-26"
+    "newBgm": true
   },
   {
     "titleCN": "Cross Ange 天使与龙的轮舞",
@@ -362,8 +337,7 @@
       "http://www.acfun.tv/a/aa1464811",
       "http://www.bilibili.com/sp/CROSSANGE%20天使与龙的轮舞"
     ],
-    "newBgm": true,
-    "showDate": "2014-10-05"
+    "newBgm": true
   },
   {
     "titleCN": "魔弹之王与战姬",
@@ -379,8 +353,7 @@
       "http://www.acfun.tv/a/aa1464820",
       "http://v.pptv.com/show/srmTEXnfT43wbtY.html"
     ],
-    "newBgm": true,
-    "showDate": "2014-10-04"
+    "newBgm": true
   },
   {
     "titleCN": "选择感染者 2期",
@@ -395,8 +368,7 @@
       "http://www.bilibili.com/sp/选择感染者WIXOSS",
       "http://www.acfun.tv/a/aa1464830"
     ],
-    "newBgm": true,
-    "showDate": "2014-10-04"
+    "newBgm": true
   },
   {
     "titleCN": "晨曦公主",
@@ -407,8 +379,7 @@
     "timeJP": "2200",
     "timeCN": "2300",
     "onAirSite": [],
-    "newBgm": true,
-    "showDate": "2014-10-07"
+    "newBgm": true
   },
   {
     "titleCN": "巴哈姆特之怒",
@@ -419,8 +390,7 @@
     "timeJP": "2230",
     "timeCN": "",
     "onAirSite": [],
-    "newBgm": true,
-    "showDate": "2014-10-06"
+    "newBgm": true
   },
   {
     "titleCN": "灰色的果实",
@@ -452,8 +422,7 @@
       "http://www.bilibili.com/sp/七大罪",
       "http://www.acfun.tv/a/aa1464817"
     ],
-    "newBgm": true,
-    "showDate": "2014-10-05"
+    "newBgm": true
   },
   {
     "titleCN": "魔术快斗1412",
@@ -471,8 +440,7 @@
       "http://www.iqiyi.com/a_19rrhc0x81.html",
       "http://tv.sohu.com/s2014/gdjd1412/"
     ],
-    "newBgm": true,
-    "showDate": "2014-10-04"
+    "newBgm": true
   },
   {
     "titleCN": "tribecoolcrew",
@@ -485,8 +453,7 @@
     "onAirSite": [
       "http://www.acfun.tv/a/aa1464859"
     ],
-    "newBgm": true,
-    "showDate": "2014-09-28"
+    "newBgm": true
   },
   {
     "titleCN": "境界触发者",
@@ -501,8 +468,7 @@
       "http://www.acfun.tv/a/aa1464845",
       "http://www.bilibili.com/sp/境界触发者"
     ],
-    "newBgm": true,
-    "showDate": "2014-10-05"
+    "newBgm": true
   },
   {
     "titleCN": "Calimero",
@@ -513,8 +479,7 @@
     "timeJP": "0630",
     "timeCN": "",
     "onAirSite": [],
-    "newBgm": true,
-    "showDate": "2014-10-07"
+    "newBgm": true
   },
   {
     "titleCN": "牙狼〈GARO〉-炎之刻印-",
@@ -531,8 +496,7 @@
       "http://www.acfun.tv/a/aa1464805",
       "http://www.youku.com/show_page/id_z7d04ee48fa7b11e3b8b7.html"
     ],
-    "newBgm": true,
-    "showDate": "2014-10-04"
+    "newBgm": true
   },
   {
     "titleCN": "银仙",
@@ -550,8 +514,7 @@
       "http://www.acfun.tv/a/aa1464821",
       "http://www.bilibili.com/sp/银仙"
     ],
-    "newBgm": true,
-    "showDate": "2014-10-06"
+    "newBgm": true
   },
   {
     "titleCN": "飙速宅男 2期",
@@ -562,8 +525,7 @@
     "timeJP": "0035",
     "timeCN": "",
     "onAirSite": [],
-    "newBgm": true,
-    "showDate": "2014-10-07"
+    "newBgm": true
   },
   {
     "titleCN": "PSYCHO-PASS 2期",
@@ -574,8 +536,7 @@
     "timeJP": "2350",
     "timeCN": "",
     "onAirSite": [],
-    "newBgm": true,
-    "showDate": "2014-10-09"
+    "newBgm": true
   },
   {
     "titleCN": "记录的地平线 2期",
@@ -591,8 +552,7 @@
       "http://www.iqiyi.com/a_19rrhc10bp.html",
       "http://www.acfun.tv/a/aa1464807"
     ],
-    "newBgm": true,
-    "showDate": "2014-10-04"
+    "newBgm": true
   },
   {
     "titleCN": "四月是你的谎言",
@@ -603,8 +563,7 @@
     "timeJP": "0020",
     "timeCN": "0150",
     "onAirSite": [],
-    "newBgm": true,
-    "showDate": "2014-10-10"
+    "newBgm": true
   },
   {
     "titleCN": "临时女友",
@@ -615,8 +574,7 @@
     "timeJP": "0035",
     "timeCN": "0135",
     "onAirSite": [],
-    "newBgm": true,
-    "showDate": "2014-10-13"
+    "newBgm": true
   },
   {
     "titleCN": "七人魔法使",
@@ -627,8 +585,7 @@
     "timeJP": "0040",
     "timeCN": "0140",
     "onAirSite": [],
-    "newBgm": true,
-    "showDate": "2014-10-08"
+    "newBgm": true
   },
   {
     "titleCN": "日常系的异能战斗",
@@ -639,8 +596,7 @@
     "timeJP": "0105",
     "timeCN": "0205",
     "onAirSite": [],
-    "newBgm": true,
-    "showDate": "2014-10-07"
+    "newBgm": true
   },
   {
     "titleCN": "怪盗Joker",
@@ -663,8 +619,7 @@
     "timeJP": "0005",
     "timeCN": "",
     "onAirSite": [],
-    "newBgm": true,
-    "showDate": "2014-10-07"
+    "newBgm": true
   },
   {
     "titleCN": "大图书馆的牧羊人",
@@ -677,8 +632,7 @@
     "onAirSite": [
       "http://www.bilibili.com/sp/大图书馆的牧羊人"
     ],
-    "newBgm": true,
-    "showDate": "2014-10-08"
+    "newBgm": true
   },
   {
     "titleCN": "爱・天地无用",
@@ -689,8 +643,7 @@
     "timeJP": "2055",
     "timeCN": "",
     "onAirSite": [],
-    "newBgm": true,
-    "showDate": "2014-10-06"
+    "newBgm": true
   },
   {
     "titleCN": "关于完全听不懂老公在说什么的事",
@@ -703,8 +656,7 @@
     "onAirSite": [
       "http://www.acfun.tv/a/aa1464852"
     ],
-    "newBgm": true,
-    "showDate": "2014-10-03"
+    "newBgm": true
   },
   {
     "titleCN": "Sword Art Online Ⅱ",
@@ -718,8 +670,7 @@
       "http://www.letv.com/comic/10001115.html",
       "http://www.bilibili.com/sp/刀剑神域"
     ],
-    "newBgm": false,
-    "showDate": "2014-07-05"
+    "newBgm": false
   },
   {
     "titleCN": "白银的意志 安格弗伦",
@@ -734,8 +685,7 @@
       "http://www.acfun.tv/a/aa2649",
       "http://www.bilibili.com/sp/白银的意志%20ARGEVOLLEN"
     ],
-    "newBgm": false,
-    "showDate": "2014-07-03"
+    "newBgm": false
   },
   {
     "titleCN": "钻石王牌",
@@ -750,8 +700,7 @@
       "http://www.bilibili.com/sp/钻石王牌",
       "http://www.acfun.tv/sp/diamondace/"
     ],
-    "newBgm": false,
-    "showDate": "2013-10-06"
+    "newBgm": false
   },
   {
     "titleCN": "前进吧！登山少女 2期",
@@ -766,8 +715,7 @@
       "http://www.acfun.tv/a/aa2680",
       "http://www.bilibili.com/sp/向山进发"
     ],
-    "newBgm": false,
-    "showDate": "2014-07-09"
+    "newBgm": false
   },
   {
     "titleCN": "美少女战士 Crystal",
@@ -783,8 +731,7 @@
       "http://www.acfun.tv/a/aa2659"
     ],
     "newBgm": true,
-    "comment": "两周一话",
-    "showDate": "2014-07-05"
+    "comment": "两周一话"
   },
   {
     "titleCN": "Happiness Charge Precure",
@@ -798,8 +745,7 @@
       "http://www.bilibili.com/sp/光之美少女",
       "http://www.acfun.tv/a/aa254"
     ],
-    "newBgm": false,
-    "showDate": "2014-02-02"
+    "newBgm": false
   },
   {
     "titleCN": "口袋妖怪 XY",
@@ -813,8 +759,7 @@
       "http://www.bilibili.com/sp/宠物小精灵",
       "http://www.acfun.tv/a/aa109"
     ],
-    "newBgm": false,
-    "showDate": "2013-10-17"
+    "newBgm": false
   },
   {
     "titleCN": "妖怪手表",
@@ -828,8 +773,7 @@
       "http://www.bilibili.com/sp/妖怪手表",
       "http://www.acfun.tv/a/aa220"
     ],
-    "newBgm": false,
-    "showDate": "2014-01-08"
+    "newBgm": false
   },
   {
     "titleCN": "魔神之骨",
@@ -844,8 +788,7 @@
       "http://www.bilibili.com/sp/魔神之骨",
       "http://www.acfun.tv/a/aa1175"
     ],
-    "newBgm": false,
-    "showDate": "2014-04-01"
+    "newBgm": false
   },
   {
     "titleCN": "展开骑士",
@@ -858,8 +801,7 @@
     "onAirSite": [
       "http://www.bilibili.com/sp/展开骑士"
     ],
-    "newBgm": false,
-    "showDate": "2014-04-05"
+    "newBgm": false
   },
   {
     "titleCN": "PriPara",
@@ -872,8 +814,7 @@
     "onAirSite": [
       "http://www.acfun.tv/a/aa2658"
     ],
-    "newBgm": false,
-    "showDate": "2014-07-05"
+    "newBgm": false
   },
   {
     "titleCN": "复仇者联盟：光盘战争",
@@ -887,8 +828,7 @@
       "http://www.bilibili.com/sp/复仇者联盟#S-889",
       "http://www.acfun.tv/a/aa1241"
     ],
-    "newBgm": false,
-    "showDate": "2014-04-02"
+    "newBgm": false
   },
   {
     "titleCN": "卡片战斗先导者 双斗盟友篇",
@@ -902,8 +842,7 @@
       "http://www.bilibili.com/sp/卡片战斗先导者",
       "http://www.acfun.tv/a/aa2297"
     ],
-    "newBgm": false,
-    "showDate": "2014-03-09"
+    "newBgm": false
   },
   {
     "titleCN": "妖精的尾巴 2期",
@@ -918,8 +857,7 @@
       "http://www.bilibili.com/sp/妖精的尾巴",
       "http://www.acfun.tv/a/aa1214#group=1"
     ],
-    "newBgm": false,
-    "showDate": "2014-04-05"
+    "newBgm": false
   },
   {
     "titleCN": "龙珠改 魔人布欧篇",
@@ -934,8 +872,7 @@
       "http://www.bilibili.com/sp/龙珠#S-867",
       "http://www.acfun.tv/a/aa1243"
     ],
-    "newBgm": false,
-    "showDate": "2014-04-06"
+    "newBgm": false
   },
   {
     "titleCN": "Lady 宝石宠物",
@@ -949,8 +886,7 @@
       "http://www.bilibili.com/sp/宝石宠物#S-894",
       "http://www.acfun.tv/a/aa1263"
     ],
-    "newBgm": false,
-    "showDate": "2014-04-05"
+    "newBgm": false
   },
   {
     "titleCN": "斩·赤红之瞳",
@@ -968,8 +904,7 @@
       "http://www.youku.com/show_page/id_ze2cbdefaa75911e38b3f.html",
       "http://www.tudou.com/albumcover/NBDgX_W2aJk.html"
     ],
-    "newBgm": false,
-    "showDate": "2014-07-06"
+    "newBgm": false
   },
   {
     "titleCN": "Buddy Complex 完结篇",
@@ -987,7 +922,6 @@
       "http://www.acfun.tv/a/aa1464854"
     ],
     "newBgm": true,
-    "comment": "完结篇 共两话<br>前后篇即14-15话",
-    "showDate": "2014-09-29"
+    "comment": "完结篇 共两话<br>前后篇即14-15话"
   }
 ]
