@@ -943,6 +943,10 @@ screen and (max--moz-device-pixel-ratio: 2) {
     #footer a {
         font-size: 10px;
     }
+
+    #container table tbody tr td abbr.weekDay {
+        border-bottom: none;
+    }
 }
 
 @media screen and (max-width:530px) {
