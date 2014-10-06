@@ -10,7 +10,8 @@
     "onAirSite": [
       "http://www.acfun.tv/a/aa127"
     ],
-    "newBgm": false
+    "newBgm": false,
+    "showDate": "1996-01-08"
   },
   {
     "titleCN": "海贼王",
@@ -24,7 +25,8 @@
       "http://www.bilibili.com/sp/海贼王",
       "http://www.acfun.tv/a/aa126"
     ],
-    "newBgm": false
+    "newBgm": false,
+    "showDate": "1999-10-20"
   },
   {
     "titleCN": "火影忍者 疾风传",
@@ -37,7 +39,8 @@
     "onAirSite": [
       "http://www.tudou.com/albumcover/Lqfme5hSolM.html"
     ],
-    "newBgm": false
+    "newBgm": false,
+    "showDate": "2007-02-15"
   },
   {
     "titleCN": "偶像活动! 二期",
@@ -50,7 +53,8 @@
     "onAirSite": [
       "http://www.bilibili.com/sp/偶像活动"
     ],
-    "newBgm": false
+    "newBgm": false,
+    "showDate": "2013-10-03"
   },
   {
     "titleCN": "游戏王ARC-V",
@@ -64,7 +68,8 @@
       "http://www.bilibili.com/sp/游☆戏☆王",
       "http://www.acfun.tv/a/aa1259367"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2013-04-06"
   },
   {
     "titleCN": "邻座同学是怪咖",
@@ -79,7 +84,8 @@
       "http://www.bilibili.com/sp/上课小动作",
       "http://www.acfun.tv/a/aa189"
     ],
-    "newBgm": false
+    "newBgm": false,
+    "showDate": "2014-01-06"
   },
   {
     "titleCN": "尽管如此世界依然美丽",
@@ -94,7 +100,8 @@
       "http://www.bilibili.com/sp/尽管如此世界依然美丽",
       "http://www.acfun.tv/a/aa1141"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-06"
   },
   {
     "titleCN": "Lady 宝石宠物",
@@ -108,7 +115,8 @@
       "http://www.bilibili.com/sp/宝石宠物#S-894",
       "http://www.acfun.tv/a/aa1263"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-05"
   },
   {
     "titleCN": "Happiness Charge Precure",
@@ -122,7 +130,8 @@
       "http://www.bilibili.com/sp/光之美少女",
       "http://www.acfun.tv/a/aa254"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-02-02"
   },
   {
     "titleCN": "金色琴弦 Blue♪Sky",
@@ -137,7 +146,8 @@
       "http://www.bilibili.com/sp/金色琴弦",
       "http://www.acfun.tv/a/aa1226"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-06"
   },
   {
     "titleCN": "艾斯卡与罗吉的工作室 黄昏之空的炼金术士",
@@ -151,7 +161,8 @@
       "http://www.bilibili.com/sp/爱丝卡与罗吉的工作室%20黄昏之空的炼金术士",
       "http://www.acfun.tv/a/aa1135"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-10"
   },
   {
     "titleCN": "洪门剑灵传说",
@@ -166,7 +177,8 @@
       "http://www.bilibili.com/sp/剑灵",
       "http://www.acfun.tv/a/aa1138"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-04"
   },
   {
     "titleCN": "希德尼娅的骑士",
@@ -181,7 +193,8 @@
       "http://www.bilibili.com/sp/希德尼娅的骑士",
       "http://www.acfun.tv/a/aa1111"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-11"
   },
   {
     "titleCN": "恶魔之谜",
@@ -196,7 +209,8 @@
       "http://www.bilibili.com/sp/恶魔之谜",
       "http://www.acfun.tv/a/aa1132"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-04"
   },
   {
     "titleCN": "我们大家的河合庄",
@@ -210,7 +224,8 @@
       "http://www.bilibili.com/sp/我们大家的河合庄",
       "http://www.acfun.tv/a/aa1110"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-04"
   },
   {
     "titleCN": "未来卡 搭档对战",
@@ -224,7 +239,8 @@
       "http://www.bilibili.com/sp/未来卡%20搭档对战",
       "http://www.acfun.tv/a/aa219"
     ],
-    "newBgm": false
+    "newBgm": false,
+    "showDate": "2014-01-04"
   },
   {
     "titleCN": "口袋妖怪 XY",
@@ -238,7 +254,8 @@
       "http://www.bilibili.com/sp/宠物小精灵",
       "http://www.acfun.tv/a/aa109"
     ],
-    "newBgm": false
+    "newBgm": false,
+    "showDate": "2013-10-17"
   },
   {
     "titleCN": "妖怪手表",
@@ -252,7 +269,8 @@
       "http://www.bilibili.com/sp/妖怪手表",
       "http://www.acfun.tv/a/aa220"
     ],
-    "newBgm": false
+    "newBgm": false,
+    "showDate": "2014-01-08"
   },
   {
     "titleCN": "卡片战斗先导者 双斗盟友篇",
@@ -265,7 +283,8 @@
     "onAirSite": [
       "http://www.bilibili.com/sp/卡片战斗先导者"
     ],
-    "newBgm": false
+    "newBgm": false,
+    "showDate": "2014-03-09"
   },
   {
     "titleCN": "圣灵破碎者",
@@ -276,7 +295,8 @@
     "timeJP": "1700",
     "timeCN": "",
     "onAirSite": [],
-    "newBgm": false
+    "newBgm": false,
+    "showDate": "2013-10-02"
   },
   {
     "titleCN": "英雄银行",
@@ -289,7 +309,8 @@
     "onAirSite": [
       "http://www.bilibili.com/sp/英雄银行"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-07"
   },
   {
     "titleCN": "美妙旋律All Star",
@@ -303,7 +324,8 @@
       "http://www.bilibili.com/sp/美妙旋律%20彩虹之梦",
       "http://www.acfun.tv/a/aa1262"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-05"
   },
   {
     "titleCN": "魔神之骨",
@@ -318,7 +340,8 @@
       "http://www.bilibili.com/sp/魔神之骨",
       "http://www.acfun.tv/a/aa1175"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-01"
   },
   {
     "titleCN": "展开骑士",
@@ -331,7 +354,8 @@
     "onAirSite": [
       "http://www.bilibili.com/sp/展开骑士"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-05"
   },
   {
     "titleCN": "噬魂师NOT",
@@ -346,7 +370,8 @@
       "http://www.bilibili.com/sp/噬魂师NOT！",
       "http://www.acfun.tv/a/aa1271"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-09"
   },
   {
     "titleCN": "伪恋",
@@ -361,7 +386,8 @@
       "http://www.bilibili.com/sp/伪恋",
       "http://www.acfun.tv/a/aa221"
     ],
-    "newBgm": false
+    "newBgm": false,
+    "showDate": "2014-01-11"
   },
   {
     "titleCN": "魔法科高校的劣等生",
@@ -375,7 +401,8 @@
       "http://www.bilibili.com/sp/魔法科高校的劣等生",
       "http://www.acfun.tv/a/aa1058"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-05"
   },
   {
     "titleCN": "JOJO的奇妙冒险 第三部 Stardust Crusaders",
@@ -389,7 +416,8 @@
       "http://www.bilibili.com/sp/JOJO的奇妙冒险",
       "http://www.acfun.tv/a/aa954"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-04"
   },
   {
     "titleCN": "魔法少女大战",
@@ -404,7 +432,8 @@
       "http://www.bilibili.com/sp/魔法少女大战",
       "http://www.acfun.tv/a/aa1282"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-08"
   },
   {
     "titleCN": "吃豆人世界",
@@ -417,7 +446,8 @@
     "onAirSite": [
       "http://www.bilibili.com/sp/吃豆人世界"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-05"
   },
   {
     "titleCN": "约会大作战Ⅱ",
@@ -432,7 +462,8 @@
       "http://www.bilibili.com/sp/约会大作战",
       "http://www.acfun.tv/a/aa1122"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-12"
   },
   {
     "titleCN": "棺姬嘉依卡",
@@ -447,7 +478,8 @@
       "http://www.bilibili.com/sp/棺姬嘉依卡",
       "http://www.acfun.tv/a/aa1134"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-10"
   },
   {
     "titleCN": "风云维新大将军",
@@ -462,7 +494,8 @@
       "http://www.bilibili.com/sp/风云维新大将军",
       "http://www.acfun.tv/a/aa1133"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-10"
   },
   {
     "titleCN": "漆黑的子弹",
@@ -477,7 +510,8 @@
       "http://www.bilibili.com/sp/漆黑的子弹",
       "http://www.acfun.tv/a/aa1105"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-08"
   },
   {
     "titleCN": "目隐都市的演绎者",
@@ -492,7 +526,8 @@
       "http://www.bilibili.com/sp/目隐都市的演绎者",
       "http://www.acfun.tv/a/aa1342"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-12"
   },
   {
     "titleCN": "虫师 续章",
@@ -507,7 +542,8 @@
       "http://www.bilibili.com/sp/虫师",
       "http://www.acfun.tv/a/aa184"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-04"
   },
   {
     "titleCN": "极黑的布伦希尔特",
@@ -522,7 +558,8 @@
       "http://www.bilibili.com/sp/极黑的布伦希尔特",
       "http://www.acfun.tv/a/aa1136"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-06"
   },
   {
     "titleCN": "选择感染者 WIXOSS",
@@ -537,7 +574,8 @@
       "http://www.bilibili.com/sp/选择感染者WIXOSS",
       "http://www.acfun.tv/a/aa1114"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-04"
   },
   {
     "titleCN": "地球队长",
@@ -552,7 +590,8 @@
       "http://www.bilibili.com/sp/地球队长",
       "http://www.acfun.tv/a/aa1131"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-06"
   },
   {
     "titleCN": "LOVELIVE 2期",
@@ -567,7 +606,8 @@
       "http://www.acfun.tv/a/aa229",
       "http://www.bilibili.com/sp/LOVE%20LIVE%21"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-06"
   },
   {
     "titleCN": "一周的朋友",
@@ -582,7 +622,8 @@
       "http://www.bilibili.com/sp/一周的朋友。",
       "http://www.acfun.tv/a/aa1118"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-06"
   },
   {
     "titleCN": "众神的恶作剧",
@@ -596,7 +637,8 @@
       "http://www.bilibili.com/sp/众神的恶作剧",
       "http://www.acfun.tv/a/aa1124"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-06"
   },
   {
     "titleCN": "星刻龙骑士",
@@ -611,7 +653,8 @@
       "http://www.bilibili.com/sp/星刻的龙骑士",
       "http://www.acfun.tv/a/aa1112"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-05"
   },
   {
     "titleCN": "如果折断她的旗",
@@ -626,7 +669,8 @@
       "http://www.bilibili.com/sp/如果她的旗帜被折断了",
       "http://www.acfun.tv/a/aa1109"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-06"
   },
   {
     "titleCN": "请问您今天要来点兔子吗？",
@@ -641,7 +685,8 @@
       "http://www.bilibili.com/sp/请问您今天要来点兔子吗？",
       "http://www.acfun.tv/a/aa1107"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-10"
   },
   {
     "titleCN": "游戏人生",
@@ -656,7 +701,8 @@
       "http://www.bilibili.com/sp/NO%20GAME%20NO%20LIFE%20游戏人生",
       "http://www.acfun.tv/a/aa1121"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-09"
   },
   {
     "titleCN": "破刃之剑",
@@ -671,7 +717,8 @@
       "http://www.bilibili.com/sp/破刃之剑",
       "http://www.acfun.tv/a/aa1104"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-06"
   },
   {
     "titleCN": "漫画家与助手",
@@ -686,7 +733,8 @@
       "http://www.bilibili.com/sp/漫画家与助手",
       "http://www.acfun.tv/a/aa1257"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-08"
   },
   {
     "titleCN": "健全机斗士",
@@ -701,7 +749,8 @@
       "http://www.bilibili.com/sp/健全机斗士",
       "http://www.acfun.tv/a/aa1139"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-05"
   },
   {
     "titleCN": "排球少年",
@@ -716,7 +765,8 @@
       "http://www.bilibili.com/sp/排球！！",
       "http://www.acfun.tv/a/aa1249"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-06"
   },
   {
     "titleCN": "金田一少年事件簿R",
@@ -731,7 +781,8 @@
       "http://www.bilibili.com/sp/金田一少年之事件簿",
       "http://www.acfun.tv/a/aa1140"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-05"
   },
   {
     "titleCN": "HUNTER×HUNTER",
@@ -746,7 +797,8 @@
       "http://www.bilibili.com/sp/全职猎人",
       "http://www.acfun.tv/a/aa129"
     ],
-    "newBgm": false
+    "newBgm": false,
+    "showDate": "2011-10-03"
   },
   {
     "titleCN": "相扑力士松太郎",
@@ -761,7 +813,8 @@
       "http://www.acfun.tv/a/aa1254",
       "http://tv.sohu.com/s2014/xplsstl/"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-06"
   },
   {
     "titleCN": "复仇者联盟：光盘战争",
@@ -775,7 +828,8 @@
       "http://www.bilibili.com/sp/复仇者联盟#S-889",
       "http://www.acfun.tv/a/aa1241"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-02"
   },
   {
     "titleCN": "忍者神龟 新系列",
@@ -786,7 +840,8 @@
     "timeJP": "0630",
     "timeCN": "",
     "onAirSite": [],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-04"
   },
   {
     "titleCN": "Oreca Battle",
@@ -797,7 +852,8 @@
     "timeJP": "1700",
     "timeCN": "",
     "onAirSite": [],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-07"
   },
   {
     "titleCN": "愚者信长",
@@ -812,7 +868,8 @@
       "http://www.bilibili.com/sp/信长%20THE%20FOOL",
       "http://www.acfun.tv/a/aa191"
     ],
-    "newBgm": false
+    "newBgm": false,
+    "showDate": "2014-01-06"
   },
   {
     "titleCN": "妖精的尾巴 2期",
@@ -827,7 +884,8 @@
       "http://www.bilibili.com/sp/妖精的尾巴",
       "http://www.acfun.tv/a/aa1214#group=1"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-05"
   },
   {
     "titleCN": "飚速宅男",
@@ -841,7 +899,8 @@
       "http://www.youku.com/show_page/id_z88da380a055711e3b8b7.html",
       "http://www.bilibili.com/sp/飙速宅男"
     ],
-    "newBgm": false
+    "newBgm": false,
+    "showDate": "2013-10-08"
   },
   {
     "titleCN": "钻石王牌",
@@ -856,7 +915,8 @@
       "http://www.bilibili.com/sp/钻石王牌",
       "http://www.acfun.tv/sp/diamondace/"
     ],
-    "newBgm": false
+    "newBgm": false,
+    "showDate": "2013-10-06"
   },
   {
     "titleCN": "监督不行届",
@@ -870,7 +930,8 @@
       "http://www.bilibili.com/sp/监督不行届",
       "http://www.acfun.tv/a/aa1200"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-04"
   },
   {
     "titleCN": "M3 ~黑钢~",
@@ -887,7 +948,8 @@
       "http://www.bilibili.com/sp/M3黑色之钢",
       "http://www.acfun.tv/a/aa1129"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-22"
   },
   {
     "titleCN": "乒乓",
@@ -901,7 +963,8 @@
       "http://comic.letv.com/zt/pingpong/index.shtml",
       "http://www.bilibili.com/sp/乒乓"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-10"
   },
   {
     "titleCN": "龙珠改 魔人布欧篇",
@@ -916,7 +979,8 @@
       "http://www.bilibili.com/sp/龙珠#S-867",
       "http://www.acfun.tv/a/aa1243"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-06"
   },
   {
     "titleCN": "龙娘七七七埋藏的宝藏",
@@ -931,20 +995,22 @@
       "http://www.bilibili.com/sp/龙娘七七七埋藏的宝藏",
       "http://www.acfun.tv/a/aa1307"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-11"
   },
   {
     "titleCN": "卡片战斗先导者 LinkJoker篇",
     "titleJP": "カードファイト!! ヴァンガード　リンクジョーカー編",
     "officalSite": "http://www.tv-tokyo.co.jp/anime/cf-vanguard-lj/",
-    "weekDayJP": 6,
-    "weekDayCN": 0,
+    "weekDayJP": 0,
+    "weekDayCN": 1,
     "timeJP": "0530",
     "timeCN": "",
     "onAirSite": [
       "http://www.bilibili.com/sp/卡片战斗先导者"
     ],
-    "newBgm": false
+    "newBgm": false,
+    "showDate": "2013-01-13"
   },
   {
     "titleCN": "网球优等生",
@@ -959,7 +1025,8 @@
       "http://www.bilibili.com/sp/BABY%20STEPS%20网球优等生",
       "http://www.acfun.tv/a/aa1235"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-06"
   },
   {
     "titleCN": "攻壳机动队入门ARISE",
@@ -972,7 +1039,8 @@
     "onAirSite": [
       "http://www.bilibili.com/sp/攻壳机动队"
     ],
-    "newBgm": false
+    "newBgm": false,
+    "showDate": "2014-01-07"
   },
   {
     "titleCN": "享用罗德斯岛战记",
@@ -983,21 +1051,23 @@
     "timeJP": "2125",
     "timeCN": "",
     "onAirSite": [],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-06"
   },
   {
     "titleCN": "犬神同学和猫山同学",
     "titleJP": "犬神さんと猫山さん",
     "officalSite": "http://www.dreamcreation.co.jp/inuneko/",
-    "weekDayJP": 2,
-    "weekDayCN": 3,
-    "timeJP": "0130",
+    "weekDayJP": 5,
+    "weekDayCN": 6,
+    "timeJP": "0000",
     "timeCN": "",
     "onAirSite": [
       "http://www.bilibili.com/sp/犬神同学和猫山同学",
       "http://www.acfun.tv/a/aa1108"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-10"
   },
   {
     "titleCN": "迷你偶像 2期",
@@ -1011,6 +1081,7 @@
       "http://www.bilibili.com/sp/迷你偶像",
       "http://www.acfun.tv/a/aa1106"
     ],
-    "newBgm": true
+    "newBgm": true,
+    "showDate": "2014-04-05"
   }
 ]
