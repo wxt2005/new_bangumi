@@ -720,6 +720,11 @@ input::-webkit-search-cancel-button {
     color: #aaa;
 }
 
+#container table tbody tr td abbr.weekDay {
+    border-bottom: 1px dashed #aaa;
+    cursor: pointer;
+}
+
 /*页脚*/
 #footer {
     max-width: 980px;
