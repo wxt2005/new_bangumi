@@ -12,7 +12,7 @@ $(function() {
 
     var i = 0, j = 0, k = 0;
     var l = 0, m = 0, n = 0;
-    var dateNow = 0, weekDayNow = 0, yearNow = 0, monthNow = 0, dayNow = 0;
+    var dateNow = 0, weekDayNow = 0, yearNow = 0, monthNow = 0, dayNow = 0, hourNow = 0, minuteNow = 0;
     var yearRead = 0, monthRead = 0;
     var timer = null;
     var weekDayCN = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
@@ -344,14 +344,19 @@ $(function() {
      * 决定显示周天还是开播日期
      * @method decideShowDate
      * @param {string} dateStr 日期字符串 2004-10-01
+     * @param {string} time 时间字符串
      * return {boolean} true为显示开播日期 false为显示周天
      */
-    function decideShowDate(dateStr) {
+    function decideShowDate(dateStr, time) {
         if (dateStr) {
             var showDate = dateStr.split('-');
+            var hour = +time.slice(0, 2);
+            var minute = +time.slice(2);
             if (+showDate[0] > yearNow || 
                 (+showDate[0] === yearNow && +showDate[1] > monthNow) || 
-                (+showDate[0] === yearNow && +showDate[1] === monthNow && +showDate[2] >= dayNow)) {
+                (+showDate[0] === yearNow && +showDate[1] === monthNow && +showDate[2] > dayNow) ||
+                (+showDate[0] === yearNow && +showDate[1] === monthNow && +showDate[2] === dayNow && hour > hourNow) || 
+                (+showDate[0] === yearNow && +showDate[1] === monthNow && +showDate[2] === dayNow && hour === hourNow && minute >= minuteNow)) {
                 return true;
             } 
         }
@@ -441,13 +446,15 @@ $(function() {
                 (status.jpTitle ? data[i].titleJP : data[i].titleCN) + '</a></td><td>' +
                 (data[i].comment ? '<div class="comment">' +
                 '<div class="tooltip">' + data[i].comment + '</div></div>' : '') +
-                '</td><td><abbr class="weekDay" title="放送日期: ' + (data[i].showDate || '') +'">';
+                '</td><td>';
 
             // 显示开播日期还是周天
-            if (decideShowDate(data[i].showDate || '')) {
-                html += formatDate(data[i].showDate);
+            if (decideShowDate((data[i].showDate || ''), data[i].timeJP)) {
+                html += '<abbr class="showDate" title="放送日期: ' + (data[i].showDate || '') +'">' +
+                    formatDate(data[i].showDate);
             } else {
-                html += formatWeekDay(data[i].weekDayJP, (status.jpTime ? 'jp' : 'cn'));
+                html += '<abbr class="weekDay" title="放送日期: ' + (data[i].showDate || '') +'">' +
+                    formatWeekDay(data[i].weekDayJP, (status.jpTime ? 'jp' : 'cn'));
             }
 
             html += '</abbr><span class="time">' + formatTime(data[i].timeJP) +
@@ -874,6 +881,8 @@ $(function() {
             dayNow = dateNow.getDate();
             monthNow = dateNow.getMonth() + 1;
             weekDayNow = dateNow.getDay();
+            hourNow = dateNow.getHours();
+            minuteNow = dateNow.getMinutes();
             // 将获取的星期几转换为switcher的序号，存入变量
             status.switchInit = (weekDayNow === 0 ? 6 : weekDayNow - 1);
             switcherToday(status.switchInit);
