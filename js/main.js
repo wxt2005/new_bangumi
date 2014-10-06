@@ -441,7 +441,7 @@ $(function() {
                 (status.jpTitle ? data[i].titleJP : data[i].titleCN) + '</a></td><td>' +
                 (data[i].comment ? '<div class="comment">' +
                 '<div class="tooltip">' + data[i].comment + '</div></div>' : '') +
-                '</td><td><abbr class="weekDay" title="' + (data[i].showDate || '') +'">';
+                '</td><td><abbr class="weekDay" title="放送日期: ' + (data[i].showDate || '') +'">';
 
             // 显示开播日期还是周天
             if (decideShowDate(data[i].showDate || '')) {
@@ -839,8 +839,10 @@ $(function() {
             },
             error: function(xhr, stat, error) {
                 // 在表格中添加显示错误信息的行
-                $tbody.append('<tr><td colspan="4">读取 ' + path + ' 出错，错误代码：' +
+                $tbody.empty();
+                $tbody.append('<tr><td colspan="5">读取 ' + path + ' 出错，错误代码：' +
                     xhr.status + ' ' + error + '</td></tr>');
+                $shadow.fadeOut(200);
             }
         });
     }
@@ -866,8 +868,10 @@ $(function() {
         },
         error: function(xhr, stat, error) {
             // 在表格中添加显示错误信息的行
-            $tbody.append('<tr><td colspan="4">读取 json/archive.json 出错，错误代码：' +
+            $tbody.empty();
+            $tbody.append('<tr><td colspan="5">读取 json/archive.json 出错，错误代码：' +
                 xhr.status + ' ' + error + '</td></tr>');
+            $shadow.fadeOut(200);
         }
     });
 
