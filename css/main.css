@@ -687,7 +687,8 @@ input::-webkit-search-cancel-button {
     font-size: 15px;
 }
 
-#container table tbody tr td .weekDay {
+#container table tbody tr td .weekDay,
+#container table tbody tr td .dateJP {
     margin-right: 5px;
 }
 

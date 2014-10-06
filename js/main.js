@@ -7,12 +7,12 @@
 /* jshint -W097 */
 
 $(function() {
-    // 删除noscipt标签
+    // 删除noscript标签
     $('noscript').remove();
 
     var i = 0, j = 0, k = 0;
     var l = 0, m = 0, n = 0;
-    var dateNow = 0, weekDayNow = 0, yearNow = 0, monthNow = 0;
+    var dateNow = 0, weekDayNow = 0, yearNow = 0, monthNow = 0, dayNow = 0;
     var yearRead = 0, monthRead = 0;
     var timer = null;
     var weekDayCN = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
@@ -92,7 +92,7 @@ $(function() {
      * 将字符串还原为布尔值
      * @method revertBoolean
      * @param {string} a 还原前字符串
-     * @return 还原后布尔值
+     * @return {boolean} 还原后布尔值
      */
     function revertBoolean(a) {
         switch (a) {
@@ -134,6 +134,22 @@ $(function() {
             return '(未知)';
         } else {
             return time ? time.slice(0, 2) + ':' + time.slice(2) : '(预计)';
+        }
+    }
+
+    /**
+     * 格式化日期（只显示月日）
+     * @method formatDate
+     * @param {string} 日期字符串
+     * @return {string} 格式化的月日 10/01
+     */
+    function formatDate(dateStr) {
+        if (dateStr) {
+            var dateParts = dateStr.split('-');
+            return (dateParts[1].length === 1 ? '0' + dateParts[1] : dateParts[1]) + '/' + 
+                (dateParts[2].length === 1 ? '0' + dateParts[2] : dateParts[2]);
+        } else {
+            return '';
         }
     }
 
@@ -325,6 +341,24 @@ $(function() {
     }
 
     /**
+     * 决定显示周天还是开播日期
+     * @method decideShowDate
+     * @param {string} dateStr 日期字符串 2004-10-01
+     * return {boolean} true为显示开播日期 false为显示周天
+     */
+    function decideShowDate(dateStr) {
+        if (dateStr) {
+            var showDate = dateStr.split('-');
+            if (+showDate[0] > yearNow || 
+                (+showDate[0] === yearNow && +showDate[1] > monthNow) || 
+                (+showDate[0] === yearNow && +showDate[1] === monthNow && +showDate[2] >= dayNow)) {
+                return true;
+            } 
+        }
+        return false;
+    }
+
+    /**
      * 构建站点过滤菜单
      * @method buildSites
      */
@@ -407,9 +441,16 @@ $(function() {
                 (status.jpTitle ? data[i].titleJP : data[i].titleCN) + '</a></td><td>' +
                 (data[i].comment ? '<div class="comment">' +
                 '<div class="tooltip">' + data[i].comment + '</div></div>' : '') +
-                '</td><td><span class="weekDay">' +
-                formatWeekDay(data[i].weekDayJP, (status.jpTime ? 'jp' : 'cn')) +
-                '</span><span class="time">' + formatTime(data[i].timeJP) +
+                '</td><td><abbr class="weekDay" title="' + (data[i].showDate || '') +'">';
+
+            // 显示开播日期还是周天
+            if (decideShowDate(data[i].showDate || '')) {
+                html += formatDate(data[i].showDate);
+            } else {
+                html += formatWeekDay(data[i].weekDayJP, (status.jpTime ? 'jp' : 'cn'));
+            }
+
+            html += '</abbr><span class="time">' + formatTime(data[i].timeJP) +
                 '</span></td><td><span class="weekDay">' +
                 formatWeekDay(data[i].weekDayCN, 'cn') + '</span><span class="time">' +
                 formatTime(data[i].timeCN) + '</span></td>';
@@ -811,6 +852,7 @@ $(function() {
             // 获取当前服务器时间。如服务器时间不可用，使用本地时间
             dateNow = (xhr.getResponseHeader('Date') ? new Date(xhr.getResponseHeader('Date')) : new Date());
             yearNow = dateNow.getFullYear();
+            dayNow = dateNow.getDate();
             monthNow = dateNow.getMonth() + 1;
             weekDayNow = dateNow.getDay();
             // 将获取的星期几转换为switcher的序号，存入变量
