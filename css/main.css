@@ -936,6 +936,10 @@ screen and (max--moz-device-pixel-ratio: 2) {
         margin: 0;
     }
 
+    #container table tbody tr td .showDate {
+        margin-right: 0;
+    }
+
     #footer {
         min-width: 531px;
         font-size: 10px;
@@ -949,7 +953,7 @@ screen and (max--moz-device-pixel-ratio: 2) {
         font-size: 10px;
     }
 
-    #container table tbody tr td abbr.weekDay {
+    #container table tbody tr td abbr {
         border-bottom: none;
     }
 }
