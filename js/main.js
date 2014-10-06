@@ -7,12 +7,12 @@
 /* jshint -W097 */
 
 $(function() {
-    // 删除noscipt标签
+    // 删除noscript标签
     $('noscript').remove();
 
     var i = 0, j = 0, k = 0;
     var l = 0, m = 0, n = 0;
-    var dateNow = 0, weekDayNow = 0, yearNow = 0, monthNow = 0;
+    var dateNow = 0, weekDayNow = 0, yearNow = 0, monthNow = 0, dayNow = 0;
     var yearRead = 0, monthRead = 0;
     var timer = null;
     var weekDayCN = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
@@ -92,7 +92,7 @@ $(function() {
      * 将字符串还原为布尔值
      * @method revertBoolean
      * @param {string} a 还原前字符串
-     * @return 还原后布尔值
+     * @return {boolean} 还原后布尔值
      */
     function revertBoolean(a) {
         switch (a) {
@@ -134,6 +134,22 @@ $(function() {
             return '(未知)';
         } else {
             return time ? time.slice(0, 2) + ':' + time.slice(2) : '(预计)';
+        }
+    }
+
+    /**
+     * 格式化日期
+     * @method formatDate
+     * @param {string} 日期字符串
+     * @return {string} 格式化的月日 10/01
+     */
+    function formatDate(dateStr) {
+        if (dateStr) {
+            var dateParts = dateStr.split('-');
+            return (dateParts[1].length === 1 ? '0' + dateParts[1] : dateParts[1]) + '/' + 
+                (dateParts[2].length === 1 ? '0' + dateParts[2] : dateParts[2]);
+        } else {
+            return '';
         }
     }
 
@@ -325,6 +341,24 @@ $(function() {
     }
 
     /**
+     * 决定显示周天还是开播日期
+     * @method decideShowDate
+     * @param {string} dateStr 日期字符串 2004-10-01
+     * return {boolean} true为显示开播日期 false为显示周天
+     */
+    function decideShowDate(dateStr) {
+        if (dateStr) {
+            var showDate = dateStr.split('-');
+            if (+showDate[0] > yearNow || 
+                (+showDate[0] === yearNow && +showDate[1] > monthNow) || 
+                (+showDate[0] === yearNow && +showDate[1] === monthNow && +showDate[2] >= dayNow)) {
+                return true;
+            } 
+        }
+        return false;
+    }
+
+    /**
      * 构建站点过滤菜单
      * @method buildSites
      */
@@ -407,9 +441,16 @@ $(function() {
                 (status.jpTitle ? data[i].titleJP : data[i].titleCN) + '</a></td><td>' +
                 (data[i].comment ? '<div class="comment">' +
                 '<div class="tooltip">' + data[i].comment + '</div></div>' : '') +
-                '</td><td><span class="weekDay">' +
-                formatWeekDay(data[i].weekDayJP, (status.jpTime ? 'jp' : 'cn')) +
-                '</span><span class="time">' + formatTime(data[i].timeJP) +
+                '</td><td><abbr class="weekDay" title="放送日期: ' + (data[i].showDate || '') +'">';
+
+            // 显示开播日期还是周天
+            if (decideShowDate(data[i].showDate || '')) {
+                html += formatDate(data[i].showDate);
+            } else {
+                html += formatWeekDay(data[i].weekDayJP, (status.jpTime ? 'jp' : 'cn'));
+            }
+
+            html += '</abbr><span class="time">' + formatTime(data[i].timeJP) +
                 '</span></td><td><span class="weekDay">' +
                 formatWeekDay(data[i].weekDayCN, 'cn') + '</span><span class="time">' +
                 formatTime(data[i].timeCN) + '</span></td>';
@@ -700,6 +741,19 @@ $(function() {
     }
 
     /**
+     * 将日期对象转换为需要的日期格式文本
+     * @method dateToStr
+     * @param {obj} dateObj 时间对象
+     * return {string} 日期文本 2014-10-06
+     */
+    function dateToStr(dateObj) {
+        var year = '' + dateObj.getFullYear();
+        var month = '' + (dateObj.getMonth() + 1);
+        var day = '' + dateObj.getDate();
+        return year + '-' + (month.length === 1 ? '0' + month : month) + '-' + (day.length === 1 ? '0' + day : day);
+    }
+
+    /**
      * 修改时区
      * @method changeTimeZone
      * @param {string} country 需要修改时区的国家的代码 'cn' 'jp'
@@ -710,19 +764,22 @@ $(function() {
         var offset = utc - status[country.toLowerCase() + 'TimeZone'];
         var timeStr = 'time' + country.toUpperCase();
         var weekDayStr = 'weekDay' + country.toUpperCase();
-        var time, weekDay;
+        var time, weekDay, showDate;
         for (i = 0, l = bgmData.length; i < l; i++) {
             time = +bgmData[i][timeStr].slice(0, 2);
             weekDay = +bgmData[i][weekDayStr];
+            showDate = new Date(bgmData[i].showDate);
             time = time + offset;
             // 时间往回倒一天
             if (time < 0) {
                 time += 24;
                 weekDay--;
+                showDate.setDate(showDate.getDate() - 1);
             // 时间往前进一天
             } else if (time >= 24) {
                 time -= 24;
                 weekDay++;
+                showDate.setDate(showDate.getDate() + 1);
             }
             // 补前导0
             if (time < 10) {
@@ -737,6 +794,7 @@ $(function() {
             }
             bgmData[i][timeStr] = time + bgmData[i][timeStr].slice(2);
             bgmData[i][weekDayStr] = weekDay + '';
+            bgmData[i].showDate = dateToStr(showDate);
         }
         // 记录现在时区
         status[country.toLowerCase() + 'TimeZone'] = utc;
@@ -798,8 +856,10 @@ $(function() {
             },
             error: function(xhr, stat, error) {
                 // 在表格中添加显示错误信息的行
-                $tbody.append('<tr><td colspan="4">读取 ' + path + ' 出错，错误代码：' +
+                $tbody.empty();
+                $tbody.append('<tr><td colspan="5">读取 ' + path + ' 出错，错误代码：' +
                     xhr.status + ' ' + error + '</td></tr>');
+                $shadow.fadeOut(200);
             }
         });
     }
@@ -811,6 +871,7 @@ $(function() {
             // 获取当前服务器时间。如服务器时间不可用，使用本地时间
             dateNow = (xhr.getResponseHeader('Date') ? new Date(xhr.getResponseHeader('Date')) : new Date());
             yearNow = dateNow.getFullYear();
+            dayNow = dateNow.getDate();
             monthNow = dateNow.getMonth() + 1;
             weekDayNow = dateNow.getDay();
             // 将获取的星期几转换为switcher的序号，存入变量
@@ -824,8 +885,10 @@ $(function() {
         },
         error: function(xhr, stat, error) {
             // 在表格中添加显示错误信息的行
-            $tbody.append('<tr><td colspan="4">读取 json/archive.json 出错，错误代码：' +
+            $tbody.empty();
+            $tbody.append('<tr><td colspan="5">读取 json/archive.json 出错，错误代码：' +
                 xhr.status + ' ' + error + '</td></tr>');
+            $shadow.fadeOut(200);
         }
     });
 

@@ -687,8 +687,9 @@ input::-webkit-search-cancel-button {
     font-size: 15px;
 }
 
-#container table tbody tr td .weekDay {
-    margin-right: 5px;
+#container table tbody tr td .weekDay,
+#container table tbody tr td .dateJP {
+    margin-right: 10px;
 }
 
 #container table tbody tr td .links li {
@@ -717,6 +718,11 @@ input::-webkit-search-cancel-button {
 
 #container table tbody tr td .links .empty {
     color: #aaa;
+}
+
+#container table tbody tr td abbr.weekDay {
+    border-bottom: 1px dashed #aaa;
+    cursor: pointer;
 }
 
 /*页脚*/
@@ -936,6 +942,10 @@ screen and (max--moz-device-pixel-ratio: 2) {
 
     #footer a {
         font-size: 10px;
+    }
+
+    #container table tbody tr td abbr.weekDay {
+        border-bottom: none;
     }
 }
 
