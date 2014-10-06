@@ -129,10 +129,12 @@
     "titleJP": "甘城ブリリアントパーク",
     "officalSite": "http://www.tbs.co.jp/anime/amaburi/",
     "weekDayJP": 5,
-    "weekDayCN": 6,
+    "weekDayCN": 5,
     "timeJP": "0116",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.bilibili.com/sp/甘城光辉游乐园"
+    ],
     "newBgm": true,
     "showDate": "2014-10-03"
   },
@@ -182,7 +184,7 @@
     "titleJP": "結城友奈は勇者である",
     "officalSite": "http://yuyuyu.tv/",
     "weekDayJP": 5,
-    "weekDayCN": 6,
+    "weekDayCN": 5,
     "timeJP": "0119",
     "timeCN": "",
     "onAirSite": [],
@@ -277,7 +279,7 @@
     "titleJP": "棺姫のチャイカ AVENGING BATTLE",
     "officalSite": "http://chaika-anime.jp/",
     "weekDayJP": 4,
-    "weekDayCN": 5,
+    "weekDayCN": 4,
     "timeJP": "0005",
     "timeCN": "",
     "onAirSite": [],
@@ -420,8 +422,11 @@
     "weekDayJP": 1,
     "weekDayCN": 2,
     "timeJP": "2230",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0200",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrhc0z39.html",
+      "http://www.bilibili.com/sp/巴哈姆特之怒"
+    ],
     "newBgm": true,
     "showDate": "2014-10-06"
   },
@@ -561,10 +566,14 @@
     "titleJP": "弱虫ペダル GRANDE ROAD",
     "officalSite": "http://yowapeda.com/",
     "weekDayJP": 2,
-    "weekDayCN": 3,
+    "weekDayCN": 2,
     "timeJP": "0035",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0135",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/0-8oH78hMeI.html",
+      "http://www.youku.com/show_page/id_za2826926df3611e3b8b7.html",
+      "http://www.bilibili.com/sp/飙速宅男#S-1337"
+    ],
     "newBgm": true,
     "showDate": "2014-10-07"
   },
@@ -641,7 +650,14 @@
     "weekDayCN": 2,
     "timeJP": "0105",
     "timeCN": "0205",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/G_nSPK6V5b0.html",
+      "http://www.youku.com/show_page/id_z358dbc7007e611e4a705.html",
+      "http://www.iqiyi.com/a_19rrhc0yyx.html",
+      "http://v.pptv.com/show/ZL6aGIDmVpRe3EQ.html",
+      "http://www.letv.com/comic/10005151.html",
+      "http://www.bilibili.com/sp/日常系的异能战斗"
+    ],
     "newBgm": true,
     "showDate": "2014-10-07"
   },
@@ -656,7 +672,8 @@
     "timeCN": "1830",
     "onAirSite": [
       "http://www.bilibili.com/sp/怪盗JOKER",
-      "http://www.iqiyi.com/a_19rrhc0zch.html"
+      "http://www.iqiyi.com/a_19rrhc0zch.html",
+      "http://www.acfun.tv/a/aa1464855"
     ],
     "newBgm": true
   },
@@ -665,7 +682,7 @@
     "titleJP": "なりヒロwww",
     "officalSite": "http://narihero.com/",
     "weekDayJP": 2,
-    "weekDayCN": 3,
+    "weekDayCN": 2,
     "timeJP": "0005",
     "timeCN": "",
     "onAirSite": [],
@@ -694,7 +711,10 @@
     "weekDayCN": 2,
     "timeJP": "2055",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.acfun.tv/a/aa1464853",
+      "http://www.bilibili.com/sp/天地无用！#S-1338"
+    ],
     "newBgm": true,
     "showDate": "2014-10-06"
   },
@@ -703,7 +723,7 @@
     "titleJP": "旦那が何を言っているかわからない件",
     "officalSite": "http://www.dreamcreation.co.jp/danna/",
     "weekDayJP": 5,
-    "weekDayCN": 6,
+    "weekDayCN": 5,
     "timeJP": "0000",
     "timeCN": "",
     "onAirSite": [
