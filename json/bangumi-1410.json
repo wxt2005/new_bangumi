@@ -651,7 +651,10 @@
     "weekDayCN": 1,
     "timeJP": "1800",
     "timeCN": "1830",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.bilibili.com/sp/怪盗JOKER",
+      "http://www.iqiyi.com/a_19rrhc0zch.html"
+    ],
     "newBgm": true
   },
   {
