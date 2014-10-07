@@ -133,7 +133,8 @@
     "timeJP": "0116",
     "timeCN": "",
     "onAirSite": [
-      "http://www.bilibili.com/sp/甘城光辉游乐园"
+      "http://www.bilibili.com/sp/甘城光辉游乐园",
+      "http://www.acfun.tv/a/aa1464810"
     ],
     "newBgm": true,
     "showDate": "2014-10-03"
@@ -413,7 +414,11 @@
     "weekDayCN": 2,
     "timeJP": "2200",
     "timeCN": "2300",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/3sgyRBy1t1M.html",
+      "http://www.youku.com/show_page/id_zd6c247ae3d6b11e4a080.html",
+      "http://www.bilibili.com/sp/晨曦公主"
+    ],
     "newBgm": true,
     "showDate": "2014-10-07"
   },
