@@ -689,7 +689,7 @@ input::-webkit-search-cancel-button {
 
 #container table tbody tr td .weekDay,
 #container table tbody tr td .dateJP {
-    margin-right: 9px;
+    margin-right: 10px;
     letter-spacing: 1px;
 }
 
@@ -728,6 +728,22 @@ input::-webkit-search-cancel-button {
 #container table tbody tr td abbr {
     border-bottom: 1px dashed #aaa;
     cursor: pointer;
+    position: relative;
+}
+
+#container table tbody tr td abbr .tip {
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    left: 50%;
+    margin-left: -85px;
+    width: 170px;
+    height: 30px;
+    border-radius: 5px;
+    background: #1abc9c;
+    display: none;
+    line-height: 30px;
+    letter-spacing: 0;
 }
 
 /*页脚*/
@@ -955,6 +971,15 @@ screen and (max--moz-device-pixel-ratio: 2) {
 
     #container table tbody tr td abbr {
         border-bottom: none;
+    }
+
+    #container table tbody tr td abbr .tip {
+        margin-top: -13px;
+        margin-left: -75px;
+        width: 150px;
+        height: 26px;
+        line-height: 26px;
+        font-size: 14px;
     }
 }
 
