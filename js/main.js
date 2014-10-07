@@ -858,6 +858,9 @@ $(function() {
                 // 更新最后修改时间
                 $('#header .lastModified').text(status.lastModified);
 
+                // 为abbr元素添加点击事件
+                abbrHandler();
+
                 // 隐藏遮罩
                 $shadow.fadeOut(200);
             },
@@ -1120,4 +1123,24 @@ $(function() {
         window.open(this.href,'','height=420, width=550, scrollbars=yes');
         return false;
     });
+
+    // 用于给放送时间abbr元素添加点击事件
+    function abbrHandler() {
+        $('abbr').click(function() {
+            var $tip = $(this).children('.tip');
+            // 如果没有提示div，则添加
+            if ($tip.length === 0) {
+                // 新建提示div
+                $('<div>' + this.title + '</div>').addClass('tip').click(function() {
+                    $(this).fadeOut(300);
+                    return false;
+                }).appendTo($(this)).fadeIn(300);
+            } else {
+                $tip.fadeIn(300);
+            }
+            return false;
+        }).mouseleave(function() {
+            $(this).children('.tip').fadeOut(300);
+        });;
+    }
 });
