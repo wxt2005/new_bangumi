@@ -222,7 +222,7 @@
   },
   {
     "titleCN": "高达创战者 Try",
-    "titleJP": "ガンダムビルドファイターズトライ",
+    "titleJP": "ガンダムビルドファイターズ トライ",
     "officalSite": "http://gundam-bf.net/",
     "weekDayJP": 3,
     "weekDayCN": 3,
@@ -524,18 +524,6 @@
     "showDate": "2014-10-05"
   },
   {
-    "titleCN": "Calimero",
-    "titleJP": "カリメロ",
-    "officalSite": "http://www.tv-tokyo.co.jp/anime/calimero/",
-    "weekDayJP": 2,
-    "weekDayCN": 3,
-    "timeJP": "0630",
-    "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true,
-    "showDate": "2014-10-07"
-  },
-  {
     "titleCN": "牙狼〈GARO〉-炎之刻印-",
     "titleJP": "牙狼〈GARO〉-炎の刻印-",
     "officalSite": "http://garo-project.jp/ANIME/",
@@ -650,7 +638,14 @@
     "weekDayCN": 3,
     "timeJP": "0040",
     "timeCN": "0140",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.bilibili.com/sp/TRINITY%20SEVEN%20七人魔法使",
+      "http://www.acfun.tv/a/aa1464825",
+      "http://www.tudou.com/albumcover/8kRmJfnSOqg.html",
+      "http://www.youku.com/show_page/id_zdb2ab4f4066e11e4a705.html",
+      "http://www.iqiyi.com/a_19rrhc0yyl.html",
+      "http://www.pptv.com/page/292431.html"
+    ],
     "newBgm": true,
     "showDate": "2014-10-08"
   },
@@ -689,18 +684,6 @@
       "http://www.acfun.tv/a/aa1464855"
     ],
     "newBgm": true
-  },
-  {
-    "titleCN": "我们不小心变成了女主角的结果www",
-    "titleJP": "なりヒロwww",
-    "officalSite": "http://narihero.com/",
-    "weekDayJP": 2,
-    "weekDayCN": 2,
-    "timeJP": "0005",
-    "timeCN": "",
-    "onAirSite": [],
-    "newBgm": true,
-    "showDate": "2014-10-07"
   },
   {
     "titleCN": "大图书馆的牧羊人",
