@@ -997,6 +997,8 @@ $(function() {
             // 隐藏清除按钮
             $(this).next().hide();
         }
+    }).on('paste', function(event) {
+        $switcher.trigger('click', [7, true, true]);
     })
         // 清除按钮点击事件
         .next().hide().click(function() {
