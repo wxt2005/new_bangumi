@@ -81,7 +81,9 @@
     "weekDayCN": 4,
     "timeJP": "2100",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.bilibili.com/sp/世嘉硬件女孩"
+    ],
     "newBgm": true,
     "showDate": "2014-10-08"
   },
@@ -228,7 +230,13 @@
     "weekDayCN": 3,
     "timeJP": "1700",
     "timeCN": "1900",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/52Lw1YgzskQ.html",
+      "http://www.youku.com/show_page/id_z0a038a9e29c411e48b3f.html",
+      "http://www.iqiyi.com/a_19rrhc0r3l.html",
+      "http://www.acfun.tv/a/aa1464844",
+      "http://www.bilibili.com/sp/高达BUILD%20FIGHTERS#S-1332"
+    ],
     "newBgm": true,
     "showDate": "2014-10-08"
   },
@@ -420,7 +428,8 @@
       "http://www.youku.com/show_page/id_zd6c247ae3d6b11e4a080.html",
       "http://www.bilibili.com/sp/晨曦公主",
       "http://www.iqiyi.com/a_19rrhc0ytd.html",
-      "http://www.pptv.com/page/296315.html"
+      "http://www.pptv.com/page/296315.html",
+      "http://www.acfun.tv/a/aa1464837"
     ],
     "newBgm": true,
     "showDate": "2014-10-07"
