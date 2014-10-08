@@ -325,7 +325,7 @@
     "showDate": "2014-04-05"
   },
   {
-    "titleCN": "PriPara",
+    "titleCN": "PriPara 美妙旋律",
     "titleJP": "プリパラ",
     "officalSite": "http://www.tv-tokyo.co.jp/anime/pripara/index2.html",
     "weekDayJP": 6,
@@ -333,7 +333,8 @@
     "timeJP": "0900",
     "timeCN": "",
     "onAirSite": [
-      "http://www.acfun.tv/a/aa2658"
+      "http://www.acfun.tv/a/aa2658",
+      "http://www.bilibili.com/sp/美妙旋律%20彩虹之梦"
     ],
     "newBgm": true,
     "showDate": "2014-07-05"

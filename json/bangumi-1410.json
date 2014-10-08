@@ -81,9 +81,9 @@
     "titleJP": "Hi★Schoool! セハガール",
     "officalSite": "http://shg.sega.jp/anime.html",
     "weekDayJP": 3,
-    "weekDayCN": 4,
+    "weekDayCN": 3,
     "timeJP": "2100",
-    "timeCN": "",
+    "timeCN": "2200",
     "onAirSite": [
       "http://www.bilibili.com/sp/世嘉硬件女孩"
     ],
@@ -127,7 +127,8 @@
     "timeCN": "0430",
     "onAirSite": [
       "http://www.iqiyi.com/a_19rrhc0xl1.html",
-      "http://www.acfun.tv/a/aa1464836"
+      "http://www.acfun.tv/a/aa1464836",
+      "http://www.bilibili.com/sp/笑对阴天"
     ],
     "newBgm": true,
     "showDate": "2014-10-04"
@@ -506,7 +507,8 @@
       "http://www.tudou.com/albumcover/2TdJoRW10F8.html",
       "http://www.acfun.tv/a/aa1464847",
       "http://www.iqiyi.com/a_19rrhc0x81.html",
-      "http://tv.sohu.com/s2014/gdjd1412/"
+      "http://tv.sohu.com/s2014/gdjd1412/",
+      "http://www.bilibili.com/sp/魔术快斗"
     ],
     "newBgm": true,
     "showDate": "2014-10-04"
@@ -520,7 +522,8 @@
     "timeJP": "0600",
     "timeCN": "",
     "onAirSite": [
-      "http://www.acfun.tv/a/aa1464859"
+      "http://www.acfun.tv/a/aa1464859",
+      "http://www.bilibili.com/sp/TRIBECOOLCREW"
     ],
     "newBgm": true,
     "showDate": "2014-09-28"
@@ -648,7 +651,11 @@
     "weekDayCN": 1,
     "timeJP": "0035",
     "timeCN": "0135",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/fPpEVMRCTFc.html",
+      "http://www.youku.com/show_page/id_z5d9421503e5011e4b2ad.html",
+      "http://www.bilibili.com/sp/临时女友"
+    ],
     "newBgm": true,
     "showDate": "2014-10-13"
   },
@@ -910,7 +917,7 @@
     "showDate": "2014-04-05"
   },
   {
-    "titleCN": "PriPara",
+    "titleCN": "PriPara 美妙旋律",
     "titleJP": "プリパラ",
     "officalSite": "http://www.tv-tokyo.co.jp/anime/pripara/index2.html",
     "weekDayJP": 6,
@@ -918,7 +925,8 @@
     "timeJP": "0900",
     "timeCN": "",
     "onAirSite": [
-      "http://www.acfun.tv/a/aa2658"
+      "http://www.acfun.tv/a/aa2658",
+      "http://www.bilibili.com/sp/美妙旋律%20彩虹之梦"
     ],
     "newBgm": false,
     "showDate": "2014-07-05"
