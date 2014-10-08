@@ -100,14 +100,17 @@
     "showDate": "2014-10-11"
   },
   {
-    "titleCN": "寄生兽",
+    "titleCN": "寄生兽 生命的准则",
     "titleJP": "寄生獣 セイの格率",
     "officalSite": "http://www.kiseiju.jp/",
     "weekDayJP": 4,
     "weekDayCN": 4,
     "timeJP": "0029",
     "timeCN": "0330",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/ljWaEal7TxI.html",
+      "http://www.bilibili.com/sp/寄生兽"
+    ],
     "newBgm": true,
     "showDate": "2014-10-09"
   },
@@ -293,8 +296,11 @@
     "weekDayJP": 4,
     "weekDayCN": 4,
     "timeJP": "0005",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0135",
+    "onAirSite": [
+      "http://v.qq.com/detail/c/crrtngniol48xnn.html",
+      "http://www.bilibili.com/sp/棺姬嘉依卡#S-1334"
+    ],
     "newBgm": true,
     "showDate": "2014-10-09"
   },
@@ -623,7 +629,11 @@
     "weekDayCN": 5,
     "timeJP": "0020",
     "timeCN": "0150",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/vVolwaPqgHI.html",
+      "http://www.youku.com/show_page/id_z75eea0d2b24a11e38b3f.html",
+      "http://www.bilibili.com/sp/四月是你的谎言"
+    ],
     "newBgm": true,
     "showDate": "2014-10-10"
   },
@@ -703,7 +713,10 @@
     "timeJP": "2330",
     "timeCN": "0030",
     "onAirSite": [
-      "http://www.bilibili.com/sp/大图书馆的牧羊人"
+      "http://www.bilibili.com/sp/大图书馆的牧羊人",
+      "http://www.tudou.com/albumcover/tQz-M8MDLYc.html",
+      "http://www.youku.com/show_page/id_z8ea489d03d8611e4a080.html",
+      "http://v.qq.com/detail/w/w9galx5d4dm0udo.html"
     ],
     "newBgm": true,
     "showDate": "2014-10-08"
@@ -732,7 +745,8 @@
     "timeJP": "0000",
     "timeCN": "",
     "onAirSite": [
-      "http://www.acfun.tv/a/aa1464852"
+      "http://www.acfun.tv/a/aa1464852",
+      "http://www.bilibili.com/sp/关于完全听不懂老公在说什么的事"
     ],
     "newBgm": true,
     "showDate": "2014-10-03"
