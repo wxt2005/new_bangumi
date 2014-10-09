@@ -95,9 +95,9 @@
     "titleJP": "山賊の娘ローニャ",
     "officalSite": "http://www9.nhk.or.jp/anime/ronja/",
     "weekDayJP": 6,
-    "weekDayCN": 0,
+    "weekDayCN": 6,
     "timeJP": "1800",
-    "timeCN": "",
+    "timeCN": "2148",
     "onAirSite": [],
     "newBgm": true,
     "showDate": "2014-10-11"
@@ -112,7 +112,8 @@
     "timeCN": "0330",
     "onAirSite": [
       "http://www.tudou.com/albumcover/ljWaEal7TxI.html",
-      "http://www.bilibili.com/sp/寄生兽"
+      "http://www.bilibili.com/sp/寄生兽",
+      "http://www.acfun.tv/a/aa1464806"
     ],
     "newBgm": true,
     "showDate": "2014-10-09"
@@ -172,8 +173,12 @@
     "weekDayJP": 5,
     "weekDayCN": 5,
     "timeJP": "0046",
-    "timeCN": "0546",
-    "onAirSite": [],
+    "timeCN": "0246",
+    "onAirSite": [
+      "http://www.letv.com/comic/10005167.html",
+      "http://www.iqiyi.com/a_19rrhbzehh.html",
+      "http://www.bilibili.com/sp/我，要成为双马尾%E3%80%82"
+    ],
     "newBgm": true,
     "showDate": "2014-10-10"
   },
@@ -206,10 +211,14 @@
     "titleJP": "SHIROBAKO",
     "officalSite": "http://www.shirobako-anime.com/",
     "weekDayJP": 4,
-    "weekDayCN": 5,
+    "weekDayCN": 4,
     "timeJP": "2230",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "2330",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrhbzeox.html",
+      "http://www.acfun.tv/a/aa1464814",
+      "http://www.bilibili.com/sp/SHIROBAKO"
+    ],
     "newBgm": true,
     "showDate": "2014-10-09"
   },
@@ -606,8 +615,11 @@
     "weekDayJP": 4,
     "weekDayCN": 5,
     "timeJP": "2350",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0030",
+    "onAirSite": [
+      "http://www.letv.com/comic/10004904.html",
+      "http://www.bilibili.com/sp/PSYCHO-PASS#S-1339"
+    ],
     "newBgm": true,
     "showDate": "2014-10-09"
   },
@@ -639,7 +651,9 @@
     "onAirSite": [
       "http://www.tudou.com/albumcover/vVolwaPqgHI.html",
       "http://www.youku.com/show_page/id_z75eea0d2b24a11e38b3f.html",
-      "http://www.bilibili.com/sp/四月是你的谎言"
+      "http://www.bilibili.com/sp/四月是你的谎言",
+      "http://www.iqiyi.com/a_19rrhbzeu5.html",
+      "http://www.acfun.tv/a/aa1464808"
     ],
     "newBgm": true,
     "showDate": "2014-10-10"
