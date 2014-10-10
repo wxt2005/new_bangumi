@@ -77,8 +77,8 @@
     "showDate": "2014-04-06"
   },
   {
-    "titleCN": "Hi★Schoool! 世嘉硬件女孩",
-    "titleJP": "Hi★Schoool! セハガール",
+    "titleCN": "Hi★sCoool! 世嘉硬件女孩",
+    "titleJP": "Hi★sCoool! セハガール",
     "officalSite": "http://shg.sega.jp/anime.html",
     "weekDayJP": 3,
     "weekDayCN": 3,
@@ -177,7 +177,8 @@
     "onAirSite": [
       "http://www.letv.com/comic/10005167.html",
       "http://www.iqiyi.com/a_19rrhbzehh.html",
-      "http://www.bilibili.com/sp/我，要成为双马尾%E3%80%82"
+      "http://www.bilibili.com/sp/我，要成为双马尾%E3%80%82",
+      "http://www.acfun.tv/a/aa1464824"
     ],
     "newBgm": true,
     "showDate": "2014-10-10"
