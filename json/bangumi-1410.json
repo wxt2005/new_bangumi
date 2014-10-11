@@ -191,7 +191,9 @@
     "weekDayCN": 6,
     "timeJP": "2100",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.bilibili.com/sp/早安恋味糕点店"
+    ],
     "newBgm": true,
     "showDate": "2014-10-10"
   },
