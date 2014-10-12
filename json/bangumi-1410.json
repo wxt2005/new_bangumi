@@ -665,7 +665,7 @@
     "showDate": "2014-10-10"
   },
   {
-    "titleCN": "临时女友",
+    "titleCN": "女朋友(仮)",
     "titleJP": "ガールフレンド（仮）",
     "officalSite": "http://girlfriend-kari-anime.jp/",
     "weekDayJP": 1,
@@ -675,7 +675,10 @@
     "onAirSite": [
       "http://www.tudou.com/albumcover/fPpEVMRCTFc.html",
       "http://www.youku.com/show_page/id_z5d9421503e5011e4b2ad.html",
-      "http://www.bilibili.com/sp/临时女友"
+      "http://www.bilibili.com/sp/临时女友",
+      "http://www.letv.com/comic/10005271.html",
+      "http://www.iqiyi.com/a_19rrhbz5w5.html",
+      "http://www.pptv.com/page/296498.html"
     ],
     "newBgm": true,
     "showDate": "2014-10-13"
