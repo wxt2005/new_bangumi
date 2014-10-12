@@ -98,7 +98,9 @@
     "weekDayCN": 6,
     "timeJP": "1800",
     "timeCN": "2148",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.bilibili.com/sp/绿林女儿罗妮娅"
+    ],
     "newBgm": true,
     "showDate": "2014-10-11"
   },
@@ -192,7 +194,8 @@
     "timeJP": "2100",
     "timeCN": "",
     "onAirSite": [
-      "http://www.bilibili.com/sp/早安恋味糕点店"
+      "http://www.bilibili.com/sp/早安恋味糕点店",
+      "http://www.acfun.tv/a/aa1464826"
     ],
     "newBgm": true,
     "showDate": "2014-10-10"
