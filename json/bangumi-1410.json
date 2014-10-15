@@ -535,12 +535,13 @@
     "titleJP": "トライブクルクル",
     "officalSite": "http://www.tribecoolcrew.net/",
     "weekDayJP": 0,
-    "weekDayCN": 1,
+    "weekDayCN": 2,
     "timeJP": "0600",
-    "timeCN": "",
+    "timeCN": "1435",
     "onAirSite": [
       "http://www.acfun.tv/a/aa1464859",
-      "http://www.bilibili.com/sp/TRIBECOOLCREW"
+      "http://www.bilibili.com/sp/TRIBECOOLCREW",
+      "http://www.iqiyi.com/a_19rrhc0yh5.html"
     ],
     "newBgm": true,
     "showDate": "2014-09-28"
