@@ -208,8 +208,11 @@
     "weekDayJP": 5,
     "weekDayCN": 5,
     "timeJP": "0119",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0350",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrhbyz99.html",
+      "http://www.bilibili.com/sp/结城友奈是勇者"
+    ],
     "newBgm": true,
     "showDate": "2014-10-17"
   },
