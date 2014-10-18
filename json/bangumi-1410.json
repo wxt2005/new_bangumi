@@ -211,7 +211,8 @@
     "timeCN": "0350",
     "onAirSite": [
       "http://www.iqiyi.com/a_19rrhbyz99.html",
-      "http://www.bilibili.com/sp/结城友奈是勇者"
+      "http://www.bilibili.com/sp/结城友奈是勇者",
+      "http://www.acfun.tv/a/aa1464812"
     ],
     "newBgm": true,
     "showDate": "2014-10-17"
@@ -355,8 +356,11 @@
     "weekDayJP": 6,
     "weekDayCN": 0,
     "timeJP": "2330",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0400",
+    "onAirSite": [
+      "http://tv.sohu.com/s2014/csxz/",
+      "http://www.bilibili.com/sp/虫师#S-1335"
+    ],
     "newBgm": true,
     "showDate": "2014-10-18"
   },
