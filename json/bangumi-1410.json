@@ -972,12 +972,13 @@
     "titleJP": "ディスク・ウォーズ：アベンジャーズ",
     "officalSite": "http://www.tv-tokyo.co.jp/anime/dw_avengers/",
     "weekDayJP": 3,
-    "weekDayCN": 4,
+    "weekDayCN": 3,
     "timeJP": "1730",
-    "timeCN": "",
+    "timeCN": "2300",
     "onAirSite": [
       "http://www.bilibili.com/sp/复仇者联盟#S-889",
-      "http://www.acfun.tv/a/aa1241"
+      "http://www.acfun.tv/a/aa1241",
+      "http://www.iqiyi.com/a_19rrhc2yph.html"
     ],
     "newBgm": false,
     "showDate": "2014-04-02"
