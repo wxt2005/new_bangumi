@@ -16,12 +16,12 @@
                 "month": 1,
                 "json": "json/bangumi-1401.json",
                 "done": true
-            }, 
+            },
             {
                 "month": 4,
                 "json": "json/bangumi-1404.json",
                 "done": true
-            }, 
+            },
             {
                 "month": 7,
                 "json": "json/bangumi-1407.json",
@@ -33,6 +33,16 @@
                 "done": true
             }
         ]
-    } 
+    },
+    {
+        "year": 2015,
+        "months": [
+            {
+                "month": 1,
+                "json": "json/bangumi-1501.json",
+                "done": true
+            }
+        ]
+    }
 ]
 
