@@ -878,5 +878,20 @@
     "onAirSite": [],
     "newBgm": true,
     "showDate": "2015-02-13"
+  },
+  {
+    "titleCN": "凭物语",
+    "titleJP": "憑物語",
+    "officalSite": "http://www.monogatari-series.com/tsukimonogatari/",
+    "weekDayJP": 3,
+    "weekDayCN": 4,
+    "timeJP": "2100",
+    "timeCN": "0900",
+    "onAirSite": [
+      "http://tv.sohu.com/s2014/dhppwy/"
+    ],
+    "newBgm": true,
+    "comment": "全四话连续播放",
+    "showDate": "2014-12-31"
   }
 ]
