@@ -424,14 +424,18 @@
     "showDate": "2014-04-05"
   },
   {
-    "titleCN": "侦探歌剧 3期",
-    "titleJP": "探偵歌劇ミルキィホームズ TD (第3期)",
+    "titleCN": "侦探歌剧 TD",
+    "titleJP": "探偵歌劇ミルキィホームズ TD",
     "officalSite": "http://milky-holmes-anime.com/td/",
     "weekDayJP": 6,
-    "weekDayCN": 0,
+    "weekDayCN": 6,
     "timeJP": "2100",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "2200",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrhaxgld.html",
+      "http://www.bilibili.com/sp/侦探歌剧%20少女福尔摩斯#S-1614",
+      "http://www.acfun.tv/v/ab1470123"
+    ],
     "newBgm": true,
     "showDate": "2015-01-03"
   },
