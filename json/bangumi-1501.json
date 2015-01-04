@@ -316,21 +316,6 @@
     "showDate": "2014-10-10"
   },
   {
-    "titleCN": "爱・天地无用",
-    "titleJP": "愛・天地無用！",
-    "officalSite": "http://www.ai-tenchi.jp/",
-    "weekDayJP": 1,
-    "weekDayCN": 2,
-    "timeJP": "2055",
-    "timeCN": "",
-    "onAirSite": [
-      "http://www.acfun.tv/a/aa1464853",
-      "http://www.bilibili.com/sp/天地无用！#S-1338"
-    ],
-    "newBgm": false,
-    "showDate": "2014-10-06"
-  },
-  {
     "titleCN": "妖怪手表",
     "titleJP": "妖怪ウォッチ",
     "officalSite": "http://www.tv-tokyo.co.jp/anime/youkai-watch/",
@@ -444,10 +429,13 @@
     "titleJP": "アブソリュート・デュオ",
     "officalSite": "http://www.absoluteduo.com/",
     "weekDayJP": 0,
-    "weekDayCN": 1,
+    "weekDayCN": 2,
     "timeJP": "1930",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0130",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/p_w6pxA6H0c.html",
+      "http://www.youku.com/show_page/id_z891372fc3ed411e4b522.html"
+    ],
     "newBgm": true,
     "showDate": "2015-01-04"
   },
@@ -459,7 +447,10 @@
     "weekDayCN": 1,
     "timeJP": "2127",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.bilibili.com/sp/大家集合起来！FALCOM学园#S-1601",
+      "http://www.acfun.tv/v/ab1470156"
+    ],
     "newBgm": true,
     "showDate": "2015-01-04"
   },
@@ -506,8 +497,11 @@
     "weekDayJP": 2,
     "weekDayCN": 2,
     "timeJP": "0105",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0305",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/s3GSriQOpPw.html",
+      "http://www.youku.com/show_page/id_z1bac0432478911e4abda.html"
+    ],
     "newBgm": true,
     "showDate": "2015-01-06"
   },
@@ -530,8 +524,11 @@
     "weekDayJP": 3,
     "weekDayCN": 3,
     "timeJP": "0040",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0310",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/pPX6jWIhZnI.html",
+      "http://www.youku.com/show_page/id_z514b5a7259c511e4b432.html"
+    ],
     "newBgm": true,
     "showDate": "2015-01-07"
   },
@@ -602,8 +599,11 @@
     "weekDayJP": 4,
     "weekDayCN": 5,
     "timeJP": "2300",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0130",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/0LwP1YrEGAA.html",
+      "http://www.youku.com/show_page/id_za4aebb4259b011e4b2ad.html"
+    ],
     "newBgm": true,
     "showDate": "2015-01-08"
   },
@@ -614,8 +614,11 @@
     "weekDayJP": 4,
     "weekDayCN": 5,
     "timeJP": "2350",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0120",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/MC8VIcj1lSI.html",
+      "http://www.youku.com/show_page/id_z090ec930b26611e3a705.html"
+    ],
     "newBgm": true,
     "showDate": "2015-01-08"
   },
@@ -626,8 +629,10 @@
     "weekDayJP": 5,
     "weekDayCN": 5,
     "timeJP": "0046",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0800",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/mDLBXR-RtX4.html"
+    ],
     "newBgm": true,
     "showDate": "2015-01-09"
   },
@@ -698,8 +703,11 @@
     "weekDayJP": 6,
     "weekDayCN": 6,
     "timeJP": "0100",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0400",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/ubXoKOOcGpc.html",
+      "http://www.youku.com/show_page/id_ze0f2bedc0feb11e4a705.html"
+    ],
     "newBgm": true,
     "showDate": "2015-01-10"
   },
@@ -708,10 +716,13 @@
     "titleJP": "少年ハリウッド-HOLLY STAGE FOR 50- (第2期)",
     "officalSite": "http://www.starchild.co.jp/special/shonen-hollywood-anime/",
     "weekDayJP": 6,
-    "weekDayCN": 0,
+    "weekDayCN": 6,
     "timeJP": "1930",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "2300",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/mdEeE4selJA.html",
+      "http://www.youku.com/show_page/id_z9029aaa259cd11e4a080.html"
+    ],
     "newBgm": true,
     "showDate": "2015-01-10"
   },
@@ -722,8 +733,11 @@
     "weekDayJP": 6,
     "weekDayCN": 0,
     "timeJP": "2230",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0100",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/Se7oGWDr_GA.html",
+      "http://www.youku.com/show_page/id_z2c9c7552acd811e38b3f.html"
+    ],
     "newBgm": true,
     "showDate": "2015-01-10"
   },
@@ -746,20 +760,26 @@
     "weekDayJP": 6,
     "weekDayCN": 0,
     "timeJP": "2330",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0200",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/Gy9E2vV4e18.html",
+      "http://www.youku.com/show_page/id_zf7651dc2599c11e4b522.html"
+    ],
     "newBgm": true,
     "showDate": "2015-01-10"
   },
   {
-    "titleCN": "翻转☆少女",
+    "titleCN": "旋转☆少女",
     "titleJP": "ローリング☆ガールズ",
     "officalSite": "http://rollinggirls.com/",
     "weekDayJP": 0,
     "weekDayCN": 0,
     "timeJP": "0058",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0330",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/kJVciY-eLyA.html",
+      "http://www.youku.com/show_page/id_z06ef4ef059ae11e4b522.html"
+    ],
     "newBgm": true,
     "showDate": "2015-01-11"
   },
@@ -770,8 +790,11 @@
     "weekDayJP": 0,
     "weekDayCN": 0,
     "timeJP": "0158",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0430",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/otzt4Efipjo.html",
+      "http://www.youku.com/show_page/id_z4d028dc407e411e48b3f.html"
+    ],
     "newBgm": true,
     "showDate": "2015-01-11"
   },
@@ -780,22 +803,28 @@
     "titleJP": "夜ノヤッターマン",
     "officalSite": "http://yatterman.jp/",
     "weekDayJP": 0,
-    "weekDayCN": 1,
+    "weekDayCN": 0,
     "timeJP": "2100",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "2330",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/uaWpGglH27U.html",
+      "http://www.youku.com/show_page/id_zd10324de8f3a11e4a080.html"
+    ],
     "newBgm": true,
     "showDate": "2015-01-11"
   },
   {
-    "titleCN": "纯洁的玛丽亚",
+    "titleCN": "纯洁的玛利亚",
     "titleJP": "純潔のマリア",
     "officalSite": "http://www.junketsu-maria.tv/",
     "weekDayJP": 0,
     "weekDayCN": 1,
     "timeJP": "2130",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0000",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/QYODtlZ-1EY.html",
+      "http://www.youku.com/show_page/id_z8a0d8e1c59b511e4b2ad.html"
+    ],
     "newBgm": true,
     "showDate": "2015-01-11"
   },
@@ -806,8 +835,11 @@
     "weekDayJP": 1,
     "weekDayCN": 1,
     "timeJP": "0005",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0300",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/eFktdfkfKZc.html",
+      "http://www.youku.com/show_page/id_z7ff0045e59c011e4b432.html"
+    ],
     "newBgm": true,
     "showDate": "2015-01-12"
   },
