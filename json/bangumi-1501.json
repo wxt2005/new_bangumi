@@ -431,10 +431,13 @@
     "weekDayJP": 0,
     "weekDayCN": 2,
     "timeJP": "1930",
-    "timeCN": "0130",
+    "timeCN": "0000",
     "onAirSite": [
       "http://www.tudou.com/albumcover/p_w6pxA6H0c.html",
-      "http://www.youku.com/show_page/id_z891372fc3ed411e4b522.html"
+      "http://www.youku.com/show_page/id_z891372fc3ed411e4b522.html",
+      "http://www.bilibili.com/sp/绝对双刃",
+      "http://www.iqiyi.com/a_19rrhaxac1.html",
+      "http://www.letv.com/ptv/vplay/21626588.html"
     ],
     "newBgm": true,
     "showDate": "2015-01-04"
@@ -471,10 +474,12 @@
     "titleJP": "ドアマイガーD",
     "officalSite": "http://www.tvk-yokohama.com/doamai/",
     "weekDayJP": 1,
-    "weekDayCN": 1,
+    "weekDayCN": 2,
     "timeJP": "1855",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.bilibili.com/sp/Doamaiger%20D"
+    ],
     "newBgm": true,
     "showDate": "2015-01-05"
   },
@@ -485,8 +490,11 @@
     "weekDayJP": 1,
     "weekDayCN": 2,
     "timeJP": "2330",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0300",
+    "onAirSite": [
+      "http://tv.sohu.com/s2015/bhxfb/",
+      "http://www.bilibili.com/sp/百合熊风暴"
+    ],
     "newBgm": true,
     "showDate": "2015-01-05"
   },
@@ -500,7 +508,11 @@
     "timeCN": "0305",
     "onAirSite": [
       "http://www.tudou.com/albumcover/s3GSriQOpPw.html",
-      "http://www.youku.com/show_page/id_z1bac0432478911e4abda.html"
+      "http://www.youku.com/show_page/id_z1bac0432478911e4abda.html",
+      "http://www.bilibili.com/sp/元气少女缘结神#S-1611",
+      "http://www.iqiyi.com/a_19rrhaxakd.html",
+      "http://www.letv.com/comic/10007496.html",
+      "http://v.qq.com/detail/9/91ekf8i4watxc1p.html"
     ],
     "newBgm": true,
     "showDate": "2015-01-06"
