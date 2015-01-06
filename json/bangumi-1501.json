@@ -437,7 +437,8 @@
       "http://www.youku.com/show_page/id_z891372fc3ed411e4b522.html",
       "http://www.bilibili.com/sp/绝对双刃",
       "http://www.iqiyi.com/a_19rrhaxac1.html",
-      "http://www.letv.com/ptv/vplay/21626588.html"
+      "http://www.letv.com/ptv/vplay/21626588.html",
+      "http://www.acfun.tv/v/ab1470155"
     ],
     "newBgm": true,
     "showDate": "2015-01-04"
@@ -493,7 +494,8 @@
     "timeCN": "0300",
     "onAirSite": [
       "http://tv.sohu.com/s2015/bhxfb/",
-      "http://www.bilibili.com/sp/百合熊风暴"
+      "http://www.bilibili.com/sp/百合熊风暴",
+      "http://www.acfun.tv/v/ab1470128"
     ],
     "newBgm": true,
     "showDate": "2015-01-05"
@@ -512,20 +514,23 @@
       "http://www.bilibili.com/sp/元气少女缘结神#S-1611",
       "http://www.iqiyi.com/a_19rrhaxakd.html",
       "http://www.letv.com/comic/10007496.html",
-      "http://v.qq.com/detail/9/91ekf8i4watxc1p.html"
+      "http://v.qq.com/detail/9/91ekf8i4watxc1p.html",
+      "http://www.acfun.tv/v/ab1470157"
     ],
     "newBgm": true,
     "showDate": "2015-01-06"
   },
   {
-    "titleCN": "Q版变形金刚 擎天柱归来之谜",
+    "titleCN": "Q版变形金刚 归来的擎天柱之谜",
     "titleJP": "キュートトランスフォーマー 帰ってきたコンボイの謎",
     "officalSite": "http://www.qtransformers.com/",
     "weekDayJP": 2,
     "weekDayCN": 3,
     "timeJP": "2055",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.bilibili.com/sp/Q版变形金刚%20归来的擎天柱之谜"
+    ],
     "newBgm": true,
     "showDate": "2015-01-06"
   },
@@ -536,10 +541,13 @@
     "weekDayJP": 3,
     "weekDayCN": 3,
     "timeJP": "0040",
-    "timeCN": "0310",
+    "timeCN": "0140",
     "onAirSite": [
       "http://www.tudou.com/albumcover/pPX6jWIhZnI.html",
-      "http://www.youku.com/show_page/id_z514b5a7259c511e4b432.html"
+      "http://www.youku.com/show_page/id_z514b5a7259c511e4b432.html",
+      "http://www.iqiyi.com/a_19rrhax3mh.html",
+      "http://v.qq.com/detail/v/vc71qe27w79ma3c.html",
+      "http://www.bilibili.com/sp/美男高校地球防卫部LOVE！"
     ],
     "newBgm": true,
     "showDate": "2015-01-07"
