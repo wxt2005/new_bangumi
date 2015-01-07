@@ -17,6 +17,7 @@ $(function() {
     var timer = null;
     var weekDayCN = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
     var weekDayJP = ['日曜', '月曜', '火曜', '水曜', '木曜', '金曜', '土曜'];
+    var tempDate = new Date();
 
     // 支持的站点列表
     var sites = {
@@ -816,6 +817,7 @@ $(function() {
         $shadow.show();
         $.ajax({
             url: path,
+            data: 't=' + tempDate.getTime(),
             success: function(data, stat, xhr) {
                 bgmData = data;
                 // 检查各选项状态
@@ -877,6 +879,7 @@ $(function() {
     // ajax读取archive
     $.ajax({
         url: 'json/archive.json',
+        data: 't=' + tempDate.getFullYear() + tempDate.getMonth(),
         success: function(data, stat, xhr) {
             // 获取当前服务器时间。如服务器时间不可用，使用本地时间
             dateNow = (xhr.getResponseHeader('Date') ? new Date(xhr.getResponseHeader('Date')) : new Date());
