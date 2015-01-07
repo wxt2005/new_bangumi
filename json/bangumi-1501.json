@@ -571,14 +571,16 @@
     "showDate": "2015-01-07"
   },
   {
-    "titleCN": "军人少女!",
+    "titleCN": "军方!",
     "titleJP": "みりたり！",
     "officalSite": "http://dreamcreation.co.jp/militari/",
     "weekDayJP": 3,
     "weekDayCN": 4,
     "timeJP": "2225",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.bilibili.com/sp/军方！"
+    ],
     "newBgm": true,
     "showDate": "2015-01-07"
   },
@@ -601,8 +603,13 @@
     "weekDayJP": 4,
     "weekDayCN": 4,
     "timeJP": "0035",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0205",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrhawvm1.html",
+      "http://www.letv.com/comic/10007486.html",
+      "http://v.qq.com/detail/7/70zp9wog1azxki9.html",
+      "http://www.bilibili.com/sp/新妹魔王的契约者"
+    ],
     "newBgm": true,
     "showDate": "2015-01-08"
   },
@@ -966,7 +973,9 @@
     "timeJP": "2100",
     "timeCN": "0900",
     "onAirSite": [
-      "http://tv.sohu.com/s2014/dhppwy/"
+      "http://tv.sohu.com/s2014/dhppwy/",
+      "http://www.acfun.tv/v/ab1470141",
+      "http://www.bilibili.com/sp/凭物语"
     ],
     "newBgm": true,
     "comment": "全四话连续播放",
