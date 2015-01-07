@@ -409,6 +409,24 @@
     "showDate": "2014-04-05"
   },
   {
+    "titleCN": "牙狼〈GARO〉-炎之刻印-",
+    "titleJP": "牙狼〈GARO〉-炎の刻印-",
+    "officalSite": "http://garo-project.jp/ANIME/",
+    "weekDayJP": 6,
+    "weekDayCN": 6,
+    "timeJP": "0023",
+    "timeCN": "0130",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrhc0xnt.html",
+      "http://www.tudou.com/albumcover/gdZUtuYLZdw.html",
+      "http://www.bilibili.com/sp/牙狼%20炎之刻印",
+      "http://www.acfun.tv/a/aa1464805",
+      "http://www.youku.com/show_page/id_z7d04ee48fa7b11e3b8b7.html"
+    ],
+    "newBgm": false,
+    "showDate": "2014-10-04"
+  },
+  {
     "titleCN": "侦探歌剧 TD",
     "titleJP": "探偵歌劇ミルキィホームズ TD",
     "officalSite": "http://milky-holmes-anime.com/td/",
