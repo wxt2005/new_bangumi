@@ -593,10 +593,14 @@
     "titleJP": "血液型くん！2",
     "officalSite": "http://ketsuekigatakun.com/",
     "weekDayJP": 4,
-    "weekDayCN": 5,
+    "weekDayCN": 3,
     "timeJP": "2055",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "1100",
+    "onAirSite": [
+      "http://v.qq.com/detail/x/xccr2dywql8z3oz.html",
+      "http://www.bilibili.com/sp/血型君！#S-1603",
+      "http://www.acfun.tv/v/ab1470161"
+    ],
     "newBgm": true,
     "showDate": "2015-01-08"
   },
