@@ -654,10 +654,16 @@
     "weekDayJP": 4,
     "weekDayCN": 5,
     "timeJP": "2300",
-    "timeCN": "0130",
+    "timeCN": "0000",
     "onAirSite": [
       "http://www.tudou.com/albumcover/0LwP1YrEGAA.html",
-      "http://www.youku.com/show_page/id_za4aebb4259b011e4b2ad.html"
+      "http://www.youku.com/show_page/id_za4aebb4259b011e4b2ad.html",
+      "http://www.iqiyi.com/a_19rrhawxm1.html",
+      "http://tv.sohu.com/s2014/djsz2/",
+      "http://v.qq.com/detail/d/dxxmvywtpp8nz70.html",
+      "http://www.pptv.com/page/298254.html?set_id=9037137",
+      "http://www.bilibili.com/sp/东京食尸鬼#S-1605",
+      "http://www.acfun.tv/v/ab1470127"
     ],
     "newBgm": true,
     "showDate": "2015-01-08"
@@ -672,7 +678,10 @@
     "timeCN": "0120",
     "onAirSite": [
       "http://www.tudou.com/albumcover/MC8VIcj1lSI.html",
-      "http://www.youku.com/show_page/id_z090ec930b26611e3a705.html"
+      "http://www.youku.com/show_page/id_z090ec930b26611e3a705.html",
+      "http://www.iqiyi.com/a_19rrhawxqd.html",
+      "http://www.bilibili.com/sp/路人女主的养成方法",
+      "http://www.acfun.tv/v/ab1470120"
     ],
     "newBgm": true,
     "showDate": "2015-01-08"
@@ -686,7 +695,9 @@
     "timeJP": "0046",
     "timeCN": "0800",
     "onAirSite": [
-      "http://www.tudou.com/albumcover/mDLBXR-RtX4.html"
+      "http://www.tudou.com/albumcover/mDLBXR-RtX4.html",
+      "http://www.youku.com/show_page/id_zd92606e290a511e4b2ad.html",
+      "http://www.bilibili.com/sp/幸腹涂鸦"
     ],
     "newBgm": true,
     "showDate": "2015-01-09"
@@ -698,8 +709,11 @@
     "weekDayJP": 5,
     "weekDayCN": 5,
     "timeJP": "0116",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0830",
+    "onAirSite": [
+      "http://www.pptv.com/page/303412.html?set_id=9037516",
+      "http://www.bilibili.com/sp/铳皇无尽的法夫纳"
+    ],
     "newBgm": true,
     "showDate": "2015-01-09"
   },
@@ -710,8 +724,11 @@
     "weekDayJP": 5,
     "weekDayCN": 5,
     "timeJP": "0119",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0204",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrhax0et.html",
+      "http://www.acfun.tv/v/ab1470131"
+    ],
     "newBgm": true,
     "showDate": "2015-01-09"
   },
