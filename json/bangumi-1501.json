@@ -565,7 +565,8 @@
       "http://www.youku.com/show_page/id_z514b5a7259c511e4b432.html",
       "http://www.iqiyi.com/a_19rrhax3mh.html",
       "http://v.qq.com/detail/v/vc71qe27w79ma3c.html",
-      "http://www.bilibili.com/sp/美男高校地球防卫部LOVE！"
+      "http://www.bilibili.com/sp/美男高校地球防卫部LOVE！",
+      "http://www.acfun.tv/v/ab1470137"
     ],
     "newBgm": true,
     "showDate": "2015-01-07"
@@ -579,7 +580,8 @@
     "timeJP": "2225",
     "timeCN": "",
     "onAirSite": [
-      "http://www.bilibili.com/sp/军方！"
+      "http://www.bilibili.com/sp/军方！",
+      "http://www.acfun.tv/v/ab1470159"
     ],
     "newBgm": true,
     "showDate": "2015-01-07"
@@ -592,7 +594,10 @@
     "weekDayCN": 4,
     "timeJP": "0005",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.bilibili.com/sp/舰队COLLECTION",
+      "http://www.acfun.tv/v/ab1470133"
+    ],
     "newBgm": true,
     "showDate": "2015-01-08"
   },
@@ -608,7 +613,8 @@
       "http://www.iqiyi.com/a_19rrhawvm1.html",
       "http://www.letv.com/comic/10007486.html",
       "http://v.qq.com/detail/7/70zp9wog1azxki9.html",
-      "http://www.bilibili.com/sp/新妹魔王的契约者"
+      "http://www.bilibili.com/sp/新妹魔王的契约者",
+      "http://www.acfun.tv/v/ab1470125"
     ],
     "newBgm": true,
     "showDate": "2015-01-08"
