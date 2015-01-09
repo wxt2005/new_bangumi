@@ -190,6 +190,21 @@
     "showDate": "2014-10-08"
   },
   {
+    "titleCN": "Happiness Charge Precure",
+    "titleJP": "ハピネスチャージプリキュア！",
+    "officalSite": "http://www.toei-anim.co.jp/tv/happinesscharge_precure/",
+    "weekDayJP": 0,
+    "weekDayCN": 0,
+    "timeJP": "0730",
+    "timeCN": "",
+    "onAirSite": [
+      "http://www.bilibili.com/sp/光之美少女",
+      "http://www.acfun.tv/a/aa254"
+    ],
+    "newBgm": false,
+    "showDate": "2014-02-02"
+  },
+  {
     "titleCN": "Cross Ange 天使与龙的轮舞",
     "titleJP": "クロスアンジュ 天使と竜の輪舞",
     "officalSite": "http://crossange.com/",
