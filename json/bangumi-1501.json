@@ -758,8 +758,15 @@
     "weekDayJP": 5,
     "weekDayCN": 6,
     "timeJP": "2300",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0030",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrhay5rp.html",
+      "http://v.qq.com/detail/w/wgzklo5zkrgalda.html",
+      "http://www.pptv.com/page/295755.html?set_id=9036881",
+      "http://www.letv.com/comic/10007495.html",
+      "http://www.bilibili.com/sp/偶像大师%20灰姑娘女孩",
+      "http://www.acfun.tv/v/ab1470132"
+    ],
     "newBgm": true,
     "showDate": "2015-01-09"
   },
@@ -771,7 +778,10 @@
     "weekDayCN": 6,
     "timeJP": "2330",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.bilibili.com/sp/JOJO的奇妙冒险#S-893",
+      "http://www.acfun.tv/v/ab1470152"
+    ],
     "newBgm": true,
     "showDate": "2015-01-09"
   },
@@ -783,7 +793,9 @@
     "weekDayCN": 6,
     "timeJP": "0058",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.bilibili.com/sp/死亡游行"
+    ],
     "newBgm": true,
     "showDate": "2015-01-10"
   },
@@ -794,10 +806,14 @@
     "weekDayJP": 6,
     "weekDayCN": 6,
     "timeJP": "0100",
-    "timeCN": "0400",
+    "timeCN": "0350",
     "onAirSite": [
       "http://www.tudou.com/albumcover/ubXoKOOcGpc.html",
-      "http://www.youku.com/show_page/id_ze0f2bedc0feb11e4a705.html"
+      "http://www.youku.com/show_page/id_ze0f2bedc0feb11e4a705.html",
+      "http://www.iqiyi.com/a_19rrhay5ht.html",
+      "http://v.qq.com/detail/8/828nt2nrl1stt58.html",
+      "http://www.bilibili.com/sp/暗杀教室",
+      "http://www.acfun.tv/v/ab1470121"
     ],
     "newBgm": true,
     "showDate": "2015-01-10"
@@ -822,12 +838,13 @@
     "titleJP": "デュラララ!!×2 承",
     "officalSite": "http://www.durarara.com/",
     "weekDayJP": 6,
-    "weekDayCN": 0,
+    "weekDayCN": 6,
     "timeJP": "2230",
-    "timeCN": "0100",
+    "timeCN": "2330",
     "onAirSite": [
       "http://www.tudou.com/albumcover/Se7oGWDr_GA.html",
-      "http://www.youku.com/show_page/id_z2c9c7552acd811e38b3f.html"
+      "http://www.youku.com/show_page/id_z2c9c7552acd811e38b3f.html",
+      "http://v.qq.com/detail/4/4gmobofw9fltve9.html"
     ],
     "newBgm": true,
     "showDate": "2015-01-10"
