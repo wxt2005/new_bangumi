@@ -939,7 +939,12 @@
     "timeCN": "2330",
     "onAirSite": [
       "http://www.tudou.com/albumcover/uaWpGglH27U.html",
-      "http://www.youku.com/show_page/id_zd10324de8f3a11e4a080.html"
+      "http://www.youku.com/show_page/id_zd10324de8f3a11e4a080.html",
+      "http://www.iqiyi.com/a_19rrhay4qp.html",
+      "http://www.letv.com/comic/10007473.html",
+      "http://v.qq.com/detail/3/3udwgbjzd6l7ruw.html",
+      "http://www.bilibili.com/sp/夜之小双侠",
+      "http://www.acfun.tv/v/ab1470149"
     ],
     "newBgm": true,
     "showDate": "2015-01-11"
@@ -954,7 +959,11 @@
     "timeCN": "0000",
     "onAirSite": [
       "http://www.tudou.com/albumcover/QYODtlZ-1EY.html",
-      "http://www.youku.com/show_page/id_z8a0d8e1c59b511e4b2ad.html"
+      "http://www.youku.com/show_page/id_z8a0d8e1c59b511e4b2ad.html",
+      "http://www.letv.com/comic/10007476.html",
+      "http://www.iqiyi.com/a_19rrhay4hp.html",
+      "http://www.bilibili.com/sp/纯洁的玛利亚",
+      "http://www.acfun.tv/v/ab1470130"
     ],
     "newBgm": true,
     "showDate": "2015-01-11"
@@ -966,10 +975,15 @@
     "weekDayJP": 1,
     "weekDayCN": 1,
     "timeJP": "0005",
-    "timeCN": "0300",
+    "timeCN": "0105",
     "onAirSite": [
       "http://www.tudou.com/albumcover/eFktdfkfKZc.html",
-      "http://www.youku.com/show_page/id_z7ff0045e59c011e4b432.html"
+      "http://www.youku.com/show_page/id_z7ff0045e59c011e4b432.html",
+      "http://www.iqiyi.com/a_19rrhay4m1.html",
+      "http://www.letv.com/comic/10007478.html",
+      "http://v.qq.com/detail/z/zq603skcxexud1x.html",
+      "http://www.bilibili.com/sp/圣剑使的禁咒咏唱",
+      "http://www.acfun.tv/v/ab1470134"
     ],
     "newBgm": true,
     "showDate": "2015-01-12"
@@ -981,8 +995,14 @@
     "weekDayJP": 1,
     "weekDayCN": 1,
     "timeJP": "0035",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0200",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrhay4c5.html",
+      "http://www.pptv.com/page/304893.html?set_id=9037629",
+      "http://v.qq.com/detail/m/mhmtum2yxj7j2ss.html",
+      "http://www.bilibili.com/sp/战国无双",
+      "http://www.acfun.tv/v/ab1470150"
+    ],
     "newBgm": true,
     "showDate": "2015-01-12"
   },
