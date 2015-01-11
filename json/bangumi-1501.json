@@ -512,7 +512,8 @@
     "timeJP": "1855",
     "timeCN": "",
     "onAirSite": [
-      "http://www.bilibili.com/sp/Doamaiger%20D"
+      "http://www.bilibili.com/sp/Doamaiger%20D",
+      "http://www.acfun.tv/v/ab1470158"
     ],
     "newBgm": true,
     "showDate": "2015-01-05"
@@ -794,7 +795,8 @@
     "timeJP": "0058",
     "timeCN": "",
     "onAirSite": [
-      "http://www.bilibili.com/sp/死亡游行"
+      "http://www.bilibili.com/sp/死亡游行",
+      "http://www.acfun.tv/v/ab1470162"
     ],
     "newBgm": true,
     "showDate": "2015-01-10"
@@ -828,7 +830,9 @@
     "timeCN": "2300",
     "onAirSite": [
       "http://www.tudou.com/albumcover/mdEeE4selJA.html",
-      "http://www.youku.com/show_page/id_z9029aaa259cd11e4a080.html"
+      "http://www.youku.com/show_page/id_z9029aaa259cd11e4a080.html",
+      "http://www.bilibili.com/sp/少年好莱坞#S-1618",
+      "http://www.acfun.tv/v/ab1470138"
     ],
     "newBgm": true,
     "showDate": "2015-01-10"
@@ -845,7 +849,9 @@
       "http://www.tudou.com/albumcover/Se7oGWDr_GA.html",
       "http://www.youku.com/show_page/id_z2c9c7552acd811e38b3f.html",
       "http://v.qq.com/detail/4/4gmobofw9fltve9.html",
-      "http://www.iqiyi.com/a_19rrhay53x.html"
+      "http://www.iqiyi.com/a_19rrhay53x.html",
+      "http://www.bilibili.com/sp/无头骑士异闻录#S-1596",
+      "http://www.acfun.tv/v/ab1470124"
     ],
     "newBgm": true,
     "showDate": "2015-01-10"
@@ -859,7 +865,8 @@
     "timeJP": "2300",
     "timeCN": "0000",
     "onAirSite": [
-      "http://www.iqiyi.com/a_19rrhay589.html"
+      "http://www.iqiyi.com/a_19rrhay589.html",
+      "http://www.acfun.tv/v/ab1470135"
     ],
     "newBgm": true,
     "showDate": "2015-01-10"
@@ -875,7 +882,10 @@
     "onAirSite": [
       "http://www.tudou.com/albumcover/Gy9E2vV4e18.html",
       "http://www.youku.com/show_page/id_zf7651dc2599c11e4b522.html",
-      "http://www.iqiyi.com/a_19rrhay55h.html"
+      "http://www.iqiyi.com/a_19rrhay55h.html",
+      "http://v.qq.com/detail/i/i2pfes4ebq4fapc.html",
+      "http://www.bilibili.com/sp/DOG%20DAYS#S-1606",
+      "http://www.acfun.tv/v/ab1470122"
     ],
     "newBgm": true,
     "showDate": "2015-01-10"
@@ -891,7 +901,9 @@
     "onAirSite": [
       "http://www.tudou.com/albumcover/kJVciY-eLyA.html",
       "http://www.youku.com/show_page/id_z06ef4ef059ae11e4b522.html",
-      "http://www.iqiyi.com/a_19rrhay4vl.html"
+      "http://www.iqiyi.com/a_19rrhay4vl.html",
+      "http://www.bilibili.com/sp/THE%20ROLLING%20GIRLS",
+      "http://www.acfun.tv/v/ab1470126"
     ],
     "newBgm": true,
     "showDate": "2015-01-11"
@@ -903,11 +915,16 @@
     "weekDayJP": 0,
     "weekDayCN": 0,
     "timeJP": "0158",
-    "timeCN": "0430",
+    "timeCN": "0500",
     "onAirSite": [
       "http://www.tudou.com/albumcover/otzt4Efipjo.html",
       "http://www.youku.com/show_page/id_z4d028dc407e411e48b3f.html",
-      "http://www.iqiyi.com/a_19rrhay4z1.html"
+      "http://www.iqiyi.com/a_19rrhay4z1.html",
+      "http://www.letv.com/comic/10007490.html",
+      "http://v.qq.com/detail/x/x9oa8s8k3v6g8xm.html",
+      "http://v.pptv.com/show/u5t181vBMWicSULg.html",
+      "http://www.bilibili.com/sp/黑子的篮球#S-1597",
+      "http://www.acfun.tv/v/ab1470145"
     ],
     "newBgm": true,
     "showDate": "2015-01-11"
@@ -999,7 +1016,7 @@
     "officalSite": "http://www.disney.co.jp/tv/xd/program/sp/rebels.html",
     "weekDayJP": 6,
     "weekDayCN": 0,
-    "timeJP": "",
+    "timeJP": "1800",
     "timeCN": "",
     "onAirSite": [],
     "newBgm": true,
