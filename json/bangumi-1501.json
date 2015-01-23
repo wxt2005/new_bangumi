@@ -793,10 +793,11 @@
     "weekDayJP": 6,
     "weekDayCN": 6,
     "timeJP": "0058",
-    "timeCN": "",
+    "timeCN": "0430",
     "onAirSite": [
       "http://www.bilibili.com/sp/死亡游行",
-      "http://www.acfun.tv/v/ab1470162"
+      "http://www.acfun.tv/v/ab1470162",
+      "http://www.iqiyi.com/a_19rrhaxopx.html"
     ],
     "newBgm": true,
     "showDate": "2015-01-10"
@@ -1013,8 +1014,12 @@
     "weekDayJP": 6,
     "weekDayCN": 6,
     "timeJP": "1800",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "2000",
+    "onAirSite": [
+      "http://tv.sohu.com/s2014/msnzsc/",
+      "http://www.bilibili.com/sp/美少女战士",
+      "http://www.acfun.tv/a/aa2659"
+    ],
     "newBgm": true,
     "showDate": "2015-01-17"
   },
@@ -1025,8 +1030,12 @@
     "weekDayJP": 6,
     "weekDayCN": 6,
     "timeJP": "0035",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0205",
+    "onAirSite": [
+      "http://www.letv.com/comic/10007487.html",
+      "http://www.bilibili.com/sp/ISUCA",
+      "http://www.acfun.tv/v/ab1470136"
+    ],
     "newBgm": true,
     "showDate": "2015-01-24"
   },
