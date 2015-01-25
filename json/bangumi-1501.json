@@ -659,7 +659,9 @@
     "weekDayCN": 5,
     "timeJP": "2254",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.acfun.tv/v/ab1470209"
+    ],
     "newBgm": true,
     "showDate": "2015-01-08"
   },
