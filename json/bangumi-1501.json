@@ -1061,8 +1061,10 @@
     "weekDayJP": 0,
     "weekDayCN": 0,
     "timeJP": "0730",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "1230",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrhawapx.html"
+    ],
     "newBgm": true,
     "showDate": "2015-02-01"
   },
