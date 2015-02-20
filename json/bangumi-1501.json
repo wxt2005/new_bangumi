@@ -1069,14 +1069,17 @@
     "showDate": "2015-02-01"
   },
   {
-    "titleCN": "漫画心疗系",
+    "titleCN": "动画心疗系",
     "titleJP": "アニメで分かる心療内科",
     "officalSite": "http://www.mental-anime.jp/",
     "weekDayJP": 5,
     "weekDayCN": 5,
     "timeJP": "0400",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0435",
+    "onAirSite": [
+      "http://v.qq.com/detail/p/p9g77zamk0kvlka.html",
+      "http://www.bilibili.com/sp/动画心疗系"
+    ],
     "newBgm": true,
     "showDate": "2015-02-13"
   },
