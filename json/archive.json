@@ -41,6 +41,11 @@
                 "month": 1,
                 "json": "json/bangumi-1501.json",
                 "done": true
+            },
+            {
+                "month": 4,
+                "json": "json/bangumi-1504.json",
+                "done": true
             }
         ]
     }
