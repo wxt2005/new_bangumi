@@ -1,5 +1,264 @@
 [
   {
+    "titleCN": "名侦探柯南",
+    "titleJP": "名探偵コナン",
+    "officalSite": "http://www.ytv.co.jp/conan/",
+    "weekDayJP": 6,
+    "weekDayCN": 0,
+    "timeJP": "1800",
+    "timeCN": "",
+    "onAirSite": [
+      "http://www.acfun.tv/a/aa127",
+      "http://www.iqiyi.com/dongman/mztkngyb.html"
+    ],
+    "newBgm": false,
+    "showDate": "1996-01-08"
+  },
+  {
+    "titleCN": "海贼王",
+    "titleJP": "ONE PIECE",
+    "officalSite": "http://www.toei-anim.co.jp/tv/onep/",
+    "weekDayJP": 0,
+    "weekDayCN": 0,
+    "timeJP": "0930",
+    "timeCN": "",
+    "onAirSite": [
+      "http://www.bilibili.com/sp/海贼王",
+      "http://www.acfun.tv/a/aa126",
+      "http://tv.sohu.com/s2013/onepiece/"
+    ],
+    "newBgm": false,
+    "showDate": "1999-10-20"
+  },
+  {
+    "titleCN": "火影忍者 疾风传",
+    "titleJP": "NARUTO -ナルト- 疾風伝",
+    "officalSite": "http://www.tv-tokyo.co.jp/anime/naruto/index2.html",
+    "weekDayJP": 4,
+    "weekDayCN": 4,
+    "timeJP": "1830",
+    "timeCN": "1900",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/Lqfme5hSolM.html",
+      "http://www.bilibili.com/sp/火影忍者"
+    ],
+    "newBgm": false,
+    "showDate": "2007-02-15"
+  },
+  {
+    "titleCN": "偶像活动! 3期",
+    "titleJP": "アイカツ!アイドルカツドウ!",
+    "officalSite": "http://www.aikatsu.net",
+    "weekDayJP": 4,
+    "weekDayCN": 4,
+    "timeJP": "1700",
+    "timeCN": "1900",
+    "onAirSite": [
+      "http://www.bilibili.com/sp/偶像活动",
+      "http://www.acfun.tv/a/aa1464858",
+      "http://www.iqiyi.com/a_19rrhc0yjx.html"
+    ],
+    "newBgm": false,
+    "showDate": "2014-10-02"
+  },
+  {
+    "titleCN": "游戏王ARC-V",
+    "titleJP": "遊☆戯☆王ARC-V ",
+    "officalSite": "http://www.tv-tokyo.co.jp/anime/yugioh-arcv/",
+    "weekDayJP": 0,
+    "weekDayCN": 1,
+    "timeJP": "1630",
+    "timeCN": "",
+    "onAirSite": [
+      "http://www.bilibili.com/sp/游☆戏☆王",
+      "http://www.acfun.tv/a/aa1259367"
+    ],
+    "newBgm": false,
+    "showDate": "2014-04-06"
+  },
+  {
+    "titleCN": "口袋妖怪 XY",
+    "titleJP": "ポケットモンスター XY",
+    "officalSite": "http://www.tv-tokyo.co.jp/anime/pokemon_xy/",
+    "weekDayJP": 4,
+    "weekDayCN": 5,
+    "timeJP": "1800",
+    "timeCN": "",
+    "onAirSite": [
+      "http://www.bilibili.com/sp/宠物小精灵",
+      "http://www.acfun.tv/a/aa109"
+    ],
+    "newBgm": false,
+    "showDate": "2013-10-17"
+  },
+  {
+    "titleCN": "GO! Princess Precure",
+    "titleJP": "Ｇｏ！プリンセスプリキュア",
+    "officalSite": "http://www.toei-anim.co.jp/tv/princess_precure/",
+    "weekDayJP": 0,
+    "weekDayCN": 0,
+    "timeJP": "0730",
+    "timeCN": "1230",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrhawapx.html",
+      "http://www.bilibili.com/sp/光之美少女"
+    ],
+    "newBgm": true,
+    "showDate": "2015-02-01"
+  },
+  {
+    "titleCN": "妖怪手表",
+    "titleJP": "妖怪ウォッチ",
+    "officalSite": "http://www.tv-tokyo.co.jp/anime/youkai-watch/",
+    "weekDayJP": 5,
+    "weekDayCN": 6,
+    "timeJP": "1730",
+    "timeCN": "",
+    "onAirSite": [
+      "http://www.bilibili.com/sp/妖怪手表",
+      "http://www.acfun.tv/a/aa220"
+    ],
+    "newBgm": false,
+    "showDate": "2014-01-08"
+  },
+  {
+    "titleCN": "妖精的尾巴 2期",
+    "titleJP": "FAIRY TAIL 新シリーズ",
+    "officalSite": "http://www.fairytail-tv.com/",
+    "weekDayJP": 6,
+    "weekDayCN": 6,
+    "timeJP": "0930",
+    "timeCN": "1400",
+    "onAirSite": [
+      "http://tv.sohu.com/s2011/yjdwb/",
+      "http://www.bilibili.com/sp/妖精的尾巴",
+      "http://www.acfun.tv/a/aa1214#group=1"
+    ],
+    "newBgm": false,
+    "showDate": "2014-04-05"
+  },
+  {
+    "titleCN": "龙珠改 魔人布欧篇",
+    "titleJP": "ドラゴンボール改（魔人ブウ編）",
+    "officalSite": "http://www.toei-anim.co.jp/tv/dragon_kai/",
+    "weekDayJP": 0,
+    "weekDayCN": 0,
+    "timeJP": "0800",
+    "timeCN": "",
+    "onAirSite": [
+      "http://tv.sohu.com/s2014/lzg2",
+      "http://www.bilibili.com/sp/龙珠#S-867",
+      "http://www.acfun.tv/a/aa1243"
+    ],
+    "newBgm": false,
+    "showDate": "2014-04-06"
+  },
+  {
+    "titleCN": "JOJO的奇妙冒险 第三部 星尘斗士 埃及篇",
+    "titleJP": "ジョジョの奇妙な冒険 第3部-スターダストクルセイダース- エジプト編",
+    "officalSite": "http://wwws.warnerbros.co.jp/jojo-animation/",
+    "weekDayJP": 5,
+    "weekDayCN": 6,
+    "timeJP": "2330",
+    "timeCN": "",
+    "onAirSite": [
+      "http://www.bilibili.com/sp/JOJO的奇妙冒险#S-893",
+      "http://www.acfun.tv/v/ab1470152"
+    ],
+    "newBgm": false,
+    "showDate": "2015-01-09"
+  },
+  {
+    "titleCN": "暗杀教室",
+    "titleJP": "暗殺教室",
+    "officalSite": "http://www.ansatsu-anime.com/",
+    "weekDayJP": 6,
+    "weekDayCN": 6,
+    "timeJP": "0100",
+    "timeCN": "0350",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/ubXoKOOcGpc.html",
+      "http://www.youku.com/show_page/id_ze0f2bedc0feb11e4a705.html",
+      "http://www.iqiyi.com/a_19rrhay5ht.html",
+      "http://v.qq.com/detail/8/828nt2nrl1stt58.html",
+      "http://www.bilibili.com/sp/暗杀教室",
+      "http://www.acfun.tv/v/ab1470121"
+    ],
+    "newBgm": true,
+    "showDate": "2015-01-10"
+  },
+  {
+    "titleCN": "偶像大师 灰姑娘女孩",
+    "titleJP": "アイドルマスター シンデレラガールズ",
+    "officalSite": "http://imas-cinderella.com/",
+    "weekDayJP": 5,
+    "weekDayCN": 6,
+    "timeJP": "2300",
+    "timeCN": "0030",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrhay5rp.html",
+      "http://v.qq.com/detail/w/wgzklo5zkrgalda.html",
+      "http://www.pptv.com/page/295755.html?set_id=9036881",
+      "http://www.letv.com/comic/10007495.html",
+      "http://www.bilibili.com/sp/偶像大师%20灰姑娘女孩",
+      "http://www.acfun.tv/v/ab1470132"
+    ],
+    "newBgm": false,
+    "showDate": "2015-01-09"
+  },
+  {
+    "titleCN": "黑子的篮球 3期",
+    "titleJP": "黒子のバスケ 第3期",
+    "officalSite": "http://www.kurobas.com/",
+    "weekDayJP": 0,
+    "weekDayCN": 0,
+    "timeJP": "0158",
+    "timeCN": "0500",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/otzt4Efipjo.html",
+      "http://www.youku.com/show_page/id_z4d028dc407e411e48b3f.html",
+      "http://www.iqiyi.com/a_19rrhay4z1.html",
+      "http://www.letv.com/comic/10007490.html",
+      "http://v.qq.com/detail/x/x9oa8s8k3v6g8xm.html",
+      "http://v.pptv.com/show/u5t181vBMWicSULg.html",
+      "http://www.bilibili.com/sp/黑子的篮球#S-1597",
+      "http://www.acfun.tv/v/ab1470145"
+    ],
+    "newBgm": false,
+    "showDate": "2015-01-11"
+  },
+  {
+    "titleCN": "美少女战士 Crystal 2期",
+    "titleJP": "美少女戦士セーラームーン Crystal ブラック・ムーン編 (第2期)",
+    "officalSite": "http://sailormoon-official.com/animation/",
+    "weekDayJP": 6,
+    "weekDayCN": 6,
+    "timeJP": "1800",
+    "timeCN": "2000",
+    "onAirSite": [
+      "http://tv.sohu.com/s2014/msnzsc/",
+      "http://www.bilibili.com/sp/美少女战士",
+      "http://www.acfun.tv/a/aa2659"
+    ],
+    "newBgm": false,
+    "showDate": "2015-01-17"
+  },
+  {
+    "titleCN": "动画心疗系",
+    "titleJP": "アニメで分かる心療内科",
+    "officalSite": "http://www.mental-anime.jp/",
+    "weekDayJP": 5,
+    "weekDayCN": 5,
+    "timeJP": "0400",
+    "timeCN": "0435",
+    "onAirSite": [
+      "http://v.qq.com/detail/p/p9g77zamk0kvlka.html",
+      "http://www.bilibili.com/sp/动画心疗系"
+    ],
+    "newBgm": false,
+    "showDate": "2015-02-13"
+  },
+  {
     "titleCN": "船梨精摇摇摇日和",
     "titleJP": "ふなっしーのふなふなふな日和",
     "officalSite": "http://www.ntv.co.jp/funaanime/",
@@ -36,7 +295,7 @@
     "showDate": "2015-04-01"
   },
   {
-    "titleCN": " GOGO拓麻歌子 五期",
+    "titleCN": " GOGO拓麻歌子 2期",
     "titleJP": "たまごっち！-たまともだいしゅーGO- (第5期)",
     "officalSite": "http://www.tv-tokyo.co.jp/anime/tamagotchi/",
     "weekDayJP": 3,
@@ -48,7 +307,7 @@
     "showDate": "2014-04-02"
   },
   {
-    "titleCN": "关于完全听不懂老公在说什么的事 二期",
+    "titleCN": "关于完全听不懂老公在说什么的事 2期",
     "titleJP": "旦那が何を言っているかわからない件2スレ目 (第2期)",
     "officalSite": "http://www.dreamcreation.co.jp/danna/",
     "weekDayJP": 5,
@@ -156,7 +415,7 @@
     "showDate": "2014-04-04"
   },
   {
-    "titleCN": "Pripara 六期",
+    "titleCN": "Pripara 6期",
     "titleJP": "プリパラ 新シーズン (第6期)",
     "officalSite": "http://www.tv-tokyo.co.jp/anime/pripara/",
     "weekDayJP": 6,
@@ -228,7 +487,7 @@
     "showDate": "2015-04-04"
   },
   {
-    "titleCN": "Fate/stay night UBW 二期",
+    "titleCN": "Fate/stay night UBW 2期",
     "titleJP": "Fate/stay night -UBW- 2nd",
     "officalSite": "http://www.fate-sn.com/ubw/",
     "weekDayJP": 6,
@@ -264,7 +523,7 @@
     "showDate": "2015-04-05"
   },
   {
-    "titleCN": "摸索吧！部活剧 三期",
+    "titleCN": "摸索吧！部活剧 3期",
     "titleJP": "てさぐれ！部活もの すぴんおふプルプルんシャルムと遊ぼう (第3期)",
     "officalSite": "http://www.ntv.co.jp/tesapuru/",
     "weekDayJP": 0,
@@ -312,7 +571,7 @@
     "showDate": "2015-04-05"
   },
   {
-    "titleCN": "网球优等生 二期",
+    "titleCN": "网球优等生 2期",
     "titleJP": "ベイビーステップ 第2シリーズ",
     "officalSite": "http://www3.nhk.or.jp/anime/babysteps/2nd/index.html",
     "weekDayJP": 0,
@@ -384,7 +643,7 @@
     "showDate": "2015-04-06"
   },
   {
-    "titleCN": "怪盗Joker 二期",
+    "titleCN": "怪盗Joker 2期",
     "titleJP": "怪盗ジョーカー シーズン2",
     "officalSite": "http://s.mxtv.jp/joker/",
     "weekDayJP": 1,
@@ -408,7 +667,7 @@
     "showDate": "2015-04-06"
   },
   {
-    "titleCN": "黏黏糊糊!角质君 二期",
+    "titleCN": "黏黏糊糊!角质君 2期",
     "titleJP": "にゅるにゅる!!KAKUSENくん 第2期",
     "officalSite": "http://kakusen-kun.com/",
     "weekDayJP": 1,
@@ -420,7 +679,7 @@
     "showDate": "2015-04-06"
   },
   {
-    "titleCN": "网球并不可笑嘛 四期",
+    "titleCN": "网球并不可笑嘛 4期",
     "titleJP": "てーきゅう 第4期",
     "officalSite": "http://te-kyu.com/",
     "weekDayJP": 2,
@@ -552,7 +811,7 @@
     "showDate": "2015-04-10"
   },
   {
-    "titleCN": "伪恋 二期",
+    "titleCN": "伪恋 2期",
     "titleJP": "ニセコイ 第2期",
     "officalSite": "http://www.nisekoi.jp/",
     "weekDayJP": 5,
