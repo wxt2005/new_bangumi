@@ -313,8 +313,11 @@
     "weekDayJP": 5,
     "weekDayCN": 5,
     "timeJP": "0000",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0100",
+    "onAirSite": [
+      "http://www.bilibili.com/sp/关于完全听不懂老公在说什么的事#S-1798",
+      "http://v.pptv.com/show/sZeBic2fNPXveXMQ.html"
+    ],
     "newBgm": true,
     "showDate": "2015-04-03"
   },
@@ -325,8 +328,10 @@
     "weekDayJP": 5,
     "weekDayCN": 5,
     "timeJP": "0046",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "1000",
+    "onAirSite": [
+      "http://www.bilibili.com/sp/我的青春恋爱物语果然有问题#S-1810"
+    ],
     "newBgm": true,
     "showDate": "2015-04-03"
   },
