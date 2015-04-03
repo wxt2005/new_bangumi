@@ -259,6 +259,22 @@
     "showDate": "2015-02-13"
   },
   {
+    "titleCN": "苍穹的法芙娜 EXODUS",
+    "titleJP": "蒼穹のファフナー エグゾダス-EXODUS-",
+    "officalSite": "http://fafner-exodus.jp/",
+    "weekDayJP": 5,
+    "weekDayCN": 5,
+    "timeJP": "0119",
+    "timeCN": "0204",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrhax0et.html",
+      "http://www.acfun.tv/v/ab1470131",
+      "http://www.bilibili.com/sp/苍穹之法芙娜#S-1613"
+    ],
+    "newBgm": false,
+    "showDate": "2015-01-09"
+  },
+  {
     "titleCN": "船梨精摇摇摇日和",
     "titleJP": "ふなっしーのふなふなふな日和",
     "officalSite": "http://www.ntv.co.jp/funaanime/",
@@ -330,7 +346,8 @@
     "timeJP": "0046",
     "timeCN": "1000",
     "onAirSite": [
-      "http://www.bilibili.com/sp/我的青春恋爱物语果然有问题#S-1810"
+      "http://www.bilibili.com/sp/我的青春恋爱物语果然有问题#S-1810",
+      "http://v.pptv.com/show/TibXPTbUbia8ksqhI.html"
     ],
     "newBgm": true,
     "showDate": "2015-04-03"
