@@ -332,7 +332,8 @@
     "timeCN": "0100",
     "onAirSite": [
       "http://www.bilibili.com/sp/关于完全听不懂老公在说什么的事#S-1798",
-      "http://v.pptv.com/show/sZeBic2fNPXveXMQ.html"
+      "http://v.pptv.com/show/sZeBic2fNPXveXMQ.html",
+      "http://www.letv.com/ptv/vplay/22369955.html"
     ],
     "newBgm": true,
     "showDate": "2015-04-03"
@@ -369,10 +370,12 @@
     "titleJP": "魔法少女リリカルなのはViVid",
     "officalSite": "http://nanoha-vivid.tv/",
     "weekDayJP": 5,
-    "weekDayCN": 6,
+    "weekDayCN": 5,
     "timeJP": "2130",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "2300",
+    "onAirSite": [
+      "http://www.bilibili.com/sp/魔法少女奈叶#S-1790"
+    ],
     "newBgm": true,
     "showDate": "2015-04-03"
   },
@@ -383,8 +386,10 @@
     "weekDayJP": 6,
     "weekDayCN": 6,
     "timeJP": "0005",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0035",
+    "onAirSite": [
+      "http://v.pptv.com/show/UicnTUbkfj80wrhY.html"
+    ],
     "newBgm": true,
     "showDate": "2015-04-04"
   },
@@ -395,8 +400,14 @@
     "weekDayJP": 6,
     "weekDayCN": 6,
     "timeJP": "0040",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0210",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/ElqA9e3gel0.html",
+      "http://www.youku.com/show_page/id_z3eebb5a2d1f711e4abda.html",
+      "http://v.qq.com/detail/l/l2h6j510vy2r11e.html",
+      "http://www.letv.com/ptv/vplay/22397254.html",
+      "http://www.bilibili.com/sp/小长门有希的消失"
+    ],
     "newBgm": true,
     "showDate": "2015-04-04"
   },
@@ -407,8 +418,12 @@
     "weekDayJP": 6,
     "weekDayCN": 6,
     "timeJP": "0055",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0155",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/W7crDVrgjUU.html",
+      "http://www.youku.com/show_page/id_z01bc34c0d1fe11e4a080.html",
+      "http://v.qq.com/detail/z/zkzeoy0ybuydkp7.html"
+    ],
     "newBgm": true,
     "showDate": "2015-04-04"
   },
@@ -419,8 +434,10 @@
     "weekDayJP": 6,
     "weekDayCN": 6,
     "timeJP": "0125",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0510",
+    "onAirSite": [
+      "http://www.bilibili.com/sp/食戟之灵"
+    ],
     "newBgm": true,
     "showDate": "2015-04-04"
   },
@@ -455,8 +472,11 @@
     "weekDayJP": 6,
     "weekDayCN": 6,
     "timeJP": "1630",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "1900",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/IaqccpIZFkw.html",
+      "http://www.youku.com/show_page/id_zf9733d54d20211e4b522.html"
+    ],
     "newBgm": true,
     "showDate": "2015-04-04"
   },
@@ -473,14 +493,18 @@
     "showDate": "2015-04-04"
   },
   {
-    "titleCN": "终究的炽天使",
+    "titleCN": "终结的炽天使",
     "titleJP": "終わりのセラフ 前期",
     "officalSite": "http://owarino-seraph.jp/",
     "weekDayJP": 6,
-    "weekDayCN": 0,
+    "weekDayCN": 6,
     "timeJP": "2100",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "2200",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/oGlXUbsk0Hw.html",
+      "http://www.youku.com/show_page/id_z7b76708ad29111e49e2a.html",
+      "http://v.qq.com/detail/i/izsh50sm4ysz5j5.html"
+    ],
     "newBgm": true,
     "showDate": "2015-04-04"
   },
@@ -501,10 +525,13 @@
     "titleJP": "ガンスリンガー ストラトス",
     "officalSite": "http://www.guns-project.jp/",
     "weekDayJP": 6,
-    "weekDayCN": 0,
+    "weekDayCN": 6,
     "timeJP": "2230",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "2330",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/KyDPNt8PGn4.html",
+      "http://www.youku.com/show_page/id_z28c17ee4d20411e4b522.html"
+    ],
     "newBgm": true,
     "showDate": "2015-04-04"
   },
@@ -515,8 +542,10 @@
     "weekDayJP": 6,
     "weekDayCN": 0,
     "timeJP": "2300",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0030",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/geFp2M0qg4A.html"
+    ],
     "newBgm": true,
     "showDate": "2015-04-04"
   },
@@ -539,8 +568,11 @@
     "weekDayJP": 0,
     "weekDayCN": 0,
     "timeJP": "0000",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0030",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/XuEeF0KkEWc.html",
+      "http://www.youku.com/show_page/id_zefa80170d20611e4b432.html"
+    ],
     "newBgm": true,
     "showDate": "2015-04-05"
   },
@@ -563,8 +595,11 @@
     "weekDayJP": 0,
     "weekDayCN": 0,
     "timeJP": "0128",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0230",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/a0ZSHooKbdg.html",
+      "http://www.youku.com/show_page/id_z3f3c69e0d37b11e4b692.html"
+    ],
     "newBgm": true,
     "showDate": "2015-04-05"
   },
@@ -587,8 +622,11 @@
     "weekDayJP": 0,
     "weekDayCN": 0,
     "timeJP": "1600",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "2200",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/Ko7krCYz4w4.html",
+      "http://www.youku.com/show_page/id_z851f4dbcd29811e4b692.html"
+    ],
     "newBgm": true,
     "showDate": "2015-04-05"
   },
@@ -597,10 +635,13 @@
     "titleJP": "ベイビーステップ 第2シリーズ",
     "officalSite": "http://www3.nhk.or.jp/anime/babysteps/2nd/index.html",
     "weekDayJP": 0,
-    "weekDayCN": 0,
+    "weekDayCN": 1,
     "timeJP": "1630",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0100",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/5EughhrPa3A.html",
+      "http://www.youku.com/show_page/id_z460a9d2cd29611e4a080.html"
+    ],
     "newBgm": true,
     "showDate": "2015-04-05"
   },
@@ -633,10 +674,13 @@
     "titleJP": "攻殻機動隊ARISE-ALTERNATIVE ARCHITECTURE-",
     "officalSite": "http://kokaku-a.jp/tv/",
     "weekDayJP": 0,
-    "weekDayCN": 1,
+    "weekDayCN": 0,
     "timeJP": "2130",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "2300",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/I3F-I2rXmBI.html",
+      "http://www.youku.com/show_page/id_z76ca4f38d29c11e4b8e3.html"
+    ],
     "newBgm": true,
     "showDate": "2015-04-05"
   },
@@ -647,8 +691,11 @@
     "weekDayJP": 0,
     "weekDayCN": 1,
     "timeJP": "2300",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0200",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/SfWjXGa2scU.html",
+      "http://www.youku.com/show_page/id_zbd48f46ece9711e38b3f.html"
+    ],
     "newBgm": true,
     "showDate": "2015-04-05"
   },
@@ -737,14 +784,17 @@
     "showDate": "2015-04-07"
   },
   {
-    "titleCN": "吹响！悠风号",
+    "titleCN": "吹响！上低音号",
     "titleJP": "響け！ユーフォニアム",
     "officalSite": "http://anime-eupho.com/",
     "weekDayJP": 2,
     "weekDayCN": 3,
     "timeJP": "2330",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0030",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/hbSbEkGBZtk.html",
+      "http://www.youku.com/show_page/id_z41f367f4d35f11e4b522.html"
+    ],
     "newBgm": true,
     "showDate": "2015-04-07"
   },
@@ -755,8 +805,11 @@
     "weekDayJP": 3,
     "weekDayCN": 3,
     "timeJP": "1700",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "1800",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/92J2xqpSxWY.html",
+      "http://www.youku.com/show_page/id_zcc0026e0962411de83b1.html"
+    ],
     "newBgm": true,
     "showDate": "2015-04-08"
   },
@@ -801,22 +854,28 @@
     "titleJP": "えとたま -干支魂-",
     "officalSite": "http://etotama.com/",
     "weekDayJP": 4,
-    "weekDayCN": 5,
+    "weekDayCN": 4,
     "timeJP": "2200",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "2300",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/hGd4jZGmtp4.html",
+      "http://www.youku.com/show_page/id_zf5e8534ed35711e4b692.html"
+    ],
     "newBgm": true,
     "showDate": "2015-04-09"
   },
   {
-    "titleCN": "Punchline",
+    "titleCN": "PUNCHLINE",
     "titleJP": "パンチライン",
     "officalSite": "http://www.punchline.jp/",
     "weekDayJP": 4,
     "weekDayCN": 5,
     "timeJP": "2350",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0125",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/qvE1P7MSZ7o.html",
+      "http://www.youku.com/show_page/id_zab2bcd5cd37c11e4b432.html"
+    ],
     "newBgm": true,
     "showDate": "2015-04-09"
   },
@@ -837,10 +896,13 @@
     "titleJP": "ニセコイ 第2期",
     "officalSite": "http://www.nisekoi.jp/",
     "weekDayJP": 5,
-    "weekDayCN": 6,
+    "weekDayCN": 5,
     "timeJP": "2230",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "2330",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/0zm0C-rHX9E.html",
+      "http://www.youku.com/show_page/id_zcdd2de40d2c811e4b2ad.html"
+    ],
     "newBgm": true,
     "showDate": "2015-04-10"
   },
@@ -851,8 +913,11 @@
     "weekDayJP": 6,
     "weekDayCN": 6,
     "timeJP": "0110",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0225",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/sdrYzuBFDuo.html",
+      "http://www.youku.com/show_page/id_z94e46f16d2c511e4b692.html"
+    ],
     "newBgm": true,
     "showDate": "2015-04-11"
   },
@@ -921,10 +986,13 @@
     "titleJP": "ニンジャスレイヤー フロムアニメイシヨン",
     "officalSite": "http://www.ninjaslayer-animation.com/",
     "weekDayJP": 4,
-    "weekDayCN": 5,
+    "weekDayCN": 4,
     "timeJP": "2200",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "2200",
+    "onAirSite": [
+      "http://www.tudou.com/albumcover/thXrYtxFJfE.html",
+      "http://www.youku.com/show_page/id_z11209d22d2b511e4b432.html"
+    ],
     "newBgm": true,
     "showDate": "2015-04-16"
   },
