@@ -198,7 +198,7 @@
     "onAirSite": [
       "http://www.iqiyi.com/a_19rrhay5rp.html",
       "http://v.qq.com/detail/w/wgzklo5zkrgalda.html",
-      "http://www.pptv.com/page/295755.html?set_id=9036881",
+      "http://www.pptv.com/page/295755.html",
       "http://www.letv.com/comic/10007495.html",
       "http://www.bilibili.com/sp/偶像大师%20灰姑娘女孩",
       "http://www.acfun.tv/v/ab1470132"
@@ -220,7 +220,7 @@
       "http://www.iqiyi.com/a_19rrhay4z1.html",
       "http://www.letv.com/comic/10007490.html",
       "http://v.qq.com/detail/x/x9oa8s8k3v6g8xm.html",
-      "http://v.pptv.com/show/u5t181vBMWicSULg.html",
+      "http://www.pptv.com/page/303313.html",
       "http://www.bilibili.com/sp/黑子的篮球#S-1597",
       "http://www.acfun.tv/v/ab1470145"
     ],
@@ -253,7 +253,8 @@
     "timeCN": "0435",
     "onAirSite": [
       "http://v.qq.com/detail/p/p9g77zamk0kvlka.html",
-      "http://www.bilibili.com/sp/动画心疗系"
+      "http://www.bilibili.com/sp/动画心疗系",
+      "http://www.acfun.tv/v/ab1470154"
     ],
     "newBgm": false,
     "showDate": "2015-02-13"
@@ -332,8 +333,9 @@
     "timeCN": "0100",
     "onAirSite": [
       "http://www.bilibili.com/sp/关于完全听不懂老公在说什么的事#S-1798",
-      "http://v.pptv.com/show/sZeBic2fNPXveXMQ.html",
-      "http://www.letv.com/ptv/vplay/22369955.html"
+      "http://www.pptv.com/page/311518.html",
+      "http://www.letv.com/comic/10008623.html",
+      "http://www.acfun.tv/v/ab1470224"
     ],
     "newBgm": true,
     "showDate": "2015-04-03"
@@ -348,7 +350,8 @@
     "timeCN": "1000",
     "onAirSite": [
       "http://www.bilibili.com/sp/我的青春恋爱物语果然有问题#S-1810",
-      "http://v.pptv.com/show/TibXPTbUbia8ksqhI.html"
+      "http://www.pptv.com/page/308997.html",
+      "http://www.acfun.tv/v/ab1470225"
     ],
     "newBgm": true,
     "showDate": "2015-04-03"
@@ -388,7 +391,7 @@
     "timeJP": "0005",
     "timeCN": "0035",
     "onAirSite": [
-      "http://v.pptv.com/show/UicnTUbkfj80wrhY.html"
+      "http://www.pptv.com/page/309015.html"
     ],
     "newBgm": true,
     "showDate": "2015-04-04"
@@ -405,7 +408,7 @@
       "http://www.tudou.com/albumcover/ElqA9e3gel0.html",
       "http://www.youku.com/show_page/id_z3eebb5a2d1f711e4abda.html",
       "http://v.qq.com/detail/l/l2h6j510vy2r11e.html",
-      "http://www.letv.com/ptv/vplay/22397254.html",
+      "http://www.letv.com/comic/10008624.html",
       "http://www.bilibili.com/sp/小长门有希的消失"
     ],
     "newBgm": true,
@@ -475,7 +478,10 @@
     "timeCN": "1900",
     "onAirSite": [
       "http://www.tudou.com/albumcover/IaqccpIZFkw.html",
-      "http://www.youku.com/show_page/id_zf9733d54d20211e4b522.html"
+      "http://www.youku.com/show_page/id_zf9733d54d20211e4b522.html",
+      "http://www.letv.com/comic/10008627.html",
+      "http://www.iqiyi.com/a_19rrhay9ot.html",
+      "http://www.pptv.com/page/251094.html"
     ],
     "newBgm": true,
     "showDate": "2015-04-04"
@@ -503,7 +509,10 @@
     "onAirSite": [
       "http://www.tudou.com/albumcover/oGlXUbsk0Hw.html",
       "http://www.youku.com/show_page/id_z7b76708ad29111e49e2a.html",
-      "http://v.qq.com/detail/i/izsh50sm4ysz5j5.html"
+      "http://v.qq.com/detail/i/izsh50sm4ysz5j5.html",
+      "http://www.bilibili.com/sp/终结的炽天使",
+      "http://www.letv.com/comic/10008808.html",
+      "http://www.pptv.com/page/311534.html"
     ],
     "newBgm": true,
     "showDate": "2015-04-04"
@@ -530,7 +539,8 @@
     "timeCN": "2330",
     "onAirSite": [
       "http://www.tudou.com/albumcover/KyDPNt8PGn4.html",
-      "http://www.youku.com/show_page/id_z28c17ee4d20411e4b522.html"
+      "http://www.youku.com/show_page/id_z28c17ee4d20411e4b522.html",
+      "http://www.letv.com/comic/10008462.html"
     ],
     "newBgm": true,
     "showDate": "2015-04-04"
@@ -544,7 +554,10 @@
     "timeJP": "2300",
     "timeCN": "0030",
     "onAirSite": [
-      "http://www.tudou.com/albumcover/geFp2M0qg4A.html"
+      "http://www.tudou.com/albumcover/geFp2M0qg4A.html",
+      "http://www.letv.com/comic/10005152.html",
+      "http://v.qq.com/detail/5/54v59r074ncc1kq.html",
+      "http://www.bilibili.com/sp/FATE/STAY%20NIGHT%20-UBW-#S-1829"
     ],
     "newBgm": true,
     "showDate": "2015-04-04"
@@ -571,7 +584,9 @@
     "timeCN": "0030",
     "onAirSite": [
       "http://www.tudou.com/albumcover/XuEeF0KkEWc.html",
-      "http://www.youku.com/show_page/id_zefa80170d20611e4b432.html"
+      "http://www.youku.com/show_page/id_zefa80170d20611e4b432.html",
+      "http://v.qq.com/detail/9/9ni9yqck4tdy63j.html",
+      "http://www.bilibili.com/sp/歌之☆王子殿下%20真爱1000#S-1799"
     ],
     "newBgm": true,
     "showDate": "2015-04-05"
@@ -598,7 +613,9 @@
     "timeCN": "0230",
     "onAirSite": [
       "http://www.tudou.com/albumcover/a0ZSHooKbdg.html",
-      "http://www.youku.com/show_page/id_z3f3c69e0d37b11e4b692.html"
+      "http://www.youku.com/show_page/id_z3f3c69e0d37b11e4b692.html",
+      "http://www.letv.com/comic/10008625.html",
+      "http://www.pptv.com/page/309013.html"
     ],
     "newBgm": true,
     "showDate": "2015-04-05"
@@ -625,7 +642,10 @@
     "timeCN": "2200",
     "onAirSite": [
       "http://www.tudou.com/albumcover/Ko7krCYz4w4.html",
-      "http://www.youku.com/show_page/id_z851f4dbcd29811e4b692.html"
+      "http://www.youku.com/show_page/id_z851f4dbcd29811e4b692.html",
+      "http://www.letv.com/comic/10008629.html",
+      "http://v.qq.com/detail/2/2nqzaniq3tunys1.html",
+      "http://www.pptv.com/page/305135.html"
     ],
     "newBgm": true,
     "showDate": "2015-04-05"
@@ -793,7 +813,8 @@
     "timeCN": "0030",
     "onAirSite": [
       "http://www.tudou.com/albumcover/hbSbEkGBZtk.html",
-      "http://www.youku.com/show_page/id_z41f367f4d35f11e4b522.html"
+      "http://www.youku.com/show_page/id_z41f367f4d35f11e4b522.html",
+      "http://www.letv.com/comic/10008635.html"
     ],
     "newBgm": true,
     "showDate": "2015-04-07"
@@ -832,8 +853,10 @@
     "weekDayJP": 4,
     "weekDayCN": 4,
     "timeJP": "0029",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0330",
+    "onAirSite": [
+      "http://www.letv.com/comic/10008807.html"
+    ],
     "newBgm": true,
     "showDate": "2015-04-09"
   },
@@ -901,7 +924,8 @@
     "timeCN": "2330",
     "onAirSite": [
       "http://www.tudou.com/albumcover/0zm0C-rHX9E.html",
-      "http://www.youku.com/show_page/id_zcdd2de40d2c811e4b2ad.html"
+      "http://www.youku.com/show_page/id_zcdd2de40d2c811e4b2ad.html",
+      "http://www.letv.com/comic/10008544.html"
     ],
     "newBgm": true,
     "showDate": "2015-04-10"
