@@ -40,7 +40,8 @@
     "timeCN": "1900",
     "onAirSite": [
       "http://www.tudou.com/albumcover/Lqfme5hSolM.html",
-      "http://www.bilibili.com/sp/火影忍者"
+      "http://www.bilibili.com/sp/火影忍者",
+      "http://www.youku.com/show_page/id_zcc001f06962411de83b1.html"
     ],
     "newBgm": false,
     "showDate": "2007-02-15"
@@ -665,7 +666,9 @@
       "http://www.youku.com/show_page/id_z851f4dbcd29811e4b692.html",
       "http://www.letv.com/comic/10008629.html",
       "http://v.qq.com/detail/2/2nqzaniq3tunys1.html",
-      "http://www.pptv.com/page/305135.html"
+      "http://www.pptv.com/page/305135.html",
+      "http://www.bilibili.com/sp/亚尔斯兰战记",
+      "http://www.iqiyi.com/a_19rrhaybsx.html"
     ],
     "newBgm": true,
     "showDate": "2015-04-05"
@@ -719,7 +722,8 @@
     "timeCN": "2300",
     "onAirSite": [
       "http://www.tudou.com/albumcover/I3F-I2rXmBI.html",
-      "http://www.youku.com/show_page/id_z76ca4f38d29c11e4b8e3.html"
+      "http://www.youku.com/show_page/id_z76ca4f38d29c11e4b8e3.html",
+      "http://www.bilibili.com/sp/攻壳机动队%20S.A.C#S-1791"
     ],
     "newBgm": true,
     "showDate": "2015-04-05"
