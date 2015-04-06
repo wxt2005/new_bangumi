@@ -602,7 +602,8 @@
       "http://www.youku.com/show_page/id_zefa80170d20611e4b432.html",
       "http://v.qq.com/detail/9/9ni9yqck4tdy63j.html",
       "http://www.bilibili.com/sp/歌之☆王子殿下%20真爱1000#S-1799",
-      "http://www.acfun.tv/v/ab1470241"
+      "http://www.acfun.tv/v/ab1470241",
+      "http://www.letv.com/comic/10008836.html"
     ],
     "newBgm": true,
     "showDate": "2015-04-05"
@@ -668,7 +669,8 @@
       "http://v.qq.com/detail/2/2nqzaniq3tunys1.html",
       "http://www.pptv.com/page/305135.html",
       "http://www.bilibili.com/sp/亚尔斯兰战记",
-      "http://www.iqiyi.com/a_19rrhaybsx.html"
+      "http://www.iqiyi.com/a_19rrhaybsx.html",
+      "http://www.acfun.tv/v/ab1470244_0"
     ],
     "newBgm": true,
     "showDate": "2015-04-05"
@@ -683,7 +685,8 @@
     "timeCN": "0100",
     "onAirSite": [
       "http://www.tudou.com/albumcover/5EughhrPa3A.html",
-      "http://www.youku.com/show_page/id_z460a9d2cd29611e4a080.html"
+      "http://www.youku.com/show_page/id_z460a9d2cd29611e4a080.html",
+      "http://www.iqiyi.com/a_19rrhaybvd.html"
     ],
     "newBgm": true,
     "showDate": "2015-04-05"
@@ -696,7 +699,9 @@
     "weekDayCN": 1,
     "timeJP": "2100",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.bilibili.com/sp/SHOW%20BY%20ROCK%21%21"
+    ],
     "newBgm": true,
     "showDate": "2015-04-05"
   },
@@ -705,10 +710,12 @@
     "titleJP": "雨色ココア",
     "officalSite": "http://rainycocoa.jp/anime/index.html",
     "weekDayJP": 0,
-    "weekDayCN": 1,
+    "weekDayCN": 0,
     "timeJP": "2127",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "2328",
+    "onAirSite": [
+      "http://www.bilibili.com/sp/雨色可可"
+    ],
     "newBgm": true,
     "showDate": "2015-04-05"
   },
@@ -719,11 +726,13 @@
     "weekDayJP": 0,
     "weekDayCN": 0,
     "timeJP": "2130",
-    "timeCN": "2300",
+    "timeCN": "2230",
     "onAirSite": [
       "http://www.tudou.com/albumcover/I3F-I2rXmBI.html",
       "http://www.youku.com/show_page/id_z76ca4f38d29c11e4b8e3.html",
-      "http://www.bilibili.com/sp/攻壳机动队%20S.A.C#S-1791"
+      "http://www.bilibili.com/sp/攻壳机动队%20S.A.C#S-1791",
+      "http://v.qq.com/detail/h/hp6xc4to1ytnkof.html",
+      "http://www.acfun.tv/v/ab1470247"
     ],
     "newBgm": true,
     "showDate": "2015-04-05"
@@ -733,7 +742,7 @@
     "titleJP": "ハロー!! きんいろモザイク (第2期)",
     "officalSite": "http://www.kinmosa.com/",
     "weekDayJP": 0,
-    "weekDayCN": 1,
+    "weekDayCN": 2,
     "timeJP": "2300",
     "timeCN": "0200",
     "onAirSite": [
