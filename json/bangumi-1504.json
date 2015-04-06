@@ -686,7 +686,9 @@
     "onAirSite": [
       "http://www.tudou.com/albumcover/5EughhrPa3A.html",
       "http://www.youku.com/show_page/id_z460a9d2cd29611e4a080.html",
-      "http://www.iqiyi.com/a_19rrhaybvd.html"
+      "http://www.iqiyi.com/a_19rrhaybvd.html",
+      "http://www.bilibili.com/sp/BABY%20STEPS%20网球优等生#S-1808",
+      "http://www.acfun.tv/v/ab1470246"
     ],
     "newBgm": true,
     "showDate": "2015-04-05"
@@ -747,7 +749,8 @@
     "timeCN": "0200",
     "onAirSite": [
       "http://www.tudou.com/albumcover/SfWjXGa2scU.html",
-      "http://www.youku.com/show_page/id_zbd48f46ece9711e38b3f.html"
+      "http://www.youku.com/show_page/id_zbd48f46ece9711e38b3f.html",
+      "http://www.bilibili.com/sp/黄金拼图#S-1793"
     ],
     "newBgm": true,
     "showDate": "2015-04-05"
@@ -771,8 +774,12 @@
     "weekDayJP": 1,
     "weekDayCN": 1,
     "timeJP": "1800",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "1830",
+    "onAirSite": [
+      "http://www.bilibili.com/sp/怪盗JOKER#S-1840",
+      "http://www.iqiyi.com/a_19rrhaybf1.html",
+      "http://www.acfun.tv/v/ab1470250"
+    ],
     "newBgm": true,
     "showDate": "2015-04-06"
   },
@@ -796,7 +803,9 @@
     "weekDayCN": 2,
     "timeJP": "2254",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.bilibili.com/sp/黏黏糊糊！！角质君#S-1817"
+    ],
     "newBgm": true,
     "showDate": "2015-04-06"
   },
@@ -807,8 +816,11 @@
     "weekDayJP": 2,
     "weekDayCN": 2,
     "timeJP": "0005",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0105",
+    "onAirSite": [
+      "http://www.pptv.com/page/318510.html?set_id=9038224",
+      "http://www.bilibili.com/sp/网球并不可笑嘛#S-1158"
+    ],
     "newBgm": true,
     "showDate": "2015-04-07"
   },
@@ -819,8 +831,11 @@
     "weekDayJP": 2,
     "weekDayCN": 2,
     "timeJP": "0008",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0108",
+    "onAirSite": [
+      "http://www.pptv.com/page/318514.html?set_id=9038223",
+      "http://www.bilibili.com/sp/我是高宫茄乃！"
+    ],
     "newBgm": true,
     "showDate": "2015-04-07"
   },
@@ -832,7 +847,9 @@
     "weekDayCN": 2,
     "timeJP": "0135",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.bilibili.com/sp/御神乐学园组曲"
+    ],
     "newBgm": true,
     "showDate": "2015-04-07"
   },
