@@ -819,7 +819,7 @@
     "timeJP": "0005",
     "timeCN": "0105",
     "onAirSite": [
-      "http://www.pptv.com/page/318510.html?set_id=9038224",
+      "http://www.pptv.com/page/318510.html",
       "http://www.bilibili.com/sp/网球并不可笑嘛#S-1158"
     ],
     "newBgm": true,
@@ -834,7 +834,7 @@
     "timeJP": "0008",
     "timeCN": "0108",
     "onAirSite": [
-      "http://www.pptv.com/page/318514.html?set_id=9038223",
+      "http://www.pptv.com/page/318514.html",
       "http://www.bilibili.com/sp/我是高宫茄乃！"
     ],
     "newBgm": true,
@@ -866,7 +866,8 @@
       "http://www.tudou.com/albumcover/hbSbEkGBZtk.html",
       "http://www.youku.com/show_page/id_z41f367f4d35f11e4b522.html",
       "http://www.letv.com/comic/10008635.html",
-      "http://www.bilibili.com/sp/吹响！悠风号"
+      "http://www.bilibili.com/sp/吹响！悠风号",
+      "http://www.pptv.com/page/308933.html"
     ],
     "newBgm": true,
     "showDate": "2015-04-07"
