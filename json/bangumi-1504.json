@@ -392,8 +392,7 @@
     "timeJP": "0005",
     "timeCN": "0035",
     "onAirSite": [
-      "http://www.pptv.com/page/309015.html",
-      "http://www.bilibili.com/sp/在地下城寻求邂逅是否搞错了什么"
+      "http://www.pptv.com/page/309015.html"
     ],
     "newBgm": true,
     "showDate": "2015-04-04"
@@ -811,7 +810,7 @@
     "showDate": "2015-04-06"
   },
   {
-    "titleCN": "网球并不可笑嘛 4期",
+    "titleCN": "女高网球部 4期",
     "titleJP": "てーきゅう 第4期",
     "officalSite": "http://te-kyu.com/",
     "weekDayJP": 2,
@@ -819,8 +818,7 @@
     "timeJP": "0005",
     "timeCN": "0105",
     "onAirSite": [
-      "http://www.pptv.com/page/318510.html",
-      "http://www.bilibili.com/sp/网球并不可笑嘛#S-1158"
+      "http://www.pptv.com/page/318510.html"
     ],
     "newBgm": true,
     "showDate": "2015-04-07"
@@ -834,8 +832,7 @@
     "timeJP": "0008",
     "timeCN": "0108",
     "onAirSite": [
-      "http://www.pptv.com/page/318514.html",
-      "http://www.bilibili.com/sp/我是高宫茄乃！"
+      "http://www.pptv.com/page/318514.html"
     ],
     "newBgm": true,
     "showDate": "2015-04-07"
@@ -911,20 +908,23 @@
     "timeJP": "0029",
     "timeCN": "0330",
     "onAirSite": [
-      "http://www.letv.com/comic/10008807.html"
+      "http://www.letv.com/comic/10008807.html",
+      "http://www.bilibili.com/sp/俺物语！！"
     ],
     "newBgm": true,
     "showDate": "2015-04-09"
   },
   {
-    "titleCN": "放学后的昂星团",
+    "titleCN": "放课后的昴宿星团",
     "titleJP": "放課後のプレアデス",
     "officalSite": "http://sbr-gx.jp/",
     "weekDayJP": 4,
     "weekDayCN": 4,
     "timeJP": "0144",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "2330",
+    "onAirSite": [
+      "http://www.pptv.com/page/305182.html"
+    ],
     "newBgm": true,
     "showDate": "2015-04-09"
   },
@@ -1044,8 +1044,10 @@
     "weekDayJP": 0,
     "weekDayCN": 1,
     "timeJP": "2230",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0800",
+    "onAirSite": [
+      "http://www.pptv.com/page/270473.html"
+    ],
     "newBgm": true,
     "showDate": "2015-04-12"
   },
