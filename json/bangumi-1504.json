@@ -441,10 +441,11 @@
     "weekDayJP": 6,
     "weekDayCN": 6,
     "timeJP": "0125",
-    "timeCN": "0440",
+    "timeCN": "0510",
     "onAirSite": [
       "http://www.bilibili.com/sp/食戟之灵",
-      "http://www.iqiyi.com/a_19rrhay9y1.html"
+      "http://www.iqiyi.com/a_19rrhay9y1.html",
+      "http://www.acfun.tv/v/ab1470231"
     ],
     "newBgm": true,
     "showDate": "2015-04-04"
@@ -500,10 +501,14 @@
     "titleJP": "境界のRINNE",
     "officalSite": "http://anime-rinne.com/",
     "weekDayJP": 6,
-    "weekDayCN": 6,
+    "weekDayCN": 2,
     "timeJP": "1630",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.acfun.tv/v/ab1470234",
+      "http://www.youku.com/show_page/id_z08c88ac2d1fc11e4b692.html",
+      "http://www.tudou.com/albumcover/XZptOiXSN6Y.html"
+    ],
     "newBgm": true,
     "showDate": "2015-04-04"
   },
@@ -942,7 +947,8 @@
     "onAirSite": [
       "http://www.tudou.com/albumcover/hGd4jZGmtp4.html",
       "http://www.youku.com/show_page/id_zf5e8534ed35711e4b692.html",
-      "http://www.iqiyi.com/a_19rrhazgvh.html"
+      "http://www.iqiyi.com/a_19rrhazgvh.html",
+      "http://www.acfun.tv/v/ab1470259"
     ],
     "newBgm": true,
     "showDate": "2015-04-09"
@@ -1003,7 +1009,10 @@
     "timeCN": "0225",
     "onAirSite": [
       "http://www.tudou.com/albumcover/sdrYzuBFDuo.html",
-      "http://www.youku.com/show_page/id_z94e46f16d2c511e4b692.html"
+      "http://www.youku.com/show_page/id_z94e46f16d2c511e4b692.html",
+      "http://www.bilibili.com/sp/希德尼娅的骑士#S-1796",
+      "http://www.iqiyi.com/v_19rrnm1qek.html",
+      "http://www.acfun.tv/v/ab1470262"
     ],
     "newBgm": true,
     "showDate": "2015-04-11"
