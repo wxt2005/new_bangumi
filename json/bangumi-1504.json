@@ -277,6 +277,22 @@
     "showDate": "2015-01-09"
   },
   {
+    "titleCN": "境界触发者",
+    "titleJP": "ワールドトリガー",
+    "officalSite": "http://www.toei-anim.co.jp/tv/wt/",
+    "weekDayJP": 0,
+    "weekDayCN": 0,
+    "timeJP": "0530",
+    "timeCN": "1100",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrhc0zzx.html",
+      "http://www.acfun.tv/a/aa1464845",
+      "http://www.bilibili.com/sp/境界触发者"
+    ],
+    "newBgm": false,
+    "showDate": "2014-10-05"
+  },
+  {
     "titleCN": "船梨精摇摇摇日和",
     "titleJP": "ふなっしーのふなふなふな日和",
     "officalSite": "http://www.ntv.co.jp/funaanime/",
@@ -1035,13 +1051,13 @@
     "titleCN": "圣斗士星矢 黄金魂",
     "titleJP": "聖闘士星矢 -黄金魂 soul of gold-",
     "officalSite": "http://saintseiya-gold.com/",
-    "weekDayJP": 6,
-    "weekDayCN": 0,
-    "timeJP": "",
+    "weekDayJP": 5,
+    "weekDayCN": 6,
+    "timeJP": "2300",
     "timeCN": "",
     "onAirSite": [],
     "newBgm": true,
-    "showDate": "2014-04-11"
+    "showDate": "2014-04-10"
   },
   {
     "titleCN": "灰色的迷宫",
