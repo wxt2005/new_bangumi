@@ -442,6 +442,22 @@
     "showDate": "2014-10-04"
   },
   {
+    "titleCN": "境界触发者",
+    "titleJP": "ワールドトリガー",
+    "officalSite": "http://www.toei-anim.co.jp/tv/wt/",
+    "weekDayJP": 0,
+    "weekDayCN": 0,
+    "timeJP": "0530",
+    "timeCN": "1100",
+    "onAirSite": [
+      "http://www.iqiyi.com/a_19rrhc0zzx.html",
+      "http://www.acfun.tv/a/aa1464845",
+      "http://www.bilibili.com/sp/境界触发者"
+    ],
+    "newBgm": false,
+    "showDate": "2014-10-05"
+  },
+  {
     "titleCN": "侦探歌剧 TD",
     "titleJP": "探偵歌劇ミルキィホームズ TD",
     "officalSite": "http://milky-holmes-anime.com/td/",
