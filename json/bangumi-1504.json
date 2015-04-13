@@ -87,7 +87,8 @@
     "timeCN": "",
     "onAirSite": [
       "http://www.bilibili.com/sp/宠物小精灵",
-      "http://www.acfun.tv/a/aa109_0"
+      "http://www.acfun.tv/a/aa109_0",
+      "http://www.tucao.cc/index.php?m=search&c=index&a=init2&q=宠物小精灵XY"
     ],
     "newBgm": false,
     "showDate": "2013-10-17"
@@ -255,7 +256,8 @@
     "onAirSite": [
       "http://v.qq.com/detail/p/p9g77zamk0kvlka.html",
       "http://www.bilibili.com/sp/动画心疗系",
-      "http://www.acfun.tv/v/ab1470154_0"
+      "http://www.acfun.tv/v/ab1470154_0",
+      "http://www.tucao.cc/index.php?m=search&c=index&a=init2&q=动画心疗系"
     ],
     "newBgm": false,
     "showDate": "2015-02-13"
@@ -354,7 +356,7 @@
       "http://www.bilibili.com/sp/关于完全听不懂老公在说什么的事#S-1798",
       "http://www.pptv.com/page/311518.html",
       "http://www.letv.com/comic/10008623.html",
-      "http://www.acfun.tv/v/ab1470224_0"
+      "http://www.acfun.tv/v/ab1470224_0http://www.tucao.cc/index.php?m=search&c=index&a=init2&q=关于完全听不懂老公在说什么的事%20第二季"
     ],
     "newBgm": true,
     "showDate": "2015-04-03"
@@ -370,7 +372,8 @@
     "onAirSite": [
       "http://www.bilibili.com/sp/我的青春恋爱物语果然有问题#S-1810",
       "http://www.pptv.com/page/308997.html",
-      "http://www.acfun.tv/v/ab1470225_0"
+      "http://www.acfun.tv/v/ab1470225_0",
+      "http://www.tucao.cc/index.php?m=search&c=index&a=init2&q=我的青春恋爱物语果然有问题%E3%80%82第二季"
     ],
     "newBgm": true,
     "showDate": "2015-04-03"
@@ -383,7 +386,9 @@
     "weekDayCN": 5,
     "timeJP": "0116",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.tucao.cc/index.php?m=search&c=index&a=init2&q=浦和小调"
+    ],
     "newBgm": true,
     "showDate": "2015-04-03"
   },
@@ -396,7 +401,8 @@
     "timeJP": "2130",
     "timeCN": "2300",
     "onAirSite": [
-      "http://www.bilibili.com/sp/魔法少女奈叶#S-1790"
+      "http://www.bilibili.com/sp/魔法少女奈叶#S-1790",
+      "http://www.tucao.cc/index.php?m=search&c=index&a=init2&q=魔法少女奈叶%20ViVid"
     ],
     "newBgm": true,
     "showDate": "2015-04-03"
@@ -930,7 +936,9 @@
     "weekDayCN": 4,
     "timeJP": "0005",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.tucao.cc/index.php?m=search&c=index&a=init2&q=绝命制裁X"
+    ],
     "newBgm": true,
     "showDate": "2015-04-09"
   },
@@ -944,7 +952,8 @@
     "timeCN": "0330",
     "onAirSite": [
       "http://www.letv.com/comic/10008807.html",
-      "http://www.bilibili.com/sp/俺物语！！"
+      "http://www.bilibili.com/sp/俺物语！！",
+      "http://www.tucao.cc/index.php?m=search&c=index&a=init2&q=俺物语"
     ],
     "newBgm": true,
     "showDate": "2015-04-09"
@@ -958,7 +967,8 @@
     "timeJP": "0144",
     "timeCN": "2330",
     "onAirSite": [
-      "http://www.pptv.com/page/305182.html"
+      "http://www.pptv.com/page/305182.html",
+      "http://www.tucao.cc/index.php?m=search&c=index&a=init2&q=放学后的昴星团"
     ],
     "newBgm": true,
     "showDate": "2015-04-09"
@@ -975,7 +985,8 @@
       "http://www.tudou.com/albumcover/hGd4jZGmtp4.html",
       "http://www.youku.com/show_page/id_zf5e8534ed35711e4b692.html",
       "http://www.iqiyi.com/a_19rrhazgvh.html",
-      "http://www.acfun.tv/v/ab1470259_0"
+      "http://www.acfun.tv/v/ab1470259_0",
+      "http://www.tucao.cc/index.php?m=search&c=index&a=init2&q=干支魂"
     ],
     "newBgm": true,
     "showDate": "2015-04-09"
@@ -1004,7 +1015,8 @@
     "timeJP": "0035",
     "timeCN": "",
     "onAirSite": [
-      "http://www.bilibili.com/sp/浦和小调"
+      "http://www.bilibili.com/sp/浦和小调",
+      "http://www.tucao.cc/index.php?m=search&c=index&a=init2&q=浦和小调"
     ],
     "newBgm": true,
     "showDate": "2015-04-10"
@@ -1021,7 +1033,8 @@
       "http://www.tudou.com/albumcover/0zm0C-rHX9E.html",
       "http://www.youku.com/show_page/id_zcdd2de40d2c811e4b2ad.html",
       "http://www.letv.com/comic/10008544.html",
-      "http://www.bilibili.com/sp/伪恋#S-1801"
+      "http://www.bilibili.com/sp/伪恋#S-1801",
+      "http://www.tucao.cc/index.php?m=search&c=index&a=init2&q=伪恋%20第二季"
     ],
     "newBgm": true,
     "showDate": "2015-04-10"
