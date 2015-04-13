@@ -24,6 +24,7 @@ $(function() {
         list: [
             {name: 'A站', domain: 'acfun', show: true},
             {name: 'B站', domain: 'bilibili', show: true},
+            {name: 'C站', domain: 'tucao', show: true},
             {name: '搜狐', domain: 'sohu', show: true},
             {name: '优酷', domain: 'youku', show: true},
             {name: '腾讯', domain: 'qq', show: true},
@@ -302,6 +303,8 @@ $(function() {
                 return 'A站';
             case 'movie':
                 return '迅雷';
+            case 'tucao':
+                return 'C站';
             default:
                 return '未知';
         }
