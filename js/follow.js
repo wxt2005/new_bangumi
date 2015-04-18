@@ -17,5 +17,36 @@ function addFollow( bgmName ) {
     }
     list.push(bgmName);
     localStorage.setItem('bangumi',list);
+    location.reload();
     
 }
+
+/*
+
+*/
+function checkFollow ( bgmName ){
+	var storage = localStorage.getItem('bangumi');
+	if( storage != null ) {
+		var list = storage.split(',');
+		return inArray( bgmName, list );
+	} else {
+		return false;
+	}
+};
+
+function inArray( bgmName, list ) {
+	if ( list == null ) {
+		return false;
+	}
+	var i = 0;
+	for (; i < list.length; i++) {
+		if ( bgmName == list[i] ) {
+			return true;
+		} else {
+			continue;
+		}
+	}
+	if ( i == list.length ) {
+		return false;
+	}
+};
