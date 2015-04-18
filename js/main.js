@@ -441,7 +441,9 @@ $(function() {
         var html = '',
             linkHtml = '';
         for (i = 0, l = data.length; i < l; i++) {
-            html += '<tr><td><a href="' + data[i].officalSite + '" title="' +
+            html += '<tr id="' + 
+                (status.jpTitle ? data[i].titleCN : data[i].titleJP) + 
+                '"><td><a href="' + data[i].officalSite + '" title="' +
                 (status.jpTitle ? data[i].titleCN : data[i].titleJP) +
                 (data[i].newBgm ? '" class="new">' : '">') +
                 (status.jpTitle ? data[i].titleJP : data[i].titleCN) + '</a></td><td>' +
