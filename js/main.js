@@ -441,7 +441,8 @@ $(function() {
         var html = '',
             linkHtml = '';
         for (i = 0, l = data.length; i < l; i++) {
-            html += '<tr id="' + 
+            var cs = checkFollow((status.jpTitle ? data[i].titleCN : data[i].titleJP))?'class="followed";':'';
+            html += '<tr ' + cs + ' id="' + 
                 (status.jpTitle ? data[i].titleCN : data[i].titleJP) + 
                 '"' + 'onclick="addFollow(\'' + (status.jpTitle ? data[i].titleCN : data[i].titleJP)
                 + '\');"' +  '><td><a href="' + data[i].officalSite + '" title="' +
