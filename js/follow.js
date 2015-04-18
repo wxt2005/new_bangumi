@@ -10,12 +10,12 @@
 function addFollow( bgmName ) {
     
     var list = localStorage.getItem('bangumi');
-    if (list !== null) {
+    if (list != null) {
         list = list.split(',');
     } else {
         list = new Array();
     }
     list.push(bgmName);
-    localStorage.setItem(list);
+    localStorage.setItem('bangumi',list);
     
 }
