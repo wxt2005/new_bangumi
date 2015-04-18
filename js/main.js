@@ -443,7 +443,8 @@ $(function() {
         for (i = 0, l = data.length; i < l; i++) {
             html += '<tr id="' + 
                 (status.jpTitle ? data[i].titleCN : data[i].titleJP) + 
-                '"><td><a href="' + data[i].officalSite + '" title="' +
+                '"' + 'onclick="addFollow(\'' + (status.jpTitle ? data[i].titleCN : data[i].titleJP)
+                + '\');"' +  '><td><a href="' + data[i].officalSite + '" title="' +
                 (status.jpTitle ? data[i].titleCN : data[i].titleJP) +
                 (data[i].newBgm ? '" class="new">' : '">') +
                 (status.jpTitle ? data[i].titleJP : data[i].titleCN) + '</a></td><td>' +
