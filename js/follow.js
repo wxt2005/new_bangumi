@@ -5,9 +5,11 @@
  */
 
 /*
- * 
+ * 根据番组名字获取相应的关注状态及条目的HTML代码
+ * @method getFollowStatue
+ * @para {string} bgmName 番组名字
+ * @return {string} HTML代码
  */
-
 function getFollowStatue( bgmName ) {
 	var htmlstr;
 	if (checkFollow(bgmName)){
@@ -18,7 +20,11 @@ function getFollowStatue( bgmName ) {
 	return htmlstr;
 }
 
-
+/*
+ * 添加关注信息
+ * @method addFollow
+ * @para {string} bgmName 番组名字
+ */
 function addFollow( bgmName ) {
     
     var list = localStorage.getItem('bangumi');
@@ -33,13 +39,19 @@ function addFollow( bgmName ) {
     
 }
 
+/*
+ * 删除关注信息
+ * @method unFollow
+ * @para {string} bgmName 番组名字
+ * @return {string} HTML代码
+ */
 function unFollow ( bgmName ) {
 
 	var list = localStorage.getItem('bangumi');
     if (list != null) {
         list = list.split(',');
     }
-    list = removeArray(bgmName, list);
+    list = removeFromArray(bgmName, list);
     if ( list != null) {
     	localStorage.setItem('bangumi',list);
     } else {
@@ -50,8 +62,11 @@ function unFollow ( bgmName ) {
 }
 
 /*
-
-*/
+ * 根据番组名字获取相应的关注状态
+ * @method checkFollow
+ * @para {string} bgmName 番组名字
+ * @return {bool} 是否已关注
+ */
 function checkFollow ( bgmName ){
 	var storage = localStorage.getItem('bangumi');
 	if( storage != null ) {
@@ -62,6 +77,13 @@ function checkFollow ( bgmName ){
 	}
 }
 
+/*
+ * 检查数组中是否含有某项
+ * @method inArray
+ * @para {string} bgmName 番组名字
+ * @para {array} list 要检查的数组
+ * @return {bool} 是否包含
+ */
 function inArray( bgmName, list ) {
 	if ( list == null ) {
 		return false;
@@ -79,8 +101,14 @@ function inArray( bgmName, list ) {
 	}
 }
 
-
-function removeArray( bgmName, list ) {
+/*
+ * 删除数组中指定的一项
+ * @method removeFromArray
+ * @para {string} bgmName 番组名字
+ * @para {array} list 要删除的原数组
+ * @return {array} 删除后的新数组；或者null，如果原数组仅包含要被删除的一项的话
+ */
+function removeFromArray( bgmName, list ) {
 	var i = 0;
 	var newList = new Array();
 	for (; i < list.length; i++) {
