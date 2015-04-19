@@ -13,11 +13,26 @@
 function getFollowStatue( bgmName ) {
 	var htmlstr;
 	if (checkFollow(bgmName)){
-		htmlstr = 'class = "followed" onclick = "unFollow(\'' + bgmName + '\');"';
+		htmlstr = 'class = "followed"';
 	} else {
-		htmlstr = 'class = "unfollowed" onclick = "addFollow(\'' + bgmName + '\');"';
+		htmlstr = 'class = "unfollowed"';
 	}
 	return htmlstr;
+}
+
+function getFollowButton( bgmName, folStu) {
+	var html;
+	switch ( folStu ) {
+		case 'class = "followed"': {
+			html = '<td><div class="unfollow" onclick = "unFollow(\'' + bgmName + '\');">取消关注</div></td>';
+			break;
+		}
+		default: case 'class = "unfollowed"': {
+			html = '<td><div class="tofollow" onclick = "addFollow(\'' + bgmName + '\');">关注</div></td>';
+			break;
+		}
+	}
+	return html;
 }
 
 /*

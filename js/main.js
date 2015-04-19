@@ -442,9 +442,10 @@ $(function() {
             linkHtml = '';
         for (i = 0, l = data.length; i < l; i++) {
             var cs = getFollowStatue((status.jpTitle ? data[i].titleCN : data[i].titleJP));
+            var btn = getFollowButton((status.jpTitle ? data[i].titleCN : data[i].titleJP), cs);
             html += '<tr ' + cs + ' id="' + 
                 (status.jpTitle ? data[i].titleCN : data[i].titleJP) + 
-                '"' + '\');"' +  '><td><a href="' + data[i].officalSite + '" title="' +
+                '"' + '\');">' + btn + '<td><a href="' + data[i].officalSite + '" title="' +
                 (status.jpTitle ? data[i].titleCN : data[i].titleJP) +
                 (data[i].newBgm ? '" class="new">' : '">') +
                 (status.jpTitle ? data[i].titleJP : data[i].titleCN) + '</a></td><td>' +
