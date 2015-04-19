@@ -5,10 +5,10 @@
  */
 
 /*
- * 根据番组名字获取相应的关注状态及条目的HTML代码
+ * 根据番组名字获取相应的关注状态及条目的class属性代码
  * @method getFollowStatue
  * @para {string} bgmName 番组名字
- * @return {string} HTML代码
+ * @return {string} class属性代码
  */
 function getFollowStatue( bgmName ) {
 	var htmlstr;
@@ -20,7 +20,14 @@ function getFollowStatue( bgmName ) {
 	return htmlstr;
 }
 
-function getFollowButton( bgmName, folStu) {
+/*
+ * 根据番组名字、关注状态关注/取消关注的文字按钮
+ * @method getFollowButton
+ * @para {string} bgmName 番组名字
+ * @para {string} folStu 从getFollowStatue得到的class属性代码
+ * @return {string} 有<td>修饰的文字按钮代码
+ */
+function getFollowButton( bgmName, folStu ) {
 	var html;
 	switch ( folStu ) {
 		case 'class = "followed"': {
