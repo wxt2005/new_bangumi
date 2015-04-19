@@ -1,3 +1,8 @@
 .followed {
 	background-color: #66ccff;
 }
+
+#header .followNotice {
+    bottom: 8px;
+    font-size: 0.15em;
+}
