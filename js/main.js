@@ -445,7 +445,7 @@ $(function() {
             var btn = getFollowButton((status.jpTitle ? data[i].titleCN : data[i].titleJP), cs);
             html += '<tr ' + cs + ' id="' + 
                 (status.jpTitle ? data[i].titleCN : data[i].titleJP) + 
-                '"' + '\');">' + btn + '<td><a href="' + data[i].officalSite + '" title="' +
+                '"' + '\');">'  + '<td><a href="' + data[i].officalSite + '" title="' +
                 (status.jpTitle ? data[i].titleCN : data[i].titleJP) +
                 (data[i].newBgm ? '" class="new">' : '">') +
                 (status.jpTitle ? data[i].titleJP : data[i].titleCN) + '</a></td><td>' +
@@ -486,7 +486,7 @@ $(function() {
                 }
                 // 如果站点全部被过滤，显示'过滤'
                 if (linkHtml === '') {
-                    linkHtml += '<li class="empty">过滤</li>';
+                    linkHtml += '<li class="empty">过滤</li>'+ btn ;
                 }
                 html += linkHtml + '</ul></td></tr>';
             } else {

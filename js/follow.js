@@ -31,11 +31,11 @@ function getFollowButton( bgmName, folStu ) {
 	var html;
 	switch ( folStu ) {
 		case 'class = "followed"': {
-			html = '<td><div class="unfollow" onclick = "unFollow(\'' + bgmName + '\');">取消关注</div></td>';
+			html = '<td class = "followButton"><div class="unfollow" onclick = "unFollow(\'' + bgmName + '\');">取消关注</div></td>';
 			break;
 		}
 		default: case 'class = "unfollowed"': {
-			html = '<td><div class="tofollow" onclick = "addFollow(\'' + bgmName + '\');">关注</div></td>';
+			html = '<td class = "followButton"><div class="tofollow" onclick = "addFollow(\'' + bgmName + '\');">关注</div></td>';
 			break;
 		}
 	}
