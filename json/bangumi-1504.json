@@ -838,7 +838,6 @@
     "timeJP": "1800",
     "timeCN": "1830",
     "onAirSite": [
-      "http://www.bilibili.com/sp/怪盗JOKER#S-1840",
       "http://www.iqiyi.com/a_19rrhaybf1.html"
     ],
     "newBgm": true,
@@ -1102,11 +1101,13 @@
     "weekDayJP": 5,
     "weekDayCN": 6,
     "timeJP": "2300",
-    "timeCN": "",
+    "timeCN": "0900",
     "onAirSite": [
-      "http://www.acfun.tv/v/ab1470265_0"
+      "http://www.acfun.tv/v/ab1470265_0",
+      "http://www.iqiyi.com/a_19rrhaz605.html"
     ],
     "newBgm": true,
+    "comment": "隔周放送",
     "showDate": "2014-04-10"
   },
   {
@@ -1149,7 +1150,9 @@
     "weekDayCN": 4,
     "timeJP": "2340",
     "timeCN": "",
-    "onAirSite": [],
+    "onAirSite": [
+      "http://www.bilibili.com/sp/英国一家%20吃在日本"
+    ],
     "newBgm": true,
     "showDate": "2015-04-15"
   },
@@ -1162,8 +1165,7 @@
     "timeJP": "2200",
     "timeCN": "2200",
     "onAirSite": [
-      "http://www.tudou.com/albumcover/thXrYtxFJfE.html",
-      "http://www.youku.com/show_page/id_z11209d22d2b511e4b432.html"
+      "http://www.tucao.cc/index.php?m=search&c=index&a=init2&q=忍者杀手"
     ],
     "newBgm": true,
     "showDate": "2015-04-16"
@@ -1175,8 +1177,12 @@
     "weekDayJP": 0,
     "weekDayCN": 1,
     "timeJP": "2200",
-    "timeCN": "",
-    "onAirSite": [],
+    "timeCN": "0000",
+    "onAirSite": [
+      "http://www.tucao.cc/index.php?m=search&c=index&a=init2&q=灰色的乐园",
+      "http://www.acfun.tv/v/ab1470270_0",
+      "http://www.iqiyi.com/a_19rrhaz2bh.html"
+    ],
     "newBgm": true,
     "showDate": "2015-04-19"
   }
