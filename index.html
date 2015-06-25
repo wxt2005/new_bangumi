@@ -9,6 +9,7 @@
         <meta name="keywords" content="番组放送, 新番, 动画, 动漫, 正版">
         <meta name="author" content="@wxt2005">
         <link type="text/css" rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="./css/follow.css">
         <title>番组放送</title>
     </head>
     <body>
@@ -95,6 +96,7 @@
             <h1>番组列表</h1>
             <p class="total"></p>
             <p class="lastModified"></p>
+            <p class="followNotice">点击关注可以高亮显示番组信息</p>
         </div>
         <div id="nav" class="clearfix">
             <ul id="switcher">
@@ -127,6 +129,7 @@
                         <th><p>日本<span>放送时间</span></p></th>
                         <th><p>大陆<span>放送时间</span></p></th>
                         <th>播放网址</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody id="bangumiList">
@@ -146,6 +149,7 @@
             &#124;&nbsp;Powered&nbsp;by&nbsp;<a href="http://jquery.com">jQuery</a>
             and&nbsp;<a href="https://github.com/wxt2005/new_bangumi/" title="GitHub项目地址">GitHub</a>
         </p>
+        <script type="text/javascript" src = './js/follow.js'></script>
         <script src="js/jquery-1.11.1.js"></script>
         <script src="js/jquery.cookie.js"></script>
         <script src="js/main.js"></script>

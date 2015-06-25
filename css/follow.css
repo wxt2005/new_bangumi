@@ -1,0 +1,19 @@
+.followed {
+	background-color: #66ccff;
+}
+
+#header .followNotice {
+    bottom: 8px;
+    font-size: 0.15em;
+}
+
+.followButton {
+    height: 50px;
+    border-bottom: 1px solid #ddd;
+    padding-left: 20px;
+    -webkit-transition: background 0.3s ease-in-out;
+    -ms-transition: background 0.3s ease-in-out;
+    -o-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out;
+}
